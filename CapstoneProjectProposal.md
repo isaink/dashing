@@ -14,9 +14,13 @@ There’s no cookie cutter approach to beauty and self-care regimens. CombToMe c
 `Section 2: The Hypothesis` 
 
 **IF:**  We make getting ready ‘head-to-toe’ for an event, easier and more convenient by bringing professional providers to you.
+
 **FOR:** People of all ages who want or need help beautifying themselves.
+
 **THEN:**  Clients will feel catered to and freelancing providers will feel in control of their own professional lives. 
+
 **BECAUSE:**  People feel taken care of when being attended to in the comfort of their own home.
+
 **WE KNOW WE’VE SUCCEEDED WHEN:** Our clients feel good about themselves and satisfied with the experience they had through our app and refer us to their friends and family.
 
 `Section 3: The Solution (in detail)` 
