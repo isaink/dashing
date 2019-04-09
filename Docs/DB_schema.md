@@ -5,8 +5,8 @@ column name          | data type | details
 ---------------------|-----------|-----------------------
 id                   | integer   | not null, primary key
 service_name         | string    | not null
-price                | integer   | not null
-duration             | integer   | not null
+price                | float     | not null
+duration             | string    | not null
 
 
 ## providers
@@ -33,4 +33,6 @@ last_name            | string    | not null,
 email                | string    | not null, indexed, unique
 password             | string    | not null, indexed,
 phone_number         | string    | not null, indexed,
-location             | integer   | not null,
+lat                  | float     | not null,
+long                 | float     | not null
+address              | varchar   | not null 
