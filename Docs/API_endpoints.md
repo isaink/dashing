@@ -10,23 +10,23 @@
 *JSON API*
 
 ### provider
-* `GET /api/provider`
+* `GET /api/u/provider`
   * Fetches all providers
-* `POST /api/provider`
+* `POST /api/u/provider`
   * Creates new provider
-* `GET /api/provider/:providerId`
+* `GET /api/u/provider/:providerId`
   * Fetches single existing provider profile
-* `PATCH /api/provider/:providerId`
+* `PATCH /api/u/provider/:providerId`
   * Allows provider to update their profile
 
 ### client
-* `GET /api/client`
+* `GET /api/u/client`
   * Fetches all clients
-* `POST /api/client`
+* `POST /api/u/client`
   * Creates new client
-* `GET /api/client/:clientId`
+* `GET /api/u/client/:clientId`
   * Fetches single existing client profile
-* `PATCH /api/client/:clientId`
+* `PATCH /api/u/client/:clientId`
   * Allows client to update their profile
 
 ### service
