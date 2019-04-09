@@ -1,0 +1,49 @@
+state: {
+    providers: {
+      2: {
+        id: 1,
+        name: "Shereen Jones",
+        profile_pic: "http://somethinghere.jpg",
+        email: "beautybyshereen@gmail.com",
+        password: password,
+        phone_number: 2123452345,
+        borough: "Brooklyn",
+        service_id: 2,
+        skills: "Coloring, Straigtening, Highlights, Loc Repair",
+        port_img_1: "http://somethinghere.jpg",
+        port_img_2: "http://somethinghere.jpg",
+        port_img_3: "http://somethinghere.jpg"
+      }
+    },
+    clients: {
+      3: {
+        id: 2,
+        name: "Alex Handy",
+        address: "123 Sesame Street",
+        borough: "Brooklyn",
+        state: "NY",
+        email: "alexh@gmail.com",
+        phone_number: "2137893456",
+        lat: -70.8129392,
+        long: 34.7238439
+      }
+    },
+    services: {
+      12: {
+        id: 2,
+        service_name: "Hair",
+        price: 35.00,
+        duration: "60 minutes",
+        service_img: "http://somethinghere.jpg"
+      }
+    },
+    education: {
+      3: {
+        id: 2,
+        lesson: "Women's Haircut",
+        provider_id: 1,
+        service_id: 2,
+        education_img: "http://somethinghere.jpg"
+      }
+    }
+  }
