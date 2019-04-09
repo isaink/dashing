@@ -60,10 +60,14 @@ Create a rough sketch of sprints in this timeline:
 
 Week    |                Sprint 
 --------|-----------------------------------------------------
-Week 1  | Create SQL, SCHEMA, Queries & Routes, User Auth & Home page
-Week 2  | Create a Profiles: provider & clients Services session
-Week 3  | Search bar, continue w/ profiles, Educational & Informative session
-Week 4  | CSS details, calendar API, Presentation, elevator pitch....
+Week 1  | `Backend:` SQL tables, Schema, Queries & Routes, staring Home page
+Week 2  | `Frontend:` continue w/ Home, Navbar w/ scroll npm, Search bar by Location &  by skills
+Week 3  | Services(4) on session-scroll, About us Session, description, and testimonials
+Week 4  | CSS details,  Presentation, elevator pitch....
+
+`BONUS:` Create Profiles for provider sign up w/ a form. 
+`BONUS:` List of professional near to you using google maps API.
+`BONUS:` Calendar API for booking and appointments.
 
 `Section 6: Wireframes`
 
