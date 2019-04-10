@@ -1,4 +1,4 @@
-const { db } = require('../connector.js');
+const  db  = require('../connector.js');
 
 
 const getAll = (req, res, next) => {

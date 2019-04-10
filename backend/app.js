@@ -10,6 +10,7 @@ var srvProvidersRouter = require('./routes/srvProviders');
 var servicesRouter = require('./routes/services');
 var portfolioRouter = require('./routes/portfolios');
 var skillsProviderRouter = require('./routes/skillsProvider');
+var skillsProvider = require('./routes/skills')
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/srvProviders', srvProvidersRouter);
 app.use('/services', servicesRouter);
 app.use('/portfolios', portfolioRouter);
 app.use('/skillsProvider', skillsProviderRouter);
+app.use('/skills', skillsProvider)
 
 
 // catch 404 and forward to error handler
@@ -47,12 +49,6 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
-app.listen(3100, () => {
-  console.log("Listening on port 3100");
-});
 
-app.listen(3100, () => {
-  console.log("Listening on port 3100");
-});
 
 module.exports = app;
