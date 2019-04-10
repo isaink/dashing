@@ -44,7 +44,7 @@ CREATE TABLE portfolio (
     id SERIAL PRIMARY KEY,
     provider_id INT REFERENCES providers(id) ON DELETE SET NULL,
     img VARCHAR,
-    body VARCHAR, 
+    body VARCHAR,
     skill_id INT REFERENCES skills(id) ON DELETE SET NULL
 );
 
@@ -95,7 +95,7 @@ VALUES('Nielene Keys', 'nkeys@gmail.com', 'nkeys', 'https://pixel.nymag.com/imgs
 ('Jo West', 'jwest@gmail.com', 'jwest', 'https://pmcvariety.files.wordpress.com/2015/11/tessa-thompson-creed-q-and-a.jpg?w=1000&h=563&crop=1', 'Queens', '34759998433', null),
 ('Carina Salvador','csalvador@gmail.com', 'csalvador', 'http://content2.latest-hairstyles.com/wp-content/uploads/2015/07/RadReasonsToEmbraceNaturalCurl-500x333-14379420002.jpg', 'Staten Island', '34759998433', null);
 
-INSERT INTO services_provider(service_id, provider_id) 
+INSERT INTO services_provider(service_id, provider_id)
 VALUES(1,1), (2,1), (2,2), (4,2), (3,3), (4,4), (1,4), (1,5), (3,5);
 
 INSERT INTO skills_provider (skill_id, provider_id, price_min, price_max, education)
@@ -122,7 +122,7 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 
 INSERT INTO portfolio(provider_id, img, body, skill_id)
 VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),
-  (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg', null, null), 
+  (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg', null, null),
   (2, 'http://www.cuded.com/wp-content/uploads/2017/03/chrome-nail-42.jpg', null, null),
   (2, 'http://tdolanplumbing.com/wp-content/uploads/parser/nail-art-designs-for-short-nails-1.jpg', null, null),
   (3, 'https://www.menshairstylestoday.com/wp-content/uploads/2016/12/Edge-Up-Burst-Fade-Curly-Afro.jpg', null, null),
