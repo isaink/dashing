@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var providersRouter = require('./routes/providers');
 var srvProvidersRouter = require('./routes/srvProviders');
 var servicesRouter = require('./routes/services');
-var portfolioRouter = require('./routes/portfolio');
+var portfolioRouter = require('./routes/portfolios');
 var skillsProviderRouter = require('./routes/skillsProvider');
 
 var app = express();
