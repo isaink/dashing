@@ -40,4 +40,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.listen(3100, () => {
+  console.log("Listening on port 3100");
+});
+
 module.exports = app;
