@@ -95,6 +95,9 @@ VALUES('Nielene Keys', 'nkeys@gmail.com', 'nkeys', 'https://pixel.nymag.com/imgs
 ('Jo West', 'jwest@gmail.com', 'jwest', 'https://pmcvariety.files.wordpress.com/2015/11/tessa-thompson-creed-q-and-a.jpg?w=1000&h=563&crop=1', 'Queens', '34759998433', null),
 ('Carina Salvador','csalvador@gmail.com', 'csalvador', 'http://content2.latest-hairstyles.com/wp-content/uploads/2015/07/RadReasonsToEmbraceNaturalCurl-500x333-14379420002.jpg', 'Staten Island', '34759998433', null);
 
+INSERT INTO services_provider(service_id, provider_id) 
+VALUES(1,1), (2,1), (2,2), (4,2), (3,3), (4,4), (1,4), (1,5), (3,5);
+
 INSERT INTO skills_provider (skill_id, provider_id, price_min, price_max, education)
 VALUES(1, 1, 50, 70, 'true'), --hair
 (2, 1, 80, 100, 'true'), --Hair
