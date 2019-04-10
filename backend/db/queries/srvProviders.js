@@ -22,4 +22,4 @@ const getAllSrvByPro = (req, res, next) => {
 
 module.exports = {
     getAllSrvByPro
-} 
+}
