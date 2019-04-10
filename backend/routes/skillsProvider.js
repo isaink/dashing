@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require ('../db/queries/skillsProvider-Q');
 
 
-router.get('/', getAll, db.getAll );
+router.get('/', db.getAll );
 
 
 module.exports = router;
