@@ -1,7 +1,7 @@
 const db = require('../connector');
 
 const getAllSrvByPro = (req, res, next) => {
-    db.any('SSELECT providers.id AS provider_id, name, email, avatar, borough, phone_number, website_link FROM providers JOIN services_provider ON providers.id = services_provider.provider_id WHERE service_id = ${id}', {
+    db.any('SELECT providers.id AS provider_id, name, email, avatar, borough, phone_number, website_link FROM providers JOIN services_provider ON providers.id = services_provider.provider_id WHERE service_id = ${id}', {
         id: Number(req.params.id)
     })
     .then(data => {
@@ -22,4 +22,4 @@ const getAllSrvByPro = (req, res, next) => {
 
 module.exports = {
     getAllSrvByPro
-} 
+}
