@@ -10,7 +10,7 @@ CREATE TABLE services(
 
 CREATE TABLE skills(
   id SERIAL PRIMARY KEY,
-  skill_name VARCHAR,
+  name VARCHAR,
   service_id INT REFERENCES services(id) ON DELETE CASCADE
 );
 
@@ -40,10 +40,12 @@ CREATE TABLE skills_provider(
     education BOOLEAN
 );
 
-CREATE TABLE porfolio (
+CREATE TABLE portfolio (
     id SERIAL PRIMARY KEY,
     provider_id INT REFERENCES providers(id) ON DELETE SET NULL,
-    img VARCHAR
+    img VARCHAR,
+    body VARCHAR, 
+    skill_id INT REFERENCES skills(id) ON DELETE SET NULL
 );
 
 CREATE TABLE clients (
@@ -58,52 +60,74 @@ CREATE TABLE clients (
   long FLOAT
 );
 
--- CREATE TABLE education (
---   id SERIAL PRIMARY KEY,
---   teach BOOLEAN,
---   provider_id INT REFERENCES providers(id) ON DELETE SET NULL,
---   skill_id INT REFERENCES skills(id) ON DELETE SET NULL,
---   education_img TEXT
--- );
-
 INSERT INTO services(name)
 VALUES('Hair'),
-('Makeup'),
 ('Nails'),
-('Barber');
+('Barber'),
+('Makeup');
 
-INSERT INTO skills(skill_name, service_id)
-VALUES('Highlights', 1),
-('Eyebrow shaping', 4),
-('Mani/Pedi', 2),
-('Glam Makeup', 4),
-('Nail Art', 2),
-('Sew In', 1), 
-('Retwist', 1), 
-('Acrylic', 2), 
-('Fade', 3), 
-('Trim', 3 ),
-('Facial Hair Grooming', 3),
-('Wedding Makeup', 4);
+INSERT INTO skills (name, service_id)
+VALUES('Coloring' , 1),
+('Weaves' , 1),
+('Locks' , 1),
+('Perms' , 1),
+('Cut' , 1),
+('Nail Art' , 2),
+('Shaping' , 2),
+('Mani/Pedi' , 2),
+('Tips' , 2),
+('Gel Nails' , 2),
+('Trim' , 3),
+('Cut' , 3),
+('Fade' , 3),
+('Blowout' , 3),
+('Facial Hair Grooming' , 3),
+('Brow shaping' , 4),
+('Glam' , 4),
+('Natural' , 4),
+('Wedding' , 4),
+('Sugaring' , 4);
 
 INSERT INTO providers (name, email, password, avatar, borough, phone_number, website_link)
 VALUES('Nielene Keys', 'nkeys@gmail.com', 'nkeys', 'https://pixel.nymag.com/imgs/fashion/daily/2018/08/17/magazine/tessa-thompson-1.w570.h712.jpg', 'Brooklyn', '34759998433', null),
 ('Isa Frias', 'irico@gmail.com', 'irico', 'https://assets.teenvogue.com/photos/55fada5fda9bc0e85547e428/master/pass/latina-girls.jpg', 'Bronx', '34759998433', null),
 ('Bayne Brian', 'bbrian@gmail.com', 'bbrian', 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F11%2Fkofi-siriboe-peopledotcom1.jpg&w=400&c=sc&poi=face&q=85', 'New York','7189875674', null),
 ('Jo West', 'jwest@gmail.com', 'jwest', 'https://pmcvariety.files.wordpress.com/2015/11/tessa-thompson-creed-q-and-a.jpg?w=1000&h=563&crop=1', 'Queens', '34759998433', null),
-('Carina Salvador','csalvador@gmail.com', 'csalvador',  'http://content2.latest-hairstyles.com/wp-content/uploads/2015/07/RadReasonsToEmbraceNaturalCurl-500x333-14379420002.jpg', 'Staten Island', '34759998433', null);
+('Carina Salvador','csalvador@gmail.com', 'csalvador', 'http://content2.latest-hairstyles.com/wp-content/uploads/2015/07/RadReasonsToEmbraceNaturalCurl-500x333-14379420002.jpg', 'Staten Island', '34759998433', null);
 
+INSERT INTO skills_provider (skill_id, provider_id, price_min, price_max, education)
+VALUES(1, 1, 50, 70, 'true'), --hair
+(2, 1, 80, 100, 'true'), --Hair
+(6, 1, 20, 30, 'false'), --nails
+(7, 1, 15, 25, 'false'), --nails
+(8, 2, 20, 25, 'true'), --nails
+(9, 2, 20, 30, 'true'), --nails
+(16, 2, 15, 20, 'true'), --makeup
+(17, 2, 30, 40, 'true'), --makeup
+(11, 3, 15, 20, 'false'), --barber
+(12, 3, 20, 30, 'false'), --barber
+(13, 3, 20, 25, 'true'), --barber
+(14, 3, 12, 18, 'true'), --barber
+(18, 4, 20, 30, 'true'), --makeup
+(19, 4, 30, 40, 'true'), --makeup
+(3, 4, 50, 70, 'false'), --hair
+(4, 4, 30, 40, 'false'), --hair
+(5, 5, 20, 50, 'true'), --hair
+(1, 5, 30, 40, 'true'), --hair
+(15, 5, 20, 45, 'true'), --barber
+(11, 5, 20, 25, 'true'); --barber
 
-
-INSERT INTO portfolio(provider_id, img)
-VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg'),
- (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg'), 
- (1, 'http://www.cuded.com/wp-content/uploads/2017/03/chrome-nail-42.jpg'),
- (2, 'http://www.cuded.com/wp-content/uploads/2017/03/chrome-nail-42.jpg')
-
--- INSERT INTO education (teach, skill_id, provider_id, education_img)
--- VALUES('true', 1, 1, null),
--- ('true', 2, 2, null),
--- ('true', 3, 3, null),
--- ('true', 4, 4, null),
--- ('true', 5, 5, null);
+INSERT INTO portfolio(provider_id, img, body, skill_id)
+VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),
+  (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg', null, null), 
+  (2, 'http://www.cuded.com/wp-content/uploads/2017/03/chrome-nail-42.jpg', null, null),
+  (2, 'http://tdolanplumbing.com/wp-content/uploads/parser/nail-art-designs-for-short-nails-1.jpg', null, null),
+  (3, 'https://www.menshairstylestoday.com/wp-content/uploads/2016/12/Edge-Up-Burst-Fade-Curly-Afro.jpg', null, null),
+  (3, 'https://www.menshairstylestoday.com/wp-content/uploads/2016/12/Edge-Up-Burst-Fade-Curly-Afro.jpg', null, null),
+  (3, 'https://www.menshairstyletrends.com/wp-content/uploads/2018/05/tote_barber-mohawk-fade-hairstyles-for-men-2018.jpg', null, null),
+  (4, 'https://i-h2.pinimg.com/564x/a1/cb/81/a1cb814979c87ec8f7b252b299c75343.jpg', null, null),
+  (4, 'https://www.miladies.net/wp-content/uploads/2017/07/Neutral-glam-makeup.jpg', null, null),
+  (4, 'http://lawyerfind.info/wp-content/uploads/best-purple-hair-dye-for-brown-hair-purple-and-magenta-hair-color-colorful-hair-pinterest-magenta.jpg', null, null),
+  (5, 'http://jpmmobile.com/wp-content/uploads/2018/11/40-braids-for-black-kids-2018-mr-kids-haircuts-braids-for-black-kids.jpg', null, null),
+  (5, 'https://4cjz9s2texp5a66rp37l3uty-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/1492699004/bashab___12224424_252504998425062_1601193227_n-2.jpg', null, null),
+  (5, 'https://www.menshairstylestoday.com/wp-content/uploads/2018/03/Black-Men-Hairstyles.jpg', null, null);
