@@ -11,12 +11,19 @@
 ### provider
 * `GET /api/provider`
   * Fetches all providers
-* `POST /api/provider`
-  * Creates new provider
 * `GET /api/provider/:providerId`
   * Fetches single existing provider profile
-* `PATCH /api/provider/:providerId`
-  * Allows provider to update their profile
+* `POST /api/provider/:id`
+  * Creates new provider
+* `LOG OUT PROVIDER`
+* `LOG IN PROVIDER`
+* `IS LOGGED IN PROVIDER`
+*  `PATCH /api/provider/:id`
+    * Edit single provider
+    * Allows provider to update their profile
+* `DELETE /api/provider/:id`
+    * Delete single provider
+
 
 ### client [ BONUS ]
 * `GET /api/client`
@@ -41,9 +48,3 @@
     * Creates a new skills
 * `DELETE /api/skills/:id`
     * Delete a single skill
-
-### lessons
-* `Get /api/lessons`
-    * Fetches all the lessons
-* `Get /api/lesons/:id`
-    * Fetches a single lesson

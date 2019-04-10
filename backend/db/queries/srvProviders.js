@@ -1,7 +1,7 @@
 const db = require('../connector');
 
-const getAllSrvByPro = (req, res, next) => {
-    db.any('SSELECT providers.id AS provider_id, name, email, avatar, borough, phone_number, website_link FROM providers JOIN services_provider ON providers.id = services_provider.provider_id WHERE service_id = ${id}', {
+const getAllProByServ = (req, res, next) => {
+    db.any("SELECT providers.id AS provider_id, name, email, avatar, borough, phone_number, website_link FROM providers JOIN services_provider ON providers.id = services_provider.provider_id WHERE service_id = ${id}", {
         id: Number(req.params.id)
     })
     .then(data => {
@@ -16,10 +16,16 @@ const getAllSrvByPro = (req, res, next) => {
             status: 'Failure',
             message: 'Failed to get all services by this provider'
         })
-        next(err);
     })
 }
 
+
+
 module.exports = {
-    getAllSrvByPro
+<<<<<<< HEAD
+    getAllProByServ
 } 
+=======
+    getAllSrvByPro
+}
+>>>>>>> 20fb40b2c1c3d0cddd42f0617e2b6762ff6b73c3

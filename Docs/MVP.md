@@ -21,7 +21,7 @@ PROVIDER:
 - choose availability
 - can create an About Me section
 
-USER:
+USER: 
 - can search for nearest provider (filter) using react-geolocated.
 - can add reviews - comments (BONUS: pictures)
 - BONUS: can see past & future appointments using react-calendar library
