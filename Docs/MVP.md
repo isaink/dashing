@@ -9,7 +9,7 @@ PROVIDER PROFILE PAGE:
 - rating (out of 5 stars)
 - fee range ('$', '$$', '$$$')
 
-CLIENT PROFILE PAGE:
+CLIENT PROFILE PAGE: [BONUS]
 - list of favorite providers
 - list of past appointments
 - list of future appointments
@@ -21,12 +21,9 @@ PROVIDER:
 - choose availability
 - can create an About Me section
 
-CLIENT:
-- can add reviews (BONUS: pictures)
-- can see past & future appointments
-- request appointments
-- add location during sign up
-- can search for nearest provider (filter)
-- can see past providers
-- can favorite past providers
-- BONUS: can save articles/tutorials
+USER:
+- can search for nearest provider (filter) using react-geolocated.
+- can add reviews - comments (BONUS: pictures)
+- BONUS: can see past & future appointments using react-calendar library
+- BONUS: request appointments using react-calendar library
+- BONUS: can save articles/tutorials from educational section
