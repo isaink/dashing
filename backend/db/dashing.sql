@@ -3,56 +3,55 @@ CREATE DATABASE dashing;
 
 \c dashing;
 
-CREATE TABLE services (  hair, nails, barber, makeup
+CREATE TABLE services (
   id SERIAL PRIMARY KEY,
   service_name TEXT,
-  price: FLOAT,
-  duration: INT,
-  service_img: TEXT
+  price FLOAT,
+  duration INT,
+  service_img TEXT
 );
 
 CREATE TABLE providers (
   id SERIAL PRIMARY KEY,
-  name: TEXT,
-  profile_pic: TEXT,
-  email: TEXT,
-  password: TEXT,
-  phone_number: INT,
-  borough: TEXT,
-  service_id: INT REFERENCES services(id) ON DELETE SET NULL,
-  skill_id: INT REFERENCES skills(id) ON DELETE SET NULL,
-  port_img_1: TEXT,
-  port_img_2: TEXT,
-  port_img_3: TEXT
+  name TEXT,
+  profile_pic TEXT,
+  email TEXT,
+  password TEXT,
+  phone_number INT,
+  borough TEXT,
+  service_id INT REFERENCES services(id) ON DELETE SET NULL,
+  skill_id INT REFERENCES skills(id) ON DELETE SET NULL,
+  port_img_1 TEXT,
+  port_img_2 TEXT,
+  port_img_3 TEXT
 );
 
 CREATE TABLE clients (
   id SERIAL PRIMARY KEY,
-  name: TEXT,
-  address: TEXT,
-  borough: TEXT,
-  state: TEXT,
-  email: TEXT,
-  phone_number: TEXT,
-  lat: FLOAT,
-  long: FLOAT
+  name TEXT,
+  address TEXT,
+  borough TEXT,
+  state TEXT,
+  email TEXT,
+  phone_number TEXT,
+  lat FLOAT,
+  long FLOAT
 );
 
-CREATE TABLE skills (   hair: weave, color, highlight, shave, ,...
-                        nails: manicure, pedicure, nail art, shaping....
+CREATE TABLE skills (   
   id SERIAL PRIMARY KEY,
   skill_name TEXT,
-  service_id INT REFERENCES services(id) ON DELETE CASCADE    Hair
+  service_id INT REFERENCES services(id) ON DELETE CASCADE,
   provider_id INT REFERENCES providers(id) ON DELETE CASCADE
 );
 
 CREATE TABLE education (
   id SERIAL PRIMARY KEY,
-  teach: BOOLEAN,
-  provider_id: INT REFERENCES providers(id) ON DELETE CASCADE,
-  -- service_id: INT REFERENCES services(id) ON DELETE CASCADE,
-  skill_id: INT REFERENCES skills(id) ON DELETE CASCADE,
-  education_img: TEXT
+  teach BOOLEAN,
+  provider_id INT REFERENCES providers(id) ON DELETE CASCADE,
+  -- service_id INT REFERENCES services(id) ON DELETE CASCADE,
+  skill_id INT REFERENCES skills(id) ON DELETE CASCADE,
+  education_img TEXT
 );
 
 
@@ -64,7 +63,7 @@ VALUES ('Hair', '100.00', 60, 'https://www.aveda.com.au/media/export/cms/hair_co
 
 INSERT INTO providers (name, profile_pic, email, password, phone_number, borough, service_id, skill_id, port_img_1, port_img_2, port_img_3)
 VALUES ('Nielene Keys', 'https://pixel.nymag.com/imgs/fashion/daily/2018/08/17/magazine/tessa-thompson-1.w570.h712.jpg', 'nkeys@gmail.com', 'nkeys', '34759998433', 'Brooklyn', 1, 1, null , null, null),
-('Carina Salvador', 'http://content2.latest-hairstyles.com/wp-content/uploads/2015/07/RadReasonsToEmbraceNaturalCurl-500x333-14379420002.jpg', 'csalvador@gmail.com', 'csalvador', '34759998433', 'Staten Island', 2, 1, null , null, null)
+('Carina Salvador', 'http://content2.latest-hairstyles.com/wp-content/uploads/2015/07/RadReasonsToEmbraceNaturalCurl-500x333-14379420002.jpg', 'csalvador@gmail.com', 'csalvador', '34759998433', 'Staten Island', 2, 1, null , null, null),
 ('Jo West', 'https://pmcvariety.files.wordpress.com/2015/11/tessa-thompson-creed-q-and-a.jpg?w=1000&h=563&crop=1', 'jwest@gmail.com', 'jwest', '34759998433', 'Queens', 3, 1, null , null, null),
 ('Bayne Brian', 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F11%2Fkofi-siriboe-peopledotcom1.jpg&w=400&c=sc&poi=face&q=85', 'bbrian@gmail.com', 'bbrian', '7189875674', 'New York', 4, 1,null , null, null),
 ('Isa Frias', 'https://assets.teenvogue.com/photos/55fada5fda9bc0e85547e428/master/pass/latina-girls.jpg', 'irico@gmail.com', 'irico', '34759998433', 'Bronx', 3, 1, null , null, null);
