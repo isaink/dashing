@@ -39,7 +39,7 @@ const getSingleProviders = (req, res, next) => {
 
 // POST -> Create a Provider [USER AUTH]  ->  /provider/:id
 const createProvider = (req, res, next) => {
-  const hash = authHelpers.createHash(req.body.password);
+  // const hash = authHelpers.createHash(req.body.password);
   db.none('INSERT INTO providers ( name, email, password)' + 
   ' VALUES(${name}, ${email}, ${password} )', 
   { name: req.body.name, email: req.body.email, password: req.body.password})

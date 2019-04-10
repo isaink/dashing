@@ -22,12 +22,9 @@ router.get('/:id', getSingleProviders);
 router.patch('/:id', updateProvider);
 router.delete('/:id', deleteProvider);
 
-// Routes for user AUTH
-router.post('/new', createProvider);
-router.post("/login", passport.authenticate("local", {}), loginProvider);``
-router.get("/isLoggedIn", isLoggedIn);
-router.post("/logout", loginRequired, logoutProvider);
+// Routes for user AUTH...
 
-// router.patch('/users/:id', updateUser);
-// router.delete('/users/:id', deleteUser);
-// router.get('/dasboard', getUserbyEmail ); 
+// router.post('/new', createProvider);
+// router.post("/login", passport.authenticate("local", {}), loginProvider);``
+// router.get("/isLoggedIn", isLoggedIn);
+// router.post("/logout", loginRequired, logoutProvider);
