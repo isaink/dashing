@@ -21,11 +21,4 @@ const getAllProByServ = (req, res, next) => {
 
 
 
-module.exports = {
-<<<<<<< HEAD
-    getAllProByServ
-} 
-=======
-    getAllSrvByPro
-}
->>>>>>> 20fb40b2c1c3d0cddd42f0617e2b6762ff6b73c3
+module.exports = { getAllProByServ }
