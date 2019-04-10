@@ -19,7 +19,7 @@ const getAll = (req, res, next) => {
           })
           next();
     })
-}
+};
 
 module.exports = {
 getAll
