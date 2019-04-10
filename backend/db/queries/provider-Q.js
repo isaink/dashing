@@ -1,4 +1,4 @@
-const { db } = require('../connector.js');
+const  db  = require('../connector.js');
 
 // GET --> Get all provider -->  /providers
 const getAllProviders = (req, res, next) => {
@@ -21,7 +21,7 @@ const getAllProviders = (req, res, next) => {
   })
 };
 
-// GET -> Get a single provider info -> /providers/:id 
+// GET -> Get a single provider info -> /providers/:id
 const getSingleProviders = (req, res, next) => {
   const id = Number(req.params.id);
   db.one('SELECT * FROM providers WHERE id=$1', [id])
@@ -40,8 +40,8 @@ const getSingleProviders = (req, res, next) => {
 // POST -> Create a Provider [USER AUTH]  ->  /provider/:id
 const createProvider = (req, res, next) => {
   // const hash = authHelpers.createHash(req.body.password);
-  db.none('INSERT INTO providers ( name, email, password)' + 
-  ' VALUES(${name}, ${email}, ${password} )', 
+  db.none('INSERT INTO providers ( name, email, password)' +
+  ' VALUES(${name}, ${email}, ${password} )',
   { name: req.body.name, email: req.body.email, password: req.body.password})
   .then(() => {
       res.status(200).json({
@@ -51,7 +51,7 @@ const createProvider = (req, res, next) => {
   }).catch(err => {
     res.status(500)
     .json({
-      message: "Error adding a new provider 😝: ", 
+      message: "Error adding a new provider 😝: ",
       err
     });
   });
