@@ -23,7 +23,7 @@ const getAllServices = (req, res, next) => {
 
 
 const getServiceById = (req, res, next) => {
-  let serviceId = parseInt(req.params.song_id);
+  let serviceId = parseInt(req.params.service_id);
   db.one('SELECT services.id AS service_id, name FROM services WHERE services.id = $1', [serviceId])
   .then(services => {
     res.status(200)
