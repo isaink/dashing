@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { getAllSrvByPro } = require('../db/queries/srvProviders')
+const { getAllProByServ } = require('../db/queries/srvProviders')
 
-router.get("/:id", getAllSrvByPro)
+router.get("/:id", getAllProByServ)
 
 
 module.exports = router; 
