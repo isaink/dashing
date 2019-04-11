@@ -1,11 +1,30 @@
-let express = require('express');
-let router = express.Router();
-// const db = require('../db/queries/provider-Q');
-let { getAllProviders } = require ('../db/queries/provider-Q');
+var express = require('express');
+var router = express.Router();
 
+const {
+    getAllProviders,
+    getSingleProviders,
+    // createProvider,
+    // logoutProvider,
+    // loginProvider,
+    // isLoggedIn,
+    updateProvider,
+    deleteProvider
+    
+} = require('../db/queries/provider-Q');
 
-router.get('/', getAllProviders );     // http://localhost:3100/users
-// router.post('/', db.postNewProvider);
+// const passport = require("../auth/local");
+// const { loginRequired } = require("./../auth/helpers");
 
+//Getting Routes...
+router.get('/', getAllProviders);  
+router.get('/:id', getSingleProviders);
+router.patch('/:id', updateProvider);
+router.delete('/:id', deleteProvider);
 
-module.exports = router;
+// Routes for user AUTH...
+
+// router.post('/new', createProvider);
+// router.post("/login", passport.authenticate("local", {}), loginProvider);``
+// router.get("/isLoggedIn", isLoggedIn);
+// router.post("/logout", loginRequired, logoutProvider);
