@@ -29,7 +29,7 @@ export const providersByService = ( service_id ) => {
 export const fetchProvidersByService = () => dispatch => {
     axios.get('/')
     .then( res => {
-        return dispatch(providersByService(res.data...)); // what is the key inside the queries...?
+        return dispatch(providersByService(res.data)); // what is the key inside the queries...?
     })
     .catch((err) => { 
         return dispatch(fetchErrors(err))
