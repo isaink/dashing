@@ -4,10 +4,10 @@ var router = express.Router();
 const {
     getAllProviders,
     getSingleProviders,
-    createProvider,
-    logoutProvider,
-    loginProvider,
-    isLoggedIn,
+    // createProvider,
+    // logoutProvider,
+    // loginProvider,
+    // isLoggedIn,
     updateProvider,
     deleteProvider
     
