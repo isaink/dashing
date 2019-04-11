@@ -1,4 +1,4 @@
-const { db } = require("../connector.js");
+const  db  = require("../connector.js");
 
 const getAllSkills = (req, res, next) => {
   db.any("SELECT * FROM skills")
