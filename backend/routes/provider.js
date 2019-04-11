@@ -10,14 +10,14 @@ const {
     isLoggedIn,
     updateProvider,
     deleteProvider
-    
+
 } = require('../db/queries/provider-Q');
 
 // const passport = require("../auth/local");
 // const { loginRequired } = require("./../auth/helpers");
 
 //Getting Routes...
-router.get('/', getAllProviders);  
+router.get('/', getAllProviders);
 router.get('/:id', getSingleProviders);
 router.patch('/:id', updateProvider);
 router.delete('/:id', deleteProvider);

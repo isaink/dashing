@@ -4,11 +4,13 @@ const {
   getAllSkills,
   getOneSkill,
   addOneSkill,
-  deleteOneSkill
+  deleteOneSkill,
+  getAllSkillsByServiceIdProviderId
 } = require("../db/queries/skills-Q.js");
 
 router.get("/", getAllSkills);
 router.get("/:id", getOneSkill);
+router.get("/:provider_id/:service_id", getAllSkillsByServiceIdProviderId);
 router.post("/", addOneSkill);
 router.delete("/:id", deleteOneSkill);
 
