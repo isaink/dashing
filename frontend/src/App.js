@@ -20,6 +20,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/hair" component={HairContainer} />
+          <Route path='/provider' component={Provider}/>
         </Switch>
 
         <ComboBox />
