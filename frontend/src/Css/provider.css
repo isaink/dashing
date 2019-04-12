@@ -1,0 +1,16 @@
+.ctnr_provider{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background-color: lightgray;
+    height: 600px;
+}
+.img_intro{
+    grid-column: 1;
+    background-color: antiquewhite;
+    height: 300px;
+}
+.inner_ctnr_providers{
+    grid-column: 2;
+    background-color: lightseagreen;
+    height: 300px;
+}

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import Auth from '../components/utils/Auth';
+import Auth from '../React-components/Utils/Auth';
 
 export let RECEIVE_PROVIDER_AUTH = 'RECEIVE_USER_AUTH';
 export let LOG_OUT_PROVIDER = 'LOG_OUT_PROVIDER';
