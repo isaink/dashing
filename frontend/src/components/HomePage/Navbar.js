@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../css/Navbar.css";
+import "../../Css/Navbar.css";
 
 import logo from "../../photo_assets/dashing_logo.png";
 
@@ -18,6 +18,7 @@ export const Navbar = () => {
         <Link to="/">Home</Link>
 
         <Link to="/hair">Hair</Link>
+        <Link to='/provider'>Hair Provider</Link>
 
         <Link to="/makeup">Makeup</Link>
 
@@ -30,7 +31,6 @@ export const Navbar = () => {
         <Link to="/aboutme">About Me</Link>
       </div>
     </div>
-
     </>
   );
 };

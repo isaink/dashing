@@ -1,16 +1,23 @@
 .ctnr_provider{
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 27% 83%;
     background-color: lightgray;
-    height: 600px;
+    height: 800px;
 }
+
+.header_services{
+    align-content: center;
+}
+
 .img_intro{
     grid-column: 1;
     background-color: antiquewhite;
-    height: 300px;
+    height: 800px;
+    margin: 10px;
 }
+
 .inner_ctnr_providers{
     grid-column: 2;
     background-color: lightseagreen;
-    height: 300px;
+    height: 800px;
 }
