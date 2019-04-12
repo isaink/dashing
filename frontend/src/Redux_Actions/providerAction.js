@@ -3,6 +3,7 @@ import axios from "axios";
 export let RECEIVE_PROVIDERS_BY_SERVICE = "RECEIVE_PROVIDERS_BY_SERVICE";
 export let FETCH_ERROR = "FETCH_ERROR";
 export let RECEIVE_PROVIDERS_SUCCESS = "RECEIVE_PROVIDERS_SUCCESS";
+export let RECEIVE_PROVIDER_INFO = "RECEIVE_PROVIDER_INFO"
 
 // PROVIDER ACTION & PAYLOAD (Action Creator: Function that returns an action object)
 export const receivedProvidersSuccess = (providers, service_id) => {
@@ -37,11 +38,11 @@ export const fetchErrors = err => {
   };
 };
 
-export const recieveSingleProvider = (provider) => {
+export const receiveSingleProvider = (provider) => {
   return {
-    type: RECIEVE_PROVIDER_INFO,
+    type: RECEIVE_PROVIDER_INFO,
     payload: {
-      provider: provider
+      provider: [...provider]
     }
   }
 }
@@ -50,7 +51,7 @@ export const getProviderInfo = provider_id => dispatch => {
   axios.get(`/providers/${provider_id}`)
     .then(res => {
       let provider = res.data.body;
-      let action = recieveSingleProvider(provider)
+      let action = receiveSingleProvider(provider)
       return dispatch(action)
     })
     .catch(err =>{
