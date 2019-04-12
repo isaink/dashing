@@ -16,7 +16,8 @@ export const receivedProvidersSuccess = (providers, service_id) => {
   };
 };
 
-// PROVIDER BY SERVICES --> AXIOS
+// PROVIDER BY SERVICES --> AXIOS // This is an action function that makes async calls.
+
 export const fetchProvidersByService = service_id => dispatch => {
   axios
     .get(`/srvProviders/${service_id}`)
@@ -35,3 +36,24 @@ export const fetchErrors = err => {
     err: err
   };
 };
+
+export const recieveSingleProvider = (provider) => {
+  return {
+    type: RECIEVE_PROVIDER_INFO,
+    payload: {
+      provider: provider
+    }
+  }
+}
+
+export const getProviderInfo = provider_id => dispatch => {
+  axios.get(`/providers/${provider_id}`)
+    .then(res => {
+      let provider = res.data.body;
+      let action = recieveSingleProvider(provider)
+      return dispatch(action)
+    })
+    .catch(err =>{
+      return dispatch(fetchErrors(err));
+    })
+}
