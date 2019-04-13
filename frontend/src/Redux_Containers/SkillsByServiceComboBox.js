@@ -7,11 +7,8 @@ import { fetchAllSkills } from "../Redux_Actions/allSkillsAction";
 
 
 class SkillsByServiceComboBox extends React.Component {
-  constructor(){
-    super()
-    this.state = {
-      
-    }
+  state = {
+
   }
 
   componentDidMount() {
@@ -27,16 +24,17 @@ class SkillsByServiceComboBox extends React.Component {
 
   render() {
     console.log('hello');
+    console.log(this.props);
     console.log(this.props.skillsByService);
-    console.log(this.props.allSkills);
+    console.log(this.props.allSkills.allSkills.skills);
     debugger
 
-    const test = this.props.skillsByService.map(skills => (
-      console.log({skills})
-    ))
+    // const test = this.props.skillsByService.map(skills => (
+    //   console.log({skills})
+    // ))
 
 
-    // const options = this.props.allSkills.map(skills => {
+    // const options = this.props.allSkills.allSkills.skills.map(skills => {
     //   return (
     //     <option
     //       key={skills.skill_id}
@@ -47,7 +45,7 @@ class SkillsByServiceComboBox extends React.Component {
     //     </option>
     //   )
     // })
-    //
+
     // console.log(options);
     // debugger
 
@@ -61,8 +59,8 @@ class SkillsByServiceComboBox extends React.Component {
           {options}
         </select>
 
-        */}
         {test}
+        */}
       </>
     );
   }
