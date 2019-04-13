@@ -1,30 +1,26 @@
 import axios from "axios";
 
 export let FETCH_ERROR = "FETCH_ERROR";
-export let RECEIVE_SKILLS_SUCCESS = "RECEIVE_SKILLS_SUCCESS";
+export let RECEIVE_ALL_SKILLS_SUCCESS = "RECEIVE_ALL_SKILLS_SUCCESS";
 
 // PROVIDER ACTION & PAYLOAD (Action Creator: Function that returns an action object)
-export const receivedSkillsSuccess = (skills, service_id) => {
-  console.log(service_id);
+export const receivedAllSkillsSuccess = (skills) => {
   return {
-    type: RECEIVE_SKILLS_SUCCESS,
+    type: RECEIVE_ALL_SKILLS_SUCCESS,
     payload: {
-      // is the payload
-      service_id: service_id,
       skills: [...skills]
     }
   };
 };
 
-// PROVIDER BY SERVICES --> AXIOS
-export const fetchSkillsByService = service_id => dispatch => {
+export const fetchAllSkills = () => dispatch => {
   axios
-    .get(`/services/skills/${service_id}`)
+    .get(`/services/skills`)
     .then(res => {
       console.log(res);
       debugger
       let skills = res.data.data;
-      return dispatch(receivedSkillsSuccess(skills, service_id)); // what is the key inside the queries...?
+      return dispatch(receivedAllSkillsSuccess(skills)); // what is the key inside the queries...?
     })
     .catch(err => {
       return dispatch(fetchErrors(err));

@@ -6,8 +6,9 @@ import { Route, Switch } from "react-router-dom";
 import {Home} from "./components/HomePage/Home";
 import HairContainer from "./Redux_Containers/HairContainer";
 import Provider from './React_Components/ProvidersPage/ProviderBySvc'
-import ComboBox from './components/HomePage/ComboBox'
 
+import SkillsByServiceComboBox from './Redux_Containers/SkillsByServiceComboBox'
+import "./Css/ComboBox.css"
 
 class App extends Component {
   render() {
@@ -23,7 +24,7 @@ class App extends Component {
           <Route path='/provider' component={Provider}/>
         </Switch>
 
-        <ComboBox />
+        <SkillsByServiceComboBox />
 
       </div>
     )

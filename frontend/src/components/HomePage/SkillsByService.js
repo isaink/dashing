@@ -4,7 +4,7 @@ export const SkillsByService = props => {
   const renderSkills = () => {
     if (props.skillsByService) {
       return props.skillsByService.map(serviceSkills => {
-        return <>{serviceSkills.name}</>;
+        return <>{serviceSkills.skills_name}</>;
       });
     } else {
       return <div>Loading...</div>;
