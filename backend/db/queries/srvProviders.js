@@ -7,7 +7,7 @@ const getAllProByServ = (req, res, next) => {
     .then(data => {
         res.status(200).json({
             status: 'Success',
-            message: 'Got all services by this provider.',
+            message: 'Got all providers by this service.',
             data: data
         });
     })
