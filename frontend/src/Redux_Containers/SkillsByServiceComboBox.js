@@ -22,6 +22,20 @@ class SkillsByServiceComboBox extends React.Component {
     console.log(`Option selected:`, selectedOption);
   }
 
+  options = () => this.props.allSkills.allSkills.skills.map(skills => {
+    return (
+
+      <option
+        key={skills.skill_id}
+        value={skills.skill_id}
+        >
+          {skills.skill_name}
+      </option>
+    )
+  })
+
+  debugger
+
   render() {
     console.log('hello');
     console.log(this.props);
@@ -59,8 +73,17 @@ class SkillsByServiceComboBox extends React.Component {
           {options}
         </select>
 
+        {this.options}
         {test}
         */}
+
+        <select
+          onChange={this.handleChange}
+          name='selectedService' >
+          <option key='0' value=''></option>
+          {this.options}
+        </select>
+
       </>
     );
   }
