@@ -4,8 +4,8 @@ export const ProviderInfo = props => {
     const renderProviderInfo = () => {
         if (props.providerInformation) {
             return props.providerInformation.map(pInfo => {
-                console.log(pInfo)
-                return <> {pInfo} </>
+                
+                return <> {pInfo.name} </>
             });
         } else {
             return (

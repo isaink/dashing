@@ -25,6 +25,8 @@ const mapDispatchToProps = dispatch => {
     fetchProvidersByService: () => dispatch(fetchProvidersByService(1))
   };
 };
+
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
