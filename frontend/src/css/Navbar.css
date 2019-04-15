@@ -1,6 +1,38 @@
 .navbar {
-  background-color: #E59F77;
+  background-color: #ECB99C;
   height: 80px;
   width: 100%;
   list-style-type: none;
+}
+
+.dashingNav {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 25px;
+  padding-top: 12px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  margin-top: -2%;
+}
+
+.links a:link {
+  color: black;
+  text-decoration: none;
+  text-transform: normal;
+  letter-spacing: normal;
+  padding-left: 20px;
+}
+
+.links a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.links a:hover {
+  color: white;
 }

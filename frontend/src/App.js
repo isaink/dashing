@@ -7,7 +7,7 @@ import {Home} from "./components/HomePage/Home";
 import HairContainer from "./Redux_Containers/HairContainer";
 import Provider from './React_Components/ProvidersPage/ProviderBySvc'
 import ComboBox from './components/HomePage/ComboBox'
-import { Dropdown } from './components/HomePage/Dropdown'
+import SingleProviderContainer from './Redux_Containers/SingleProviderContainer'
 
 class App extends Component {
   render() {
@@ -20,10 +20,11 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/hair" component={HairContainer} />
+          <Route path='/provider' component={SingleProviderContainer}/>
         </Switch>
 
         <ComboBox />
-        <Dropdown />
+        
 
 
       </div>
