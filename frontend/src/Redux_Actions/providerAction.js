@@ -38,11 +38,11 @@ export const fetchErrors = err => {
   };
 };
 
-export const receiveSingleProvider = (provider) => {
+export const receiveSingleProvider = (provider, provider_id) => {
   return {
     type: RECEIVE_PROVIDER_INFO,
     payload: {
-      
+      provider_id: provider_id, 
       provider: provider
     }
   }
@@ -51,7 +51,7 @@ export const receiveSingleProvider = (provider) => {
 export const getProviderInfo = provider_id => dispatch => {
   axios.get(`/providers/${provider_id}`)
     .then(res => {
-      let provider = res.data.body;
+      let provider = res.data.info;
       let action = receiveSingleProvider(provider)
       return dispatch(action)
     })
