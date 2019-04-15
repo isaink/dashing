@@ -50,11 +50,11 @@ export const fetchErrors = err => {
   };
 };
 
-export const receiveSingleProvider = (provider) => {
+export const receiveSingleProvider = (provider, provider_id) => {
   return {
     type: RECEIVE_PROVIDER_INFO,
     payload: {
-
+      provider_id: provider_id,
       provider: provider
     }
   }

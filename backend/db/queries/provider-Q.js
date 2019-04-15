@@ -101,7 +101,7 @@ const deleteProvider = (req, res, next) => {
 
 
 const getSingleProvider = (req, res, next) => {
-  db.any('SELECT providers.id, providers.name, email, borough, phone_number, website_link, services_provider.service_id, services_provider.provider_id, services.id, services.name, skills.id, skills.service_id, skills.name FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE provider_id = ${id}', {
+  db.any('SELECT providers.id, providers.name AS providerName, email, borough, phone_number, website_link, services_provider.service_id, services_provider.provider_id, services.id, services.name AS servicesName, skills.id, skills.service_id, skills.name AS skillsName FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE provider_id =  ${id}', {
     id: Number(req.params.id)
   })
   .then(info => {
