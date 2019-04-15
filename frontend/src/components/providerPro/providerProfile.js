@@ -5,6 +5,7 @@ export const ProviderInfo = props => {
     
     const renderProviderInfo = () => {
         if (props.providerInformation) {
+
             return props.providerInformation.map(pInfo => {             
             
                 return <div key = {pInfo.provider_id}>
@@ -13,8 +14,8 @@ export const ProviderInfo = props => {
             });
         } else {
             return (
-                <div> 
-                    Collecting Info 
+                <div>
+                    Collecting Info
                 </div>
             )}
         };
