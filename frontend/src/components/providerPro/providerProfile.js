@@ -1,10 +1,11 @@
 import React from 'react';
 
-export const providerInfo = props => {
+export const ProviderInfo = props => {
     const renderProviderInfo = () => {
         if (props.providerInformation) {
             return props.providerInformation.map(pInfo => {
-                return <> {pInfo.name} </>
+                console.log(pInfo)
+                return <> {pInfo} </>
             });
         } else {
             return (
@@ -15,9 +16,9 @@ export const providerInfo = props => {
         };
         return (
             <>
+
             <h1>Provider Information</h1>
-            {renderProviderInfo(console.log(pInfo)
-            )}
+            {renderProviderInfo()}
             </>
         );
     };
