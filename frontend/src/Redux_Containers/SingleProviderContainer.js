@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProviderInfo } from '../components/providerPro/providerProfile'
-import { connect } from 'react-redux'; 
+import { connect } from 'react-redux';
 import { getProviderInfo } from "../Redux_Actions/providerAction";
 
 class SingleProviderContainer extends React.Component {
@@ -18,12 +18,12 @@ class SingleProviderContainer extends React.Component {
 }
 const mapStateToProps = (state, ownProps) => {
     return {
-        providerInfo: state.singleProviderInfo[1]
+        providerInfo: state.singleProviderInfo[3]
     };
 };
 const mapDispatchToProps = dispatch => {
     return {
-      getProviderInfo: () => dispatch(getProviderInfo(1))
+      getProviderInfo: () => dispatch(getProviderInfo(3))
     };
   };
 

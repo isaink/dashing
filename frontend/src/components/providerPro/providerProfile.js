@@ -4,8 +4,8 @@ export const ProviderInfo = props => {
     const renderProviderInfo = () => {
         if (props.providerInformation) {
             return props.providerInformation.map(pInfo => {
-                
-                return <> {pInfo.name} </>
+
+                return <> {pInfo.email} </>
             });
         } else {
             return (
@@ -17,7 +17,7 @@ export const ProviderInfo = props => {
         return (
             <>
 
-            <h1>Provider Information</h1>
+            <h2>Provider Information</h2>
             {renderProviderInfo()}
             </>
         );
