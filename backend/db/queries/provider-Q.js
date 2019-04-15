@@ -21,21 +21,6 @@ const getAllProviders = (req, res, next) => {
   })
 };
 
-// GET -> Get a single provider info -> /providers/:id
-const getSingleProviders = (req, res, next) => {
-  const id = Number(req.params.id);
-  db.one('SELECT * FROM providers WHERE id=$1', [id])
-  .then((provider) => {
-    res.status(200).json({
-    status: 'Success',
-    message: 'Got a single provider',
-    body: provider
-    })
-}).catch(err => {
-  console.log("Error retrieving a single provider: ", err)
-  return next(err)
-  })
-};
 
 // POST -> Create a Provider [USER AUTH]  ->  /provider/:id
 const createProvider = (req, res, next) => {
@@ -114,9 +99,27 @@ const deleteProvider = (req, res, next) => {
   })
 };
 
+
+const getSingleProvider = (req, res, next) => {
+  db.any('SELECT providers.id, providers.name, email, borough, phone_number, website_link, services_provider.service_id, services_provider.provider_id, services.id, services.name, skills.id, skills.service_id, skills.name FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE provider_id = ${id}', {
+    id: Number(req.params.id)
+  })
+  .then(info => {
+    res.status(200).json({
+      status: 'success', 
+      message: 'Got complete infor for provider',
+      info: info
+    })
+  })
+  .catch(err => next(err));
+};
+
+
+
+
 module.exports = {
   getAllProviders,
-  getSingleProviders,
+  getSingleProvider,
   createProvider,
   logoutProvider,
   loginProvider,

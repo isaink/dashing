@@ -22,7 +22,8 @@ CREATE TABLE providers (
   avatar TEXT,
   borough TEXT,
   phone_number VARCHAR,
-  website_link VARCHAR
+  website_link VARCHAR, 
+  bio TEXT
 );
 
 CREATE TABLE services_provider(
@@ -88,12 +89,12 @@ VALUES('Coloring' , 1),
 ('Wedding' , 4),
 ('Sugaring' , 4);
 
-INSERT INTO providers (name, email, password, avatar, borough, phone_number, website_link)
-VALUES('Nielene Keys', 'nkeys@gmail.com', 'nkeys', 'https://pixel.nymag.com/imgs/fashion/daily/2018/08/17/magazine/tessa-thompson-1.w570.h712.jpg', 'Brooklyn', '34759998433', null),
-('Isa Frias', 'irico@gmail.com', 'irico', 'https://assets.teenvogue.com/photos/55fada5fda9bc0e85547e428/master/pass/latina-girls.jpg', 'Bronx', '34759998433', null),
-('Bayne Brian', 'bbrian@gmail.com', 'bbrian', 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F11%2Fkofi-siriboe-peopledotcom1.jpg&w=400&c=sc&poi=face&q=85', 'New York','7189875674', null),
-('Jo West', 'jwest@gmail.com', 'jwest', 'https://pmcvariety.files.wordpress.com/2015/11/tessa-thompson-creed-q-and-a.jpg?w=1000&h=563&crop=1', 'Queens', '34759998433', null),
-('Carina Salvador','csalvador@gmail.com', 'csalvador', 'http://content2.latest-hairstyles.com/wp-content/uploads/2015/07/RadReasonsToEmbraceNaturalCurl-500x333-14379420002.jpg', 'Staten Island', '34759998433', null);
+INSERT INTO providers (name, email, password, avatar, borough, phone_number, website_link, bio)
+VALUES('Nielene Keys', 'nkeys@gmail.com', 'nkeys', 'https://pixel.nymag.com/imgs/fashion/daily/2018/08/17/magazine/tessa-thompson-1.w570.h712.jpg', 'Brooklyn', '34759998433', null, 'I love doing nails'),
+('Isa Frias', 'irico@gmail.com', 'irico', 'https://assets.teenvogue.com/photos/55fada5fda9bc0e85547e428/master/pass/latina-girls.jpg', 'Bronx', '34759998433', null, 'hair is great'),
+('Bayne Brian', 'bbrian@gmail.com', 'bbrian', 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F11%2Fkofi-siriboe-peopledotcom1.jpg&w=400&c=sc&poi=face&q=85', 'New York','7189875674', null, 'Im the best barber in NY fam'),
+('Jo West', 'jwest@gmail.com', 'jwest', 'https://pmcvariety.files.wordpress.com/2015/11/tessa-thompson-creed-q-and-a.jpg?w=1000&h=563&crop=1', 'Queens', '34759998433', null, 'Jo is here to take care of you'),
+('Carina Salvador','csalvador@gmail.com', 'csalvador', 'http://content2.latest-hairstyles.com/wp-content/uploads/2015/07/RadReasonsToEmbraceNaturalCurl-500x333-14379420002.jpg', 'Staten Island', '34759998433', null, 'Im here to meet all your beauty needs');
 
 INSERT INTO services_provider(service_id, provider_id)
 VALUES(1,1), (2,1), (2,2), (4,2), (3,3), (4,4), (1,4), (1,5), (3,5);
