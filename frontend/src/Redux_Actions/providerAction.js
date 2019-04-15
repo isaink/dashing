@@ -1,6 +1,5 @@
 import axios from "axios";
-
-export let RECEIVE_PROVIDERS_BY_SERVICE = "RECEIVE_PROVIDERS_BY_SERVICE";
+;
 export let FETCH_ERROR = "FETCH_ERROR";
 export let RECEIVE_PROVIDERS_SUCCESS = "RECEIVE_PROVIDERS_SUCCESS";
 
@@ -16,6 +15,16 @@ export const receivedProvidersSuccess = (providers, service_id) => {
   };
 };
 
+// export const receiveSingleProvider = provider =>{
+//   return {
+//     type: RECEIVE_PROVIDER_INFO,
+//     payload: {
+//         provider: provider
+//     }
+//   }
+// }
+
+
 // PROVIDER BY SERVICES --> AXIOS
 export const fetchProvidersByService = service_id => dispatch => {
   axios
@@ -29,9 +38,22 @@ export const fetchProvidersByService = service_id => dispatch => {
     });
 };
 
+// export const getProviderInfoForProfile = provider_id => dispatch => {
+//   axios
+//     .get(`/providers/${provider_id}`)
+//     .then(res => {
+//         let provider = res.data.body;
+//         let action = receiveSingleProvider(provider)
+//         return dispatch(action)
+//     })
+//     .catch(err => {
+//       return dispatch(fetchErrors(err));
+//     });
+// }
+
 export const fetchErrors = err => {
   return {
     type: FETCH_ERROR,
-    err: err
+    err: "did not get profile info"
   };
 };

@@ -22,7 +22,7 @@ class ComboBox extends Component {
 
       <>
 
-        <h1> Hello </h1>
+    
 
       </>
     );

@@ -7,7 +7,7 @@ import {Home} from "./components/HomePage/Home";
 import HairContainer from "./Redux_Containers/HairContainer";
 import Provider from './React_Components/ProvidersPage/ProviderBySvc'
 import ComboBox from './components/HomePage/ComboBox'
-
+import { Dropdown } from './components/HomePage/Dropdown'
 
 class App extends Component {
   render() {
@@ -23,6 +23,8 @@ class App extends Component {
         </Switch>
 
         <ComboBox />
+        <Dropdown />
+
 
       </div>
     )
