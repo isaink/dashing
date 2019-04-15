@@ -17,8 +17,10 @@ class SingleProviderContainer extends React.Component {
     };
 }
 const mapStateToProps = (state, ownProps) => {
+
+
     return {
-        providerInfo: state.singleProviderInfo[3]
+        providerInfo: state.singleProviderInfo
     };
 };
 const mapDispatchToProps = dispatch => {
