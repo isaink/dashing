@@ -42,7 +42,7 @@ export const receiveSingleProvider = (provider) => {
   return {
     type: RECEIVE_PROVIDER_INFO,
     payload: {
-      provider: [...provider]
+      provider: provider
     }
   }
 }
