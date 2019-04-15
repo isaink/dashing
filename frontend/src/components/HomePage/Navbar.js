@@ -17,7 +17,7 @@ export const Navbar = () => {
       <div className="links">
         <Link to="/">Home</Link>
 
-        <Link to="/hair">Hair</Link>
+        {/* <Link to="/hair">Hair</Link> */}
         <Link to='/provider'>Hair Provider</Link>
 
         <Link to="/makeup">Makeup</Link>
