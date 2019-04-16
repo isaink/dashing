@@ -3,6 +3,9 @@
   height: 80px;
   width: 100%;
   list-style-type: none;
+  position: fixed;
+  top: 0;
+  z-index: 3;
 }
 
 .dashingNav {
@@ -17,20 +20,22 @@
   justify-content: center;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
-  margin-top: -2%;
+  margin-top: -20px;
+  padding-left: 25px;
+  /* margin-top: -2%; */
 }
 
 .links a:link {
-  color: black;
+  color: red;
   text-decoration: none;
   text-transform: normal;
   letter-spacing: normal;
-  padding-left: 20px;
+  /* padding-left: 20px; */
 }
 
 .links a:visited {
   text-decoration: none;
-  color: black;
+  color: red;
 }
 
 .links a:hover {

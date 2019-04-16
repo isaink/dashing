@@ -1,7 +1,9 @@
 
 import React, { Component } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
+
 import "./App.css";
-import { Navbar } from "./components/HomePage/Navbar";
+import  Navbar  from "./components/HomePage/Navbar";
 import { Route, Switch } from "react-router-dom";
 import {Home} from "./components/HomePage/Home";
 // import HairContainer from "./Redux_Containers/HairContainer";
@@ -16,14 +18,25 @@ class App extends Component {
 
         <Navbar />
 
+        {/* <Switch> */}
+          <Home name='home' />
+          <Provider />
+          
 
-        <Switch>
-          <Route exact path="/" component={Home} />
+
+
+          {/* <Route exact path="/" component={Home} /> */}
           {/* <Route path="/hair" component={HairContainer} /> */}
-          <Route path='/provider' component={Provider}/>
-        </Switch>
+          {/* <Route path='/provider' component={Provider}/> */}
+        {/* </Switch> */}
 
         <ComboBox />
+
+
+        <a onClick={this.scrollToTop}>To the top!</a>
+        <br/>
+        <a onClick={this.scrollToBottom}>To the bottom!</a>
+        <br/>
 
       </div>
     )

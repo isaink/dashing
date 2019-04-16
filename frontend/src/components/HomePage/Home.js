@@ -1,4 +1,5 @@
 import React from "react";
+
 import "../../Css/Home.css";
 
 import bk_img from "../../photo_assets/beautybackground.jpg";
@@ -10,8 +11,9 @@ export const Home = () => {
       <div id="homeBackground">
         <img src={bk_img} alt="" />
       </div>
+       
       <div className="centerLogo">
-        <img src={homeLogo} alt="" />
+        <img src={homeLogo} alt=""  style={{ zIndex:'2'}}/>
       </div>
     </div>
   );

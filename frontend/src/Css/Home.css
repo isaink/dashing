@@ -1,20 +1,21 @@
 #homeBackground {
-  position: fixed;
+  /* position: fixed; */
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  z-index: -1;
+  z-index: 1;
 }
 #homeBackground img {
   position: absolute;
-  top: 0;
-  left: 0;
+  /* top: 500px; */
   right: 0;
-  bottom: 0;
+  left: 0;
+  /* bottom: 0; */
   margin: auto;
-  min-width: 50%;
-  min-height: 50%;
+  /* min-width: 50%; */
+  /* min-height: 50%; */
+  /* background-image: url("./../photo_assets/beautybackground.jpg"); */
 }
 
 .centerLogo {
@@ -24,4 +25,8 @@
   height: auto;
   margin-left: 500px;
   margin-top: 50px;
+}
+
+#homeContainer{
+  min-height: 900px;
 }
