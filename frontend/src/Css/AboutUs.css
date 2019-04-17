@@ -1,0 +1,24 @@
+.about_container {
+background: white;
+}
+
+#about_header {
+  font-family: "Mrs Saint Delafield", cursive;
+  color: white;
+  font-size: 60px;
+  padding-top: 100px;
+  text-align: center;
+}
+
+#about_writeup {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200;
+  color: #ABAAAA;
+  padding-left: 20px;
+  display: flex;
+  text-align: center;
+  padding-right: 100px;
+  line-height: 30px;
+  padding-left: 400px;
+  padding-right: 400px;
+}
