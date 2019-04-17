@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { fetchSkillsByService } from "../Redux_Actions/skillsByServiceAction";
 import { fetchAllSkills } from "../Redux_Actions/allSkillsAction";
 
+// let { Combobox } = ReactWidgets;
 
 class SkillsByServiceComboBox extends React.Component {
   state = {
@@ -14,7 +15,7 @@ class SkillsByServiceComboBox extends React.Component {
   componentDidMount() {
     this.props.fetchSkillsByService(1)
     this.props.fetchAllSkills()
-    debugger
+    // debugger
   }
 
   handleChange = (selectedOption) => {
@@ -22,25 +23,32 @@ class SkillsByServiceComboBox extends React.Component {
     console.log(`Option selected:`, selectedOption);
   }
 
-  options = () => this.props.allSkills.allSkills.skills.map(skills => {
+  options = () => this.props.allSkills.map(skills => {
     return (
 
       <option
         key={skills.skill_id}
-        value={skills.skill_id}
-        >
+        value={skills.skill_id} >
           {skills.skill_name}
       </option>
     )
   })
 
-  debugger
+  // debugger
 
   render() {
     console.log('hello');
     console.log(this.props);
     console.log(this.props.skillsByService);
-    console.log(this.props.allSkills.allSkills.skills);
+    console.log(this.props.allSkills);
+    // console.log(this.options());
+    // debugger
+
+    let options = this.props.allSkills.map(skill => {
+    return (
+        skill.skill_name)})
+
+    console.log(options);
     debugger
 
     // const test = this.props.skillsByService.map(skills => (
@@ -75,7 +83,6 @@ class SkillsByServiceComboBox extends React.Component {
 
         {this.options}
         {test}
-        */}
 
         <select
           onChange={this.handleChange}
@@ -83,7 +90,8 @@ class SkillsByServiceComboBox extends React.Component {
           <option key='0' value=''></option>
           {this.options}
         </select>
-
+        */}
+        {options}
       </>
     );
   }
@@ -93,7 +101,8 @@ class SkillsByServiceComboBox extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     skillsByService: state.skillsByService[1],
-    allSkills: state.allSkills,
+    allSkills: state.allSkills.allSkills,
+    // allSkills: state.allSkills.allSkills.skills[1],
     // skillsByService: state.skillsByService
   };
 };

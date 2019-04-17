@@ -7,9 +7,11 @@ export let RECEIVE_ALL_SKILLS_SUCCESS = "RECEIVE_ALL_SKILLS_SUCCESS";
 export const receivedAllSkillsSuccess = (skills) => {
   return {
     type: RECEIVE_ALL_SKILLS_SUCCESS,
-    payload: {
-      skills: [...skills]
-    }
+    payload: skills
+    // payload: {
+    //   skills: [...skills]
+    // }
+
   };
 };
 
@@ -26,6 +28,19 @@ export const fetchAllSkills = () => dispatch => {
       return dispatch(fetchErrors(err));
     });
 };
+
+// export const fetchAllFavoritesBySpecificUser = (user_id) => dispatch => {
+//   axios.get(`/favorites/user/${user_id}`)
+//   .then(res => {
+//     console.log(res);
+//     debugger
+//     dispatch({
+//       type: FETCH_ALL_FAVORITES_BY_USER,
+//       payload: res.data.songs
+//     })
+//   })
+// }
+
 
 export const fetchErrors = err => {
   return {
