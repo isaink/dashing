@@ -47,7 +47,7 @@ class SkillsByServiceComboBox extends React.Component {
 
     let options = this.props.allSkills.map(skill => {
     return (
-        <option key={skill.skill_id}>skill.skill_name</option>)})
+        <option key={skill.skill_id}>{skill.skill_name}</option>)})
 
     console.log(options);
     // debugger
