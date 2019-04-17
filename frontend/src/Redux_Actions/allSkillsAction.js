@@ -19,8 +19,8 @@ export const fetchAllSkills = () => dispatch => {
   axios
     .get(`/services/skills`)
     .then(res => {
-      console.log(res);
-      debugger
+      // console.log(res);
+      // debugger
       let skills = res.data.data;
       return dispatch(receivedAllSkillsSuccess(skills)); // what is the key inside the queries...?
     })

@@ -21,8 +21,8 @@ export const fetchSkillsByService = service_id => dispatch => {
   axios
     .get(`/services/skills/${service_id}`)
     .then(res => {
-      console.log(res);
-      debugger
+      // console.log(res);
+      // debugger
       let skills = res.data.data;
       return dispatch(receivedSkillsSuccess(skills, service_id)); // what is the key inside the queries...?
     })

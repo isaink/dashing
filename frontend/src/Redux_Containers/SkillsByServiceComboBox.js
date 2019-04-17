@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { fetchSkillsByService } from "../Redux_Actions/skillsByServiceAction";
 import { fetchAllSkills } from "../Redux_Actions/allSkillsAction";
 
+import '../Css/ComboBox.css'
+
 // let { Combobox } = ReactWidgets;
 
 class SkillsByServiceComboBox extends React.Component {
@@ -23,21 +25,20 @@ class SkillsByServiceComboBox extends React.Component {
     console.log(`Option selected:`, selectedOption);
   }
 
-  options = () => this.props.allSkills.map(skills => {
-    return (
-
-      <option
-        key={skills.skill_id}
-        value={skills.skill_id} >
-          {skills.skill_name}
-      </option>
-    )
-  })
+  // options = () => this.props.allSkills.map(skills => {
+  //   return (
+  //
+  //     <option
+  //       key={skills.skill_id}
+  //       value={skills.skill_id} >
+  //         {skills.skill_name}
+  //     </option>
+  //   )
+  // })
 
   // debugger
 
   render() {
-    console.log('hello');
     console.log(this.props);
     console.log(this.props.skillsByService);
     console.log(this.props.allSkills);
@@ -46,30 +47,11 @@ class SkillsByServiceComboBox extends React.Component {
 
     let options = this.props.allSkills.map(skill => {
     return (
-        skill.skill_name)})
+        <option key={skill.skill_id}>skill.skill_name</option>)})
 
     console.log(options);
-    debugger
-
-    // const test = this.props.skillsByService.map(skills => (
-    //   console.log({skills})
-    // ))
-
-
-    // const options = this.props.allSkills.allSkills.skills.map(skills => {
-    //   return (
-    //     <option
-    //       key={skills.skill_id}
-    //       value={skills.skill_id}
-    //       groupBy={skills.service_name}
-    //       >
-    //         {skills.skill_name}
-    //     </option>
-    //   )
-    // })
-
-    // console.log(options);
     // debugger
+
 
     return (
       <>
@@ -84,14 +66,14 @@ class SkillsByServiceComboBox extends React.Component {
         {this.options}
         {test}
 
-        <select
-          onChange={this.handleChange}
-          name='selectedService' >
-          <option key='0' value=''></option>
-          {this.options}
-        </select>
         */}
-        {options}
+
+        <select onChange={this.handleChange} name='selectedService' >
+          <option key='0' value=''></option>
+          {options}
+        </select>
+
+
       </>
     );
   }
