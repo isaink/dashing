@@ -25,6 +25,7 @@ class App extends Component {
         </Switch>
 
         <ComboBox />
+
       </div>
     );
   }
