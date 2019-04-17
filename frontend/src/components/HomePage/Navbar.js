@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import { Link, animateScroll as scroll } from 'react-scroll';
 import "../../Css/Navbar.css";
 
+
 import logo from "../../photo_assets/dashing_logo.png";
 
 export default class Navbar extends Component {
