@@ -14,7 +14,7 @@ class Provider extends Component {
     render(){
         return(
             <>  
-                <div className="ctnr_provider">
+                <div className="ctnr_provider" > 
                     <div className='img_intro'> 
                         <img alt='intro' src='https://media.giphy.com/media/fzub3vneXmvx6/giphy.gif' />
                         <header className='header_services' >
