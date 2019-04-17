@@ -5,7 +5,7 @@ import { getProviderInfo } from "../Redux_Actions/providerAction";
 
 class SingleProviderContainer extends React.Component {
     componentDidMount() {
-        this.props.getProviderInfo();
+        this.props.getProviderInfo(3);
     };
 
     render() {
@@ -25,7 +25,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 const mapDispatchToProps = dispatch => {
     return {
-      getProviderInfo: () => dispatch(getProviderInfo(3))
+      getProviderInfo: (id) => dispatch(getProviderInfo(id))
     };
   };
 
