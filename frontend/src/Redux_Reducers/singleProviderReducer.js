@@ -4,12 +4,12 @@ export const singleProviderReducer = (state = {}, action) => {
     const newState = {...state};
     switch (action.type) {
         case RECEIVE_PROVIDER_INFO:
-        const { provider, provider_id} = 
+        const { provider, provider_id} =
         action.payload;
         newState[provider_id] = provider;
         return newState;
 
         default:
-        return state; 
+        return state;
     }
 }

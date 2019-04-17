@@ -51,8 +51,8 @@ class App extends Component {
 
         <button onClick={this.scrollToTop}>To the top!</button>
       </div>
-    )
+    );
   }
-};
+}
 
 export default App;
