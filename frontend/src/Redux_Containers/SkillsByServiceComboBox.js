@@ -11,7 +11,7 @@ import '../Css/ComboBox.css'
 
 class SkillsByServiceComboBox extends React.Component {
   state = {
-
+    selectedSkill: '',
   }
 
   componentDidMount() {
@@ -20,36 +20,42 @@ class SkillsByServiceComboBox extends React.Component {
     // debugger
   }
 
-  handleChange = (selectedOption) => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
+  // handleChange = (selectedOption) => {
+  //   this.setState({ selectedOption });
+  //   console.log(`Option selected:`, selectedOption);
+  // }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    })
   }
 
-  // options = () => this.props.allSkills.map(skills => {
-  //   return (
-  //
-  //     <option
-  //       key={skills.skill_id}
-  //       value={skills.skill_id} >
-  //         {skills.skill_name}
-  //     </option>
-  //   )
-  // })
+  options = () => {
+    const skills = this.props.allSkills.map(skill => {
+      return (
+        <option key={skill.skill_id} value={skill.skill_id} >{skill.skill_name}</option>
+      )
+    })
 
-  // debugger
+    return skills
+  }
+
 
   render() {
     console.log(this.props);
     console.log(this.props.skillsByService);
     console.log(this.props.allSkills);
-    // console.log(this.options());
+
+    console.log(this.state.selectedSkill);
+    console.log(this.options());
     // debugger
 
     let options = this.props.allSkills.map(skill => {
     return (
         <option key={skill.skill_id}>{skill.skill_name}</option>)})
 
-    console.log(options);
+    // console.log(options);
     // debugger
 
 
@@ -68,9 +74,9 @@ class SkillsByServiceComboBox extends React.Component {
 
         */}
 
-        <select onChange={this.handleChange} name='selectedService' >
+        <select onChange={this.handleChange} name='selectedSkill' >
           <option key='0' value=''></option>
-          {options}
+          {this.options()}
         </select>
 
 
