@@ -1,11 +1,11 @@
 import React from 'react';
 import { ProviderInfo } from '../components/providerPro/providerProfile'
-import { connect } from 'react-redux'; 
+import { connect } from 'react-redux';
 import { getProviderInfo } from "../Redux_Actions/providerAction";
 
 class SingleProviderContainer extends React.Component {
     componentDidMount() {
-        this.props.getProviderInfo();
+        this.props.getProviderInfo(3);
     };
 
     render() {
@@ -17,15 +17,15 @@ class SingleProviderContainer extends React.Component {
     };
 }
 const mapStateToProps = (state, ownProps) => {
-   
-    
+
+
     return {
         providerInfo: state.singleProviderInfo
     };
 };
 const mapDispatchToProps = dispatch => {
     return {
-      getProviderInfo: () => dispatch(getProviderInfo(1))
+      getProviderInfo: (id) => dispatch(getProviderInfo(id))
     };
   };
 

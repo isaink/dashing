@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../Css/Navbar.css";
+// import "../../Css/Navbar.css";
 
 import logo from "../../photo_assets/dashing_logo.png";
 
