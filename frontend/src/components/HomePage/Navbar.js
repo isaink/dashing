@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-import scrollToComponent from "react-scroll-to-component";
+// import scrollToComponent from "react-scroll-to-component";
 import "../../Css/Navbar.css";
 
 import logo from "../../photo_assets/dashing_logo.png";
@@ -45,7 +45,7 @@ export default class Navbar extends Component {
             <Link
               className="links"
               activeClass="active"
-              to="provider"
+              to="providers"
               spy={true}
               smooth={true}
               offset={-70}
@@ -54,61 +54,43 @@ export default class Navbar extends Component {
               Hair Provider
             </Link>
 
-          </h3>
-        </span>
-  
-        <div className="links">
-          <Link 
-            className='links'
-            activeClass='active'
-            to="Home"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={100}
-          >Home</Link>
-  
-          <Link 
-            className='links'
-            activeClass='active'
-            to='providers'
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >Hair Provider</Link>
-  
-          <Link 
-            className='links'
-            activeClass='active'
-            to="makeup"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >Makeup</Link>
-  
-          <Link 
-            className='links'
-            activeClass='active'
-            to="nails"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >Nails</Link>
-  
-          <Link 
-            className='links'
-           activeClass='active'
-           to="barber"
-           spy={true}
-           smooth={true}
-           offset={-70}
-           duration={500}
-           >Barber</Link>
-  
-           <Link
+            <Link
+              className="links"
+              activeClass="active"
+              to="makeup"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Makeup
+            </Link>
+
+            <Link
+              className="links"
+              activeClass="active"
+              to="nails"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Nails
+            </Link>
+
+            <Link
+              className="links"
+              activeClass="active"
+              to="barber"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Barber
+            </Link>
+
+            <Link
               className="links"
               activeClass="active"
               to="education"
@@ -131,6 +113,7 @@ export default class Navbar extends Component {
             >
               About Us
             </Link>
+          </div>
         </div>
       </>
     );
