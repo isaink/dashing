@@ -5,17 +5,17 @@ import "./App.css";
 import Home from './components/HomePage/Home';
 import {ProviderProfile} from './components/providerPro/providerProfile';
 
+
 class App extends Component {
   
   render() {
     return (
       <div className="App">
-
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/profile" component={ProviderProfile}/>
         </Switch>
-           
+
       </div>
     );
   }

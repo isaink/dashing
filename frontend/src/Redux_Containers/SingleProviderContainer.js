@@ -11,7 +11,7 @@ class SingleProviderContainer extends React.Component {
         console.log('props in render', this.props);
         return(
             <>
-            <ProviderInfo providerInfo = {this.props.providerInfo} />
+            <ProviderInfo providerInfo={this.props.providerInfo} />
             </>
         )
     }

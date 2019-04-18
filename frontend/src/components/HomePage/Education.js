@@ -1,13 +1,13 @@
 import React from "react";
 import "../../Css/Education.css";
-import leftpic from "../../photo_assets/educational.jpg";
+import leftpic from "../../photo_assets/edu_pic.jpg";
 
 export const Education = () => {
   return (
     <>
       <div className="edu_container">
-        <div id="left_vid">
-          <img src={leftpic} alt="" width="610px" height="auto" />
+        <div id="left_pic">
+          <img src={leftpic} alt="" width="700px" height="auto" />
         </div>
         <div className="rightside">
           <div id="ed_header">Educational Services</div>

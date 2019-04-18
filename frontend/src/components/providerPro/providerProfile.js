@@ -9,11 +9,12 @@ export const ProviderProfile = props => {
           <div key={props.providerInfo.provider_id}>
             <img src={props.providerInfo.avatar} alt='' />
             <h2>Provider: {props.providerInfo.providername}</h2>
-            <p>Skills: {props.providerInfo.skills}</p>
+            <p>Services: {props.providerInfo.services}</p>
           </div>
       );
     } else {
-      return <div>Collecting Info</div>;
+      return <div id='providerInfo'>Collecting Info ... </div>;
+
     }
 };
   return (
