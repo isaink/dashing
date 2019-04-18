@@ -62,10 +62,11 @@ export const receiveSingleProvider = (provider, provider_id) => {
 }
 
 export const getProviderInfo = provider_id => dispatch => {
+
   axios.get(`/providers/${provider_id}`)
     .then(res => {
       console.log(res.data.info);
-      
+
       let provider = res.data.info;
       let action = receiveSingleProvider(provider, provider_id)
       return dispatch(action)
@@ -85,9 +86,9 @@ export const getProviderInfo = provider_id => dispatch => {
 
 export const receiveProviderServices = (services, provider_id) => {
   return {
-    type: RECEIVE_PROVIDER_SERVICES, 
+    type: RECEIVE_PROVIDER_SERVICES,
     payload: {
-      provider_id: provider_id, 
+      provider_id: provider_id,
       services: services
     }
   }

@@ -8,7 +8,7 @@ import Home from './components/HomePage/Home';
 
 
 class App extends Component {
-  
+
   render() {
     return (
       <div className="App">
@@ -17,6 +17,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
+
+
 
       </div>
     );

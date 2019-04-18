@@ -7,11 +7,12 @@ import {
     scroller
 } from "react-scroll";
 
-import { ProviderProfile } from '../providerPro/providerProfile';
+import SingleProviderContainer from '../../Redux_Containers/SingleProviderContainer';
 import { Welcome } from "./Welcome";
 import Provider from "./../ProvidersPage/ProviderBySvc";
 import { Education } from "./Education";
 import { AboutUs } from "./AboutUs";
+
 
 class Home extends Component {
     componentDidMount() {
@@ -22,7 +23,7 @@ class Home extends Component {
           console.log("end", arguments);
         });
     };
-    
+
     scrollToTop() {
         scroll.scrollToTop();
     };
@@ -57,7 +58,7 @@ class Home extends Component {
             </Element>
 
             <Element name=''>
-            <ProviderProfile/>
+            <SingleProviderContainer />
             </Element>
 
             <button onClick={this.scrollToTop}>To the top!</button>
