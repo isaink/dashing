@@ -5,15 +5,15 @@ export const Hair = props => {
   const renderProviders = () => {
     if (props.hairProviders) {
       return props.hairProviders.map((hairP) => {
-        return <> 
+        return <>
         <div key={hairP.provider_id} className='box_provider' >
-          <div className='hair_avatar box'> 
-            <img 
-                alt='avatar' 
-                className='pic_hair content' 
-                src={hairP.avatar} 
+          <div className='hair_avatar box'>
+            <img
+                alt='avatar'
+                className='pic_hair content'
+                src={hairP.avatar}
                 style={{ height:'200px'}}
-            />  
+            />
             <span className='provider_name'>
               {hairP.name}
             </span>
@@ -24,7 +24,7 @@ export const Hair = props => {
               {hairP.borough} <br/>
               {hairP.website_link}
             </div>
-            
+
           </div>
         </div>
         </>;

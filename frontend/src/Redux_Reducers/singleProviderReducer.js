@@ -1,7 +1,5 @@
 import { RECEIVE_PROVIDER_INFO } from '../Redux_Actions/providerAction';
-
 import { RECEIVE_PROVIDER_SERVICES } from '../Redux_Actions/providerAction';
-
 
 export const singleProviderReducer = (state = {}, action) => {
     let newState = {...state};
@@ -21,7 +19,7 @@ export const singleProviderReducer = (state = {}, action) => {
         default:
         return state;
     }
-}
+};
 
 // export const providerServicesReducer = (state = {}, action) => {
 //     const newState = {...state};

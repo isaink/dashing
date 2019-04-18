@@ -1,5 +1,5 @@
 import axios from "axios";
-;
+
 export let FETCH_ERROR = "FETCH_ERROR";
 export let RECEIVE_PROVIDERS_SUCCESS = "RECEIVE_PROVIDERS_SUCCESS";
 export let RECEIVE_PROVIDER_INFO = "RECEIVE_PROVIDER_INFO"
@@ -76,8 +76,7 @@ export const getProviderInfo = provider_id => dispatch => {
           let action = receiveProviderServices(services, provider_id)
           return dispatch(action)
         })
-    }
-    )
+    })
     .catch(err =>{
       return dispatch(fetchErrors(err));
     })

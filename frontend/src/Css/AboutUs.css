@@ -1,5 +1,11 @@
 .about_container {
-background: white;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  background-color: black;
+  background-size: cover;
+  height: 1000px;
+
 }
 
 #about_header {
@@ -8,6 +14,7 @@ background: white;
   font-size: 60px;
   padding-top: 100px;
   text-align: center;
+
 }
 
 #about_writeup {
@@ -18,7 +25,9 @@ background: white;
   display: flex;
   text-align: center;
   padding-right: 100px;
-  line-height: 30px;
+  line-height: 50px;
   padding-left: 400px;
   padding-right: 400px;
+  font-size: 40px;
+
 }
