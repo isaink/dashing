@@ -4,7 +4,7 @@ import { ProviderInfo } from '../components/providerPro/providerProfile'
 import { getProviderInfo } from "../Redux_Actions/providerAction";
 
 class SingleProviderContainer extends React.Component {
-    componentDidMount() {
+    componentDidMount() { 
         this.props.getProviderInfo(3);
     };
     render() {
