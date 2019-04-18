@@ -29,7 +29,6 @@ export default class NavbarLogIn extends Component {
           </span>
 
           <div className="links">
-            
             <Link
               className="links"
               activeClass="active"
@@ -51,7 +50,7 @@ export default class NavbarLogIn extends Component {
               offset={-70}
               duration={500}
             >
-              Hair Provider
+              Hair
             </Link>
 
             <Link
@@ -118,4 +117,4 @@ export default class NavbarLogIn extends Component {
       </>
     );
   }
-};
+}
