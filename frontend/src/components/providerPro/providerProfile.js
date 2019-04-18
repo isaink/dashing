@@ -6,7 +6,7 @@ export const ProviderProfile = props => {
   const renderProviderInfo = () => {
     if (props.providerInfo.id) {
       return ( 
-          <div key={props.providerInfo.provider_id} id='providerInfo'>
+          <div key={props.providerInfo.provider_id}>
             <img src={props.providerInfo.avatar} alt='' />
             <h2>Provider: {props.providerInfo.providername}</h2>
             <p>Skills: {props.providerInfo.skills}</p>
