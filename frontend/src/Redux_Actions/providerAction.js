@@ -3,6 +3,7 @@ import axios from "axios";
 export let FETCH_ERROR = "FETCH_ERROR";
 export let RECEIVE_PROVIDERS_SUCCESS = "RECEIVE_PROVIDERS_SUCCESS";
 export let RECEIVE_PROVIDER_INFO = "RECEIVE_PROVIDER_INFO"
+export let RECEIVE_PROVIDER_SERVICES = "RECEIVE_PROVIDER_SERVICES";
 
 // PROVIDER ACTION & PAYLOAD (Action Creator: Function that returns an action object)
 export const receivedProvidersSuccess = (providers, service_id) => {
@@ -63,11 +64,45 @@ export const receiveSingleProvider = (provider, provider_id) => {
 export const getProviderInfo = provider_id => dispatch => {
   axios.get(`/providers/${provider_id}`)
     .then(res => {
+      console.log(res.data.info);
+      
       let provider = res.data.info;
       let action = receiveSingleProvider(provider, provider_id)
       return dispatch(action)
-    })
+    }).then(res => {
+      axios.get(`/providers/services/${provider_id}`)
+        .then(res => {
+          let services = res.data.info;
+          let action = receiveProviderServices(services, provider_id)
+          return dispatch(action)
+        })
+    }
+    )
     .catch(err =>{
       return dispatch(fetchErrors(err));
     })
 }
+
+
+export const receiveProviderServices = (services, provider_id) => {
+  return {
+    type: RECEIVE_PROVIDER_SERVICES, 
+    payload: {
+      provider_id: provider_id, 
+      services: services
+    }
+  }
+}
+
+
+// export const getProviderServices = provider_id => dispatch => {
+//   axios.get(`/providers/services/${provider_id}`)
+//   .then(res => {
+//     let services = res.data.info;
+//     let action = receiveProviderServices(services, provider_id)
+//     return dispatch(action)
+//   })
+//   .catch(err => {
+//     return dispatch(fetchErrors(err));
+//   })
+// }

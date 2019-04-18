@@ -3,12 +3,14 @@ import { ProviderInfo } from '../components/providerPro/providerProfile'
 import { connect } from 'react-redux';
 import { getProviderInfo } from "../Redux_Actions/providerAction";
 
+
 class SingleProviderContainer extends React.Component {
     componentDidMount() {
         this.props.getProviderInfo(3);
     };
 
     render() {
+        console.log('props in render', this.props);
         return(
             <>
             <ProviderInfo providerInfo = {this.props.providerInfo} />

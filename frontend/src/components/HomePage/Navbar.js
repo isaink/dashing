@@ -1,10 +1,9 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link, animateScroll as scroll } from "react-scroll";
 
-import scrollToComponent from 'react-scroll-to-component';
+import scrollToComponent from "react-scroll-to-component";
 import "../../Css/Navbar.css";
-
 
 import logo from "../../photo_assets/dashing_logo.png";
 
@@ -12,21 +11,49 @@ export default class Navbar extends Component {
   scrollToTop = () => {
     scroll.scrollToTop();
   };
-  render(){
+  render() {
     return (
       <>
-      <div className="navbar">
-        <span className="dashingNav">
-          <h3>
-            <Link to={"/"}>
-              <img 
-                src={logo}
-                alt=""
-                width="175px"
-                height="auto"
-                onClick={this.scrollToTop}
-              />
+        <div className="navbar">
+          <span className="dashingNav">
+            <h3>
+              <Link to={"/"}>
+                <img
+                  src={logo}
+                  alt=""
+                  width="175px"
+                  height="auto"
+                  onClick={this.scrollToTop}
+                />
+              </Link>
+            </h3>
+          </span>
+
+          <div className="links">
+            <Link
+              className="links"
+              activeClass="active"
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Home
             </Link>
+
+            <Link
+              className="links"
+              activeClass="active"
+              to="provider"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Hair Provider
+            </Link>
+
           </h3>
         </span>
   
@@ -81,29 +108,31 @@ export default class Navbar extends Component {
            duration={500}
            >Barber</Link>
   
-          <Link 
-            className='links'
-            activeClass='active'
-            to="education"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >Educational Services</Link>
-  
-          <Link 
-          className='links'
-          activeClass='active'
-          to="aboutme"
-          spy={true}
-          smooth={true}
-          offset={-70}
-          duration={500}
-          >About Me</Link>
+           <Link
+              className="links"
+              activeClass="active"
+              to="education"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Educational Services
+            </Link>
+
+            <Link
+              className="links"
+              activeClass="active"
+              to="aboutus"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              About Us
+            </Link>
         </div>
-      </div>
       </>
     );
   }
-  
-};
+}

@@ -7,12 +7,12 @@ export const Education = () => {
     <>
       <div className="edu_container">
         <div id="left_vid">
-          <img src={leftpic} alt="" />
+          <img src={leftpic} alt="" width="610px" height="auto" />
         </div>
         <div className="rightside">
           <div id="ed_header">Educational Services</div>
           <br />
-        
+
           <div id="ed_writeup">
             Dashing provides educational beauty services right in the
             comfort of your own home. <br/> Our fun and interactive classes are
