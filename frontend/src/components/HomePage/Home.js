@@ -7,7 +7,7 @@ import {
     scroller
 } from "react-scroll";
 
-import { ProviderProfile } from '../providerPro/providerProfile';
+import { ProviderProfile } from '../ProfilePage/providerProfile';
 import { Welcome } from "./Welcome";
 import Provider from "../ProvidersPage/Provider";
 import { Education } from "./Education";
@@ -45,23 +45,23 @@ class Home extends Component {
             
 
             <Element name="home">
-            <Welcome />
+                <Welcome />
             </Element>
 
             <Element name="providers">
-            <Provider />
+                <Provider />
             </Element>
 
             <Element name="education">
-            <Education />
+                <Education />
             </Element>
 
             <Element name="aboutus">
-            <AboutUs />
+                <AboutUs />
             </Element>
 
             <Element name=''>
-            <ProviderProfile/>
+                <ProviderProfile/>
             </Element>
 
             <button onClick={this.scrollToTop}>To the top!</button>
