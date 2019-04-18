@@ -1,20 +1,17 @@
 import React from "react";
+import './../../Css/porfolio.css';
 
-export const ProviderInfo = props => {
-
-
+export const ProviderProfile = props => {
+ console.log( props, 'PROPS')
   const renderProviderInfo = () => {
-  
     if (props.providerInfo.id) {
-    
       return ( 
-          <div key={props.providerInfo.provider_id}>
+          <div key={props.providerInfo.provider_id} >
             <img src={props.providerInfo.avatar} alt='' />
             <h2>Provider: {props.providerInfo.providername}</h2>
             <p>Skills: {props.providerInfo.skills}</p>
           </div>
-        );
-      
+      );
     } else {
       return <div>Collecting Info</div>;
     }
@@ -22,7 +19,7 @@ export const ProviderInfo = props => {
   return (
     <>
       <h1>Provider Information</h1>
-      {renderProviderInfo()}
+      {renderProviderInfo}
     </>
   );
 };
