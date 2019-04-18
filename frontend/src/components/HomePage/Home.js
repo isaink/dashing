@@ -13,6 +13,8 @@ import Provider from "./../ProvidersPage/ProviderBySvc";
 import { Education } from "./Education";
 import { AboutUs } from "./AboutUs";
 
+import NavbarLogIn from "./../NavBars/Navbar";
+
 class Home extends Component {
   componentDidMount() {
     Events.scrollEvent.register("begin", function() {
@@ -38,8 +40,6 @@ class Home extends Component {
   render() {
     return (
       <>
-        {/* <button onClick={this.scrollToBottom}>To the bottom!</button> */}
-
         <Element name="home">
           <Welcome />
         </Element>
