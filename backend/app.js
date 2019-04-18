@@ -12,6 +12,7 @@ var portfolioRouter = require('./routes/portfolios');
 var skillsProviderRouter = require('./routes/skillsProvider');
 var skillsProvider = require('./routes/skills')
 
+
 var app = express();
 
 // view engine setup
@@ -31,6 +32,7 @@ app.use('/services', servicesRouter);
 app.use('/portfolios', portfolioRouter);
 app.use('/skillsProvider', skillsProviderRouter);
 app.use('/skills', skillsProvider)
+
 
 
 // catch 404 and forward to error handler

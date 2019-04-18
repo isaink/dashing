@@ -1,62 +1,58 @@
-.ctnr_provider{
-    display: grid;
-    grid-template-columns: 27% 73%;
-    /* background-color: lightgray; */
-    padding-left: 20px;
-    max-height:50%;
+.ctnr_provider {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  /* background-color: lightgray; */
+  padding-left: 20px;
+  max-height: 50%;
 }
 
-.img_intro{
-    grid-column: 1;
-    /* height: 500px; */
-    margin: 10px;
+.img_intro {
+  grid-column: 1;
+  /* height: 500px; */
+
 }
 
-.inner_ctnr_providers{
-    grid-column: 2;
-    background-color: lightslategray;
-    height: 800px;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 10% 80% 10%;
-    margin: 10px;
-    border-left: 1px dashed #000;
+.inner_ctnr_providers {
+  grid-column: 2;
+  background-color: black;
+  height: 800px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 10% 80% 10%;
+  margin: 10px;
 }
 
-.box_provider{
-    grid-row: 2;
-     
+.box_provider {
+  grid-row: 2;
 }
 
-.provider_name{
-    margin: 10px;
-    margin-left: 20px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bold;
-    text-align: left;
-    color: lightslategray;
-    /* border-bottom: 1px dashed #000; */
-    width: 20%;
-    margin: auto;
-    
+.provider_name {
+  margin: 10px;
+  margin-left: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  /* border-bottom: 1px dashed #000; */
+  width: 20%;
+  margin: auto;
 }
 
-.info_provider{
-    /* display: none; */
-    opacity: 0;
-    text-transform: uppercase;
-    position: absolute; 
-    top: 220px;
-
+.info_provider {
+  /* display: none; */
+  opacity: 0;
+  text-transform: uppercase;
+  position: absolute;
+  top: 220px;
 }
 
 .info_provider:hover {
-    display: block;
-    opacity: 1;
+  display: block;
+  opacity: 1;
 }
-.box:hover{
-    opacity: 0.5;
-    /* background: #eaab00; */
+.box:hover {
+  opacity: 0.5;
+  /* background: #eaab00; */
 }
 
 /* I dont using pic_avatar */
@@ -73,96 +69,103 @@
 } */
 
 .lds-heart {
-    display: inline-block;
-    position: relative;
-    width: 64px;
-    height: 64px;
-    transform: rotate(45deg);
-    transform-origin: 32px 32px;
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  transform: rotate(45deg);
+  transform-origin: 32px 32px;
 }
 .lds-heart div {
-    top: 23px;
-    left: 19px;
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    background:#eac2a8;
-    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  top: 23px;
+  left: 19px;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #ce0000;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-  .lds-heart div:after,
-  .lds-heart div:before {
-    content: " ";
-    position: absolute;
-    display: block;
-    width: 26px;
-    height: 26px;
-    background: #eac2a8;
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #abaaaa;
+}
+.lds-heart div:before {
+  left: -17px;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+  top: -17px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
   }
-  .lds-heart div:before {
-    left: -17px;
-    border-radius: 50% 0 0 50%;
+  5% {
+    transform: scale(1.1);
   }
-  .lds-heart div:after {
-    top: -17px;
-    border-radius: 50% 50% 0 0;
+  39% {
+    transform: scale(0.85);
   }
-  @keyframes lds-heart {
-    0% {
-      transform: scale(0.95);
-    }
-    5% {
-      transform: scale(1.1);
-    }
-    39% {
-      transform: scale(0.85);
-    }
-    45% {
-      transform: scale(1);
-    }
-    60% {
-      transform: scale(0.95);
-    }
-    100% {
-      transform: scale(0.9);
-    }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
 }
 
-.box{
-    width: 100px;
-    margin: 0 auto;
-    padding: 2px;
-    background-color: #eaab00; 
-    background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAOqrAP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='), 
-    url('data:image/gif;base64,R0lGODlhAQABAPAAAOqrAP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='),
-    url('data:image/gif;base64,R0lGODlhAQABAPAAAP///////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==');
-    background-repeat: no-repeat;
-    background-size: 0 2px, 0 100%, 0% 2px;
-    background-position: top center, top center, bottom center;
-    -webkit-animation: drawBorderFromCenter 4s;
+.hair_title {
+  font-family: "Mrs Saint Delafield", cursive;
+  color: white;
+  font-size: 60px;
+  padding-top: 100px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
 }
-  
+
+.box {
+  width: 100px;
+  margin: 0 auto;
+  padding: 2px;
+  background-color: #FFFBFC;
+  background-image: url("data:image/gif;base64,R0lGODlhAQABAPAAAOqrAP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="),
+    url("data:image/gif;base64,R0lGODlhAQABAPAAAOqrAP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="),
+    url("data:image/gif;base64,R0lGODlhAQABAPAAAP///////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==");
+  background-repeat: no-repeat;
+  background-size: 0 2px, 0 100%, 0% 2px;
+  background-position: top center, top center, bottom center;
+  -webkit-animation: drawBorderFromCenter 4s;
+}
+
 @-webkit-keyframes drawBorderFromCenter {
-      0% {
-        background-size: 0 2px, 0 0, 100% 100%;
-      }
-      20% {
-        background-size: 100% 2px, 100% 0, 100% 100%;
-      }
-      66%
-      {
-        background-size: 100% 2px, 100% 98%, 100% 100%;
-      }
-      99%
-      {
-        background-size: 100% 2px, 100% 98%, 0 2px;
-      }
+  0% {
+    background-size: 0 2px, 0 0, 100% 100%;
+  }
+  20% {
+    background-size: 100% 2px, 100% 0, 100% 100%;
+  }
+  66% {
+    background-size: 100% 2px, 100% 98%, 100% 100%;
+  }
+  99% {
+    background-size: 100% 2px, 100% 98%, 0 2px;
+  }
 }
-  
-.content{
-    background: lightslategray;
-    padding: 2em;
-    text-align: center;
-    text-transform: uppercase;
+
+.content {
+  background: #ecb99c;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
 }
-  
