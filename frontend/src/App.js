@@ -10,6 +10,7 @@ import {Home} from "./components/HomePage/Home";
 import Provider from './React_Components/ProvidersPage/ProviderBySvc'
 import ComboBox from './components/HomePage/ComboBox'
 // import SingleProviderContainer from './Redux_Containers/SingleProviderContainer'
+import  SingleProviderContainer from './Redux_Containers/SingleProviderContainer'
 
 class App extends Component {
 
@@ -43,11 +44,18 @@ class App extends Component {
 
         <Home name='home' />
 
-        <Element name='provider'> 
+        <Element name='provider'>
           <Provider/>
         </Element>
 
-        <ComboBox />
+        <Element name='provider_profile'>
+          <SingleProviderContainer />
+        </Element>
+
+        <ComboBox
+        />
+
+
 
         <button onClick={this.scrollToTop}>To the top!</button>
       </div>

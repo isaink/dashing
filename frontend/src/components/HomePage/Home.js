@@ -11,7 +11,7 @@ export const Home = () => {
       <div id="homeBackground">
         <img src={bk_img} alt="" />
       </div>
-       
+
       <div className="centerLogo">
         <img src={homeLogo} alt=""  style={{ zIndex:'2'}}/>
       </div>
