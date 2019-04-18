@@ -33,7 +33,7 @@ export default class Navbar extends Component {
             <Link
               className="links"
               activeClass="active"
-              to="Home"
+              to="home"
               spy={true}
               smooth={true}
               offset={-70}
@@ -105,13 +105,13 @@ export default class Navbar extends Component {
             <Link
               className="links"
               activeClass="active"
-              to="aboutme"
+              to="aboutus"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
             >
-              About Me
+              About Us
             </Link>
           </div>
         </div>
