@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Element, Events, animateScroll as scroll, scroller } from 'react-scroll';
-
+import { ProviderInfo } from './components/providerPro/providerProfile'
 import "./App.css";
 
 import  Navbar  from "./components/HomePage/Navbar";
@@ -45,6 +45,9 @@ class App extends Component {
 
         <Element name='provider'> 
           <Provider/>
+        </Element>
+        <Element name='providerInfo'>
+          <ProviderInfo/>
         </Element>
 
         <ComboBox />

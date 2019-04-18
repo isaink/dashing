@@ -8,15 +8,15 @@ export const ProviderInfo = props => {
     if (props.providerInfo.id) {
     
       return ( 
-          <div key={props.providerInfo.provider_id}>
+          <div key={props.providerInfo.provider_id} id='providerInfo'>
             <img src={props.providerInfo.avatar} alt='' />
             <h2>Provider: {props.providerInfo.providername}</h2>
-            <p>Skills: {props.providerInfo.skills}</p>
+            <p>Services: {props.providerInfo.services}</p>
           </div>
         );
       
     } else {
-      return <div>Collecting Info</div>;
+      return <div id='providerInfo'>Collecting Info</div>;
     }
 };
   return (
