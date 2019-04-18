@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ProviderInfo } from '../components/providerPro/providerProfile'
+import { ProviderProfile } from '../components/providerPro/providerProfile'
 import { getProviderInfo } from "../Redux_Actions/providerAction";
 
 class SingleProviderContainer extends React.Component {
@@ -11,7 +11,7 @@ class SingleProviderContainer extends React.Component {
         console.log('props in render', this.props);
         return(
             <>
-            <ProviderInfo providerInfo={this.props.providerInfo} />
+            <ProviderProfile providerInfo={this.props.providerInfo} />
             </>
         )
     }

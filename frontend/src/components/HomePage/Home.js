@@ -9,7 +9,7 @@ import {
 
 import { ProviderProfile } from '../providerPro/providerProfile';
 import { Welcome } from "./Welcome";
-import Provider from "./../ProvidersPage/ProviderBySvc";
+import Provider from "../ProvidersPage/Provider";
 import { Education } from "./Education";
 import { AboutUs } from "./AboutUs";
 

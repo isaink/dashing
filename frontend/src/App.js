@@ -3,7 +3,8 @@ import { Route, Switch } from "react-router-dom";
 
 import "./App.css";
 import Home from './components/HomePage/Home';
-import {ProviderProfile} from './components/providerPro/providerProfile';
+// import {ProviderProfile} from './components/providerPro/providerProfile';
+import SingleProviderContainer from './Redux_Containers/SingleProviderContainer';
 
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/profile" component={ProviderProfile}/>
+          <Route exact path="/profile" component={SingleProviderContainer}/>
         </Switch>
 
       </div>
