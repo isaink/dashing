@@ -20,7 +20,7 @@ export const ProviderProfile = props => {
   return (
     <>
       <h1>Provider Information</h1>
-      {renderProviderInfo()}
+      {/* {renderProviderInfo()} */}
     </>
   );
 };
