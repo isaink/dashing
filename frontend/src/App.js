@@ -29,7 +29,7 @@ class App extends Component {
 
   scrollTo() {
     scroller.scrollTo('scroll-to-element', {
-      duration: 800,
+      duration: 200,
       delay: 0,
       smooth: 'easeInOutQuart'
     })
@@ -43,7 +43,7 @@ class App extends Component {
 
         <Home name='home' />
 
-        <Element name='provider'> 
+        <Element name='providers'> 
           <Provider/>
         </Element>
 

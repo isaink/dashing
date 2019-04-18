@@ -38,15 +38,13 @@ export default class Navbar extends Component {
             spy={true}
             smooth={true}
             offset={-70}
-            duration={500}
+            duration={100}
           >Home</Link>
   
           <Link 
-          
-
             className='links'
             activeClass='active'
-            to='provider'
+            to='providers'
             spy={true}
             smooth={true}
             offset={-70}
