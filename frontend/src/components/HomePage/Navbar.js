@@ -54,43 +54,61 @@ export default class Navbar extends Component {
               Hair Provider
             </Link>
 
-            <Link
-              className="links"
-              activeClass="active"
-              to="makeup"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Makeup
-            </Link>
-
-            <Link
-              className="links"
-              activeClass="active"
-              to="nails"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Nails
-            </Link>
-
-            <Link
-              className="links"
-              activeClass="active"
-              to="barber"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Barber
-            </Link>
-
-            <Link
+          </h3>
+        </span>
+  
+        <div className="links">
+          <Link 
+            className='links'
+            activeClass='active'
+            to="Home"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={100}
+          >Home</Link>
+  
+          <Link 
+            className='links'
+            activeClass='active'
+            to='providers'
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >Hair Provider</Link>
+  
+          <Link 
+            className='links'
+            activeClass='active'
+            to="makeup"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >Makeup</Link>
+  
+          <Link 
+            className='links'
+            activeClass='active'
+            to="nails"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >Nails</Link>
+  
+          <Link 
+            className='links'
+           activeClass='active'
+           to="barber"
+           spy={true}
+           smooth={true}
+           offset={-70}
+           duration={500}
+           >Barber</Link>
+  
+           <Link
               className="links"
               activeClass="active"
               to="education"
@@ -113,7 +131,6 @@ export default class Navbar extends Component {
             >
               About Us
             </Link>
-          </div>
         </div>
       </>
     );
