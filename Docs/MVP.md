@@ -1,18 +1,12 @@
 HOME PAGE:
-- can SIGN UP / LOG IN as either CLIENT or PROVIDER
-- search bar
-- service selection with images that link to second search page
+- can SIGN UP / LOG IN as PROVIDER
+- combobox search bar
 
 PROVIDER PROFILE PAGE:
 - portfolio containing images of past work (by service)
 - list of services provided and their cost by the hour
 - rating (out of 5 stars)
 - fee range ('$', '$$', '$$$')
-
-CLIENT PROFILE PAGE: [BONUS]
-- list of favorite providers
-- list of past appointments
-- list of future appointments
 
 PROVIDER:
 - can upload photos
