@@ -45,7 +45,7 @@ class Home extends Component {
         </Element>
 
         <Element name="providers">
-          <Providers />
+          <Provider />
         </Element>
 
         <Element name="education">
