@@ -12,6 +12,7 @@
     "react-scripts": "2.1.8",
     "react-scroll": "^1.7.11",
     "react-scroll-to-component": "^1.0.2",
+    "react-widgets": "^4.4.10",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"

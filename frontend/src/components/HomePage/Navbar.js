@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
-
-// import scrollToComponent from "react-scroll-to-component";
 import "../../Css/Navbar.css";
 
 import logo from "../../photo_assets/dashing_logo.png";
