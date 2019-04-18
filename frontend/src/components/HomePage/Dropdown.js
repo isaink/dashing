@@ -2,13 +2,13 @@ import React from "react";
 
 export const Dropdown = props => {
 
-// const renderLocations = () => {
-//   if(props.location){
-//     return props.location.map(location =>{
-//       return <option>location.borough</option>
-//     })
-//   }
-// }
+const renderLocations = () => {
+  if(props.location){
+    return props.location.map(location =>{
+      return <option>location.borough</option>
+    })
+  }
+}
 
   return(
     <div>

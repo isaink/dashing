@@ -7,7 +7,7 @@ import {ProviderProfile} from './components/providerPro/providerProfile';
 
 
 class App extends Component {
-  
+
   render() {
     return (
       <div className="App">
