@@ -1,11 +1,10 @@
 import React from "react";
 
-import { Dropdown } from "./Dropdown";
-
 import "../../Css/Home.css";
 
 import bk_img from "../../photo_assets/beautybackground.jpg";
 import homeLogo from "../../photo_assets/dashing_logo_invert.png";
+
 
 // import ComboBox from "./ComboBox";
 
@@ -17,9 +16,10 @@ export const Welcome = () => {
       </div>
 
       <div className="centerLogo">
-        <img src={homeLogo} alt="" />
+        <img src={homeLogo} alt="" className="homeLogo" />
       </div>
-      <Dropdown />
+
+
     </>
   );
 };

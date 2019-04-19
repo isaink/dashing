@@ -5,7 +5,8 @@
 }
 
 
-.centerLogo {
-  padding-left: 239px;
+.homeLogo {
+  z-index: 2;
+  margin-bottom: -200px;
 
 }
