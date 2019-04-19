@@ -128,8 +128,21 @@ const getProviderInfo = (req, res, next) => {
  .catch(err => next(err));
 };
 
+// const getProviderServices = (req, res, next) => {
+//  db.any('SELECT services_provider.provider_id, services_provider.service_id, services.name AS servicesName, skills.name AS skillsName FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE providers.id = ${id}', {
+//    id: Number(req.params.id)
+//  }).then(info => {
+//    res.status(200).json({
+//      status: 'success',
+//      message: 'Got complete services for provider',
+//      info: info
+//    })
+//  })
+//  .catch(err => next(err));
+// };
+
 const getProviderServices = (req, res, next) => {
- db.any('SELECT services_provider.provider_id, services_provider.service_id, services.name AS servicesName, skills.name AS skillsName FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE providers.id = ${id}', {
+ db.any('SELECT services_provider.provider_id, services_provider.service_id, services.name AS servicesName, array_agg(skills.name) AS skills FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE providers.id =${id} group by services_provider.provider_id, services_provider.service_id, services.name', {
    id: Number(req.params.id)
  }).then(info => {
    res.status(200).json({
@@ -141,6 +154,7 @@ const getProviderServices = (req, res, next) => {
  .catch(err => next(err));
 };
 
+// SELECT services_provider.provider_id, services_provider.service_id, services.name AS servicesName, array_agg(skills.name) AS skillsName FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE providers.id =${id} group by services_provider.provider_id, services_provider.service_id, services.name
 
 module.exports = {
   getAllProviders,
