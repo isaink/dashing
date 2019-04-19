@@ -1,11 +1,17 @@
-.mySelectTagCss {
-  /* opacity: 0.7; */
+.ComboboxDiv {
+  /* background-color: white; */
+  display: flex;
 
 }
 
-.options {
-  background-color: white;
+.Combobox {
+  width: 300px;
+
+  display: flex;
+  align-content: center;
+  align-items: center;
 }
-.thisOptions {
-  background-color: red;
+
+groupBy {
+  color: red;
 }

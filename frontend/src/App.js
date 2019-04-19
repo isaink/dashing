@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
-import {Home} from "./components/HomePage/Home";
+import Home from "./components/HomePage/Home";
 import HairContainer from "./Redux_Containers/HairContainer";
-import Provider from './React_Components/ProvidersPage/ProviderBySvc'
+// import Provider from './React_Components/ProvidersPage/ProviderBySvc'
 
 import SkillsByServiceComboBox from './Redux_Containers/SkillsByServiceComboBox'
 import "./Css/ComboBox.css"
@@ -25,7 +25,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/profile" component={ProviderProfile} />
         </Switch>
-        
+
         <SkillsByServiceComboBox />
 
       </div>
