@@ -1,0 +1,39 @@
+html {
+  background-color: black;
+}
+
+.edu_container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  object-fit: cover;
+  height: 1000px;
+}
+
+.rightside {
+  background-color: black;
+}
+
+#left_pic {
+  margin-right: 400px;
+}
+
+#ed_header {
+  font-family: "Mrs Saint Delafield", cursive;
+  color: white;
+  font-size: 60px;
+  padding-top: 100px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+#ed_writeup {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200;
+  color: #abaaaa;
+  padding-left: 20px;
+  display: flex;
+  text-align: left;
+  padding-right: 100px;
+  line-height: 30px;
+}
