@@ -76,8 +76,8 @@ class SkillsByServiceComboBox extends React.Component {
 
            <Combobox
         data={this.props.allSkills}
-        defaultValue={skills[0]}
         textField='name'
+        groupBy={service => service.service_name}
       />
 
 {/*
