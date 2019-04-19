@@ -7,6 +7,10 @@ import { fetchAllSkills } from "../Redux_Actions/allSkillsAction";
 
 import '../Css/ComboBox.css'
 
+import 'react-widgets/dist/css/react-widgets.css'
+import Combobox from 'react-widgets/lib/Combobox';
+// import { Combobox } from 'react-widgets'
+import { render } from 'react-dom';
 // let { Combobox } = ReactWidgets;
 
 class SkillsByServiceComboBox extends React.Component {
@@ -52,33 +56,42 @@ class SkillsByServiceComboBox extends React.Component {
     // debugger
 
     let options = this.props.allSkills.map(skill => {
-    return (
-        <option key={skill.skill_id}>{skill.skill_name}</option>)})
-
+      return (
+        <option key={skill.skill_id}>
+          {skill.skill_name}
+        </option>
+      )
+    })
     // console.log(options);
     // debugger
 
+    let skills = this.options()
 
     return (
       <>
-      {/*
-        <select
-          onChange={this.handleChange}
-          name='selectedService' >
-          <option key='0' value=''></option>
-          {options}
-        </select>
-
-        {this.options}
-        {test}
-
-        */}
-
         <select onChange={this.handleChange} name='selectedSkill' >
           <option key='0' value=''></option>
           {this.options()}
         </select>
 
+           <Combobox
+        data={this.props.allSkills}
+        defaultValue={skills[0]}
+        textField='name'
+      />
+
+{/*
+  <Combobox busy />
+        <Combobox busy busySpinner={
+          <span className="fas fa-sync fa-spin" />
+        }/>
+
+     //    <Combobox
+     // data={options}
+     // defaultValue={options[0]}
+     // textField='name'
+   // />
+   */}
 
       </>
     );
