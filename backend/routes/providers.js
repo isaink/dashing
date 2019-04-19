@@ -3,7 +3,8 @@ var router = express.Router();
 
 const {
     getAllProviders,
-    getSingleProvider,
+    getProviderInfo,
+    getProviderServices,
     // createProvider,
     // logoutProvider,
     // loginProvider,
@@ -18,7 +19,8 @@ const {
 
 //Getting Routes...
 router.get('/', getAllProviders);
-router.get('/:id', getSingleProvider);
+router.get('/:id', getProviderInfo);
+router.get('/services/:id', getProviderServices);
 router.patch('/:id', updateProvider);
 router.delete('/:id', deleteProvider);
 
