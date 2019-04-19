@@ -1,6 +1,4 @@
 import React from "react";
-// import { SkillsByService } from "../components/HomePage/SkillsByService";
-// import ComboBox from "../components/HomePage/ComboBox";
 import { connect } from "react-redux";
 import { fetchSkillsByService } from "../Redux_Actions/skillsByServiceAction";
 import { fetchAllSkills } from "../Redux_Actions/allSkillsAction";
@@ -9,9 +7,8 @@ import '../Css/ComboBox.css'
 
 import 'react-widgets/dist/css/react-widgets.css'
 import Combobox from 'react-widgets/lib/Combobox';
-// import { Combobox } from 'react-widgets'
 import { render } from 'react-dom';
-// let { Combobox } = ReactWidgets;
+// import { Combobox } from 'react-widgets'   // let { Combobox } = ReactWidgets;
 
 class SkillsByServiceComboBox extends React.Component {
   state = {
@@ -19,21 +16,18 @@ class SkillsByServiceComboBox extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchSkillsByService(1)
-    this.props.fetchAllSkills()
-    // debugger
+    this.props.fetchAllSkills() // debugger
+    // this.props.fetchSkillsByService(1)
   }
 
-  // handleChange = (selectedOption) => {
-  //   this.setState({ selectedOption });
-  //   console.log(`Option selected:`, selectedOption);
+  handleChange = (selectedSkill) => {
+    this.setState({ selectedSkill });
+    console.log(`Option selected:`, selectedSkill);
+  }
+
+  // handleChange = (e) => {
+  //   this.setState({ [e.target.name]: e.target.value, })
   // }
-
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    })
-  }
 
   options = () => {
     const skills = this.props.allSkills.map(skill => {
@@ -41,41 +35,34 @@ class SkillsByServiceComboBox extends React.Component {
         <option key={skill.skill_id} value={skill.skill_id} >{skill.skill_name}</option>
       )
     })
-
     return skills
   }
 
-
   render() {
-    console.log(this.props);  console.log(this.props.skillsByService);  console.log(this.props.allSkills);
-    console.log(this.state.selectedSkill);  console.log(this.options());
-    // debugger
+    console.log(this.props);  console.log(this.props.skillsByService);  console.log(this.props.allSkills);  console.log(this.options());
+    console.log(this.state.selectedSkill);  // debugger
 
     let options = this.props.allSkills.map(skill => {
       return (
-        <option key={skill.skill_id}>
-          {skill.skill_name}
-        </option>
+        <option key={skill.skill_id}> {skill.skill_name} </option>
       )
-    })
-    // console.log(options); // debugger
-
-    let skills = this.options()
+    })    // console.log(options); // debugger
 
     return (
       <>
         <select onChange={this.handleChange} name='selectedSkill' >
           <option key='0' value=''></option>
-          {this.options()}
+            {this.options()}
         </select>
 
-           <Combobox
-        data={this.props.allSkills}
-        defaultValue='Select a Skill'
-        textField='name'
-        groupBy={service => service.service_name}
-      />
-
+        <Combobox
+          data={this.props.allSkills}
+          defaultValue='Select a Skill'
+          textField='name'
+          groupBy={service => service.service_name}
+          name='selectedSkill'
+          onChange={this.handleChange}
+        />
       </>
     );
   }
@@ -84,18 +71,15 @@ class SkillsByServiceComboBox extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    skillsByService: state.skillsByService[1],
-    allSkills: state.allSkills.allSkills,
-    // allSkills: state.allSkills.allSkills.skills[1],
-    // skillsByService: state.skillsByService
+    allSkills: state.allSkills.allSkills,   // skillsByService: state.skillsByService[1],
   };
 };
 
 const mapDispatchToProps = dispatch => {
   console.log('dispatch', fetchSkillsByService);
   return {
-    fetchSkillsByService: (service_id) => dispatch(fetchSkillsByService(service_id)),
     fetchAllSkills: () => dispatch(fetchAllSkills())
+    // fetchSkillsByService: (service_id) => dispatch(fetchSkillsByService(service_id)),
   };
 };
 
