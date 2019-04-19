@@ -4,7 +4,6 @@ import "./../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
-
 // let intro_professional = require('./../../img/provider.jpg');
 
 class Provider extends Component {
@@ -15,7 +14,6 @@ class Provider extends Component {
   render() {
     return (
       <>
-
         <div className="hair_box">
           <div className="img_intro">
             <img
@@ -26,11 +24,12 @@ class Provider extends Component {
             />
           </div>
           <div className="inner_ctnr_providers">
-            <Hair hairProviders={this.props.hairProviders} />
+            <Hair
+              hairProviders={this.props.hairProviders}
+              fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro}
+            />
           </div>
-
         </div>
-      
       </>
     );
   }
@@ -43,7 +42,9 @@ const mapStateToProps = (state, ownProps) => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProvidersByService: () => dispatch(fetchProvidersByService(1))
+    fetchProvidersByService: () => dispatch(fetchProvidersByService(1)),
+    fetchProBySvcAndBoro: borough =>
+      dispatch(fetchProvidersByService(1, borough))
   };
 };
 

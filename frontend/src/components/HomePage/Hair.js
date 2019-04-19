@@ -34,11 +34,13 @@ export const Hair = props => {
     }
   };
   return (
+
+
     <>
       <div className="hair_title">Hair</div>
       <span className="dropdown">
         <h1>Select Your Location</h1>
-        <Dropdown />
+        <Dropdown fetchProBySvcAndBoro={props.fetchProBySvcAndBoro} />
       </span>
 
       <div className="providers">{renderProviders()}</div>
