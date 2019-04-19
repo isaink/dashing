@@ -19,9 +19,9 @@ export const receivedProvidersSuccess = (providers, service_id) => {
 
 // PROVIDER BY SERVICES --> AXIOS // This is an action function that makes async calls.
 
-export const fetchProvidersByService = service_id => dispatch => {
+export const fetchProvidersByService = (service_id, borough="") => dispatch => {
   axios
-    .get(`/srvProviders/${service_id}`)
+    .get(`/srvProviders/${service_id}/${borough}`)
     .then(res => {
       let providers = res.data.data;
       return dispatch(receivedProvidersSuccess(providers, service_id)); // what is the key inside the queries...?
@@ -65,7 +65,7 @@ export const getProviderInfo = provider_id => dispatch => {
   axios.get(`/providers/${provider_id}`)
     .then(res => {
       console.log(res.data.info);
-      
+
       let provider = res.data.info;
       let action = receiveSingleProvider(provider, provider_id)
       return dispatch(action)
@@ -85,9 +85,9 @@ export const getProviderInfo = provider_id => dispatch => {
 
 export const receiveProviderServices = (services, provider_id) => {
   return {
-    type: RECEIVE_PROVIDER_SERVICES, 
+    type: RECEIVE_PROVIDER_SERVICES,
     payload: {
-      provider_id: provider_id, 
+      provider_id: provider_id,
       services: services
     }
   }
