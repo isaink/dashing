@@ -8,7 +8,7 @@ import '../Css/ComboBox.css'
 import 'react-widgets/dist/css/react-widgets.css'
 import Combobox from 'react-widgets/lib/Combobox';
 import { render } from 'react-dom';
-// import { Combobox } from 'react-widgets'   // let { Combobox } = ReactWidgets;
+
 
 class SkillsByServiceComboBox extends React.Component {
   state = {
@@ -16,8 +16,7 @@ class SkillsByServiceComboBox extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllSkills() // debugger
-    // this.props.fetchSkillsByService(1)
+    this.props.fetchAllSkills()
   }
 
   handleChange = (selectedSkill) => {
@@ -25,36 +24,13 @@ class SkillsByServiceComboBox extends React.Component {
     console.log(`Option selected:`, selectedSkill);
   }
 
-  // handleChange = (e) => {
-  //   this.setState({ [e.target.name]: e.target.value, })
-  // }
-
-  options = () => {
-    const skills = this.props.allSkills.map(skill => {
-      return (
-        <option key={skill.skill_id} value={skill.skill_id} >{skill.skill_name}</option>
-      )
-    })
-    return skills
-  }
-
   render() {
-    console.log(this.props);  console.log(this.props.skillsByService);  console.log(this.props.allSkills);  console.log(this.options());
-    console.log(this.state.selectedSkill);  // debugger
+    console.log(this.props.allSkills);
+    console.log(this.state.selectedSkill.skill_name);
 
-    let options = this.props.allSkills.map(skill => {
-      return (
-        <option key={skill.skill_id}> {skill.skill_name} </option>
-      )
-    })    // console.log(options); // debugger
 
     return (
       <>
-        <select onChange={this.handleChange} name='selectedSkill' >
-          <option key='0' value=''></option>
-            {this.options()}
-        </select>
-
         <Combobox
           data={this.props.allSkills}
           defaultValue='Select a Skill'
@@ -71,15 +47,13 @@ class SkillsByServiceComboBox extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    allSkills: state.allSkills.allSkills,   // skillsByService: state.skillsByService[1],
+    allSkills: state.allSkills.allSkills,
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  console.log('dispatch', fetchSkillsByService);
   return {
     fetchAllSkills: () => dispatch(fetchAllSkills())
-    // fetchSkillsByService: (service_id) => dispatch(fetchSkillsByService(service_id)),
   };
 };
 
