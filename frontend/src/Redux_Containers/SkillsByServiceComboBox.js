@@ -47,12 +47,8 @@ class SkillsByServiceComboBox extends React.Component {
 
 
   render() {
-    console.log(this.props);
-    console.log(this.props.skillsByService);
-    console.log(this.props.allSkills);
-
-    console.log(this.state.selectedSkill);
-    console.log(this.options());
+    console.log(this.props);  console.log(this.props.skillsByService);  console.log(this.props.allSkills);
+    console.log(this.state.selectedSkill);  console.log(this.options());
     // debugger
 
     let options = this.props.allSkills.map(skill => {
@@ -62,8 +58,7 @@ class SkillsByServiceComboBox extends React.Component {
         </option>
       )
     })
-    // console.log(options);
-    // debugger
+    // console.log(options); // debugger
 
     let skills = this.options()
 
@@ -76,22 +71,10 @@ class SkillsByServiceComboBox extends React.Component {
 
            <Combobox
         data={this.props.allSkills}
+        defaultValue='Select a Skill'
         textField='name'
         groupBy={service => service.service_name}
       />
-
-{/*
-  <Combobox busy />
-        <Combobox busy busySpinner={
-          <span className="fas fa-sync fa-spin" />
-        }/>
-
-     //    <Combobox
-     // data={options}
-     // defaultValue={options[0]}
-     // textField='name'
-   // />
-   */}
 
       </>
     );
