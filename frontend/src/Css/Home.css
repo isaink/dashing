@@ -1,12 +1,17 @@
 .homeBackground {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
+
 }
 
 
 .homeLogo {
+  width: 500px;
+  height: auto;
   z-index: 2;
-  margin-bottom: -200px;
+ padding-top: 100px;
+
+
 
 }
