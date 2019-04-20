@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 
 import './../../Css/provider.css';
 
+import { Dropdown } from "./Dropdown.js";
+
 export const Hair = props => {
   const renderProviders = () => {
     if (props.hairProviders) {
@@ -39,7 +41,13 @@ export const Hair = props => {
   };
   return (
     <>
-      {renderProviders()}
+      <div className="hair_title">Hair</div>
+      <span className="dropdown">
+        <h1>Select Your Location</h1>
+        <Dropdown fetchProBySvcAndBoro={props.fetchProBySvcAndBoro} />
+      </span>
+
+      <div className="providers">{renderProviders()}</div>
     </>
   );
 };

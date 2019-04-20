@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
+import {Home} from "./components/HomePage/Home";
+import HairContainer from "./Redux_Containers/HairContainer";
+import Provider from './React_Components/ProvidersPage/ProviderBySvc'
+
+import SkillsByServiceComboBox from './Redux_Containers/SkillsByServiceComboBox'
+import "./Css/ComboBox.css"
+
+
 import "./App.css";
 
 import Navbar from './components/NavBars/Navbar'
@@ -21,6 +29,9 @@ class App extends Component {
           <Route exact path="/profilecontainer" component={SingleProviderContainer}/>
 
         </Switch>
+        
+        <SkillsByServiceComboBox />
+
       </div>
     );
   }

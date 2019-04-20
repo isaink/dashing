@@ -22,4 +22,27 @@ const getAllProByServ = (req, res, next) => {
     });
 };
 
-module.exports = { getAllProByServ };
+const getProvBySvcAndBoro = (req, res, next) => {
+  db.any(
+    "SELECT * FROM providers WHERE service_id = ${service_id} AND borough = ${borough}", {
+      service_id: Number(req.params.id),
+      borough: req.params.location}
+  )
+  .then(data => {
+    res.status(200).json({
+      status: "Success",
+      message: "Got all providers by this service and borough",
+      data: data
+    });
+  })
+  .catch(err => {
+    res.status(400).json({
+      status: "Failure",
+      message: "Failed to get all services by this provider"
+    });
+  });
+
+}
+
+
+module.exports = { getAllProByServ, getProvBySvcAndBoro };
