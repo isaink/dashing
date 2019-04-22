@@ -44,13 +44,37 @@ export default class NavbarLogIn extends Component {
             <Link
               className="links"
               activeClass="active"
-              to="providers"
+              to="hair"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
             >
               Hair
+            </Link>
+
+            <Link
+              className="links"
+              activeClass="active"
+              to="nails"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              >
+              Nails
+            </Link>
+
+            <Link
+              className="links"
+              activeClass="active"
+              to="barber"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              >
+              Barber
             </Link>
 
             <Link
@@ -65,29 +89,7 @@ export default class NavbarLogIn extends Component {
               Makeup
             </Link>
 
-            <Link
-              className="links"
-              activeClass="active"
-              to="nails"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Nails
-            </Link>
 
-            <Link
-              className="links"
-              activeClass="active"
-              to="barber"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Barber
-            </Link>
 
             <Link
               className="links"
