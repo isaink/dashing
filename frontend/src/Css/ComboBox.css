@@ -1,0 +1,17 @@
+.ComboboxDiv {
+  /* background-color: white; */
+  display: flex;
+
+}
+
+.Combobox {
+  width: 300px;
+
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+groupBy {
+  color: red;
+}
