@@ -1,19 +1,35 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
+import LinkTo from './LinkTo';
 
 import "../../Css/Navbar.css";
 import logo from "../../photo_assets/dashing_logo.png";
 
 export default class NavbarLogIn extends Component {
+  state = {
+    hair: '',
+    nail: ''
+
+  }
   scrollToTop = () => {
     scroll.scrollToTop();
+  };
+
+  handleServHair = (e) => {
+    this.setState({
+      hair: 1
+    })
+  };
+  handleServNail = (e) => {
+    this.setState({
+      nail: 2
+    })
   };
 
   render() {
     return (
       <>
-        <div className="navbar">
+        <div className="navbar" style={{ position: 'sticky'}}>
           <span className="dashingNav">
             <h3>
               <Link to={"/"}>
@@ -32,7 +48,7 @@ export default class NavbarLogIn extends Component {
             <Link
               className="links"
               activeClass="active"
-              to="home"
+              to="home" 
               spy={true}
               smooth={true}
               offset={-70}
@@ -41,7 +57,9 @@ export default class NavbarLogIn extends Component {
               Home
             </Link>
 
+        
             <Link
+              // to={`/services/1`} try hash route and scroll
               className="links"
               activeClass="active"
               to="providers"
@@ -49,14 +67,16 @@ export default class NavbarLogIn extends Component {
               smooth={true}
               offset={-70}
               duration={500}
+              onClick={this.handleServHair}
             >
               Hair
             </Link>
-
+       
             <Link
               className="links"
               activeClass="active"
               to="makeup"
+              // to={`/services/2`}try hash route and scroll
               spy={true}
               smooth={true}
               offset={-70}
@@ -64,11 +84,12 @@ export default class NavbarLogIn extends Component {
             >
               Makeup
             </Link>
-
+  
             <Link
               className="links"
               activeClass="active"
               to="nails"
+              // to={`/services/3`} try hash route and scroll
               spy={true}
               smooth={true}
               offset={-70}
@@ -77,10 +98,13 @@ export default class NavbarLogIn extends Component {
               Nails
             </Link>
 
+
+    
             <Link
               className="links"
               activeClass="active"
               to="barber"
+              // to={`/services/3`}  try hash route and scroll
               spy={true}
               smooth={true}
               offset={-70}
@@ -88,33 +112,12 @@ export default class NavbarLogIn extends Component {
             >
               Barber
             </Link>
+    
+            <LinkTo/>
 
-            <Link
-              className="links"
-              activeClass="active"
-              to="education"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Educational Services
-            </Link>
-
-            <Link
-              className="links"
-              activeClass="active"
-              to="aboutus"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              About Us
-            </Link>
           </div>
         </div>
       </>
-    );
+    )
   }
-}
+};

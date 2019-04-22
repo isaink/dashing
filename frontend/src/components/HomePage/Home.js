@@ -7,13 +7,13 @@ import {
   scroller
 } from "react-scroll";
 
-import { ProviderProfile } from '../ProfilePage/providerProfile';
+// import { ProviderProfile } from '../ProfilePage/providerProfile';
 import { Welcome } from "./Welcome";
 import Provider from "../ProvidersPage/Provider";
-import { Education } from "./Education";
-import { AboutUs } from "./AboutUs";
+// import { Education } from "./Education";
+// import { AboutUs } from "./AboutUs";
 
-import NavbarLogIn from "./../NavBars/Navbar";
+// import NavbarLogIn from "./../NavBars/Navbar";
 
 class Home extends Component {
   componentDidMount() {
@@ -48,17 +48,13 @@ class Home extends Component {
           <Provider />
         </Element>
 
-        <Element name="education">
-          <Education />
-        </Element>
+        {/* <Element name="education"> */}
+          {/* <Education /> */}
+        {/* </Element> */}
 
-        <Element name="aboutus">
-          <AboutUs />
-        </Element>
-
-        <Element name="">
-          <ProviderProfile />
-        </Element>
+        {/* <Element name="aboutus"> */}
+          {/* <AboutUs /> */}
+        {/* </Element> */}
 
         <button onClick={this.scrollToTop}>To the top!</button>
       </>

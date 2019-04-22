@@ -7,9 +7,6 @@ import { Provider } from "react-redux";
 import store from "./Redux_Store/store.js";
 import { BrowserRouter } from "react-router-dom";
 
-// import Combobox from 'react-widgets/lib/Combobox';
-
-
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>

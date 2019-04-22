@@ -1,0 +1,8 @@
+.selector{
+    position: relative;
+    background-color: lightsalmon;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}

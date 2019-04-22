@@ -10,9 +10,10 @@
 
 .dashingNav {
   display: flex;
-  justify-content: flex-start;
-  padding-left: 25px;
-  padding-top: 12px;
+  /* justify-content: flex-start; */
+  justify-content: center;
+  /* padding-left: 25px;
+  padding-top: 12px; */
 }
 
 .links {
@@ -23,7 +24,7 @@
   margin-top: -18px;
   padding-left: 25px;
   font-size: 15px;
-  /* margin-top: -2%; */
+  margin-top: -0.5%;
 }
 
 .links a:link {

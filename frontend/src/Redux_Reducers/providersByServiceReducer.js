@@ -7,7 +7,7 @@ export const providersByServiceReducer = (state = {}, action) => {
       const { service_id, providers } = action.payload;
       newState[service_id] = providers;
       return newState;
-
+      
     default:
       return state;
   }

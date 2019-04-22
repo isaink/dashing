@@ -6,12 +6,13 @@ import './../../Css/provider.css';
 import { Dropdown } from "./Dropdown.js";
 
 export const Hair = props => {
+  
   const renderProviders = () => {
     if (props.hairProviders) {
-      return props.hairProviders.map((hairP) => {
+      return props.hairProviders.map(hairP => {
         return <>
         <div key={hairP.provider_id} className='box_provider' >
-          <Link to={`/profile`}>
+          <Link to={`/profile/:id`}>
             <div className='hair_avatar box'>
               <img
                   alt='avatar'
@@ -40,10 +41,12 @@ export const Hair = props => {
     }
   };
   return (
+
+
     <>
       <div className="hair_title">Hair</div>
       <span className="dropdown">
-        <h1>Select Your Location</h1>
+        <h1 className='location_title'>Select Your Location</h1>
         <Dropdown fetchProBySvcAndBoro={props.fetchProBySvcAndBoro} />
       </span>
 

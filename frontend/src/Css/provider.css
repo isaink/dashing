@@ -11,33 +11,40 @@ body {
 
 .hair_box {
   display: grid;
-  grid-template-columns: 40% 60%;
-  max-height: 50%;
+  grid-template-columns: 20% 80%;
+  height: 900px;
 }
 
 .img_intro {
   grid-column: 1;
-  /* height: 500px; */
+
 }
 
 .inner_ctnr_providers {
-  background-color: black;
-  height: 900px;
+  background-color: white; 
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 10% 20% 50%;
+  margin-left: 20px;
+  border-left:solid #ecb99c;
+  border-style: double;
+  padding-right: 10px;
 }
 
 .providers {
   grid-row: 3;
   grid-column: 1;
 }
-
+.location_title{
+  font-size: 14px;
+  text-align: left;
+}
 .dropdown {
   margin-top: 120px;
-  grid-column: 1;
+  grid-column: 4;
   align-content: flex-start;
 }
+
 .provider_name {
   margin: 10px;
   margin-left: 20px;
@@ -57,7 +64,7 @@ body {
   position: absolute;
   top: 220px;
   font-family: "Josefin Sans", sans-serif;
-  color: white;
+  /* color: white; */
 }
 
 .info_provider:hover {
@@ -66,21 +73,8 @@ body {
 }
 .box:hover {
   opacity: 0.5;
-  /* background: #eaab00; */
 }
 
-/* I dont using pic_avatar */
-/* .pic_avatar{
-    padding-top: 50px;
-    grid-column: 1;
-    object-fit: cover;
-    object-position: 100% 0;
-    z-index: 1;
-    background-size: cover !important;
-    transition: all 0.2s ease-in-out;
-    overflow: hidden;
-    transform: translateY(-50%);
-} */
 
 .lds-heart {
   display: inline-block;
@@ -105,9 +99,9 @@ body {
   content: " ";
   position: absolute;
   display: block;
-  width: 15px;
-  height: 15px;
-  background: #abaaaa;
+  width: 26px;
+  height: 26px;
+  background: #ce0000;
 }
 .lds-heart div:before {
   left: -17px;
@@ -140,10 +134,10 @@ body {
 
 .hair_title {
   font-family: "Mrs Saint Delafield", cursive;
-  color: white;
+  color:  black;
   font-size: 60px;
   padding-top: 100px;
-  display: flex;
+  /* display: flex; */
   justify-content: flex-start;
   padding-left: 20px;
 }

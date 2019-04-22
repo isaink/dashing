@@ -1,21 +1,16 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
-import {Home} from "./components/HomePage/Home";
-import HairContainer from "./Redux_Containers/HairContainer";
-import Provider from './React_Components/ProvidersPage/ProviderBySvc'
+import Navbar from './components/NavBars/Navbar';
+import Home from './components/HomePage/Home';
+import { Education } from './components/HomePage/Education';
+import { AboutUs } from './components/HomePage/AboutUs';
+import { ProviderProfile } from './components/ProfilePage/providerProfile';
 
-import SkillsByServiceComboBox from './Redux_Containers/SkillsByServiceComboBox'
-import "./Css/ComboBox.css"
-
+import SkillsByServiceComboBox from './Redux_Containers/SkillsByServiceComboBoxContainer';
+import SingleProviderContainer from './Redux_Containers/SingleProviderContainer';
 
 import "./App.css";
-
-import Navbar from './components/NavBars/Navbar'
-import { ProviderProfile } from "./components/providerPro/providerProfile";
-
-import Home from './components/HomePage/Home';
-import SingleProviderContainer from './Redux_Containers/SingleProviderContainer';
 
 class App extends Component {
   render() {
@@ -25,9 +20,15 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path='/services/:id' component={Home} />
+          <Route exact path='/aboutus' component={AboutUs}/>
+          <Route exact path='/educational' component={Education} />
+
           <Route exact path="/profile" component={ProviderProfile} />
           <Route exact path="/profilecontainer" component={SingleProviderContainer}/>
-
+          <Route 
+             render= { () => <h3> NOT FOUND  </h3> }
+            />
         </Switch>
         
         <SkillsByServiceComboBox />
