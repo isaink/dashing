@@ -7,11 +7,12 @@ import {
   scroller
 } from "react-scroll";
 
-import { ProviderProfile } from "../providerPro/providerProfile";
+import { ProviderProfile } from '../ProfilePage/providerProfile';
 import { Welcome } from "./Welcome";
-import Provider from "./../ProvidersPage/ProviderBySvc";
+import Provider from "../ProvidersPage/Provider";
 import { Education } from "./Education";
 import { AboutUs } from "./AboutUs";
+import SkillsByServiceComboBox from "./SkillsByServiceComboBox"
 
 import NavbarLogIn from "./../NavBars/Navbar";
 
@@ -42,6 +43,7 @@ class Home extends Component {
       <>
         <Element name="home">
           <Welcome />
+          <SkillsByServiceComboBox />
         </Element>
 
         <Element name="providers">
