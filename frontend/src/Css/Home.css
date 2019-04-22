@@ -1,0 +1,17 @@
+.homeBackground {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+
+}
+
+
+.homeLogo {
+  width: 500px;
+  height: auto;
+  z-index: 2;
+ padding-top: 100px;
+
+
+
+}
