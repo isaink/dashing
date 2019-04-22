@@ -1,41 +1,45 @@
 import React from "react";
-import "../../Css/provider.css";
+import {Link} from 'react-router-dom';
+
+import './../../Css/provider.css';
 
 import { Dropdown } from "./Dropdown.js";
 
 export const Hair = props => {
   const renderProviders = () => {
     if (props.hairProviders) {
-      return props.hairProviders.map(hairP => {
-        return (
-          <>
-            <div className="hair_avatar box">
+      return props.hairProviders.map((hairP) => {
+        return <>
+        <div key={hairP.provider_id} className='box_provider' >
+          <Link to={`/profile`}>
+            <div className='hair_avatar box'>
               <img
-                alt="avatar"
-                className="pic_hair content"
-                src={hairP.avatar}
-                style={{ height: "150px" }}
+                  alt='avatar'
+                  className='pic_hair content'
+                  src={hairP.avatar}
+                  style={{ height:'200px'}}
               />
-            <span id="providername">{hairP.provider}</span><br/>
-              {hairP.borough} <br />
-              {hairP.email} <br />
-              {hairP.phone_number} <br />
-              {hairP.website_link}
+              <span className='provider_name'>
+                {hairP.name}
+              </span>
+
+              <div className='info_provider' >
+                {hairP.email} <br/>
+                {hairP.phone_number} <br/>
+                {hairP.borough} <br/>
+                {hairP.website_link}
+              </div>
             </div>
-          </>
-        );
+          </Link>
+        </div>
+        
+        </>;
       });
     } else {
-      return (
-        <div className="lds-heart">
-          <div />
-        </div>
-      );
+      return <div className="lds-heart"><div></div></div>;
     }
   };
   return (
-
-
     <>
       <div className="hair_title">Hair</div>
       <span className="dropdown">
