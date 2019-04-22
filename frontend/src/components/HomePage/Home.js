@@ -12,6 +12,9 @@ import { Welcome } from "./Welcome";
 import Provider from "./../ProvidersPage/ProviderBySvc";
 import { Education } from "./Education";
 import { AboutUs } from "./AboutUs";
+import SkillsByServiceComboBox from "./SkillsByServiceComboBox"
+
+import NavbarLogIn from "./../NavBars/Navbar";
 
 import NavbarLogIn from "./../NavBars/Navbar";
 
@@ -41,14 +44,14 @@ class Home extends Component {
   render() {
     return (
       <>
-      <NavbarLogIn />
 
         <Element name="home">
           <Welcome />
+          <SkillsByServiceComboBox />
         </Element>
 
         <Element name="providers">
-          <Providers />
+          <Provider />
         </Element>
 
         <Element name="education">

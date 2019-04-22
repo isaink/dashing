@@ -1,3 +1,7 @@
+html {
+  background-color: black;
+}
+
 .edu_container {
   display: grid;
   grid-template-columns: 40% 60%;
@@ -10,9 +14,7 @@
 }
 
 #left_pic {
-  margin-right: 400px
-
-
+  margin-right: 400px;
 }
 
 #ed_header {
