@@ -146,7 +146,7 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 (3, 10, 30, 50, 'true'), --hair
 (10, 11, 50, 85, 'false'), --nails
 (9, 6, 30, 55, 'false'), --Nails
-(3, 9, 60, 150, 'false'), --hair
+(3, 9, 60, 150, 'false'); --hair
 
 
 
