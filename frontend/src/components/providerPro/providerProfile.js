@@ -4,12 +4,14 @@ import { withRouter } from "react-router-dom";
 
 export const ProviderProfile = props => {
   const renderProviderInfo = () => {
+
     console.log("provider info", props.providerInfo);
     if (props.providerInfo) {
       return (
         <div key={props.providerInfo.provider_id} className="providerInfo">
           <div className="provider_avatar">
             <img src={props.providerInfo.avatar} alt="" />
+
           </div>
           <div className="contact_info">
             <div className="provider_name">
@@ -28,7 +30,9 @@ export const ProviderProfile = props => {
         </div>
       );
     } else {
+
       return <div id="providerInfo">Collecting Info ... </div>;
+
     }
   };
 
@@ -50,8 +54,10 @@ export const ProviderProfile = props => {
   return (
     <>
       <h1>Provider Information</h1>
+
       <div className="render_info">{renderProviderInfo()}</div>
       <div className="render_skills">{renderProviderSkills()}</div>
+
     </>
   );
 };

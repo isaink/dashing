@@ -20,6 +20,8 @@ import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 
 import NavbarLogIn from "./../NavBars/Navbar";
 
+import NavbarLogIn from "./../NavBars/Navbar";
+
 class Home extends Component {
   componentDidMount() {
     Events.scrollEvent.register("begin", function() {
@@ -42,9 +44,11 @@ class Home extends Component {
     });
   }
 
+
   render() {
     return (
       <>
+
         <Element name="home">
           <Welcome />
           <SkillsByServiceComboBox />
