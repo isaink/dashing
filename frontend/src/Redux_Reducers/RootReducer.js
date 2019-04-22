@@ -1,6 +1,5 @@
 import { combineReducers } from "redux";
 import { providersByServiceReducer } from './providersByServiceReducer';
-import { skillsByServiceReducer } from './skillsByServiceReducer';
 import { allSkillsReducer } from './allSkillsReducer';
 import { singleProviderReducer } from './singleProviderReducer';
 

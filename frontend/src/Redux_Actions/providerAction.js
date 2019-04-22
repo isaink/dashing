@@ -30,19 +30,6 @@ export const fetchProvidersByService = (service_id, borough="") => dispatch => {
     });
 };
 
-// // PROVIDER BY BOROUGH AND TYPE OF SERVICE 
-// export const fetchProvBoroServ = (service_id, borough="") => dispatch => {
-//   axios
-//     .get(`/srvProviders/${service_id}/${borough}`)
-//     .then(res => {
-//       let providers = res.data.data;
-//       return dispatch(receivedProvidersSuccess(providers, service_id)); 
-//     })
-//     .catch(err => {
-//       return dispatch(fetchErrors(err));
-//     });
-// };
-
 export const fetchErrors = err => {
   return {
     type: FETCH_ERROR,
