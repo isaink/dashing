@@ -6,9 +6,7 @@ import "./App.css";
 import Navbar from "./components/NavBars/Navbar";
 import Home from "./components/HomePage/Home";
 
-import {ProviderProfile} from './components/providerPro/providerProfile';
-
-
+import { ProviderProfile } from "./components/providerPro/providerProfile";
 
 import SingleProviderContainer from "./Redux_Containers/SingleProviderContainer";
 
@@ -24,8 +22,7 @@ class App extends Component {
             component={SingleProviderContainer}
           />
 
-          <Route exact path="/profile" component={ProviderProfile}/>
-
+          <Route exact path="/profile" component={ProviderProfile} />
         </Switch>
       </div>
     );

@@ -18,9 +18,7 @@ import { Education } from "./Education";
 import { AboutUs } from "./AboutUs";
 import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 
-import NavbarLogIn from "./../NavBars/Navbar";
-
-import NavbarLogIn from "./../NavBars/Navbar";
+import Navbar from "./../NavBars/Navbar";
 
 class Home extends Component {
   componentDidMount() {
@@ -48,6 +46,7 @@ class Home extends Component {
   render() {
     return (
       <>
+      <Navbar/>
 
         <Element name="home">
           <Welcome />
