@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Hair } from "../HomePage/Hair";
+import  Hair  from "../HomePage/Hair";
 import "./../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";

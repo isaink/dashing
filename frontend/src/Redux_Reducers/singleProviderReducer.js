@@ -13,22 +13,10 @@ export const singleProviderReducer = (state = {}, action) => {
 
         case RECEIVE_PROVIDER_SERVICES:
             const { services } = action.payload;
-            newState['services'] = services ; 
+            newState['services'] = services ;
             return newState
 
         default:
         return state;
     }
 };
-
-// export const providerServicesReducer = (state = {}, action) => {
-//     const newState = {...state};
-//     switch (action.type) {
-//         case RECEIVE_PROVIDER_SERVICES:
-//         const {services, provider_id} =
-//         action.payload;
-//         newState [provider_id] = provider_id,
-//                 [services] = services ;
-//         return newState
-//     }
-// }

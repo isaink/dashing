@@ -1,14 +1,17 @@
 import React from "react";
+import { withRouter, Link } from "react-router-dom"
 import "../../Css/provider.css";
 
 import { Dropdown } from "./Dropdown.js";
 
-export const Hair = props => {
+const Hair = props => {
   const renderProviders = () => {
     if (props.hairProviders) {
       return props.hairProviders.map(hairP => {
+      
         return (
           <>
+          <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
             <div className="hair_avatar box">
               <img
                 alt="avatar"
@@ -22,6 +25,7 @@ export const Hair = props => {
               {hairP.phone_number} <br />
               {hairP.website_link}
             </div>
+          </Link>
           </>
         );
       });
@@ -47,3 +51,5 @@ export const Hair = props => {
     </>
   );
 };
+
+export default withRouter(Hair)

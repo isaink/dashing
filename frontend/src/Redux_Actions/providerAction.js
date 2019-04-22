@@ -31,18 +31,6 @@ export const fetchProvidersByService = (service_id, borough="") => dispatch => {
     });
 };
 
-// export const getProviderInfoForProfile = provider_id => dispatch => {
-//   axios
-//     .get(`/providers/${provider_id}`)
-//     .then(res => {
-//         let provider = res.data.body;
-//         let action = receiveSingleProvider(provider)
-//         return dispatch(action)
-//     })
-//     .catch(err => {
-//       return dispatch(fetchErrors(err));
-//     });
-// }
 
 export const fetchErrors = err => {
   return {
@@ -92,16 +80,3 @@ export const receiveProviderServices = (services, provider_id) => {
     }
   }
 }
-
-
-// export const getProviderServices = provider_id => dispatch => {
-//   axios.get(`/providers/services/${provider_id}`)
-//   .then(res => {
-//     let services = res.data.info;
-//     let action = receiveProviderServices(services, provider_id)
-//     return dispatch(action)
-//   })
-//   .catch(err => {
-//     return dispatch(fetchErrors(err));
-//   })
-// }
