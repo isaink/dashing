@@ -6,30 +6,30 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
 import { Dropdown } from "./Dropdown.js";
 
-class Hair extends React.Component {
+class Makeup extends React.Component {
   componentDidMount() {
     this.props.fetchProvidersByService();
   }
 
   renderProviders = () => {
-    if (this.props.hairProviders) {
-      return this.props.hairProviders.map(hairP => {
+    if (this.props.makeupProviders) {
+      return this.props.makeupProviders.map(makeupP => {
         return (
           <>
-            <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
-              <div className="hair_avatar box">
+            <Link to={`/singleProviderProfile/${makeupP.provider_id}`}>
+              <div className="makeup_avatar box">
                 <img
                   alt="avatar"
-                  className="pic_hair content"
-                  src={hairP.avatar}
+                  className="pic_makeup content"
+                  src={makeupP.avatar}
                   style={{ height: "150px" }}
                 />
-                <span id="providername">{hairP.provider}</span>
+                <span id="providername">{makeupP.provider}</span>
                 <br />
-                {hairP.borough} <br />
-                {hairP.email} <br />
-                {hairP.phone_number} <br />
-                {hairP.website_link}
+                {makeupP.borough} <br />
+                {makeupP.email} <br />
+                {makeupP.phone_number} <br />
+                {makeupP.website_link}
               </div>
             </Link>
           </>
@@ -47,13 +47,13 @@ class Hair extends React.Component {
   render() {
     return (
       <>
-        <div className="hair_title">Hair</div>
+        <div className="makeup_title">Makeup</div>
         <span className="dropdown">
           <h1>Select Your Location</h1>
           <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
         </span>
 
-        <div className="hair_box">
+        <div className="makeup_box">
           <div className="img_intro">
             <img
               alt="intro"
@@ -73,18 +73,18 @@ class Hair extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    hairProviders: state.providersByService[1]
+    makeupProviders: state.providersByService[4]
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProvidersByService: () => dispatch(fetchProvidersByService(1)),
+    fetchProvidersByService: () => dispatch(fetchProvidersByService(4)),
     fetchProBySvcAndBoro: borough =>
-      dispatch(fetchProvidersByService(1, borough))
+      dispatch(fetchProvidersByService(4, borough))
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Hair);
+)(Makeup);

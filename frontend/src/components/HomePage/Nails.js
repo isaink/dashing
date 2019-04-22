@@ -6,30 +6,29 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
 import { Dropdown } from "./Dropdown.js";
 
-class Hair extends React.Component {
+class Nails extends React.Component {
   componentDidMount() {
     this.props.fetchProvidersByService();
   }
-
   renderProviders = () => {
-    if (this.props.hairProviders) {
-      return this.props.hairProviders.map(hairP => {
+    if (this.props.nailProviders) {
+      return this.props.nailProviders.map(nailP => {
         return (
           <>
-            <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
+            <Link to={`/singleProviderProfile/${nailP.provider_id}`}>
               <div className="hair_avatar box">
                 <img
                   alt="avatar"
                   className="pic_hair content"
-                  src={hairP.avatar}
+                  src={nailP.avatar}
                   style={{ height: "150px" }}
                 />
-                <span id="providername">{hairP.provider}</span>
+                <span id="providername">{nailP.provider}</span>
                 <br />
-                {hairP.borough} <br />
-                {hairP.email} <br />
-                {hairP.phone_number} <br />
-                {hairP.website_link}
+                {nailP.borough} <br />
+                {nailP.email} <br />
+                {nailP.phone_number} <br />
+                {nailP.website_link}
               </div>
             </Link>
           </>
@@ -47,25 +46,13 @@ class Hair extends React.Component {
   render() {
     return (
       <>
-        <div className="hair_title">Hair</div>
+        <div className="hair_title">Nails</div>
         <span className="dropdown">
           <h1>Select Your Location</h1>
           <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
         </span>
 
-        <div className="hair_box">
-          <div className="img_intro">
-            <img
-              alt="intro"
-              src="http://fashionbombdaily.com/wp-content/uploads/2016/08/fashion-bomb-daily-Kat-Morgan-Cardi-B-17.jpg"
-              width="600px"
-              height="auto"
-            />
-          </div>
-          <div className="inner_ctnr_providers">
-            <div className="providers">{this.renderProviders()}</div>
-          </div>
-        </div>
+        <div className="providers">{this.renderProviders()}</div>
       </>
     );
   }
@@ -73,18 +60,18 @@ class Hair extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    hairProviders: state.providersByService[1]
+    nailProviders: state.providersByService[2]
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProvidersByService: () => dispatch(fetchProvidersByService(1)),
+    fetchProvidersByService: () => dispatch(fetchProvidersByService(2)),
     fetchProBySvcAndBoro: borough =>
-      dispatch(fetchProvidersByService(1, borough))
+      dispatch(fetchProvidersByService(2, borough))
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Hair);
+)(Nails);

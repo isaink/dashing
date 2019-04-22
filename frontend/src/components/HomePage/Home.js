@@ -9,14 +9,16 @@ import {
 
 import { ProviderProfile } from "../providerPro/providerProfile";
 import { Welcome } from "./Welcome";
-import Provider from "./../ProvidersPage/ProviderBySvc";
+import Hair from "./Hair";
+import Nails from "./Nails";
+import Barber from "./Barber";
+import Makeup from "./Makeup";
+
 import { Education } from "./Education";
 import { AboutUs } from "./AboutUs";
-import SkillsByServiceComboBox from "./SkillsByServiceComboBox"
+import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 
-import NavbarLogIn from "./../NavBars/Navbar";
-
-import NavbarLogIn from "./../NavBars/Navbar";
+import Navbar from "./../NavBars/Navbar";
 
 class Home extends Component {
   componentDidMount() {
@@ -44,14 +46,27 @@ class Home extends Component {
   render() {
     return (
       <>
+      <Navbar/>
 
         <Element name="home">
           <Welcome />
           <SkillsByServiceComboBox />
         </Element>
 
-        <Element name="providers">
-          <Provider />
+        <Element name="hair">
+          <Hair />
+        </Element>
+
+        <Element name="nails">
+          <Nails />
+        </Element>
+
+        <Element name="barber">
+          <Barber />
+        </Element>
+
+        <Element name="makeup">
+          <Makeup />
         </Element>
 
         <Element name="education">
