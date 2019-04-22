@@ -4,9 +4,22 @@ import { connect } from "react-redux";
 import { getProviderInfo } from "../Redux_Actions/providerAction";
 
 class SingleProviderContainer extends React.Component {
+
   componentDidMount() {
     this.props.getProviderInfo(this.props.match.params.id);
   }
+
+  
+    render() {
+        console.log('props in render', this.props);
+        return(
+            <>
+            <ProviderInfo providerInfo={this.props.providerInfo} />
+            </>
+        )
+    }
+};
+
 
   render() {
     console.log("props in render", this.props);
