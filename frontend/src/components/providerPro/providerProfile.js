@@ -12,7 +12,7 @@ export const ProviderProfile = props => {
       return (
         <div key={props.providerInfo.provider_id} className="providerInfo">
           <div >
-            <img className="provider_avatar" style={{ height: '400px'}} src={props.providerInfo.avatar} alt="" />
+            <img className="provider_avatar" style={{ height: '400'}} src={props.providerInfo.avatar} alt="" />
 
           </div>
           <div className="contact_info">
@@ -47,7 +47,8 @@ export const ProviderProfile = props => {
   };
 
   const renderProviderSkills = () => {
-    // console.log("skills section:", props.providerInfo.services);
+    // if(props.providerInfo.services)
+    // {console.log("skills section:", props.providerInfo.services[0].skills)};
 
     // let skills = props.providerInfo.services.map((skill, i)=>{
     //   return(
