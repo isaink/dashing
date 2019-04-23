@@ -2,6 +2,7 @@ import React from "react";
 import "./../../Css/porfolio.css";
 import { withRouter } from "react-router-dom";
 import NavbarProfile  from "../NavBars/NavbarProfile";
+import "../../Css/providerProfile.css"
 
 export const ProviderProfile = props => {
   const renderProviderInfo = () => {
@@ -10,8 +11,8 @@ export const ProviderProfile = props => {
     if (props.providerInfo) {
       return (
         <div key={props.providerInfo.provider_id} className="providerInfo">
-          <div className="provider_avatar">
-            <img src={props.providerInfo.avatar} alt="" />
+          <div >
+            <img className="provider_avatar" style={{ height: '400px'}} src={props.providerInfo.avatar} alt="" />
 
           </div>
           <div className="contact_info">
@@ -27,6 +28,14 @@ export const ProviderProfile = props => {
             <div className="provider_email">
               <p>Email: {props.providerInfo.email}</p>
             </div>
+              <div className='skills'>
+                {props.providerInfo.services && props.providerInfo.services.map(service => {
+                  return (
+                    <p>{service.servicesname}</p>
+                  )
+                })}
+              </div>
+
           </div>
         </div>
       );
