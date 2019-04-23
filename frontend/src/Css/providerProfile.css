@@ -1,11 +1,11 @@
 .providerInfo{
-
+color: white; 
 };
 
 .provider_avatar{
   height: 400px;
 };
-.contact_info{
+/* .contact_info{
 
 };
 .provider_name{
@@ -19,4 +19,4 @@
 };
 .provider_email{
 
-};
+}; */

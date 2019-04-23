@@ -29,12 +29,31 @@ export const ProviderProfile = props => {
               <p>Email: {props.providerInfo.email}</p>
             </div>
               <div className='skills'>
+
+               
                 {props.providerInfo.services && props.providerInfo.services.map(service => {
+                let skills = service.skills.map(skill => {
                   return (
+                    <li>
+                      {skill}
+                    </li>
+                  )
+                })
+                  return (
+                    <>
                     <p>{service.servicesname}</p>
+                    <ul>
+                      {skills}
+                    </ul>
+                    </>
                   )
                 })}
+              
               </div>
+
+
+
+
 
           </div>
         </div>
@@ -47,7 +66,7 @@ export const ProviderProfile = props => {
   };
 
   const renderProviderSkills = () => {
-    // if(props.providerInfo.services)
+   
     // {console.log("skills section:", props.providerInfo.services[0].skills)};
 
     // let skills = props.providerInfo.services.map((skill, i)=>{
