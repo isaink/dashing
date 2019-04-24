@@ -3,12 +3,41 @@ import { withRouter, Link } from "react-router-dom";
 import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
+// import { fetchSkillsByService } from "../../Redux_Actions/comboBoxAction";
+import { fetchAllSkillsForSingleService } from '../../Redux_Actions/comboBoxAction';
+
 
 import { Dropdown } from "./Dropdown.js";
 
+import { ComboBox } from "./ComboBox.js";
+import SkillsByServiceComboBox from "./SkillsByServiceComboBox.js";
+
+import axios from 'axios';
+
 class Hair extends React.Component {
+  state = {
+    skills: []
+  }
   componentDidMount() {
     this.props.fetchProvidersByService();
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if (!prevProps.hairProviders && this.props.hairProviders) {
+      this.getSkillsForService();
+    }
+  }
+
+  getSkillsForService = () => {
+    axios.get(`/services/skills/1`)
+    .then(res => {
+      this.setState({
+        skills: res.data.data
+      })
+    })
+    .catch(err => {
+      console.log('GET SKILLS ERR', err);
+    })
   }
 
   renderProviders = () => {
@@ -45,12 +74,21 @@ class Hair extends React.Component {
   };
 
   render() {
+    console.log('HAIR STATE', this.state)
     return (
       <>
         <div className="hair_title">Hair</div>
         <span className="dropdown">
           <h1>Select Your Location</h1>
           <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+        </span>
+
+        <span className="combobox">
+          <ComboBox fetchProviderByServiceAndSkill={this.state.skills} />
+        </span>
+
+        <span className="">
+          <SkillsByServiceComboBox fetchProviderByServiceAndSkill={this.props.fetchProviderByServiceAndSkill}  />
         </span>
 
         <div className="hair_box">
@@ -73,14 +111,24 @@ class Hair extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    hairProviders: state.providersByService[1]
+    hairProviders: state.providersByService[1],
+    // service_skills: state.comments.service_to_skills_map[1],
+
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
     fetchProvidersByService: () => dispatch(fetchProvidersByService(1)),
     fetchProBySvcAndBoro: borough =>
-      dispatch(fetchProvidersByService(1, borough))
+      dispatch(fetchProvidersByService(1, borough)),
+
+      fetchAllSkillsForSingleService: (service_id) => dispatch( fetchAllSkillsForSingleService(1)),
+
+
+    // fetchProviderByServiceAndSkill: skill =>
+    //   dispatch(fetchProvidersByService(1, skill)),
+
+
   };
 };
 

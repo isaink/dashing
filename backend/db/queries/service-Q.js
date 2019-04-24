@@ -43,6 +43,7 @@ const getServiceById = (req, res, next) => {
   })
 }
 
+// router.get('services/skills/:service_id', db.getSkillsByServiceId );     // http://localhost:3100/services/:service_id
 const getSkillsByServiceId = (req, res, next) => {
   let serviceId = parseInt(req.params.service_id);
   db.any(
@@ -77,11 +78,36 @@ const getAllSkillsJoinService = (req, res, next) => {
     .catch(err => next(err));
 };
 
+// router.get("/:service_id/:skill", db.getProvidersByServiceAndSkill)
+const getProvidersByServiceAndSkill= (req, res, next) => {
+  db.any(
+    "SELECT *, providers.name provider_name, services.name service_name, skills.name skill_name, skills.id skill_id FROM providers JOIN services ON services.id = providers.service_id JOIN skills ON skills.service_id=services.id WHERE services.id = ${service_id} AND skills.id = ${skill_id}", {
+      service_id: Number(req.params.service_id),
+      skill: Number(req.params.skill)
+    }
+  )
+  .then(data => {
+    res.status(200).json({
+      status: "Success",
+      message: "Got all providers by this service and skill",
+      data: data
+    });
+  })
+  .catch(err => {
+    res.status(400).json({
+      status: "Failure",
+      message: "Failed to get all services/skills by this provider"
+    });
+  });
+
+}
+
 
 
 module.exports = {
   getAllServices,
   getServiceById,
   getSkillsByServiceId,
-  getAllSkillsJoinService
+  getAllSkillsJoinService,
+  getProvidersByServiceAndSkill
 }

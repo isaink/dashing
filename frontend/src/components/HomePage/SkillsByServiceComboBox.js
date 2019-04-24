@@ -35,7 +35,7 @@ class SkillsByServiceComboBox extends React.Component {
             data={this.props.allSkills}
             defaultValue='Select a Skill'
             textField='name'
-            groupBy={service => service.service_name}
+            groupBy={service => service.service_name.toUpperCase()}
             name='selectedSkill'
             onChange={this.handleChange}
             className='Combobox'

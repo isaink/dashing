@@ -1,33 +1,27 @@
-import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import React from "react";
 
-// import Combobox from 'react-widgets/lib/Combobox'
+export const ComboBox = props => {
 
+  // const renderSkills = () => {
+  //   if (props.fetchProviderByServiceAndSkill.length) {
+  //     return props.fetchProviderByServiceAndSkill.map(skill => {
+  //       return <option>{skill.skill_name}</option>;
+  //     });
+  //   }
+  // };
 
-class ComboBox extends Component {
-  constructor() {
-    super()
-    this.state = {
-
-    }
-
-  }
-
-  componentDidMount() {
-
-  }
-
-  render() {
-    return (
-
-      <>
-
-
-
-      </>
-    );
-  }
+const handleBoroChange = event => {
+  let skill = event.target.value
+  props.fetchProviderByServiceAndSkill(skill)
 
 }
-
-export default ComboBox;
+  return (
+    <div>
+      <select onChange={handleBoroChange}>
+        {props.fetchProviderByServiceAndSkill.length !== 0 && ['', ...props.fetchProviderByServiceAndSkill].map(skill => (
+          <option>{skill.skill_name}</option>
+        ))}
+      </select>
+    </div>
+  );
+};
