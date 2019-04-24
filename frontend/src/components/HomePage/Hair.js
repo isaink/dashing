@@ -16,16 +16,18 @@ class Hair extends React.Component {
     if (this.props.hairProviders) {
       return this.props.hairProviders.map(hairP => {
         return (
-          <>
+          <>  
+        
             <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
-              <div className="box ">
-              <div className="content">
+            <div>
+            <div>
                 <img
                     alt="avatar"
                     className='hvrbox-layer_bottom'
                     src={hairP.avatar}
                     style={{ height: "150px", display: 'block'}}
                   />
+                
                   <div className='hvrbox-layer_top'>
                     <div className='hvrbox-text'>
                     <span id="providername" className='ih-fade-down ih-delay-sm'>{hairP.provider}</span>

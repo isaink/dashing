@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./../../Css/Dropdown.css";
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './../../Css/Dropdown.css';
 
 import "../../Css/Dropdown.css";
 
