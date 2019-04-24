@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
+import LinkTo from './LinkTo';
 
 import "../../Css/Navbar.css";
 import logo from "../../photo_assets/dashing_logo.png";
@@ -10,10 +10,21 @@ export default class Navbar extends Component {
     scroll.scrollToTop();
   };
 
+  handleServHair = (e) => {
+    this.setState({
+      hair: 1
+    })
+  };
+  handleServNail = (e) => {
+    this.setState({
+      nail: 2
+    })
+  };
+
   render() {
     return (
       <>
-        <div className="navbar">
+        <div className="navbar" style={{ position: 'sticky'}}>
           <span className="dashingNav">
             <h3>
               <Link to={"/"}>
@@ -32,7 +43,7 @@ export default class Navbar extends Component {
             <Link
               className="links"
               activeClass="active"
-              to="home"
+              to="home" 
               spy={true}
               smooth={true}
               offset={-70}
@@ -41,7 +52,9 @@ export default class Navbar extends Component {
               Home
             </Link>
 
+        
             <Link
+              // to={`/services/1`} try hash route and scroll
               className="links"
               activeClass="active"
               to="hair"
@@ -49,10 +62,11 @@ export default class Navbar extends Component {
               smooth={true}
               offset={-70}
               duration={500}
+              onClick={this.handleServHair}
             >
               Hair
             </Link>
-
+       
             <Link
               className="links"
               activeClass="active"
@@ -64,7 +78,7 @@ export default class Navbar extends Component {
               >
               Nails
             </Link>
-
+  
             <Link
               className="links"
               activeClass="active"
@@ -77,6 +91,8 @@ export default class Navbar extends Component {
               Barber
             </Link>
 
+
+    
             <Link
               className="links"
               activeClass="active"
@@ -88,10 +104,12 @@ export default class Navbar extends Component {
             >
               Makeup
             </Link>
+    
+            <LinkTo/>
 
 
 
-            <Link
+            {/* <Link
               className="links"
               activeClass="active"
               to="education"
@@ -113,10 +131,10 @@ export default class Navbar extends Component {
               duration={500}
             >
               About Us
-            </Link>
+            </Link> */}
           </div>
         </div>
       </>
-    );
+    )
   }
-}
+};

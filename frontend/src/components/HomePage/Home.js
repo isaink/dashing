@@ -7,16 +7,14 @@ import {
   scroller
 } from "react-scroll";
 
-import { ProviderProfile } from "../providerPro/providerProfile";
+// import { ProviderProfile } from '../ProfilePage/providerProfile';
 import { Welcome } from "./Welcome";
 import Hair from "./Hair";
 import Nails from "./Nails";
 import Barber from "./Barber";
 import Makeup from "./Makeup";
 
-import { Education } from "./Education";
-import { AboutUs } from "./AboutUs";
-import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
+import './../../Css/Home.css'
 
 import Navbar from "./../NavBars/Navbar";
 
@@ -36,7 +34,7 @@ class Home extends Component {
 
   scrollTo() {
     scroller.scrollTo("scroll-to-element", {
-      duration: 200,
+      duration: 300,
       delay: 0,
       smooth: "easeInOutQuart"
     });
@@ -47,39 +45,41 @@ class Home extends Component {
     return (
       <>
       <Navbar/>
+      <a href="top" id="toTop" className="cd-top text--replace js-cd-top" >Top</a>
 
         <Element name="home">
           <Welcome />
-          <SkillsByServiceComboBox />
+         
         </Element>
 
         <Element name="hair">
           <Hair />
+          
+       
         </Element>
 
         <Element name="nails">
           <Nails />
+          {/* <button onClick={this.scrollToTop}>To the top!</button> */}
         </Element>
 
         <Element name="barber">
           <Barber />
+          {/* <button onClick={this.scrollToTop}>To the top!</button> */}
         </Element>
 
         <Element name="makeup">
           <Makeup />
+          <button onClick={this.scrollToTop}>To the top!</button> 
         </Element>
 
-        <Element name="education">
-          <Education />
-        </Element>
+//         <Element name="education">
+//           <Education />
+//         </Element>
 
-        <Element name="aboutus">
-          <AboutUs />
-        </Element>
-
-
-
-        <button onClick={this.scrollToTop}>To the top!</button>
+//         <Element name="aboutus">
+//           <AboutUs />
+//         </Element>
       </>
     );
   }

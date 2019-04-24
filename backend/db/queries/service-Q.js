@@ -1,6 +1,5 @@
 const  db  = require('../connector.js');
 
-
 const getAllServices = (req, res, next) => {
   db.any('SELECT * FROM services')
   .then(services => {
@@ -19,8 +18,7 @@ const getAllServices = (req, res, next) => {
     })
     next();
   })
-}
-
+};
 
 const getServiceById = (req, res, next) => {
   let serviceId = parseInt(req.params.service_id);
