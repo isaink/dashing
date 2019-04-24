@@ -4,33 +4,38 @@ import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
+import nailsPic from "../../photo_assets/nails.jpg";
+
 import { Dropdown } from "./Dropdown.js";
 
 class Nails extends React.Component {
   componentDidMount() {
     this.props.fetchProvidersByService();
   }
+
   renderProviders = () => {
     if (this.props.nailProviders) {
       return this.props.nailProviders.map(nailP => {
         return (
           <>
+          <div className="pageContainer">
             <Link to={`/singleProviderProfile/${nailP.provider_id}`}>
-              <div className="hair_avatar box">
+              <div className="makeup_avatar box">
                 <img
                   alt="avatar"
-                  className="pic_hair content"
+                  className="pic_makeup content"
                   src={nailP.avatar}
-                  style={{ height: "150px" }}
+                  style={{ height: "200px" }}
                 />
-                <span id="providername">{nailP.provider}</span>
+              <div id="providername">{nailP.provider}</div>
                 <br />
                 {nailP.borough} <br />
-                {nailP.email} <br />
-                {nailP.phone_number} <br />
-                {nailP.website_link}
+              {nailP.email} <br />
+            {nailP.phone_number} <br />
+          {nailP.website_link}
               </div>
             </Link>
+          </div>
           </>
         );
       });
@@ -46,13 +51,25 @@ class Nails extends React.Component {
   render() {
     return (
       <>
-        <div className="hair_title">Nails</div>
+        <div className="makeup_title">Nails</div>
         <span className="dropdown">
           <h1>Select Your Location</h1>
           <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
         </span>
 
-        <div className="providers">{this.renderProviders()}</div>
+        <div className="makeup_box">
+          <div className="img_intro">
+            <img
+              alt="intro"
+              src={nailsPic}
+              width="600px"
+              height="auto"
+            />
+          </div>
+          <div className="inner_ctnr_providers">
+            <div className="providers">{this.renderProviders()}</div>
+          </div>
+        </div>
       </>
     );
   }

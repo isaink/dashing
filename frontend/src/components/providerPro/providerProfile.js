@@ -54,7 +54,7 @@ export const ProviderProfile = props => {
   };
   return (
     <>
-    
+
       <h1>Provider Information</h1>
 
       <div className="render_info">{renderProviderInfo()}</div>

@@ -77,9 +77,7 @@ class Home extends Component {
           <AboutUs />
         </Element>
 
-        <Element name="">
-          <ProviderProfile />
-        </Element>
+
 
         <button onClick={this.scrollToTop}>To the top!</button>
       </>
