@@ -40,38 +40,42 @@ class Home extends Component {
     });
   }
 
-
   render() {
     return (
       <>
-      <Navbar/>
-      <a href="top" id="toTop" className="cd-top text--replace js-cd-top" >Top</a>
-
+        <Navbar />
+        <a href="top" id="toTop" className="cd-top text--replace js-cd-top">
+          Top
+        </a>
         <Element name="home">
           <Welcome />
-         
         </Element>
-
         <Element name="hair">
           <Hair />
-          
-       
         </Element>
-
         <Element name="nails">
           <Nails />
           {/* <button onClick={this.scrollToTop}>To the top!</button> */}
         </Element>
-
         <Element name="barber">
           <Barber />
           {/* <button onClick={this.scrollToTop}>To the top!</button> */}
         </Element>
-
         <Element name="makeup">
           <Makeup />
-          <button onClick={this.scrollToTop}>To the top!</button> 
+          <button onClick={this.scrollToTop}>To the top!</button>
         </Element>
+        //{" "}
+        <Element name="education">
+          <Education />
+          {" "}
+        </Element>
+        //{" "}
+        <Element name="aboutus">
+          <AboutUs />
+          {" "}
+        </Element>
+<<<<<<< HEAD
 
         <Element name="education">
             <Education />
@@ -80,6 +84,8 @@ class Home extends Component {
          <Element name="aboutus">
           <AboutUs />
          </Element>
+=======
+>>>>>>> bece07924e08cefca41fa0801dbbfc29219dfa26
       </>
     );
   }
