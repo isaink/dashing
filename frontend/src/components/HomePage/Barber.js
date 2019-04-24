@@ -68,9 +68,9 @@ class Barber extends React.Component {
             </div>
 
             <div className="inner_ctnr_providers">
-              <div className="title">B a r b e r</div>
+              <div className="title">Barber</div>
               <hr />
-            
+
               <span className="dropdown">
                 <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
                 <SkillsByServiceComboBox />

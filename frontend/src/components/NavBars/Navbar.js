@@ -36,8 +36,7 @@ export default class Navbar extends Component {
               smooth={true}
               offset={-70}
               duration={500}
-            >
-              Home
+            >Home
             </Link>
 
             <Link
