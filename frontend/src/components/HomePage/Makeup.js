@@ -1,17 +1,16 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-
+import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import makeupPic from "../../photo_assets/makeup.jpg";
-
 import { Dropdown } from "./Dropdown.js";
 
 class Makeup extends React.Component {
   componentDidMount() {
     this.props.fetchProvidersByService();
-  }
+  };
 
   renderProviders = () => {
     if (this.props.makeupProviders) {
@@ -19,10 +18,10 @@ class Makeup extends React.Component {
         return (
           <>
             <Link to={`/singleProviderProfile/${makeupP.provider_id}`}>
-              <div className="makeup_avatar box">
+              <div className="box">
                 <img
                   alt="avatar"
-                  className="pic_makeup content"
+                  className="content"
                   src={makeupP.avatar}
                   style={{ height: "150px" }}
                 />
@@ -39,23 +38,17 @@ class Makeup extends React.Component {
       });
     } else {
       return (
-        <div className="lds-heart">
-          <div />
-        </div>
-      );
+        <div className="lds-heart"><div></div></div>
+      )
     }
   };
 
   render() {
     return (
       <>
-        <div className="makeup_title">Makeup</div>
-        <span className="dropdown">
-          <h1>Select Your Location</h1>
-          <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-        </span>
+      <div className='ctnr_prov'>
 
-        <div className="makeup_box">
+        <div className="ctnr_box">
           <div className="img_intro">
             <img
               alt="intro"
@@ -64,10 +57,22 @@ class Makeup extends React.Component {
               height="auto"
             />
           </div>
+
           <div className="inner_ctnr_providers">
-            <div className="providers">{this.renderProviders()}</div>
+            <div className="title">M a k e u p</div>
+            <hr />
+
+            <span className="dropdown">
+              <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+              <SkillsByServiceComboBox />
+            </span>
+
+              <div className="providers">
+                <div className="prov">{this.renderProviders()}</div>
+              </div>
           </div>
         </div>
+      </div>
       </>
     );
   }

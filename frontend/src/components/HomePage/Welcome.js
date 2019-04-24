@@ -9,10 +9,13 @@ import homeLogo from "../../photo_assets/dashing_logo_invert.png";
 
 export const Welcome = () => {
   return (
-    <>
-      <img src={homeLogo} alt="" className="homeLogo" />
+    <>  
+      <div className='bg_welcome'>
+        <img src={homeLogo} alt="" className="homeLogo" />
 
-      <img src={bk_img} alt="" className="homeBackground" />
+        <img src={bk_img} alt="" className="homeBackground" />
+      </div>
+      
     </>
   );
 };
