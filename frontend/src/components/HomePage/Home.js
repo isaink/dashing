@@ -15,6 +15,7 @@ import Barber from "./Barber";
 import Makeup from "./Makeup";
 import {Education} from "./Education"
 import {AboutUs} from "./AboutUs"
+//test//
 
 import "./../../Css/Home.css";
 
