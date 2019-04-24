@@ -108,9 +108,6 @@ VALUES('Nielene Keys', 'nkeys@gmail.com', 'nkeys', 'https://i0.wp.com/ranktribe.
 ('Dianna Rossman', 'drnails@gmail.com', 'drnails', 'https://i.pinimg.com/736x/ce/71/ca/ce71ca421ed47b5d9e22b9b36a7486d7--pretty-people-beautiful-people.jpg', 'Manhattan', '646-769-2000', 'www.drnails.com', 'Nails and all the works!', 2);
 
 
-
--- https://pmcvariety.files.wordpress.com/2015/11/tessa-thompson-creed-q-and-a.jpg?w=1000&h=563&crop=1
-
 INSERT INTO services_provider(service_id, provider_id)
 VALUES(1,1), (2,1), (2,2), (4,2), (3,3), (4,4), (1,4), (1,5), (3,5), (2,14), (2,11), (1,11), (1,10), (1,9), (3,7), (2,4), (3,8), (1,8), (2,6), (1,6), (4,13), (1,14), (1,12), (3,12);
 
@@ -146,7 +143,8 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 (3, 10, 30, 50, 'true'), --hair
 (10, 11, 50, 85, 'false'), --nails
 (9, 6, 30, 55, 'false'), --Nails
-(3, 9, 60, 150, 'false');  --hair
+(3, 9, 60, 150, 'false'); --hair
+
 
 
 

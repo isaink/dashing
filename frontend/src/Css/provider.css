@@ -1,38 +1,40 @@
 body {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 12px
+  font-size: 12px;
+}
 
+.pageContainer {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  object-fit: cover;
+  height: 1000px;
 }
 
 #providername {
-  font-size: 15;
+  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
   font-weight: 400;
 }
 
-.hair_box {
-  display: grid;
-  grid-template-columns: 40% 60%;
-  max-height: 50%;
-}
-
-.img_intro {
+.img_intro{
   grid-column: 1;
-  /* height: 500px; */
-}
-
-.inner_ctnr_providers {
-  background-color: black;
-  height: 900px;
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 10% 20% 50%;
 }
 
 .providers {
-  grid-row: 3;
-  grid-column: 1;
+  background-color: black;
+  width: 1000px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  /* grid-template-rows: 10% 20% 50%; */
 }
 
+.title {
+  font-family: "Mrs Saint Delafield", cursive;
+  color: white;
+  font-size: 60px;
+  padding-top: 100px;
+}
 .dropdown {
   margin-top: 120px;
   grid-column: 1;
@@ -68,19 +70,6 @@ body {
   opacity: 0.5;
   /* background: #eaab00; */
 }
-
-/* I dont using pic_avatar */
-/* .pic_avatar{
-    padding-top: 50px;
-    grid-column: 1;
-    object-fit: cover;
-    object-position: 100% 0;
-    z-index: 1;
-    background-size: cover !important;
-    transition: all 0.2s ease-in-out;
-    overflow: hidden;
-    transform: translateY(-50%);
-} */
 
 .lds-heart {
   display: inline-block;
@@ -138,16 +127,6 @@ body {
   }
 }
 
-.hair_title {
-  font-family: "Mrs Saint Delafield", cursive;
-  color: white;
-  font-size: 60px;
-  padding-top: 100px;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 20px;
-}
-
 .box {
   width: 100px;
   margin: 0 auto;
@@ -179,7 +158,7 @@ body {
 
 .content {
   background: #ecb99c;
-  padding: 8px;
+  /* padding: 8px; */
   text-align: center;
   text-transform: uppercase;
 }

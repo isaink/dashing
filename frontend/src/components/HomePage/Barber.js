@@ -4,6 +4,8 @@ import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
+import barberPic from "../../photo_assets/barber.jpeg";
+
 import { Dropdown } from "./Dropdown.js";
 
 class Barber extends React.Component {
@@ -17,10 +19,10 @@ class Barber extends React.Component {
         return (
           <>
             <Link to={`/singleProviderProfile/${barberP.provider_id}`}>
-              <div className="barber_avatar box">
+              <div className="hair_avatar box">
                 <img
                   alt="avatar"
-                  className="pic_barber content"
+                  className="pic_hair content"
                   src={barberP.avatar}
                   style={{ height: "150px" }}
                 />
@@ -47,17 +49,17 @@ class Barber extends React.Component {
   render() {
     return (
       <>
-        <div className="barber_title">Barber</div>
+        <div className="hair_title">Barber</div>
         <span className="dropdown">
           <h1>Select Your Location</h1>
           <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
         </span>
 
-        <div className="barber_box">
+        <div className="hair_box">
           <div className="img_intro">
             <img
-              alt="intro"
-              src="http://fashionbombdaily.com/wp-content/uploads/2016/08/fashion-bomb-daily-Kat-Morgan-Cardi-B-17.jpg"
+              src={barberPic}
+              alt=""
               width="600px"
               height="auto"
             />

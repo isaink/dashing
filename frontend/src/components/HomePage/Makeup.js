@@ -4,6 +4,8 @@ import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
+import makeupPic from "../../photo_assets/makeup.jpg";
+
 import { Dropdown } from "./Dropdown.js";
 
 class Makeup extends React.Component {
@@ -57,7 +59,7 @@ class Makeup extends React.Component {
           <div className="img_intro">
             <img
               alt="intro"
-              src="http://fashionbombdaily.com/wp-content/uploads/2016/08/fashion-bomb-daily-Kat-Morgan-Cardi-B-17.jpg"
+              src={makeupPic}
               width="600px"
               height="auto"
             />
