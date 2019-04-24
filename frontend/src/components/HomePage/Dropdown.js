@@ -2,8 +2,6 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './../../Css/Dropdown.css';
 
-import "../../Css/Dropdown.css";
-
 export const Dropdown = props => {
   const handleBoroChange = event => {
     let borough = event.target.value;

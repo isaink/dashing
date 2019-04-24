@@ -4,12 +4,12 @@ body {
   font-size: 12px;
 }
 
-.pageContainer {
+/* .pageContainer {
   display: grid;
   grid-template-columns: 40% 60%;
   object-fit: cover;
   height: 1000px;
-}
+} */
 
 #providername {
   font-size: 15px;
@@ -29,7 +29,7 @@ body {
 
 }
 .ctnr_prov{
-  max-height: 950px;
+  /* max-height: 950px; */
 }
 
 .inner_ctnr_providers {
