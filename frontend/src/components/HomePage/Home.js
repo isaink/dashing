@@ -75,17 +75,6 @@ class Home extends Component {
           <AboutUs />
           {" "}
         </Element>
-<<<<<<< HEAD
-
-        <Element name="education">
-            <Education />
-        </Element>
-
-         <Element name="aboutus">
-          <AboutUs />
-         </Element>
-=======
->>>>>>> bece07924e08cefca41fa0801dbbfc29219dfa26
       </>
     );
   }
