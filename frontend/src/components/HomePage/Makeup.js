@@ -59,7 +59,7 @@ class Makeup extends React.Component {
           </div>
 
           <div className="inner_ctnr_providers">
-            <div className="title">M a k e u p</div>
+            <div className="title">Makeup</div>
             <hr />
 
             <span className="dropdown">

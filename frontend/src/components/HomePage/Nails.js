@@ -66,9 +66,9 @@ class Nails extends React.Component {
                 height="auto"
               />
             </div>
-          
+
             <div className="inner_ctnr_providers">
-              <div className="title">N a i l s</div>
+              <div className="title">Nails</div>
               <hr />
 
               <span className="dropdown">
