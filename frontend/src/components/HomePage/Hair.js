@@ -37,13 +37,13 @@ class Hair extends React.Component {
                     {hairP.website_link}
                     </div>
                   </div>
-                    
+
                   </div>
-              
-                
+
+
                 </div>
               </div>
-                
+
             </Link>
           </>
         );
@@ -55,7 +55,7 @@ class Hair extends React.Component {
 
   render() {
     return (
-      <> 
+      <>
         <div className='ctnr_prov'>
 
         <div className="ctnr_box">
@@ -69,9 +69,9 @@ class Hair extends React.Component {
           </div>
 
           <div className="inner_ctnr_providers">
-            <div className="title">H  a  i  r</div>
+            <div className="title">Hair</div>
             <hr />
-            
+
             <span className="dropdown">
               <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
               <SkillsByServiceComboBox />
