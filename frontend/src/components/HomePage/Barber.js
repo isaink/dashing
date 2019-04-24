@@ -1,15 +1,15 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-
+import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import { Dropdown } from "./Dropdown.js";
 
 class Barber extends React.Component {
   componentDidMount() {
     this.props.fetchProvidersByService();
-  }
+  };
 
   renderProviders = () => {
     if (this.props.barberProviders) {
@@ -17,10 +17,10 @@ class Barber extends React.Component {
         return (
           <>
             <Link to={`/singleProviderProfile/${barberP.provider_id}`}>
-              <div className="barber_avatar box">
+              <a href="box" className="box btn">
                 <img
                   alt="avatar"
-                  className="pic_barber content"
+                  className="content"
                   src={barberP.avatar}
                   style={{ height: "150px" }}
                 />
@@ -30,16 +30,14 @@ class Barber extends React.Component {
                 {barberP.email} <br />
                 {barberP.phone_number} <br />
                 {barberP.website_link}
-              </div>
+              </a>
             </Link>
           </>
         );
       });
     } else {
       return (
-        <div className="lds-heart">
-          <div />
-        </div>
+        <div className="lds-heart"><div></div></div>
       );
     }
   };
@@ -47,23 +45,30 @@ class Barber extends React.Component {
   render() {
     return (
       <>
-        <div className="barber_title">Barber</div>
-        <span className="dropdown">
-          <h1>Select Your Location</h1>
-          <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-        </span>
+       <div className='ctnr_prov'>
+        <div className="ctnr_box">
+            <div className="img_intro">
+              <img
+                alt="intro"
+                src="http://fashionbombdaily.com/wp-content/uploads/2016/08/fashion-bomb-daily-Kat-Morgan-Cardi-B-17.jpg"
+                width="600px"
+                height="auto"
+              />
+            </div>
 
-        <div className="barber_box">
-          <div className="img_intro">
-            <img
-              alt="intro"
-              src="http://fashionbombdaily.com/wp-content/uploads/2016/08/fashion-bomb-daily-Kat-Morgan-Cardi-B-17.jpg"
-              width="600px"
-              height="auto"
-            />
-          </div>
-          <div className="inner_ctnr_providers">
-            <div className="providers">{this.renderProviders()}</div>
+            <div className="inner_ctnr_providers">
+              <div className="title">B a r b e r</div>
+              <hr />
+            
+              <span className="dropdown">
+                <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+                <SkillsByServiceComboBox />
+              </span>
+
+              <div className="providers">
+                <div className="prov">{this.renderProviders()}</div>
+              </div>
+            </div>
           </div>
         </div>
       </>

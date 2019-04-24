@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
-import Navbar from './components/NavBars/Navbar';
 import Home from './components/HomePage/Home';
 import { Education } from './components/HomePage/Education';
 import { AboutUs } from './components/HomePage/AboutUs';
 import { ProviderProfile } from './components/ProfilePage/providerProfile';
-import SkillsByServiceComboBox from './Redux_Containers/SkillsByServiceComboBoxContainer';
 import SingleProviderContainer from './Redux_Containers/SingleProviderContainer';
-import Navbar from "./components/NavBars/Navbar";
-import SingleProviderContainer from "./Redux_Containers/SingleProviderContainer";
+
 import "./App.css";
 
 class App extends Component {
@@ -33,7 +30,7 @@ class App extends Component {
             />
         </Switch>
         
-        <SkillsByServiceComboBox />
+  
 
       </div>
     );

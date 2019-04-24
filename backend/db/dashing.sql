@@ -146,9 +146,7 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 (3, 10, 30, 50, 'true'), --hair
 (10, 11, 50, 85, 'false'), --nails
 (9, 6, 30, 55, 'false'), --Nails
-(3, 9, 60, 150, 'false'), --hair
-
-
+(3, 9, 60, 150, 'false'); --hair
 
 INSERT INTO portfolio(provider_id, img, body, skill_id)
 VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),

@@ -23,8 +23,8 @@ class SkillsByServiceComboBox extends React.Component {
   }
 
   render() {
-    console.log(this.props.allSkills);
-    console.log(this.state.selectedSkill.skill_name, ': ', this.state.selectedSkill.service_name);
+    // console.log(this.props.allSkills);
+    // console.log(this.state.selectedSkill.skill_name, ': ', this.state.selectedSkill.service_name);
 
 
     return (

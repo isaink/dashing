@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db/queries/service-Q');
+const db = require ('../db/queries/skillsProvider-Q');
 
 
-router.get('/provider/:id', getAllSkillsforProvider );
+router.get('/provider/:id', db.getAllSkillsforProvider );
 router.post('/new', db.addSkillForProvider)
 
 
