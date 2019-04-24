@@ -4,6 +4,7 @@ import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
+import nailsPic from "../../photo_assets/nails.jpg";
 import { Dropdown } from "./Dropdown.js";
 
 class Nails extends React.Component {
@@ -16,6 +17,7 @@ class Nails extends React.Component {
       return this.props.nailProviders.map(nailP => {
         return (
           <>
+          <div className="pageContainer">
             <Link to={`/singleProviderProfile/${nailP.provider_id}`}>
               <div className="box">
               <div className="content">
@@ -35,14 +37,12 @@ class Nails extends React.Component {
                     {nailP.phone_number} <br />
                     {nailP.website_link}
                     </div>
-                 
                  </div>
-                 
                  </div>
-                
               </div>
               </div>
             </Link>
+          </div>
           </>
         );
       });
@@ -61,7 +61,7 @@ class Nails extends React.Component {
             <div className="img_intro">
               <img
                 alt="intro"
-                src="http://fashionbombdaily.com/wp-content/uploads/2016/08/fashion-bomb-daily-Kat-Morgan-Cardi-B-17.jpg"
+                src={nailsPic}
                 width="600px"
                 height="auto"
               />

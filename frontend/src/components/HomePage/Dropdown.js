@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './../../Css/Dropdown.css';
 
-export const Dropdown = props => {
+import "../../Css/Dropdown.css";
 
+export const Dropdown = props => {
   const handleBoroChange = event => {
     let borough = event.target.value
     props.fetchProBySvcAndBoro(borough)
@@ -21,7 +22,6 @@ export const Dropdown = props => {
         <option value="Staten Island">Staten Island</option>
       </select>
     </div>
-
     <hr/>
     </>
   );

@@ -1,11 +1,20 @@
 body {
+
   /* font-family: "Josefin Sans", sans-serif; */
   font-size: 12px;
+}
 
+.pageContainer {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  object-fit: cover;
+  height: 1000px;
 }
 
 #providername {
-  font-size: 15;
+  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
   font-weight: 400;
 }
 
@@ -47,7 +56,6 @@ body {
   grid-column-end: 5;
   grid-row: 1;
 }
-
 .dropdown {
   margin-top: 100px;
   grid-column: 1;
@@ -201,7 +209,6 @@ body {
   padding: 8px;
   text-align: center;
   text-transform: uppercase;
-
 }
 
 .lds-heart {
@@ -263,11 +270,3 @@ body {
     transform: scale(0.9);
   }
 }
-
-
-
-
-
-
-
-
