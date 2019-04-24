@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import {
   Element,
   Events,
@@ -13,7 +12,8 @@ import Hair from "./Hair";
 import Nails from "./Nails";
 import Barber from "./Barber";
 import Makeup from "./Makeup";
-
+import { Education } from './Education';
+import { AboutUs } from './AboutUs';
 import './../../Css/Home.css'
 
 import Navbar from "./../NavBars/Navbar";
@@ -73,13 +73,13 @@ class Home extends Component {
           <button onClick={this.scrollToTop}>To the top!</button> 
         </Element>
 
-//         <Element name="education">
-//           <Education />
-//         </Element>
+        <Element name="education">
+            <Education />
+        </Element>
 
-//         <Element name="aboutus">
-//           <AboutUs />
-//         </Element>
+         <Element name="aboutus">
+          <AboutUs />
+         </Element>
       </>
     );
   }
