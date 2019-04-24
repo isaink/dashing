@@ -64,13 +64,12 @@ class Home extends Component {
         </Element>
         <Element name="makeup">
           <Makeup />
-          <button onClick={this.scrollToTop}>To the top!</button>
         </Element>
-        //{" "}
+   
         <Element name="education">
           <Education />{" "}
         </Element>
-        //{" "}
+        
         <Element name="aboutus">
           <AboutUs />{" "}
         </Element>
