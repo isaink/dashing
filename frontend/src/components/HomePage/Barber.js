@@ -4,6 +4,7 @@ import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
+import barberPic from "../../photo_assets/barber.jpeg";
 import { Dropdown } from "./Dropdown.js";
 
 class Barber extends React.Component {
@@ -50,7 +51,7 @@ class Barber extends React.Component {
             <div className="img_intro">
               <img
                 alt="intro"
-                src="http://fashionbombdaily.com/wp-content/uploads/2016/08/fashion-bomb-daily-Kat-Morgan-Cardi-B-17.jpg"
+                src={barberPic}
                 width="600px"
                 height="auto"
               />
