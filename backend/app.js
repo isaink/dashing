@@ -29,7 +29,7 @@ app.use('/', indexRouter);
 app.use('/providers', providersRouter);
 app.use('/srvProviders', srvProvidersRouter);
 app.use('/services', servicesRouter);
-app.use('/portfolios', portfolioRouter);
+app.use('/portfolio', portfolioRouter);
 app.use('/skillsProvider', skillsProviderRouter);
 app.use('/skills', skillsProvider)
 
