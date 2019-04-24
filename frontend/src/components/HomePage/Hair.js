@@ -17,10 +17,9 @@ class Hair extends React.Component {
       return this.props.hairProviders.map(hairP => {
         return (
           <>  
-        
             <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
-            <div>
-            <div>
+              <div className="box ">
+              <div className="content">
                 <img
                     alt="avatar"
                     className='hvrbox-layer_bottom'
@@ -41,8 +40,6 @@ class Hair extends React.Component {
                   </div>
 
                   </div>
-
-
                 </div>
               </div>
 

@@ -17,7 +17,6 @@ class Nails extends React.Component {
       return this.props.nailProviders.map(nailP => {
         return (
           <>
-          <div className="pageContainer">
             <Link to={`/singleProviderProfile/${nailP.provider_id}`}>
               <div className="box">
               <div className="content">
@@ -42,7 +41,6 @@ class Nails extends React.Component {
               </div>
               </div>
             </Link>
-          </div>
           </>
         );
       });

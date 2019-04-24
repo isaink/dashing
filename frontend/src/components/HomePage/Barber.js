@@ -18,20 +18,30 @@ class Barber extends React.Component {
         return (
           <>
             <Link to={`/singleProviderProfile/${barberP.provider_id}`}>
-              <a href="box" className="box btn">
+            <div className="box">
+              <div className="content">
                 <img
                   alt="avatar"
-                  className="content"
+                  className="hvrbox-layer_bottom"
                   src={barberP.avatar}
-                  style={{ height: "150px" }}
+                  style={{ height: "150px", display: 'block' }}
                 />
-                <span id="providername">{barberP.provider}</span>
-                <br />
-                {barberP.borough} <br />
-                {barberP.email} <br />
-                {barberP.phone_number} <br />
-                {barberP.website_link}
-              </a>
+
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'>
+                      <span id="ih-fade-down ih-delay-sm">{barberP.provider}</span>
+                      <br />
+                      
+                    <div className='ih-zoom-in ih-delay-md'>
+                      {barberP.borough} <br />
+                      {barberP.email} <br />
+                      {barberP.phone_number} <br />
+                      {barberP.website_link}
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Link>
           </>
         );

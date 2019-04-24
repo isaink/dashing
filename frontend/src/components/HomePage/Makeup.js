@@ -19,18 +19,27 @@ class Makeup extends React.Component {
           <>
             <Link to={`/singleProviderProfile/${makeupP.provider_id}`}>
               <div className="box">
-                <img
-                  alt="avatar"
-                  className="content"
-                  src={makeupP.avatar}
-                  style={{ height: "150px" }}
-                />
-                <span id="providername">{makeupP.provider}</span>
-                <br />
-                {makeupP.borough} <br />
-                {makeupP.email} <br />
-                {makeupP.phone_number} <br />
-                {makeupP.website_link}
+                <div className="content">
+                    <img
+                      alt="avatar"
+                      className="hvrbox-layer_bottom"
+                      src={makeupP.avatar}
+                      style={{ height: "150px", display: 'block' }}
+                    />
+                </div>
+                  
+                  <div className='hvrbox-layer_top'>
+                      <div className='hvrbox-text'>
+                    <span id="providername" className='ih-fade-down ih-delay-sm'>{makeupP.provider}</span>
+                    <br />
+                    <div className='ih-zoom-in ih-delay-md'>
+                      {makeupP.borough} <br />
+                      {makeupP.email} <br />
+                      {makeupP.phone_number} <br />
+                      {makeupP.website_link}
+                    </div>
+                  </div>
+                </div>
               </div>
             </Link>
           </>
