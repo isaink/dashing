@@ -4,49 +4,16 @@
   background-size: auto;
   object-fit: cover;
   height: 970px;
-
 }
-.bg_welcome{
+.bg_welcome {
   background-color: black;
 }
 
 .homeLogo {
-  width: 500px;
   position: absolute;
   height: auto;
   z-index: 2;
- margin-top: 500px;
- margin-left: 20%;
-}
+  margin-top: 250px;
+  margin-left: 27%;
 
-
-.cd-top--is-visible {
-  visibility: visible;
-  opacity: 1;
-}
-
-.cd-top--fade-out { 
-  opacity: .5;
-}
-
-#toTop {
-  display: none;
-  position: absolute;
-  top: 1000px;
-  bottom: 5px;
-  right: 10px;
-  width: 80px;
-  height: 80px;
-  opacity: 0.8;
-  filter: alpha(opacity=40); /* For IE8 and earlier */
-}
-
-#toTop:after {
-  content: "\f343";
-  font-family: dashicons;
-  color: #fff;
-  background-color: rgba(191,48,0,.5);
-  font-size: 35px;
-  border-radius: 50%;
-  padding: 5px;
 }

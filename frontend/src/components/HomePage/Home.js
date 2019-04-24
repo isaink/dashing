@@ -45,9 +45,6 @@ class Home extends Component {
     return (
       <>
         <Navbar />
-        <a href="top" id="toTop" className="cd-top text--replace js-cd-top">
-          Top
-        </a>
         <Element name="home">
           <Welcome />
         </Element>

@@ -76,7 +76,8 @@ class Hair extends React.Component {
 
             <span className="dropdown">
               <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-              <SkillsByServiceComboBox />
+              <SkillsByServiceComboBox />;
+
             </span>
 
             <div className="providers">
