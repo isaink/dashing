@@ -142,6 +142,44 @@ const getSingleProvider = (req, res, next) => {
 };
 
 
+// router.get('/bySkill/:skill_id', getProvidersBySkill);
+const getProvidersBySkill= (req, res, next) => {
+  db.any(
+    `SELECT
+      providers.name provider,
+      avatar,
+      borough,
+      email,
+      phone_number,
+      providers.id provider_id,
+      website_link,
+      services.name services,
+      skills.id skill_id
+    FROM skills_provider
+    JOIN skills ON skills.id = skills_provider.skill_id
+    JOIN providers ON providers.id = skills_provider.provider_id
+    JOIN services ON services.id = skills.service_id
+    WHERE skills.id = $[skill_id]`, {
+      // service_id: Number(req.params.service_id),
+      skill_id: Number(req.params.skill_id)
+    }
+  )
+  .then(data => {
+    res.status(200).json({
+      status: "Success",
+      message: "Got all providers by this service and skill",
+      data: data
+    });
+  })
+  .catch(err => {
+    res.status(400).json({
+      status: "Failure",
+      message: "Failed to get all services/skills by this provider"
+    });
+  });
+
+}
+
 
 
 module.exports = {
@@ -154,5 +192,7 @@ module.exports = {
   loginProvider,
   isLoggedIn,
   updateProvider,
-  deleteProvider
+  deleteProvider,
+
+  getProvidersBySkill
 }

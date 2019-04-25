@@ -82,7 +82,7 @@ class Barber extends React.Component {
         </span>
 
         <span className="combobox">
-          <ComboBox fetchProviderByServiceAndSkill={this.state.skills} />
+          <ComboBox fetchSkillList={this.state.skills} />
         </span>
 
         <div className="barber_box">

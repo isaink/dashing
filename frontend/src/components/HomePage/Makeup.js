@@ -8,14 +8,17 @@ import { Dropdown } from "./Dropdown.js";
 
 import { ComboBox } from "./ComboBox.js";
 import axios from 'axios';
+import { getProvidersBySkill } from "../../Redux_Actions/comboBoxAction";
 
 class Makeup extends React.Component {
   state = {
-    skills: []
+    skills: [],
+    selectedSkill: '',
   }
 
   componentDidMount() {
     this.props.fetchProvidersByService();
+    this.props.getProvidersBySkill();
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -71,7 +74,10 @@ class Makeup extends React.Component {
   };
 
   render() {
-    console.log('MAKEUP STATE', this.state)
+    console.log('MAKEUP STATE', this.state);
+    console.log('MAKEUP PROPS', this.props);
+    console.log(this.props.makeupProviders);
+    console.log(this.props.makeupProvidersBySkill);
 
     return (
       <>
@@ -82,7 +88,11 @@ class Makeup extends React.Component {
         </span>
 
         <span className="combobox">
-          <ComboBox fetchProviderByServiceAndSkill={this.state.skills} />
+          <ComboBox
+            fetchSkillList={this.state.skills}
+            getProvidersBySkill={this.props.getProvidersBySkill}
+            selectedSkill={this.state.selectedSkill}
+          />
         </span>
 
         <div className="makeup_box">
@@ -105,14 +115,17 @@ class Makeup extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    makeupProviders: state.providersByService[4]
+    makeupProviders: state.providersByService[4],
+    makeupProvidersBySkill: [state.providersBySkill[4]],
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
     fetchProvidersByService: () => dispatch(fetchProvidersByService(4)),
     fetchProBySvcAndBoro: borough =>
-      dispatch(fetchProvidersByService(4, borough))
+      dispatch(fetchProvidersByService(4, borough)),
+
+    getProvidersBySkill: (skill_id) => dispatch(getProvidersBySkill(4, skill_id)),
   };
 };
 

@@ -1,24 +1,18 @@
 import axios from "axios";
+import { receivedProvidersSuccess } from './providerAction'
 export let FETCH_PROVIDER_BY_SKILL = "FETCH_PROVIDER_BY_SKILL"
 export let FETCH_ERROR = "FETCH_ERROR";
 
-export const providerBySkillsSuccess = (providers)=> {
-  return {
-    type: FETCH_PROVIDER_BY_SKILL,
-    payload: providers
-    // payload: {
-    //   providers: providers
-    // }
-  }
-}
 
 // getting the skills --> AXIOS
-export const getProvidersBySkill = (skill_id) => dispatch => {
+export const getProvidersBySkill = (service_id, skill_id) => dispatch => {
   axios
-    .get(`/providers/${skill_id}`)
+    .get(`/providers/bySkill/${skill_id}`)
     .then(res => {
+      console.log(res.data.data);
       debugger
-      return dispatch(providerBySkillsSuccess(res.data.data)); // what is the key inside the queries...?
+      let providers = res.data.data;
+      return dispatch(receivedProvidersSuccess(providers, service_id)); // what is the key inside the queries...?
     })
     .catch(err => {
       return dispatch(fetchErrors(err));

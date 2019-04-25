@@ -85,7 +85,10 @@ class Hair extends React.Component {
         </span>
 
         <span className="combobox">
-          <ComboBox fetchProviderByServiceAndSkill={this.state.skills} />
+          <ComboBox
+            fetchSkillList={this.state.skills}
+            getProvidersBySkill={this.props.getProvidersBySkill}
+          />
         </span>
 
         <span className="">

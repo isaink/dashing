@@ -23,6 +23,8 @@ export const fetchProvidersByService = (service_id, borough="") => dispatch => {
   axios
     .get(`/srvProviders/${service_id}/${borough}`)
     .then(res => {
+      // console.log(res.data.data);
+      // debugger
       let providers = res.data.data;
       return dispatch(receivedProvidersSuccess(providers, service_id)); // what is the key inside the queries...?
     })

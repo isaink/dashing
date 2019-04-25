@@ -1,4 +1,4 @@
-import { FETCH_ALL_PROVIDERS_BY_SKILL } from "../Redux_Actions/comboBoxAction";
+import { FETCH_PROVIDER_BY_SKILL } from "../Redux_Actions/comboBoxAction";
 
 const initialState = {
   providersBySkill: [],
@@ -6,7 +6,7 @@ const initialState = {
 
 export const providersBySkillReducer = (state = initialState, action ) => {
   switch(action.type) {
-    case FETCH_ALL_PROVIDERS_BY_SKILL:
+    case FETCH_PROVIDER_BY_SKILL:
     return {
       ...state,
       providersBySkill: action.payload
