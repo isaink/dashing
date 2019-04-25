@@ -10,16 +10,16 @@ export const ComboBox = props => {
   //   }
   // };
 
-const handleBoroChange = event => {
+const handleSkillChange = event => {
   let skill = event.target.value
   props.fetchProviderByServiceAndSkill(skill)
 
 }
   return (
     <div>
-      <select onChange={handleBoroChange}>
+      <select onChange={handleSkillChange}>
         {props.fetchProviderByServiceAndSkill.length !== 0 && ['', ...props.fetchProviderByServiceAndSkill].map(skill => (
-          <option>{skill.skill_name}</option>
+          <option key={skill.skill_id}>{skill.skill_name}</option>
         ))}
       </select>
     </div>

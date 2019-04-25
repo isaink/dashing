@@ -1,24 +1,29 @@
 import axios from "axios";
-export let FETCH_ALL_SKILLS_FOR_SINGLE_SERVICE = "FETCH_ALL_SKILLS_FOR_SINGLE_SERVICE"
+export let FETCH_PROVIDER_BY_SKILL = "FETCH_PROVIDER_BY_SKILL"
 export let FETCH_ERROR = "FETCH_ERROR";
 
-export const fetchAllSkillsForSingleService = (service_id) => dispatch => {
-  axios.get(`/services/skills/${service_id}`)
-  .then(res => {
-    // console.log(res.data);
-    // debugger
-    dispatch ({
-      type: FETCH_ALL_SKILLS_FOR_SINGLE_SERVICE,
-      payload: {
-        skills: res.data.data,
-        service_id: service_id // all comments for a given song_id
-      }
-    })
-  })
-  .catch(err => {
-    return dispatch(fetchErrors(err));
-  });
+export const providerBySkillsSuccess = (providers)=> {
+  return {
+    type: FETCH_PROVIDER_BY_SKILL,
+    payload: providers
+    // payload: {
+    //   providers: providers
+    // }
+  }
 }
+
+// getting the skills --> AXIOS
+export const getProvidersBySkill = (skill_id) => dispatch => {
+  axios
+    .get(`/providers/${skill_id}`)
+    .then(res => {
+      debugger
+      return dispatch(providerBySkillsSuccess(res.data.data)); // what is the key inside the queries...?
+    })
+    .catch(err => {
+      return dispatch(fetchErrors(err));
+    });
+};
 
 export const fetchErrors = err => {
   return {
@@ -26,6 +31,38 @@ export const fetchErrors = err => {
     err: err
   };
 };
+
+// ---------------------------------------------
+
+
+// import axios from "axios";
+// export let FETCH_ALL_SKILLS_FOR_SINGLE_SERVICE = "FETCH_ALL_SKILLS_FOR_SINGLE_SERVICE"
+// export let FETCH_ERROR = "FETCH_ERROR";
+//
+// export const fetchAllSkillsForSingleService = (service_id) => dispatch => {
+//   axios.get(`/services/skills/${service_id}`)
+//   .then(res => {
+//     // console.log(res.data);
+//     // debugger
+//     dispatch ({
+//       type: FETCH_ALL_SKILLS_FOR_SINGLE_SERVICE,
+//       payload: {
+//         skills: res.data.data,
+//         service_id: service_id // all comments for a given song_id
+//       }
+//     })
+//   })
+//   .catch(err => {
+//     return dispatch(fetchErrors(err));
+//   });
+// }
+//
+// export const fetchErrors = err => {
+//   return {
+//     type: FETCH_ERROR,
+//     err: err
+//   };
+// };
 
 
 

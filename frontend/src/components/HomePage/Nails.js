@@ -6,15 +6,41 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
 import { Dropdown } from "./Dropdown.js";
 
+import { ComboBox } from "./ComboBox.js";
+import axios from 'axios';
+
 class Nails extends React.Component {
+  state = {
+    skills: []
+  }
+
   componentDidMount() {
     this.props.fetchProvidersByService();
   }
+
+  componentDidUpdate(prevProps, prevState){
+    if (!prevProps.nailProviders && this.props.nailProviders) {
+      this.getSkillsForService();
+    }
+  }
+
+  getSkillsForService = () => {
+    axios.get(`/services/skills/2`)
+    .then(res => {
+      this.setState({
+        skills: res.data.data
+      })
+    })
+    .catch(err => {
+      console.log('GET SKILLS ERR', err);
+    })
+  }
+
   renderProviders = () => {
     if (this.props.nailProviders) {
       return this.props.nailProviders.map(nailP => {
         return (
-          <>
+          <div key={nailP.provider_id}>
             <Link to={`/singleProviderProfile/${nailP.provider_id}`}>
               <div className="hair_avatar box">
                 <img
@@ -31,7 +57,7 @@ class Nails extends React.Component {
                 {nailP.website_link}
               </div>
             </Link>
-          </>
+          </div>
         );
       });
     } else {
@@ -44,6 +70,8 @@ class Nails extends React.Component {
   };
 
   render() {
+    console.log('NAIL STATE', this.state)
+
     return (
       <>
         <div className="hair_title">Nails</div>
@@ -51,6 +79,11 @@ class Nails extends React.Component {
           <h1>Select Your Location</h1>
           <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
         </span>
+
+        <span className="combobox">
+          <ComboBox fetchProviderByServiceAndSkill={this.state.skills} />
+        </span>
+
 
         <div className="providers">{this.renderProviders()}</div>
       </>

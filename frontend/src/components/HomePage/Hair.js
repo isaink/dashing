@@ -4,20 +4,21 @@ import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 // import { fetchSkillsByService } from "../../Redux_Actions/comboBoxAction";
-import { fetchAllSkillsForSingleService } from '../../Redux_Actions/comboBoxAction';
+// import { fetchAllSkillsForSingleService } from '../../Redux_Actions/comboBoxAction';
+import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
 
 
 import { Dropdown } from "./Dropdown.js";
 
 import { ComboBox } from "./ComboBox.js";
 import SkillsByServiceComboBox from "./SkillsByServiceComboBox.js";
-
 import axios from 'axios';
 
 class Hair extends React.Component {
   state = {
     skills: []
   }
+
   componentDidMount() {
     this.props.fetchProvidersByService();
   }
@@ -44,7 +45,7 @@ class Hair extends React.Component {
     if (this.props.hairProviders) {
       return this.props.hairProviders.map(hairP => {
         return (
-          <>
+          <div key={hairP.provider_id}>
             <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
               <div className="hair_avatar box">
                 <img
@@ -61,7 +62,7 @@ class Hair extends React.Component {
                 {hairP.website_link}
               </div>
             </Link>
-          </>
+          </div>
         );
       });
     } else {
@@ -122,7 +123,7 @@ const mapDispatchToProps = dispatch => {
     fetchProBySvcAndBoro: borough =>
       dispatch(fetchProvidersByService(1, borough)),
 
-      fetchAllSkillsForSingleService: (service_id) => dispatch( fetchAllSkillsForSingleService(1)),
+      getProvidersBySkill: (skill_id) => dispatch( getProvidersBySkill(1)),
 
 
     // fetchProviderByServiceAndSkill: skill =>

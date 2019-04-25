@@ -6,16 +6,42 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
 import { Dropdown } from "./Dropdown.js";
 
+import { ComboBox } from "./ComboBox.js";
+import axios from 'axios';
+
 class Makeup extends React.Component {
+  state = {
+    skills: []
+  }
+
   componentDidMount() {
     this.props.fetchProvidersByService();
   }
+
+  componentDidUpdate(prevProps, prevState){
+    if (!prevProps.makeupProviders && this.props.makeupProviders) {
+      this.getSkillsForService();
+    }
+  }
+
+  getSkillsForService = () => {
+    axios.get(`/services/skills/4`)
+    .then(res => {
+      this.setState({
+        skills: res.data.data
+      })
+    })
+    .catch(err => {
+      console.log('GET SKILLS ERR', err);
+    })
+  }
+
 
   renderProviders = () => {
     if (this.props.makeupProviders) {
       return this.props.makeupProviders.map(makeupP => {
         return (
-          <>
+          <div key={makeupP.provider_id}>
             <Link to={`/singleProviderProfile/${makeupP.provider_id}`}>
               <div className="makeup_avatar box">
                 <img
@@ -32,7 +58,7 @@ class Makeup extends React.Component {
                 {makeupP.website_link}
               </div>
             </Link>
-          </>
+          </div>
         );
       });
     } else {
@@ -45,12 +71,18 @@ class Makeup extends React.Component {
   };
 
   render() {
+    console.log('MAKEUP STATE', this.state)
+
     return (
       <>
         <div className="makeup_title">Makeup</div>
         <span className="dropdown">
           <h1>Select Your Location</h1>
           <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+        </span>
+
+        <span className="combobox">
+          <ComboBox fetchProviderByServiceAndSkill={this.state.skills} />
         </span>
 
         <div className="makeup_box">
