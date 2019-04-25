@@ -1,7 +1,5 @@
 import React from "react";
 import "./../../Css/porfolio.css";
-import { withRouter } from "react-router-dom";
-import NavbarProfile  from "../NavBars/NavbarProfile";
 import "../../Css/providerProfile.css"
 
 export const ProviderProfile = props => {
@@ -52,7 +50,7 @@ export const ProviderProfile = props => {
               </div>
 
 
-
+              
 
 
           </div>
@@ -64,21 +62,16 @@ export const ProviderProfile = props => {
 
     }
   };
+  
+  const renderProviderPortfolio = () => {
+    if (props.providerInfo.portfolio) {
 
-  const renderProviderSkills = () => {
-   
-    // {console.log("skills section:", props.providerInfo.services[0].skills)};
+     return props.providerInfo.portfolio.map(photo =>{
 
-    // let skills = props.providerInfo.services.map((skill, i)=>{
-    //   return(
-    //     <div>
-    //       <p key={i}>{skill}</p>
-    //     </div>
-    //   )
-    // })
-
-    if (props.providerInfo) {
-      return <div className="providerSkills" />;
+      return(
+        <img className="portfolio_image" src={photo['img']} alt='not here'/>
+      )
+      })
     }
   };
   return (
@@ -87,7 +80,7 @@ export const ProviderProfile = props => {
       <h1>Provider Information</h1>
 
       <div className="render_info">{renderProviderInfo()}</div>
-      <div className="render_skills">{renderProviderSkills()}</div>
+      <div className="render_portfolio">{renderProviderPortfolio()}</div>
 
     </>
   );

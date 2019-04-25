@@ -12,22 +12,10 @@ class Provider extends Component {
     this.props.fetchProBySvcAndBoro();
   };
 
-  handleServHair = (e) => {
-    this.setState({
-      hair: 1
-    })
-  };
-
-  handleServNail = (e) => {
-    this.setState({
-      nail: 2
-    })
-  };
-
   render() {
     return (
       <>
-        <div className="hair_box">
+        <div className="ctnr_prov">
           <div className="img_intro">
           <div className='line'>
             <img
