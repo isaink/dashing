@@ -1,6 +1,6 @@
-import React from "react";
-import { ProviderProfile } from "../components/providerPro/providerProfile";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import { ProviderProfile } from '../components/ProfilePage/providerProfile';
 import { getProviderInfo } from "../Redux_Actions/providerAction";
 import  NavbarProfile  from "../components/NavBars/NavbarProfile";
 
@@ -12,7 +12,7 @@ class SingleProviderContainer extends React.Component {
   render() {
     return (
       <>
-<NavbarProfile />
+        <NavbarProfile />
         <ProviderProfile providerInfo={this.props.providerInfo} />
       </>
     );

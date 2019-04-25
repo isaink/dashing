@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
-
-import "../../css/Navbar.css";
-import logo from "../../photo_assets/dashing_logo.png";
+import "../../Css/Navbar.css";
+// import logo from "../../photo_assets/dashing_logo.png";
 
 export default class Navbar extends Component {
   scrollToTop = () => {
@@ -13,8 +11,8 @@ export default class Navbar extends Component {
   render() {
     return (
       <>
-        <div className="navbar">
-          <span className="dashingNav">
+        <div className="navbar  cntr_bttn">
+          {/* <span className="dashingNav">
             <h3>
               <Link to={"/"}>
                 <img
@@ -26,10 +24,10 @@ export default class Navbar extends Component {
                 />
               </Link>
             </h3>
-          </span>
+          </span> */}
 
           <div className="links">
-            <Link
+            {/* <Link
               className="links"
               activeClass="active"
               to="home"
@@ -37,10 +35,11 @@ export default class Navbar extends Component {
               smooth={true}
               offset={-70}
               duration={500}
-            >
-              Home
-            </Link>
-
+            >Home
+            </Link> */}
+          
+          <button className='btn-slide-line center'>
+         
             <Link
               className="links"
               activeClass="active"
@@ -50,9 +49,11 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-              Hair
+             <span>  Hair </span>
             </Link>
-
+          </button>
+          
+          <button className='btn-slide-line center'>
             <Link
               className="links"
               activeClass="active"
@@ -61,10 +62,13 @@ export default class Navbar extends Component {
               smooth={true}
               offset={-70}
               duration={500}
-              >
-              Nails
+            >
+             
+              <span>  Nails </span>
             </Link>
-
+          </button>
+          
+          <button className='btn-slide-line center'>
             <Link
               className="links"
               activeClass="active"
@@ -73,10 +77,12 @@ export default class Navbar extends Component {
               smooth={true}
               offset={-70}
               duration={500}
-              >
-              Barber
+            >
+            <span>  Barber </span>
             </Link>
-
+          </button>
+    
+          <button className='btn-slide-line center'>
             <Link
               className="links"
               activeClass="active"
@@ -86,12 +92,13 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-              Makeup
+             <span>  Makeup </span>
+              
             </Link>
+          </button>
+        
 
-
-
-            <Link
+            {/* <Link
               className="links"
               activeClass="active"
               to="education"
@@ -113,7 +120,7 @@ export default class Navbar extends Component {
               duration={500}
             >
               About Us
-            </Link>
+            </Link> */}
           </div>
         </div>
       </>

@@ -6,8 +6,7 @@ const getAllProByServ = (req, res, next) => {
     {
       id: Number(req.params.id)
     }
-  )
-    .then(data => {
+  ).then(data => {
       res.status(200).json({
         status: "Success",
         message: "Got all providers by this service.",
@@ -41,8 +40,6 @@ const getProvBySvcAndBoro = (req, res, next) => {
       message: "Failed to get all services by this provider"
     });
   });
-
-}
-
+};
 
 module.exports = { getAllProByServ, getProvBySvcAndBoro };

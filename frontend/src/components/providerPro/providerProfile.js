@@ -1,7 +1,5 @@
 import React from "react";
 import "./../../Css/porfolio.css";
-import { withRouter } from "react-router-dom";
-import NavbarProfile  from "../NavBars/NavbarProfile";
 import "../../Css/providerProfile.css"
 
 export const ProviderProfile = props => {
@@ -45,10 +43,9 @@ export const ProviderProfile = props => {
                     </ul>
                     </>
                   )
-                })}
-
+                })}  
               </div>
-
+              </div>
           </div>
         </div>
       );
@@ -58,7 +55,7 @@ export const ProviderProfile = props => {
 
     }
   };
-
+  
   const renderProviderPortfolio = () => {
     if (props.providerInfo.portfolio) {
      return props.providerInfo.portfolio.map(photo =>{

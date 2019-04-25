@@ -1,18 +1,5 @@
 .navbar {
-  background-color: #ECB99C;
-  height: 80px;
-  width: 100%;
-  list-style-type: none;
-  position: fixed;
-  top: 0;
-  z-index: 3;
-}
 
-.dashingNav {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 25px;
-  padding-top: 12px;
 }
 
 .links {
@@ -20,25 +7,52 @@
   justify-content: center;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
-  margin-top: -18px;
-  padding-left: 25px;
-  font-size: 15px;
-  /* margin-top: -2%; */
+  font-size: 18px;
+  /* margin-top: -0.4%; */
 }
 
-.links a:link {
-  color: red;
-  text-decoration: none;
-  text-transform: normal;
-  letter-spacing: normal;
-  /* padding-left: 20px; */
+.cntr_bttn{
+  width: 80%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.links a:visited {
-  text-decoration: none;
-  color: red;
+button {
+  position: relative;
+  /* margin: 0; */
+  margin: 5px;
+  /* padding: 5px 12px; */
+  height: 60px;
+  width: 150px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: black;
+  border-radius: 10px;
+  color: #ECB99C;
+  z-index: 0;
+  overflow: hidden;
 }
 
-.links a:hover {
-  color: white;
+button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  border: solid 5px #ECB99C;
+  z-index: -1;
+  transition: transform 0.6s linear;
+  transform: scale(0.97, 0.93);
 }
+
+button:hover::after { transform: scale(1,1); }

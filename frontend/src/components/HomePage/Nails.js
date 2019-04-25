@@ -1,49 +1,52 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-
+import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import nailsPic from "../../photo_assets/nails.jpg";
-
 import { Dropdown } from "./Dropdown.js";
 
 class Nails extends React.Component {
   componentDidMount() {
     this.props.fetchProvidersByService();
-  }
+  };
 
   renderProviders = () => {
     if (this.props.nailProviders) {
       return this.props.nailProviders.map(nailP => {
         return (
           <>
-          <div className="pageContainer">
             <Link to={`/singleProviderProfile/${nailP.provider_id}`}>
-              <div className="makeup_avatar box">
+              <div className="box">
+              <div className="content">
                 <img
                   alt="avatar"
-                  className="pic_makeup content"
+                  className="hvrbox-layer_bottom"
                   src={nailP.avatar}
-                  style={{ height: "200px" }}
+                  style={{ height: "150px" , display: 'block'}}
                 />
-              <div id="providername">{nailP.provider}</div>
-                <br />
-                {nailP.borough} <br />
-              {nailP.email} <br />
-            {nailP.phone_number} <br />
-          {nailP.website_link}
+                 <div className='hvrbox-layer_top'>
+                 <div className='hvrbox-text'>
+                    <span id="providername"  className='ih-fade-down ih-delay-sm'>>{nailP.provider}</span>
+                    <br />
+                    <div className='ih-zoom-in ih-delay-md'>
+                    {nailP.borough} <br />
+                    {nailP.email} <br />
+                    {nailP.phone_number} <br />
+                    {nailP.website_link}
+                    </div>
+                 </div>
+                 </div>
+              </div>
               </div>
             </Link>
-          </div>
           </>
         );
       });
     } else {
       return (
-        <div className="lds-heart">
-          <div />
-        </div>
+        <div className="lds-heart"><div></div></div>
       );
     }
   };
@@ -51,25 +54,32 @@ class Nails extends React.Component {
   render() {
     return (
       <>
-        <div className="makeup_title">Nails</div>
-        <span className="dropdown">
-          <h1>Select Your Location</h1>
-          <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-        </span>
+         <div className='ctnr_prov'>
+          <div className="ctnr_box">
+            <div className="img_intro">
+              <img
+                alt="intro"
+                src={nailsPic}
+                width="600px"
+                height="auto"
+              />
+            </div>
 
-        <div className="makeup_box">
-          <div className="img_intro">
-            <img
-              alt="intro"
-              src={nailsPic}
-              width="600px"
-              height="auto"
-            />
-          </div>
-          <div className="inner_ctnr_providers">
-            <div className="providers">{this.renderProviders()}</div>
-          </div>
-        </div>
+            <div className="inner_ctnr_providers">
+              <div className="title">Nails</div>
+              <hr />
+
+              <span className="dropdown">
+                <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+                <SkillsByServiceComboBox />
+              </span>
+
+                <div className="providers">
+                  <div className="prov">{this.renderProviders()}</div>
+                </div>
+              </div>
+            </div>
+         </div>
       </>
     );
   }
