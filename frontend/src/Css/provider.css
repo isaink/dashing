@@ -1,7 +1,7 @@
 body {
   /* font-family: "Josefin Sans", sans-serif; */
   font-size: 12px;
-  background-color: black;
+  /* background-color: black; */
 }
 
 /* .pageContainer {
@@ -30,6 +30,8 @@ body {
 
 .ctnr_prov{
   /* max-height: 950px; */
+  background-color: black;
+
 }
 
 .inner_ctnr_providers {
@@ -88,11 +90,11 @@ body {
   display: inline-block;
   overflow: hidden;
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
   width: 300px;
   margin: 0 auto;
   padding: 8px;
-  background-color: #fffbfc;
+  /* background-color: #fffbfc; */
   background-image: url("data:image/gif;base64,R0lGODlhAQABAPAAAOqrAP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="),
     url("data:image/gif;base64,R0lGODlhAQABAPAAAOqrAP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="),
     url("data:image/gif;base64,R0lGODlhAQABAPAAAP///////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==");

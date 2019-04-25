@@ -17,8 +17,6 @@ import { AboutUs } from "./AboutUs";
 
 import "./../../Css/Home.css";
 
-import Navbar from "./../NavBars/Navbar";
-
 class Home extends Component {
   componentDidMount() {
     Events.scrollEvent.register("begin", function() {
@@ -44,7 +42,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        <Navbar />
+       
         <Element name="home">
           <Welcome />
         </Element>
