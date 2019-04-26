@@ -33,7 +33,7 @@ class Home extends Component {
 
   scrollTo() {
     scroller.scrollTo("scroll-to-element", {
-      duration: 300,
+      duration: 3000,
       delay: 0,
       smooth: "easeInOutQuart"
     });
@@ -58,18 +58,11 @@ class Home extends Component {
         <Element name="barber">
           <Barber />
         </Element>
-        
+
         <Element name="makeup">
           <Makeup />
         </Element>
    
-        <Element name="education">
-          <Education />{" "}
-        </Element>
-        
-        <Element name="aboutus">
-          <AboutUs />{" "}
-        </Element>
       </>
     );
   }

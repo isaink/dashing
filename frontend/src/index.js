@@ -6,10 +6,12 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import store from "./Redux_Store/store.js";
 import { BrowserRouter } from "react-router-dom";
+import ScrollMemory from 'react-router-scroll-memory';
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
+    <ScrollMemory />
       <App />
     </Provider>
   </BrowserRouter>,

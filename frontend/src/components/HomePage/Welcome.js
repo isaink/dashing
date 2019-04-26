@@ -11,7 +11,7 @@ export const Welcome = () => {
       <div className="bg_welcome"  >
        
         <div className="homeLogo" >
-          <img src={homeLogo} alt="" width="700px"   />
+          <img src={homeLogo} alt="" width="600px"   />
           <Navbar />
         </div>
         <div className="homeBackground">

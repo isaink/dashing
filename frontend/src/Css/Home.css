@@ -1,8 +1,13 @@
 .homeLogo {
   position: absolute;
-  height: auto;
+  /* height: auto; */
   /* z-index: 2; */
   margin-top: 250px;
   margin-left: 27%;
 
+}
+
+
+.homeBackground{
+  max-height: 800px;
 }
