@@ -1,6 +1,5 @@
 const  db  = require('../connector.js');
 
-
 const getAllSkillsforProvider = (req, res, next) => {
   db.any('SELECT * FROM skills_provider WHERE provider_id=${id}', {id: Number(req.params.id)})
     .then(data => {

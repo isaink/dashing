@@ -97,7 +97,7 @@ VALUES('Nielene Keys', 'nkeys@gmail.com', 'nkeys', 'https://i0.wp.com/ranktribe.
 ('Bayne Brian', 'bbrian@gmail.com', 'bbrian', 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F11%2Fkofi-siriboe-peopledotcom1.jpg&w=400&c=sc&poi=face&q=85', 'Manhattan','7189875674', 'www.baynebrian.com', 'I''m the best barber in NY fam!', 3),
 ('Jo West', 'jwest@gmail.com', 'jwest', 'https://i-h2.pinimg.com/564x/a1/cb/81/a1cb814979c87ec8f7b252b299c75343.jpg', 'Queens', '347-599-9843', 'www.jowest.com', 'Jo is here to take care of you', 1),
 ('Carina Salvador','csalvador@gmail.com', 'csalvador', 'https://static1.squarespace.com/static/585862a3e6f2e134f2aa6e3e/t/58b87bf6d2b8579db55b0e57/1488485395205/', 'Staten Island', '347-599-9843', 'www.carinabeauty.com', 'Im here to meet all your beauty needs', 4),
-('Sheree Love', 'shereelove@gmail.com', 'sheloves', 'https://www.styleseat.com/m/p/744413/photo/2494191', 'Brooklyn', '212-769-2000', 'www.beautybysheree.com', 'Let me take care of all your needs!', 2),
+('Sheree Love', 'shereelove@gmail.com', 'sheloves', 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/71732_446752851221_6737560_n.jpg?_nc_cat=109&_nc_oc=AQnBLTtsTVHV9U2ho6WqGEQY5VTSxi4pjhkycI-hOKIaJSZZQlKRJVu6WsTJiZQ3oqc&_nc_ht=scontent-lga3-1.xx&oh=f47011313f8a95f23c17a3a2d1a1608f&oe=5D37A50F', 'Brooklyn', '212-769-2000', 'www.beautybysheree.com', 'Let me take care of all your needs!', 2),
 ('Brianna Thomas', 'bree@gmail.com', 'bree', 'https://i.dailymail.co.uk/i/pix/2017/02/02/21/3CB97D1300000578-0-One_of_the_beautiful_people_Actress_Angelina_Jolie_Photography_h-a-132_1486072162004.jpg', 'Queens', '646-769-2000', 'www.beautybybree.com', 'Let me take care of all your needs!', 3),
 ('Micah Douglas', 'Micah@gmail.com', 'micah', 'https://cdn7.whiskeyriff.com/wp-content/uploads/sam_hunt_beard_0_1441190712.jpg', 'Bronx', '646-769-2000', 'www.micahdouglashair.com', 'Best Barber in the Business!', 3),
 ('Samantha Clement', 'sammy@gmail.com', 'sammy', 'https://i.pinimg.com/236x/e1/6d/70/e16d7087621fbcabdcd4481def7317c7.jpg', 'Manhattan', '646-769-2000', 'www.sammydoeshair.com', 'Professional looking to take care of you!', 1),
@@ -107,9 +107,6 @@ VALUES('Nielene Keys', 'nkeys@gmail.com', 'nkeys', 'https://i0.wp.com/ranktribe.
 ('Nikki Vee', 'nikki@gmail.com', 'nikki', 'https://data.whicdn.com/images/153050864/superthumb.jpg?t=1419377844', 'Brooklyn', '646-769-2000', 'www.nikkiveenails.com', 'Makeup and all the works!', 4),
 ('Dianna Rossman', 'drnails@gmail.com', 'drnails', 'https://i.pinimg.com/736x/ce/71/ca/ce71ca421ed47b5d9e22b9b36a7486d7--pretty-people-beautiful-people.jpg', 'Manhattan', '646-769-2000', 'www.drnails.com', 'Nails and all the works!', 2);
 
-
-
--- https://pmcvariety.files.wordpress.com/2015/11/tessa-thompson-creed-q-and-a.jpg?w=1000&h=563&crop=1
 
 INSERT INTO services_provider(service_id, provider_id)
 VALUES(1,1), (2,1), (2,2), (4,2), (3,3), (4,4), (1,4), (1,5), (3,5), (2,14), (2,11), (1,11), (1,10), (1,9), (3,7), (2,4), (3,8), (1,8), (2,6), (1,6), (4,13), (1,14), (1,12), (3,12);
@@ -149,7 +146,6 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 (3, 9, 60, 150, 'false'); --hair
 
 
-
 INSERT INTO portfolio(provider_id, img, body, skill_id)
 VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),
   (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg', null, null),
@@ -163,4 +159,22 @@ VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851
   (4, 'http://lawyerfind.info/wp-content/uploads/best-purple-hair-dye-for-brown-hair-purple-and-magenta-hair-color-colorful-hair-pinterest-magenta.jpg', null, null),
   (5, 'http://jpmmobile.com/wp-content/uploads/2018/11/40-braids-for-black-kids-2018-mr-kids-haircuts-braids-for-black-kids.jpg', null, null),
   (5, 'https://4cjz9s2texp5a66rp37l3uty-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/1492699004/bashab___12224424_252504998425062_1601193227_n-2.jpg', null, null),
-  (5, 'https://www.menshairstylestoday.com/wp-content/uploads/2018/03/Black-Men-Hairstyles.jpg', null, null);
+  (5, 'https://www.menshairstylestoday.com/wp-content/uploads/2018/03/Black-Men-Hairstyles.jpg', null, null),
+  (6, 'https://tinyurl.com/y37njtfh', null, null),
+  (6, 'https://tinyurl.com/yyqagcrl', null, null),
+  (7, 'https://tinyurl.com/y6gwhcka', null, null),
+  (7, 'https://tinyurl.com/y56k6cu2', null, null),
+  (8, 'https://tinyurl.com/y4y7ccxd', null, null),
+  (8, 'https://tinyurl.com/y6gwhcka', null, null),
+  (9, 'https://tinyurl.com/y4fssmvh' , null, null),
+  (9, 'https://tinyurl.com/y4gdwrwl', null, null),
+  (10, 'https://tinyurl.com/y5rbrowj', null, null),
+  (10, 'https://tinyurl.com/y4bwezmc', null, null),
+  (11, 'https://tinyurl.com/y33jtox3', null, null),
+  (11, 'https://tinyurl.com/yy8vp7gp', null, null),
+  (12, 'https://tinyurl.com/y5dxg22b', null, null),
+  (12, 'https://tinyurl.com/yyf9muw4', null, null),
+  (13, 'https://tinyurl.com/y54y22le', null, null),
+  (13, 'https://tinyurl.com/yynypmx9', null, null),
+  (14, 'https://tinyurl.com/yxjcdxu7', null, null),
+  (14, 'https://tinyurl.com/y5y69r8p', null, null);

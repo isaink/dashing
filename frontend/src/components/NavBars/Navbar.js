@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
-
 import "../../Css/Navbar.css";
-import logo from "../../photo_assets/dashing_logo.png";
+// import logo from "../../photo_assets/dashing_logo.png";
 
 export default class Navbar extends Component {
   scrollToTop = () => {
@@ -13,8 +11,8 @@ export default class Navbar extends Component {
   render() {
     return (
       <>
-        <div className="navbar">
-          <span className="dashingNav">
+        <div>
+          {/* <span className="dashingNav">
             <h3>
               <Link to={"/"}>
                 <img
@@ -26,10 +24,10 @@ export default class Navbar extends Component {
                 />
               </Link>
             </h3>
-          </span>
+          </span> */}
 
           <div className="links">
-            <Link
+            {/* <Link
               className="links"
               activeClass="active"
               to="home"
@@ -37,12 +35,13 @@ export default class Navbar extends Component {
               smooth={true}
               offset={-70}
               duration={500}
-            >
-              Home
-            </Link>
-
-            <Link
-              className="links"
+            >Home
+            </Link> */}
+          
+          
+         
+            <Link 
+              className="links className='btn-slide-line center'"
               activeClass="active"
               to="hair"
               spy={true}
@@ -50,35 +49,38 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-              Hair
+            <button >Hair </button>
             </Link>
-
-            <Link
-              className="links"
+          
+          
+            <Link 
+              className="links btn-slide-line center"
               activeClass="active"
               to="nails"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
-              >
-              Nails
+            >
+             <button > Nails </button>
             </Link>
-
+          
+          
             <Link
-              className="links"
+              className="links btn-slide-line center"
               activeClass="active"
               to="barber"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
-              >
-              Barber
+            >
+             <button> Barber </button> 
             </Link>
-
+    
+          
             <Link
-              className="links"
+              className="links btn-slide-line center"
               activeClass="active"
               to="makeup"
               spy={true}
@@ -86,37 +88,36 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-              Makeup
-            </Link>
-
-
-
-            <Link
-              className="links"
-              activeClass="active"
-              to="education"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Educational Services
-            </Link>
-
-            <Link
-              className="links"
-              activeClass="active"
-              to="aboutus"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              About Us
+              <button> Makeup </button>
             </Link>
           </div>
         </div>
       </>
     );
   }
-}
+};
+
+
+            // {/* <Link
+            //   className="links"
+            //   activeClass="active"
+            //   to="education"
+            //   spy={true}
+            //   smooth={true}
+            //   offset={-70}
+            //   duration={500}
+            // >
+            //   Educational Services
+            // </Link>
+
+            // <Link
+            //   className="links"
+            //   activeClass="active"
+            //   to="aboutus"
+            //   spy={true}
+            //   smooth={true}
+            //   offset={-70}
+            //   duration={500}
+            // >
+            //   About Us
+            // </Link> */}

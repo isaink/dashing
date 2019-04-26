@@ -1,10 +1,11 @@
 
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-
+import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
+import barberPic from "../../photo_assets/barber.jpeg";
 import { Dropdown } from "./Dropdown.js";
 
 import { ComboBox } from "./ComboBox.js";
@@ -19,7 +20,7 @@ class Barber extends React.Component {
 
   componentDidMount() {
     this.props.fetchProvidersByService();
-  }
+  };
 
   componentDidUpdate(prevProps, prevState){
     if (!prevProps.barberProviders && this.props.barberProviders) {
@@ -43,69 +44,83 @@ class Barber extends React.Component {
     if (this.props.barberProviders) {
       return this.props.barberProviders.map(barberP => {
         return (
-          <div key={barberP.provider_id}>
+          <>
             <Link to={`/singleProviderProfile/${barberP.provider_id}`}>
-              <div className="barber_avatar box">
+            <div className="box">
+              <div className="content">
                 <img
                   alt="avatar"
-                  className="pic_barber content"
+                  className="hvrbox-layer_bottom"
                   src={barberP.avatar}
-                  style={{ height: "150px" }}
-                  />
-                <span id="providername">{barberP.provider}</span>
-                <br />
-                {barberP.borough} <br />
-              {barberP.email} <br />
-            {barberP.phone_number} <br />
-          {barberP.website_link}
-        </div>
-      </Link>
-    </div>
-  );
-});
-} else {
-  return (
-    <div className="lds-heart">
-      <div />
-    </div>
-  );
-}
-};
+                  style={{ height: "150px", display: 'block' }}
+                />
+
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'>
+                      <span id="ih-fade-down ih-delay-sm">{barberP.provider}</span>
+                      <br />
+
+                    <div className='ih-zoom-in ih-delay-md'>
+                      {barberP.borough} <br />
+                      {barberP.email} <br />
+                      {barberP.phone_number} <br />
+                      {barberP.website_link}
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </>
+        );
+      });
+    } else {
+      return (
+        <div className="lds-heart"><div></div></div>
+      );
+    }
+  };
+
 
 render() {
-  console.log('BARBER STATE', this.state)
+    return (
+      <>
+       <div className='ctnr_prov'>
+        <div className="ctnr_box">
+            <div className="img_intro">
+              <img
+                alt="intro"
+                src={barberPic}
+                width="600px"
+                height="auto"
+              />
+            </div>
 
-  return (
-    <>
-    <div className="barber_title">Barber</div>
-    <span className="dropdown">
-      <h1>Select Your Location</h1>
-      <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-    </span>
+            <div className="inner_ctnr_providers">
+              <div className="title">Barber</div>
+              <hr />
 
-    <span className="combobox">
-      <ComboBox
-        fetchSkillList={this.state.skills}
-        getProvidersBySkill={this.props.getProvidersBySkill}
-        />
-    </span>
+              <span className="dropdown">
+                <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+                <SkillsByServiceComboBox />
+              </span>
 
-    <div className="barber_box">
-      <div className="img_intro">
-        <img
-          alt="intro"
-          src="http://fashionbombdaily.com/wp-content/uploads/2016/08/fashion-bomb-daily-Kat-Morgan-Cardi-B-17.jpg"
-          width="600px"
-          height="auto"
-          />
-      </div>
-      <div className="inner_ctnr_providers">
-        <div className="providers">{this.renderProviders()}</div>
-      </div>
-    </div>
-    </>
-);
-}
+              <span className="combobox">
+                <ComboBox
+                  fetchSkillList={this.state.skills}
+                  getProvidersBySkill={this.props.getProvidersBySkill}
+                  />
+              </span>
+
+              <div className="providers">
+                <div className="prov">{this.renderProviders()}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
 }
 
 const mapStateToProps = (state, ownProps) => {

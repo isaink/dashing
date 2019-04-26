@@ -1,16 +1,19 @@
 html {
-  background-color: black;
+  /* background-color: black; */
 }
 
 .edu_container {
   display: grid;
   grid-template-columns: 40% 60%;
+
   object-fit: cover;
   height: 1000px;
+  background-color: black;
 }
 
 .rightside {
   background-color: black;
+  grid-template-rows: 30% 70%;
 }
 
 #left_pic {
@@ -18,7 +21,7 @@ html {
 }
 
 #ed_header {
-  font-family: "Mrs Saint Delafield", cursive;
+  font-family: 'Mrs Saint Delafield', cursive;
   color: white;
   font-size: 60px;
   padding-top: 100px;
@@ -34,6 +37,14 @@ html {
   padding-left: 20px;
   display: flex;
   text-align: left;
-  padding-right: 100px;
+  padding-right: 50px;
   line-height: 30px;
+  grid-row: 1;
+}
+
+.skillsDropdown {
+  margin-top: auto;
+  grid-row: 2;
+  padding-left: 20px;
+
 }

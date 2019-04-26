@@ -21,34 +21,6 @@ const getAllProviders = (req, res, next) => {
   })
 };
 
-const getProviderInfo = (req, res, next) => {
- db.one('SELECT providers.id, providers.name AS providerName, avatar, email, borough, phone_number, website_link FROM providers WHERE providers.id = ${id}', {
-   id: Number(req.params.id)
- })
- .then(info => {
-   res.status(200).json({
-     status: 'success',
-     message: 'Got complete info for provider',
-     info: info
-   })
- })
- .catch(err => next(err));
-};
-
-
-const getProviderServices = (req, res, next) => {
- db.any('SELECT services_provider.provider_id, services_provider.service_id, services.name AS servicesName, array_agg(skills.name) AS skills FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE providers.id =${id} group by services_provider.provider_id, services_provider.service_id, services.name', {
-   id: Number(req.params.id)
- }).then(info => {
-   res.status(200).json({
-     status: 'success',
-     message: 'Got complete services for provider',
-     info: info
-   })
- })
- .catch(err => next(err));
-};
-
 // POST -> Create a Provider [USER AUTH]  ->  /provider/:id
 const createProvider = (req, res, next) => {
   // const hash = authHelpers.createHash(req.body.password);
@@ -127,6 +99,22 @@ const deleteProvider = (req, res, next) => {
 };
 
 
+// const getSingleProvider = (req, res, next) => {
+//   db.any('SELECT providers.id, providers.name AS providerName, array_agg(distinct avatar) AS avatar, email, borough, phone_number, website_link, services_provider.service_id, services_provider.provider_id, services.id, services.name AS servicesName, skills.id, skills.service_id, skills.name AS skillsName FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE provider_id =  ${id} GROUP BY providers.id, services_provider.service_id, services_provider.provider_id, services.id, skills.id', {
+const getProviderInfo = (req, res, next) => {
+  db.one('SELECT providers.id, bio, providers.name AS providerName, avatar, email, borough, phone_number, website_link FROM providers WHERE providers.id = ${id}', {
+    id: Number(req.params.id)
+  })
+  .then(info => {
+    res.status(200).json({
+      status: 'success',
+      message: 'Got complete info for provider',
+      info: info
+    })
+  })
+  .catch(err => next(err));
+};
+
 const getSingleProvider = (req, res, next) => {
   db.one('SELECT providers.id, providers.name AS providerName, array_agg(distinct avatar) AS avatar, email, borough, phone_number, website_link, services_provider.service_id, services_provider.provider_id, services.id, services.name AS servicesName, skills.id, skills.service_id, skills.name AS skillsName FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE provider_id =  ${id} GROUP BY providers.id, services_provider.service_id, services_provider.provider_id, services.id, skills.id', {
     id: Number(req.params.id)
@@ -180,6 +168,18 @@ const getProvidersBySkill= (req, res, next) => {
 
 }
 
+const getProviderServices = (req, res, next) => {
+  db.any('SELECT services_provider.provider_id, services_provider.service_id, services.name AS servicesName, array_agg(skills.name) AS skills FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE providers.id =${id} group by services_provider.provider_id, services_provider.service_id, services.name', {
+    id: Number(req.params.id)
+  }).then(info => {
+    res.status(200).json({
+      status: 'success',
+      message: 'Got complete services for provider',
+      info: info
+    })
+  })
+  .catch(err => next(err));
+ };
 
 
 module.exports = {

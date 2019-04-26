@@ -1,9 +1,10 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-
+import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
+import nailsPic from "../../photo_assets/nails.jpg";
 import { Dropdown } from "./Dropdown.js";
 
 import axios from 'axios';
@@ -36,6 +37,7 @@ class Nails extends React.Component {
       console.log('GET SKILLS ERR', err);
     })
   }
+  // };
 
   renderProviders = () => {
     if (this.props.nailProviders) {
@@ -43,56 +45,83 @@ class Nails extends React.Component {
         return (
           <div key={nailP.provider_id}>
             <Link to={`/singleProviderProfile/${nailP.provider_id}`}>
-              <div className="hair_avatar box">
-                <img
-                  alt="avatar"
-                  className="pic_hair content"
-                  src={nailP.avatar}
-                  style={{ height: "150px" }}
-                />
-                <span id="providername">{nailP.provider}</span>
-                <br />
-                {nailP.borough} <br />
-                {nailP.email} <br />
-                {nailP.phone_number} <br />
-                {nailP.website_link}
+              <div className="box">
+                <div className="content">
+                  <img
+                    alt="avatar"
+                    className="hvrbox-layer_bottom"
+                    src={nailP.avatar}
+                    style={{ height: "150px" , display: 'block'}}
+                    />
+                  <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'>
+                      <span id="providername"  className='ih-fade-down ih-delay-sm'>>{nailP.provider}</span>
+                      <br />
+                      <div className='ih-zoom-in ih-delay-md'>
+                        {nailP.borough} <br />
+                      {nailP.email} <br />
+                    {nailP.phone_number} <br />
+                  {nailP.website_link}
+                </div>
               </div>
-            </Link>
+            </div>
           </div>
-        );
-      });
-    } else {
-      return (
-        <div className="lds-heart">
-          <div />
         </div>
-      );
-    }
-  };
+      </Link>
+    </div>
+  );
+});
+} else {
+  return (
+    <div className="lds-heart"><div></div></div>
+  );
+}
+};
 
-  render() {
-    console.log('NAIL STATE', this.state)
+render() {
+  console.log('NAIL STATE', this.state)
 
-    return (
-      <>
-        <div className="hair_title">Nails</div>
-        <span className="dropdown">
-          <h1>Select Your Location</h1>
-          <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-        </span>
-
-        <span className="combobox">
-          <ComboBox
-            fetchSkillList={this.state.skills}
-            getProvidersBySkill={this.props.getProvidersBySkill}
+  return (
+    <>
+    <div className='ctnr_prov'>
+      <div className="ctnr_box">
+        <div className="img_intro">
+          <img
+            alt="intro"
+            src={nailsPic}
+            width="600px"
+            height="auto"
             />
-        </span>
+        </div>
+
+        <div className="inner_ctnr_providers">
+          <div className="title">Nails</div>
+          <hr />
 
 
-        <div className="providers">{this.renderProviders()}</div>
-      </>
-    );
-  }
+
+          <div className="providers">{this.renderProviders()}</div>
+          <span className="dropdown">
+            <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+            <SkillsByServiceComboBox />
+          </span>
+
+          <span className="combobox">
+            <ComboBox
+              fetchSkillList={this.state.skills}
+              getProvidersBySkill={this.props.getProvidersBySkill}
+              />
+          </span>
+
+          <div className="providers">
+            <div className="prov">{this.renderProviders()}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </>
+);
+}
 }
 
 const mapStateToProps = (state, ownProps) => {
