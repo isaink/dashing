@@ -43,19 +43,6 @@ class Hair extends React.Component {
     })
   }
 
-  // getLocationsForService = () => {
-  //   axios.get(`/providers/1`)
-  //   .then(res => {
-  //     // console.log(res.data.data);
-  //     // debugger
-  //     this.setState({
-  //       skills: res.data.data
-  //     })
-  //   })
-  //   .catch(err => {
-  //     console.log('GET SKILLS ERR', err);
-  //   })
-  // }
 
   renderProviders = () => {
     if (this.props.hairProviders) {

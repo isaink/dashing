@@ -37,7 +37,13 @@ export class ComboBox extends Component {
     event.preventDefault()
       let location = this.state.location
       let skill_id = this.state.skill_id
+    if (this.state.boro_selected && this.state.skill_selected) {
       this.props.getProvidersByService(skill_id, location)
+    } else if (this.state.boro_selected) {
+      this.props.fetchProBySvcAndBoro(location)
+    } else if (this.state.skill_selected) {
+      this.props.getProvidersBySkill(skill_id)
+    }
   }
 
 
