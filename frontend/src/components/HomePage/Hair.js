@@ -13,7 +13,8 @@ import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
 
 class Hair extends React.Component {
   state = {
-    skills: []
+    skills: [],
+    locations: []
   }
 
   componentDidMount() {
@@ -23,12 +24,15 @@ class Hair extends React.Component {
   componentDidUpdate(prevProps, prevState){
     if (!prevProps.hairProviders && this.props.hairProviders) {
       this.getSkillsForService();
+      // this.getLocationsForService();
     }
   }
 
   getSkillsForService = () => {
     axios.get(`/services/skills/1`)
     .then(res => {
+      // console.log(res.data.data);
+      // debugger
       this.setState({
         skills: res.data.data
       })
@@ -37,6 +41,20 @@ class Hair extends React.Component {
       console.log('GET SKILLS ERR', err);
     })
   }
+
+  // getLocationsForService = () => {
+  //   axios.get(`/providers/1`)
+  //   .then(res => {
+  //     // console.log(res.data.data);
+  //     // debugger
+  //     this.setState({
+  //       skills: res.data.data
+  //     })
+  //   })
+  //   .catch(err => {
+  //     console.log('GET SKILLS ERR', err);
+  //   })
+  // }
 
   renderProviders = () => {
     if (this.props.hairProviders) {
@@ -80,6 +98,7 @@ class Hair extends React.Component {
 
 
   render() {
+    console.log(this.props);
     return (
       <>
       <div className='ctnr_prov'>
@@ -103,6 +122,7 @@ class Hair extends React.Component {
               <ComboBox
                 fetchSkillList={this.state.skills}
                 getProvidersBySkill={this.props.getProvidersBySkill}
+                fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro}
                 />
             </span>
 

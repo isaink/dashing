@@ -64,6 +64,28 @@ const getSkillsByServiceId = (req, res, next) => {
   })
 }
 
+// router.get('services/locations/:service_id', db.getSkillsByServiceId );     // http://localhost:3100/services/:service_id
+const getLocationsByServiceId = (req, res, next) => {
+  let serviceId = parseInt(req.params.service_id);
+  db.any(
+    // `SELECT *, skills.id AS skill_id, skills.name AS skill_name, services.name AS service_name FROM skills JOIN services ON services.id=skills.service_id WHERE service_id = $1`, [serviceId]
+  )
+  .then(data => {
+    res.status(200).json({
+      status: 'success',
+      data: data,
+      message: 'Skills by service id!'
+    })
+  })
+  .catch(err => {
+    res.status(400)
+    .json({
+      status: 'error',
+      message: " 🤣 Na nana na nah. You didn't get your Skills by service id!😝 "
+    })
+  })
+}
+
 const getAllSkillsJoinService = (req, res, next) => {
   db.any("SELECT skills.name AS skill_name, skills.id AS skill_id, skills.*, services.name AS service_name FROM skills JOIN services ON services.id = skills.service_id")
     .then(data => {
@@ -83,6 +105,7 @@ const getAllSkillsJoinService = (req, res, next) => {
 module.exports = {
   getAllServices,
   getServiceById,
+  getLocationsByServiceId, //to put location dropdown with skill dropdown
   getSkillsByServiceId,
   getAllSkillsJoinService,
 }
