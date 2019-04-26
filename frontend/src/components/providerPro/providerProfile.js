@@ -48,11 +48,6 @@ export const ProviderProfile = props => {
                 })}
               
               </div>
-
-
-              
-
-
           </div>
         </div>
       );
@@ -66,7 +61,7 @@ export const ProviderProfile = props => {
   const renderProviderPortfolio = () => {
     if (props.providerInfo.portfolio) {
 
-     return props.providerInfo.portfolio.map(photo =>{
+     return props.providerInfo.portfolio.map(photo => {
 
       return(
         <img className="portfolio_image" src={photo['img']} alt='not here'/>

@@ -10,8 +10,8 @@ export default class NavbarProfile extends Component {
     render() {
       return (
         <>
-          <div className="navbar">
-            <span className="dashingNav">
+          <div className="nav_prof">
+            <span className="dashingNav ">
               <h3>
                 <Link to={"/"}>
                   <img

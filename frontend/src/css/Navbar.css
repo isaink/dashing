@@ -36,3 +36,8 @@ button:after {
 }
 
 button:hover::after { transform: scale(1,1); }
+
+
+.nav_prof{
+  z-index: 3;
+}

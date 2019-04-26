@@ -17,7 +17,7 @@ export const ProviderProfile = props => {
             <div className='ctnr_profile' key={props.providerInfo.provider_id}>
 
               <div className='bg_intro_profile'>
-                <img alt='intro_picture' src={pared}  className='intro_pic' style={{width: `1418px`}}/>
+                <img alt='intro_picture' src={pared}  className='intro_pic' style={{width: `400%`}}/>
               </div>
               
               {/* <div >    */}
