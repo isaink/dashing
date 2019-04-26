@@ -31,7 +31,7 @@ class Barber extends React.Component {
                     <div className='hvrbox-text'>
                       <span id="ih-fade-down ih-delay-sm">{barberP.provider}</span>
                       <br />
-                      
+
                     <div className='ih-zoom-in ih-delay-md'>
                       {barberP.borough} <br />
                       {barberP.email} <br />
@@ -62,7 +62,7 @@ class Barber extends React.Component {
               <img
                 alt="intro"
                 src={barberPic}
-                width="600px"
+                width="800px"
                 height="auto"
               />
             </div>

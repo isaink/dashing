@@ -14,6 +14,7 @@ import Barber from "./Barber";
 import Makeup from "./Makeup";
 import { Education } from "./Education";
 import { AboutUs } from "./AboutUs";
+// import  NavbarForComponents  from '../NavBars/NavbarForComponents'
 
 import "./../../Css/Home.css";
 
@@ -42,7 +43,7 @@ class Home extends Component {
   render() {
     return (
       <>
-       
+
         <Element name="home">
           <Welcome />
         </Element>
@@ -58,15 +59,15 @@ class Home extends Component {
         <Element name="barber">
           <Barber />
         </Element>
-        
+
         <Element name="makeup">
           <Makeup />
         </Element>
-   
+
         <Element name="education">
           <Education />{" "}
         </Element>
-        
+
         <Element name="aboutus">
           <AboutUs />{" "}
         </Element>

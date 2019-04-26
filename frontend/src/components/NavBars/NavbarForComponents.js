@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
-import "../../Css/Navbar.css";
-// import logo from "../../photo_assets/dashing_logo.png";
+import "../../Css/NavbarForComponents.css";
+import logo from "../../photo_assets/dashing_logo.png";
 
 export default class Navbar extends Component {
   scrollToTop = () => {
@@ -11,8 +11,8 @@ export default class Navbar extends Component {
   render() {
     return (
       <>
-        <div>
-          {/* <span className="dashingNav">
+        <div className="navbar">
+          <span className="dashingNav">
             <h3>
               <Link to={"/"}>
                 <img
@@ -24,10 +24,10 @@ export default class Navbar extends Component {
                 />
               </Link>
             </h3>
-          </span> */}
+          </span>
 
           <div className="links">
-            {/* <Link
+            <Link
               className="links"
               activeClass="active"
               to="home"
@@ -35,11 +35,9 @@ export default class Navbar extends Component {
               smooth={true}
               offset={-70}
               duration={500}
-            >Home
-            </Link> */}
-
-
-
+            >
+              Home
+            </Link>
             <Link
               className="links className='btn-slide-line center'"
               activeClass="active"
@@ -48,11 +46,8 @@ export default class Navbar extends Component {
               smooth={true}
               offset={-70}
               duration={500}
-            >
-            <button >Hair </button>
+            >Hair
             </Link>
-
-
             <Link
               className="links btn-slide-line center"
               activeClass="active"
@@ -62,10 +57,8 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-             <button > Nails </button>
+              Nails
             </Link>
-
-
             <Link
               className="links btn-slide-line center"
               activeClass="active"
@@ -75,10 +68,8 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-             <button> Barber </button>
+              Barber
             </Link>
-
-
             <Link
               className="links btn-slide-line center"
               activeClass="active"
@@ -88,36 +79,34 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-              <button> Makeup </button>
+              Makeup
             </Link>
+            <Link
+              className="links"
+              activeClass="active"
+              to="education"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Educational Services
+            </Link>
+            <Link
+              className="links"
+              activeClass="active"
+              to="aboutus"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              About Us
+            </Link>
+
           </div>
         </div>
       </>
     );
   }
-};
-
-
-            // {/* <Link
-            //   className="links"
-            //   activeClass="active"
-            //   to="education"
-            //   spy={true}
-            //   smooth={true}
-            //   offset={-70}
-            //   duration={500}
-            // >
-            //   Educational Services
-            // </Link>
-
-            // <Link
-            //   className="links"
-            //   activeClass="active"
-            //   to="aboutus"
-            //   spy={true}
-            //   smooth={true}
-            //   offset={-70}
-            //   duration={500}
-            // >
-            //   About Us
-            // </Link> */}
+}
