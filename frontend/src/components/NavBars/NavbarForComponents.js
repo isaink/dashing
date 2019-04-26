@@ -39,7 +39,7 @@ export default class Navbar extends Component {
               Home
             </Link>
             <Link
-              className="links className='btn-slide-line center'"
+              className="links"
               activeClass="active"
               to="hair"
               spy={true}
@@ -49,7 +49,7 @@ export default class Navbar extends Component {
             >Hair
             </Link>
             <Link
-              className="links btn-slide-line center"
+              className="links"
               activeClass="active"
               to="nails"
               spy={true}
@@ -60,7 +60,7 @@ export default class Navbar extends Component {
               Nails
             </Link>
             <Link
-              className="links btn-slide-line center"
+              className="links"
               activeClass="active"
               to="barber"
               spy={true}
@@ -71,7 +71,7 @@ export default class Navbar extends Component {
               Barber
             </Link>
             <Link
-              className="links btn-slide-line center"
+              className="links"
               activeClass="active"
               to="makeup"
               spy={true}
@@ -81,6 +81,7 @@ export default class Navbar extends Component {
             >
               Makeup
             </Link>
+
             <Link
               className="links"
               activeClass="active"
@@ -92,6 +93,7 @@ export default class Navbar extends Component {
             >
               Educational Services
             </Link>
+
             <Link
               className="links"
               activeClass="active"
