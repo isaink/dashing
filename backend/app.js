@@ -10,7 +10,7 @@ var srvProvidersRouter = require('./routes/srvProviders');
 var servicesRouter = require('./routes/services');
 var portfolioRouter = require('./routes/portfolios');
 var skillsProviderRouter = require('./routes/skillsProvider');
-var skillsProvider = require('./routes/skills')
+var skillsProvider = require('./routes/skills');
 
 
 var app = express();
@@ -31,8 +31,7 @@ app.use('/srvProviders', srvProvidersRouter);
 app.use('/services', servicesRouter);
 app.use('/portfolio', portfolioRouter);
 app.use('/skillsProvider', skillsProviderRouter);
-app.use('/skills', skillsProvider)
-
+app.use('/skills', skillsProvider);
 
 
 // catch 404 and forward to error handler
