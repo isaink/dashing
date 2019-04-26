@@ -1,21 +1,6 @@
-body {
-  /* font-family: "Josefin Sans", sans-serif; */
-  font-size: 12px;
-  /* background-color: black; */
-}
-
-/* .pageContainer {
-  display: grid;
-  grid-template-columns: 40% 60%;
-  object-fit: cover;
-  height: 1000px;
-} */
-
-#providername {
-  font-size: 15px;
-  font-family: "Josefin Sans", sans-serif;
-  color: white;
-  font-weight: 400;
+.ctnr_prov{
+  max-height: 950px;
+  background-color: black;
 }
 
 .ctnr_box {
@@ -28,12 +13,6 @@ body {
   grid-column: 1;
 }
 
-.ctnr_prov{
-  /* max-height: 950px; */
-  background-color: black;
-
-}
-
 .inner_ctnr_providers {
   align-items: start;
   background-color: white;
@@ -44,6 +23,13 @@ body {
   border-left: solid #ecb99c;
   border-style: double;
   padding-right: 10px;
+}
+
+#providername {
+  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  font-weight: 400;
 }
 
 .title {

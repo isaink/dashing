@@ -11,7 +11,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <>
-        <div className="navbar  cntr_bttn">
+        <div>
           {/* <span className="dashingNav">
             <h3>
               <Link to={"/"}>
@@ -38,10 +38,10 @@ export default class Navbar extends Component {
             >Home
             </Link> */}
           
-          <button className='btn-slide-line center'>
+          
          
-            <Link
-              className="links"
+            <Link 
+              className="links className='btn-slide-line center'"
               activeClass="active"
               to="hair"
               spy={true}
@@ -49,13 +49,12 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-             <span>  Hair </span>
+            <button >Hair </button>
             </Link>
-          </button>
           
-          <button className='btn-slide-line center'>
-            <Link
-              className="links"
+          
+            <Link 
+              className="links btn-slide-line center"
               activeClass="active"
               to="nails"
               spy={true}
@@ -63,14 +62,12 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-             
-              <span>  Nails </span>
+             <button > Nails </button>
             </Link>
-          </button>
           
-          <button className='btn-slide-line center'>
+          
             <Link
-              className="links"
+              className="links btn-slide-line center"
               activeClass="active"
               to="barber"
               spy={true}
@@ -78,13 +75,12 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-            <span>  Barber </span>
+             <button> Barber </button> 
             </Link>
-          </button>
     
-          <button className='btn-slide-line center'>
+          
             <Link
-              className="links"
+              className="links btn-slide-line center"
               activeClass="active"
               to="makeup"
               spy={true}
@@ -92,38 +88,36 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-             <span>  Makeup </span>
-              
+              <button> Makeup </button>
             </Link>
-          </button>
-        
-
-            {/* <Link
-              className="links"
-              activeClass="active"
-              to="education"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Educational Services
-            </Link>
-
-            <Link
-              className="links"
-              activeClass="active"
-              to="aboutus"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              About Us
-            </Link> */}
           </div>
         </div>
       </>
     );
   }
-}
+};
+
+
+            // {/* <Link
+            //   className="links"
+            //   activeClass="active"
+            //   to="education"
+            //   spy={true}
+            //   smooth={true}
+            //   offset={-70}
+            //   duration={500}
+            // >
+            //   Educational Services
+            // </Link>
+
+            // <Link
+            //   className="links"
+            //   activeClass="active"
+            //   to="aboutus"
+            //   spy={true}
+            //   smooth={true}
+            //   offset={-70}
+            //   duration={500}
+            // >
+            //   About Us
+            // </Link> */}
