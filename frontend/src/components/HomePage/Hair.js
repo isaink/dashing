@@ -10,6 +10,7 @@ import { Dropdown } from "./Dropdown.js";
 import axios from 'axios';
 import { ComboBox } from "./ComboBox.js";
 import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
+import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
 
 class Hair extends React.Component {
   state = {
@@ -118,11 +119,14 @@ class Hair extends React.Component {
             <hr />
 
             <span className="dropdown">
-              <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+              {/*
+              // <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+              */}
               <ComboBox
                 fetchSkillList={this.state.skills}
                 getProvidersBySkill={this.props.getProvidersBySkill}
                 fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro}
+                getProvidersByService = {this.props.getProvidersByService}
                 />
             </span>
 
@@ -149,6 +153,7 @@ const mapDispatchToProps = dispatch => {
     fetchProBySvcAndBoro: borough => dispatch(fetchProvidersByService(1, borough)),
 
     getProvidersBySkill: (skill_id) => dispatch( getProvidersBySkill(1, skill_id)),
+    getProvidersByService: (skill_id, borough) => dispatch(getProvidersByService(1, skill_id, borough))
   };
 };
 

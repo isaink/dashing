@@ -1,3 +1,11 @@
+/* .staticNavbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  background-color: green;
+  border: 2px solid #4CAF50;
+} */
+
 .links_center {
   display: flex;
   justify-content: center;

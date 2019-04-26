@@ -20,18 +20,8 @@ export class ComboBox extends Component {
     this.setState({
       boro_selected: true,
       [event.target.name]: event.target.value,
-
     })
   };
-
-  // fetchBoroProviders = event => {
-  //   let borough = event.target.value;
-  //   if (this.state.boro_selected) {
-  //     return null
-  //   } else{
-  //     this.props.fetchProBySvcAndBoro(borough);
-  //   }
-  // }
 
   handleSkillChange = (event) => {
     // let skill_id = event.target.value
@@ -43,42 +33,17 @@ export class ComboBox extends Component {
     })
   }
 
-  // fetchSkillProviders = event => {
-  //   let skill_id = event.target.value
-  //   this.props.getProvidersBySkill(skill_id)
-  //   this.setState ({
-  //     skill_id : skill_id,   // skill_id (made up name) : skill_id (the event.target.value variable)
-  //   })
-  // }
-
-
   handleSubmit = event => {
     event.preventDefault()
-      let location = event.target.value;
-      let skill_id = event.target.value
-    if (this.state.boro_selected && this.state.skill_selected) {
-      this.props.fetchProBySvcAndBoro(location)
-      this.props.getProvidersBySkill(skill_id)
-    } else if (this.state.boro_selected) {
-      this.props.fetchProBySvcAndBoro(location)
-    } else if (this.state.skill_selected) {
-      this.props.getProvidersBySkill(skill_id)
-    }
+      let location = this.state.location
+      let skill_id = this.state.skill_id
+      this.props.getProvidersByService(skill_id, location)
   }
 
 
 
   render() {
     console.log(this.state);
-
-    // if (this.state.boro_selected && this.state.skill_selected) {
-    //   this.fetchBoroProviders()
-    //   this.props.fetchSkillProviders()
-    // } else if (this.state.boro_selected) {
-    //   this.fetchBoroProviders()
-    // } else if (this.state.skill_selected) {
-    //   this.props.fetchSkillProviders()
-    // }
 
     const skillList = this.props.fetchSkillList.length !== 0 && [...this.props.fetchSkillList].map(skill => (
       <option key={skill.skill_id} value={skill.skill_id} > {skill.skill_name} </option>

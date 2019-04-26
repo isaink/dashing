@@ -168,6 +168,58 @@ const getProvidersBySkill= (req, res, next) => {
 
 }
 
+// router.get('/byService/:service_id', getProvidersByService);
+// http://localhost:3100/providers/byService/1?skill_id=1&borough=Brooklyn
+const getProvidersByService= (req, res, next) => {
+  console.log('REQ.QUERY', req.query);
+  let sql = `SELECT
+    providers.name provider,
+    avatar,
+    borough,
+    email,
+    phone_number,
+    providers.id provider_id,
+    website_link,
+    services.name services,
+    skills.id skill_id
+  FROM skills_provider
+  JOIN skills ON skills.id = skills_provider.skill_id
+  JOIN providers ON providers.id = skills_provider.provider_id
+  JOIN services ON services.id = skills.service_id
+  WHERE services.id = $[service_id]`
+
+  // if (req.query.skill_id && req.query.borough) {
+  //   sql += `AND skills.id = $[skill_id] AND borough= $[borough]`
+  // } else
+  if (req.query.skill_id) {
+    sql += `AND skills.id = $[skill_id]`
+  }
+  if (req.query.borough) {
+    sql += `AND borough= $[borough]`
+  }
+
+  db.any(sql, {
+      service_id: Number(req.params.service_id),
+      skill_id: Number(req.query.skill_id),
+      borough: req.query.borough
+    }
+  )
+  .then(data => {
+    res.status(200).json({
+      status: "Success",
+      message: "Got all providers by this service and skill",
+      data: data
+    });
+  })
+  .catch(err => {
+    res.status(400).json({
+      status: "Failure",
+      message: "Failed to get all services/skills by this provider"
+    });
+  });
+
+}
+
 const getProviderServices = (req, res, next) => {
   db.any('SELECT services_provider.provider_id, services_provider.service_id, services.name AS servicesName, array_agg(skills.name) AS skills FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE providers.id =${id} group by services_provider.provider_id, services_provider.service_id, services.name', {
     id: Number(req.params.id)
@@ -194,5 +246,6 @@ module.exports = {
   updateProvider,
   deleteProvider,
 
-  getProvidersBySkill
+  getProvidersBySkill,
+  getProvidersByService,
 }
