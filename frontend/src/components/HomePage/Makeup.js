@@ -13,7 +13,6 @@ import { getProvidersBySkill } from "../../Redux_Actions/comboBoxAction";
 class Makeup extends React.Component {
   state = {
     skills: [],
-    selectedSkill: '',
   }
 
   componentDidMount() {
@@ -91,7 +90,6 @@ class Makeup extends React.Component {
           <ComboBox
             fetchSkillList={this.state.skills}
             getProvidersBySkill={this.props.getProvidersBySkill}
-            selectedSkill={this.state.selectedSkill}
           />
         </span>
 
@@ -122,8 +120,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchProvidersByService: () => dispatch(fetchProvidersByService(4)),
-    fetchProBySvcAndBoro: borough =>
-      dispatch(fetchProvidersByService(4, borough)),
+    fetchProBySvcAndBoro: borough => dispatch(fetchProvidersByService(4, borough)),
 
     getProvidersBySkill: (skill_id) => dispatch(getProvidersBySkill(4, skill_id)),
   };

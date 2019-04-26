@@ -117,8 +117,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchProvidersByService: () => dispatch(fetchProvidersByService(3)),
-    fetchProBySvcAndBoro: borough =>
-    dispatch(fetchProvidersByService(3, borough)),
+    fetchProBySvcAndBoro: borough => dispatch(fetchProvidersByService(3, borough)),
 
     getProvidersBySkill: (skill_id) => dispatch(getProvidersBySkill(3, skill_id)),
 

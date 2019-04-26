@@ -15,17 +15,20 @@ export class ComboBox extends Component {
 
   render() {
 
-  return (
-    <div>
-      <select onChange={this.handleSkillChange} value={this.state.skill_id}>
-        <option value='0' disabled >Select Skill</option>
-        {this.props.fetchSkillList.length !== 0 && [...this.props.fetchSkillList].map(skill => (
-          <option key={skill.skill_id} value={skill.skill_id} > {skill.skill_name} </option>
-        ))}
-      </select>
-    </div>
-  );
-}
+    const skillList = this.props.fetchSkillList.length !== 0 && [...this.props.fetchSkillList].map(skill => (
+      <option key={skill.skill_id} value={skill.skill_id} > {skill.skill_name} </option>
+    ))
+
+    return (
+      <div>
+        <select onChange={this.handleSkillChange} value={this.state.skill_id}>
+          <option value='0' disabled >Select Skill</option>
+
+          {skillList}
+        </select>
+      </div>
+    );
+  }
 };
 
 
