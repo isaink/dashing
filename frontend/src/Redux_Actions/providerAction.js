@@ -97,3 +97,4 @@ export const getProviderInfo = provider_id => dispatch => {
       return dispatch(fetchErrors(err));
     })
 };
+

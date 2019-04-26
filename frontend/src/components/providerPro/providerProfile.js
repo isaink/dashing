@@ -27,8 +27,6 @@ export const ProviderProfile = props => {
               <p>Email: {props.providerInfo.email}</p>
             </div>
               <div className='skills'>
-
-               
                 {props.providerInfo.services && props.providerInfo.services.map(service => {
                 let skills = service.skills.map(skill => {
                   return (
@@ -45,8 +43,8 @@ export const ProviderProfile = props => {
                     </ul>
                     </>
                   )
-                })}
-              
+                })}  
+              </div>
               </div>
           </div>
         </div>
@@ -60,15 +58,14 @@ export const ProviderProfile = props => {
   
   const renderProviderPortfolio = () => {
     if (props.providerInfo.portfolio) {
-
-     return props.providerInfo.portfolio.map(photo => {
-
+     return props.providerInfo.portfolio.map(photo =>{
       return(
         <img className="portfolio_image" src={photo['img']} alt='not here'/>
       )
       })
     }
   };
+
   return (
     <>
 
