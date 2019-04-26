@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import '../../Css/ComboBox.css'
+
 export class ComboBox extends Component {
   state = {
     skill_id: 0,
@@ -20,8 +22,12 @@ export class ComboBox extends Component {
     ))
 
     return (
-      <div>
-        <select onChange={this.handleSkillChange} value={this.state.skill_id}>
+      <div className='ComboboxDiv'>
+        <select
+          className='comboSelector'
+          onChange={this.handleSkillChange}
+          value={this.state.skill_id}
+          >
           <option value='0' disabled >Select Skill</option>
 
           {skillList}

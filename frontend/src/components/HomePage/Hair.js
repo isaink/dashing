@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
+// import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import hairPic from "../../photo_assets/hair.jpg";
 import { Dropdown } from "./Dropdown.js";
 
@@ -100,11 +100,6 @@ class Hair extends React.Component {
 
             <span className="dropdown">
               <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-              <SkillsByServiceComboBox />;
-
-            </span>
-
-            <span className="combobox">
               <ComboBox
                 fetchSkillList={this.state.skills}
                 getProvidersBySkill={this.props.getProvidersBySkill}

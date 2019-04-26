@@ -102,10 +102,6 @@ render() {
 
               <span className="dropdown">
                 <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-                <SkillsByServiceComboBox />
-              </span>
-
-              <span className="combobox">
                 <ComboBox
                   fetchSkillList={this.state.skills}
                   getProvidersBySkill={this.props.getProvidersBySkill}

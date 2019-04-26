@@ -17,24 +17,6 @@ export const receivedProvidersSuccess = (providers, service_id) => {
   };
 };
 
-// <<<<<<< HEAD
-// // PROVIDER BY SERVICES --> AXIOS // This is an action function that makes async calls.
-//
-// export const fetchProvidersByService = (service_id, borough="") => dispatch => {
-//   axios
-//     .get(`/srvProviders/${service_id}/${borough}`)
-//     .then(res => {
-//       // console.log(res.data.data);
-//       // debugger
-//       let providers = res.data.data;
-//       return dispatch(receivedProvidersSuccess(providers, service_id)); // what is the key inside the queries...?
-//     })
-//     .catch(err => {
-//       return dispatch(fetchErrors(err));
-//     });
-// =======
-
-
 
 // SERVICES ACTION CREATOR
 export const receiveProviderServices = (services, provider_id) => {
