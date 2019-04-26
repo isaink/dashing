@@ -1,12 +1,12 @@
-.ctnr_prov{
+.ctnr_prov {
   max-height: 950px;
   background-color: black;
 }
 
 .ctnr_box {
   display: grid;
-  grid-template-columns: 20% 80%;
-  height: 900px;
+  grid-template-columns: 35% 65%;
+  height: 1500px;
 }
 
 .img_intro {
@@ -15,13 +15,13 @@
 
 .inner_ctnr_providers {
   align-items: start;
-  background-color: white;
+  background-color: black;
   display: grid;
   grid-template-columns: 20% 25% 25% 25%;
   grid-column-gap: 100px;
   margin-left: 20px;
   border-left: solid #ecb99c;
-  border-style: double;
+
   padding-right: 10px;
 }
 
@@ -33,11 +33,11 @@
 }
 
 .title {
-  background-color: #c17a46;
-  font-family: "Yesteryear", cursive;
+  background-color: black;
+  font-family: 'Mrs Saint Delafield', cursive;
   padding-left: 20px;
   text-align: left;
-  color: black;
+  color: white;
   font-size: 60px;
   padding-top: 5px;
   grid-column-start: 1;
@@ -45,7 +45,8 @@
   grid-row: 1;
 }
 .dropdown {
-  margin-top: 100px;
+  padding-left: 20px;
+  margin-top: 115px;
   grid-column: 1;
   grid-row: 1;
 }
@@ -59,6 +60,7 @@
 
 .prov {
   display: grid;
+  border-radius: 20px 20px 20px 20px;
   grid-template-columns: 25% 25% 25%;
   margin-left: 20px;
   border-left: solid #ecb99c;
@@ -66,17 +68,14 @@
   padding-right: 10px;
 }
 
-.box,
-.box * {
-  box-sizing: border-box;
-}
+
 
 .box {
   position: relative;
   display: inline-block;
   overflow: hidden;
-  max-width: 100%;
-  /* height: auto; */
+
+  
   width: 300px;
   margin: 0 auto;
   padding: 8px;

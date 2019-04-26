@@ -91,7 +91,7 @@ render() {
               <img
                 alt="intro"
                 src={barberPic}
-                width="600px"
+                width="800px"
                 height="auto"
               />
             </div>
