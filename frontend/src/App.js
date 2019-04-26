@@ -8,6 +8,7 @@ import { ProviderProfile } from './components/ProfilePage/providerProfile';
 import SingleProviderContainer from './Redux_Containers/SingleProviderContainer';
 
 import "./App.css";
+import './index.css'
 
 class App extends Component {
   render() {
@@ -25,12 +26,12 @@ class App extends Component {
 
           <Route exact path="/profile" component={ProviderProfile} />
           <Route exact path="/profilecontainer" component={SingleProviderContainer}/>
-          <Route 
+          <Route
              render= { () => <h3> NOT FOUND  </h3> }
             />
         </Switch>
-        
-  
+
+
 
       </div>
     );
