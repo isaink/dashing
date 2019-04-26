@@ -18,7 +18,7 @@ class Makeup extends React.Component {
 
   componentDidMount() {
     this.props.fetchProvidersByService();
-    this.props.getProvidersBySkill();
+    // this.props.getProvidersBySkill();
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -74,10 +74,10 @@ class Makeup extends React.Component {
   };
 
   render() {
-    console.log('MAKEUP STATE', this.state);
-    console.log('MAKEUP PROPS', this.props);
-    console.log(this.props.makeupProviders);
-    console.log(this.props.makeupProvidersBySkill);
+    // console.log('MAKEUP STATE', this.state);
+    // console.log('MAKEUP PROPS', this.props);
+    // console.log(this.props.makeupProviders);
+    // console.log(this.props.makeupProvidersBySkill);
 
     return (
       <>

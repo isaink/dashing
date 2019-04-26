@@ -6,8 +6,9 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
 import { Dropdown } from "./Dropdown.js";
 
-import { ComboBox } from "./ComboBox.js";
 import axios from 'axios';
+import { ComboBox } from "./ComboBox.js";
+import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
 
 class Nails extends React.Component {
   state = {
@@ -81,7 +82,10 @@ class Nails extends React.Component {
         </span>
 
         <span className="combobox">
-          <ComboBox fetchSkillList={this.state.skills} />
+          <ComboBox
+            fetchSkillList={this.state.skills}
+            getProvidersBySkill={this.props.getProvidersBySkill}
+            />
         </span>
 
 
@@ -100,7 +104,10 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchProvidersByService: () => dispatch(fetchProvidersByService(2)),
     fetchProBySvcAndBoro: borough =>
-      dispatch(fetchProvidersByService(2, borough))
+      dispatch(fetchProvidersByService(2, borough)),
+
+    getProvidersBySkill: (skill_id) => dispatch( getProvidersBySkill(2, skill_id)),
+
   };
 };
 
