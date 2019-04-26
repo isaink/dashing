@@ -9,6 +9,8 @@ export class ComboBox extends Component {
     skill_id: 0,
     skill_selected: false,
     boro_selected: false,
+    // selectedSkill: '',
+    location: '',
   }
 
 
@@ -16,7 +18,9 @@ export class ComboBox extends Component {
     // let borough = event.target.value;
     // this.props.fetchProBySvcAndBoro(borough);
     this.setState({
-      boro_selected: true
+      boro_selected: true,
+      [event.target.name]: event.target.value,
+
     })
   };
 
@@ -34,7 +38,8 @@ export class ComboBox extends Component {
     // this.props.getProvidersBySkill(skill_id)
     this.setState ({
       // skill_id : skill_id,   // skill_id (made up name) : skill_id (the event.target.value variable)
-      skill_selected: true
+      skill_selected: true,
+      [event.target.name]: event.target.value,
     })
   }
 
@@ -49,19 +54,22 @@ export class ComboBox extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-      let borough = event.target.value;
+      let location = event.target.value;
       let skill_id = event.target.value
     if (this.state.boro_selected && this.state.skill_selected) {
-      this.props.fetchProBySvcAndBoro(borough)
+      this.props.fetchProBySvcAndBoro(location)
       this.props.getProvidersBySkill(skill_id)
     } else if (this.state.boro_selected) {
-      this.props.fetchProBySvcAndBoro(borough)
-    } else if (this.state.skill_selected)
+      this.props.fetchProBySvcAndBoro(location)
+    } else if (this.state.skill_selected) {
       this.props.getProvidersBySkill(skill_id)
-
+    }
   }
 
+
+
   render() {
+    console.log(this.state);
 
     // if (this.state.boro_selected && this.state.skill_selected) {
     //   this.fetchBoroProviders()
@@ -84,8 +92,10 @@ export class ComboBox extends Component {
             onChange={this.handleBoroChange}
 
             style={{ width: "300px", height: "50px" }}
-            name="select-profession"
+            name="location"
             id="select-profession"
+
+            value={this.state.location}
           >
             <option value=""> Select Your Location </option>
             <option value="Brooklyn">Brooklyn</option>
@@ -103,10 +113,15 @@ export class ComboBox extends Component {
             className='comboSelector'
             onChange={this.handleSkillChange}
             value={this.state.skill_id}
+            name='skill_id'
             >
             <option value='0' disabled >Select Skill</option>
             {skillList}
           </select>
+        </div>
+
+        <div>
+          <button type='submit'> Submit </button>
         </div>
 
       </form>

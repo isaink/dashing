@@ -60,7 +60,7 @@ class Hair extends React.Component {
     if (this.props.hairProviders) {
       return this.props.hairProviders.map(hairP => {
         return (
-          <>
+          <div key={hairP.provider_id}>
           <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
             <div className="box ">
               <div className="content">
@@ -88,7 +88,7 @@ class Hair extends React.Component {
             </div>
 
           </Link>
-          </>
+        </div>
         );
       });
     } else {
