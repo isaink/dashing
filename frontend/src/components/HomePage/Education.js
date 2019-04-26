@@ -17,13 +17,13 @@ export const Education = () => {
 
           <div id="ed_writeup">
             Dashing provides educational beauty services right in the comfort of
-            your own home. <br /> Our fun and interactive classes are conducted
+            your own home! <br /> Our fun and interactive classes are conducted
             by our skilled and licensed beauty professionals.
             <br />
             <br />
-            <span className="skillsDropdown">
-              <SkillsByServiceComboBox />
-            </span>
+          </div>
+          <div className="skillsDropdown">
+            <SkillsByServiceComboBox />
           </div>
         </div>
       </div>

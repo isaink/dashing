@@ -13,12 +13,12 @@ export const singleProviderReducer = (state = {}, action) => {
 
         case RECEIVE_PROVIDER_SERVICES:
             const { services } = action.payload;
-            newState['services'] = services ; 
+                newState['services'] = services ; 
             return newState;
 
         case RECEIVE_PROVIDER_PORTFOLIIO:
             const { portfolio } = action.payload;
-            newState['portfolio'] = portfolio;
+                newState['portfolio'] = portfolio;
             return newState;
         default:
         return state;
