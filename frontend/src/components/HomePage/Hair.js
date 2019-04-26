@@ -3,47 +3,73 @@ import { Link } from "react-router-dom";
 import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
+// import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import hairPic from "../../photo_assets/hair.jpg";
 import { Dropdown } from "./Dropdown.js";
 
+import axios from 'axios';
+import { ComboBox } from "./ComboBox.js";
+import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
+
 class Hair extends React.Component {
+  state = {
+    skills: []
+  }
+
   componentDidMount() {
     this.props.fetchProvidersByService();
   };
+
+  componentDidUpdate(prevProps, prevState){
+    if (!prevProps.hairProviders && this.props.hairProviders) {
+      this.getSkillsForService();
+    }
+  }
+
+  getSkillsForService = () => {
+    axios.get(`/services/skills/1`)
+    .then(res => {
+      this.setState({
+        skills: res.data.data
+      })
+    })
+    .catch(err => {
+      console.log('GET SKILLS ERR', err);
+    })
+  }
 
   renderProviders = () => {
     if (this.props.hairProviders) {
       return this.props.hairProviders.map(hairP => {
         return (
-          <>  
-            <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
-              <div className="box ">
+          <>
+          <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
+            <div className="box ">
               <div className="content">
                 <img
-                    alt="avatar"
-                    className='hvrbox-layer_bottom'
-                    src={hairP.avatar}
-                    style={{ height: "150px", display: 'block'}}
+                  alt="avatar"
+                  className='hvrbox-layer_bottom'
+                  src={hairP.avatar}
+                  style={{ height: "150px", display: 'block'}}
                   />
-                
-                  <div className='hvrbox-layer_top'>
-                    <div className='hvrbox-text'>
+
+                <div className='hvrbox-layer_top'>
+                  <div className='hvrbox-text'>
                     <span id="providername" className='ih-fade-down ih-delay-sm'>{hairP.provider}</span>
                     <br />
                     <div className='ih-zoom-in ih-delay-md'>
-                    {hairP.borough} <br />
-                    {hairP.email} <br />
-                    {hairP.phone_number} <br />
-                    {hairP.website_link}
+                      {hairP.borough} <br />
+                      {hairP.email} <br />
+                      {hairP.phone_number} <br />
+                      {hairP.website_link}
                     </div>
                   </div>
 
-                  </div>
                 </div>
               </div>
+            </div>
 
-            </Link>
+          </Link>
           </>
         );
       });
@@ -52,10 +78,11 @@ class Hair extends React.Component {
     }
   };
 
+
   render() {
     return (
       <>
-        <div className='ctnr_prov'>
+      <div className='ctnr_prov'>
 
         <div className="ctnr_box">
           <div className="img_intro">
@@ -64,7 +91,7 @@ class Hair extends React.Component {
               src={hairPic}
               width="600px"
               height="auto"
-            />
+              />
           </div>
 
           <div className="inner_ctnr_providers">
@@ -73,8 +100,10 @@ class Hair extends React.Component {
 
             <span className="dropdown">
               <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-              <SkillsByServiceComboBox />;
-
+              <ComboBox
+                fetchSkillList={this.state.skills}
+                getProvidersBySkill={this.props.getProvidersBySkill}
+                />
             </span>
 
             <div className="providers">
@@ -82,7 +111,7 @@ class Hair extends React.Component {
             </div>
           </div>
         </div>
-        </div>
+      </div>
       </>
     )
   }
@@ -90,14 +119,16 @@ class Hair extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    hairProviders: state.providersByService[1]
+    hairProviders: state.providersByService[1],
   };
 };
+
 const mapDispatchToProps = dispatch => {
   return {
     fetchProvidersByService: () => dispatch(fetchProvidersByService(1)),
-    fetchProBySvcAndBoro: borough =>
-      dispatch(fetchProvidersByService(1, borough))
+    fetchProBySvcAndBoro: borough => dispatch(fetchProvidersByService(1, borough)),
+
+    getProvidersBySkill: (skill_id) => dispatch( getProvidersBySkill(1, skill_id)),
   };
 };
 

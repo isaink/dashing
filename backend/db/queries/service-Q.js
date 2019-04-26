@@ -41,6 +41,7 @@ const getServiceById = (req, res, next) => {
   })
 }
 
+// router.get('services/skills/:service_id', db.getSkillsByServiceId );     // http://localhost:3100/services/:service_id
 const getSkillsByServiceId = (req, res, next) => {
   let serviceId = parseInt(req.params.service_id);
   db.any(
@@ -77,9 +78,11 @@ const getAllSkillsJoinService = (req, res, next) => {
 
 
 
+
+
 module.exports = {
   getAllServices,
   getServiceById,
   getSkillsByServiceId,
-  getAllSkillsJoinService
+  getAllSkillsJoinService,
 }

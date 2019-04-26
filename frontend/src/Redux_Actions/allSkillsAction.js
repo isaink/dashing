@@ -29,17 +29,7 @@ export const fetchAllSkills = () => dispatch => {
     });
 };
 
-// export const fetchAllFavoritesBySpecificUser = (user_id) => dispatch => {
-//   axios.get(`/favorites/user/${user_id}`)
-//   .then(res => {
-//     console.log(res);
-//     debugger
-//     dispatch({
-//       type: FETCH_ALL_FAVORITES_BY_USER,
-//       payload: res.data.songs
-//     })
-//   })
-// }
+
 
 
 export const fetchErrors = err => {
