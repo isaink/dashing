@@ -46,17 +46,19 @@ class Home extends Component {
         <Element name="home">
           <Welcome />
         </Element>
+
         <Element name="hair">
           <Hair />
         </Element>
+
         <Element name="nails">
           <Nails />
-          {/* <button onClick={this.scrollToTop}>To the top!</button> */}
         </Element>
+
         <Element name="barber">
           <Barber />
-          {/* <button onClick={this.scrollToTop}>To the top!</button> */}
         </Element>
+        
         <Element name="makeup">
           <Makeup />
         </Element>
@@ -74,3 +76,4 @@ class Home extends Component {
 }
 
 export default Home;
+//  {/* <button onClick={this.scrollToTop}>To the top!</button> */}
