@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
+
 import "../../Css/Navbar.css";
 // import logo from "../../photo_assets/dashing_logo.png";
 
@@ -26,7 +27,7 @@ export default class Navbar extends Component {
             </h3>
           </span> */}
 
-          <div className="links">
+          <div className="links_center">
             {/* <Link
               className="links"
               activeClass="active"
@@ -96,28 +97,3 @@ export default class Navbar extends Component {
     );
   }
 };
-
-
-            // {/* <Link
-            //   className="links"
-            //   activeClass="active"
-            //   to="education"
-            //   spy={true}
-            //   smooth={true}
-            //   offset={-70}
-            //   duration={500}
-            // >
-            //   Educational Services
-            // </Link>
-
-            // <Link
-            //   className="links"
-            //   activeClass="active"
-            //   to="aboutus"
-            //   spy={true}
-            //   smooth={true}
-            //   offset={-70}
-            //   duration={500}
-            // >
-            //   About Us
-            // </Link> */}

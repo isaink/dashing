@@ -3,6 +3,10 @@ import "../../Css/Education.css";
 import leftpic from "../../photo_assets/edu_pic.jpg";
 import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 
+import { ComboBox } from "./ComboBox.js";
+import axios from 'axios';
+import { getProvidersBySkill } from "../../Redux_Actions/comboBoxAction";
+
 export const Education = () => {
   return (
     <>
@@ -23,7 +27,7 @@ export const Education = () => {
             <br />
           </div>
           <div className="skillsDropdown">
-            <SkillsByServiceComboBox />
+          <SkillsByServiceComboBox />
           </div>
         </div>
       </div>
