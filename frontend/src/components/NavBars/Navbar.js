@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
-import "../../Css/Navbar.css";
+import "../../css/Navbar.css";
 // import logo from "../../photo_assets/dashing_logo.png";
 
 export default class Navbar extends Component {
@@ -37,10 +37,10 @@ export default class Navbar extends Component {
               duration={500}
             >Home
             </Link> */}
-          
-          
-         
-            <Link 
+
+
+
+            <Link
               className="links className='btn-slide-line center'"
               activeClass="active"
               to="hair"
@@ -51,9 +51,9 @@ export default class Navbar extends Component {
             >
             <button >Hair </button>
             </Link>
-          
-          
-            <Link 
+
+
+            <Link
               className="links btn-slide-line center"
               activeClass="active"
               to="nails"
@@ -64,8 +64,8 @@ export default class Navbar extends Component {
             >
              <button > Nails </button>
             </Link>
-          
-          
+
+
             <Link
               className="links btn-slide-line center"
               activeClass="active"
@@ -75,10 +75,10 @@ export default class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-             <button> Barber </button> 
+             <button> Barber </button>
             </Link>
-    
-          
+
+
             <Link
               className="links btn-slide-line center"
               activeClass="active"

@@ -1,5 +1,4 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './../../Css/Dropdown.css';
 
 export const Dropdown = props => {
