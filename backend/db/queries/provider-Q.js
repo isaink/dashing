@@ -173,7 +173,7 @@ const getProvidersBySkill= (req, res, next) => {
 const getProvidersByService= (req, res, next) => {
   console.log('REQ.QUERY', req.query);
   let sql = `SELECT
-    providers.name provider,
+    DISTINCT providers.name provider,
     avatar,
     borough,
     email,
