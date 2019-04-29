@@ -12,7 +12,8 @@ const {
     // isLoggedIn,
     updateProvider,
     deleteProvider,
-    getProvidersBySkill
+    getProvidersBySkill,
+    getProvidersByService,
 
 } = require('../db/queries/provider-Q');
 
@@ -28,6 +29,8 @@ router.patch('/:id', updateProvider);
 router.delete('/:id', deleteProvider);
 
 router.get('/bySkill/:skill_id', getProvidersBySkill);
+router.get('/byService/:service_id', getProvidersByService);
+
 
 // Routes for user AUTH...
 

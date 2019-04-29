@@ -134,7 +134,7 @@ const getSingleProvider = (req, res, next) => {
 const getProvidersBySkill= (req, res, next) => {
   db.any(
     `SELECT
-      providers.name provider,
+      DISTINCT providers.name provider,
       avatar,
       borough,
       email,
@@ -150,6 +150,58 @@ const getProvidersBySkill= (req, res, next) => {
     WHERE skills.id = $[skill_id]`, {
       // service_id: Number(req.params.service_id),
       skill_id: Number(req.params.skill_id)
+    }
+  )
+  .then(data => {
+    res.status(200).json({
+      status: "Success",
+      message: "Got all providers by this service and skill",
+      data: data
+    });
+  })
+  .catch(err => {
+    res.status(400).json({
+      status: "Failure",
+      message: "Failed to get all services/skills by this provider"
+    });
+  });
+
+}
+
+// router.get('/byService/:service_id', getProvidersByService);
+// http://localhost:3100/providers/byService/1?skill_id=1&borough=Brooklyn
+const getProvidersByService= (req, res, next) => {
+  console.log('REQ.QUERY', req.query);
+  let sql = `SELECT
+    DISTINCT providers.name provider,
+    avatar,
+    borough,
+    email,
+    phone_number,
+    providers.id provider_id,
+    website_link,
+    services.name services,
+    skills.id skill_id
+  FROM skills_provider
+  JOIN skills ON skills.id = skills_provider.skill_id
+  JOIN providers ON providers.id = skills_provider.provider_id
+  JOIN services ON services.id = skills.service_id
+  WHERE services.id = $[service_id]`
+
+  // if (req.query.skill_id && req.query.borough) {
+  //   sql += `AND skills.id = $[skill_id] AND borough= $[borough]`
+  // } else
+  if (req.query.skill_id) {
+    sql += `AND skills.id = $[skill_id]`
+  }
+  if (req.query.borough) {
+    sql += `AND borough= $[borough]`
+  }
+
+  db.any(sql, {
+      service_id: Number(req.params.service_id),
+      skill_id: Number(req.query.skill_id),
+      borough: req.query.borough
     }
   )
   .then(data => {
@@ -194,5 +246,6 @@ module.exports = {
   updateProvider,
   deleteProvider,
 
-  getProvidersBySkill
+  getProvidersBySkill,
+  getProvidersByService,
 }

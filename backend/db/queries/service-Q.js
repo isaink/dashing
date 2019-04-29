@@ -64,6 +64,7 @@ const getSkillsByServiceId = (req, res, next) => {
   })
 }
 
+
 const getAllSkillsJoinService = (req, res, next) => {
   db.any("SELECT skills.name AS skill_name, skills.id AS skill_id, skills.*, services.name AS service_name FROM skills JOIN services ON services.id = skills.service_id")
     .then(data => {

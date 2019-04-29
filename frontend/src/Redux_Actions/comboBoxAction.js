@@ -26,6 +26,30 @@ export const fetchErrors = err => {
   };
 };
 
+export const getProvidersByService = (service_id, skill_id, borough) => dispatch => {
+
+  let url = `/providers/byService/${service_id}?`
+  if (skill_id !== 0 && borough !== 0) {
+    url += `skill_id=${skill_id}&borough=${borough}`
+  }
+  else if (skill_id !== 0) {
+    url += `skill_id=${skill_id}`
+  }
+  else if (borough !== 0) {
+    url += `borough=${borough}`
+  }
+
+  axios
+  .get(url)
+  .then(res => {
+    let providers = res.data.data;
+    return dispatch(receivedProvidersSuccess(providers, service_id));
+  })
+  .catch(err => {
+    return dispatch(fetchErrors(err));
+  })
+}
+
 // ---------------------------------------------
 
 
