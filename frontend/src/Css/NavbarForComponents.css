@@ -3,9 +3,9 @@
   height: 80px;
   width: 100%;
   list-style-type: none;
-  position: fixed;
-  top: 0;
-  z-index: 3;
+  /* position: fixed; */
+  top: 500px;
+  /* z-index: 3; */
   padding-right: 400px;
 }
 

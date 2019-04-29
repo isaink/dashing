@@ -134,7 +134,7 @@ const getSingleProvider = (req, res, next) => {
 const getProvidersBySkill= (req, res, next) => {
   db.any(
     `SELECT
-      providers.name provider,
+      DISTINCT providers.name provider,
       avatar,
       borough,
       email,

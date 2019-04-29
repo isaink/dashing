@@ -47,40 +47,23 @@ class Home extends Component {
 
   render() {
     return (
-      <dl className='HomepageDiv'>
+        <div className='HomepageDiv'>
 
-        {/*
-        <dl>
-          <div>
-            <dt>A</dt>
-            <dd>Andrew W.K.</dd>
-            <dd>Apparat</dd>
-            <dd>Arcade Fire</dd>
-            <dd>At The Drive-In</dd>
-            <dd>Aziz Ansari</dd>
-          </div>
-        </dl>
-        */}
+          <dl>
 
-        <div className='divBelow_dl'>
-          {/*
-          <dd className="bg_welcome">
-            <dd className="homeLogo">
-                <img src={homeLogo} alt="" width="700px" />
+            <dd>
+              <div className="bg_welcome">
+                <div className="homeLogo">
+                  <img src={homeLogo} alt="" width="700px" />
+                </div>
+              </div>
             </dd>
-          </dd>
-          */}
 
-          <dt className="bg_welcome">
-            <dt className="homeLogo">
-              <dt className='NavbarDiv'>
-                <Navbar
-                  className='NavbarComponentTag'
-                  />
-              </dt>
+            <dt>
+              <div className='NavbarDiv'>
+                <Navbar className='NavbarComponentTag'/>
+              </div>
             </dt>
-          </dt>
-
 
           <dd>
             <Element name="home" className='Element'>
@@ -123,10 +106,9 @@ class Home extends Component {
               <AboutUs />{" "}
             </Element>
           </dd>
+        </dl>
+      </div>
 
-        </div>
-
-      </dl>
     );
   }
 }

@@ -9,12 +9,12 @@ export const Welcome = () => {
   return (
     <>
       <div className="bg_welcome">
+        {/*
         <div className="homeLogo">
           <img src={homeLogo} alt="" width="700px" />
-          {/*
           // <Navbar />
-          */}
         </div>
+        */}
 
         <div className="homeBackground">
           <img src={bk_img} alt="" />

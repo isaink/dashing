@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 
-
 import '../../Css/ComboBox.css'
-
 
 export class ComboBox extends Component {
   state = {
     skill_id: 0,
     skill_selected: false,
     boro_selected: false,
-    // selectedSkill: '',
     location: '',
+    serviceId: this.props.service_id
   }
 
-
   handleBoroChange = (event) => {
-    // let borough = event.target.value;
-    // this.props.fetchProBySvcAndBoro(borough);
     this.setState({
       boro_selected: true,
       [event.target.name]: event.target.value,
@@ -24,10 +19,7 @@ export class ComboBox extends Component {
   };
 
   handleSkillChange = (event) => {
-    // let skill_id = event.target.value
-    // this.props.getProvidersBySkill(skill_id)
     this.setState ({
-      // skill_id : skill_id,   // skill_id (made up name) : skill_id (the event.target.value variable)
       skill_selected: true,
       [event.target.name]: event.target.value,
     })
@@ -37,6 +29,12 @@ export class ComboBox extends Component {
     event.preventDefault()
       let location = this.state.location
       let skill_id = this.state.skill_id
+      let serviceId = this.state.servciceId
+
+    if (this.state.skill_id === 0) {
+      this.props.fetchProvidersByService(serviceId)
+    }
+
     if (this.state.boro_selected && this.state.skill_selected) {
       this.props.getProvidersByService(skill_id, location)
     } else if (this.state.boro_selected) {
@@ -45,7 +43,6 @@ export class ComboBox extends Component {
       this.props.getProvidersBySkill(skill_id)
     }
   }
-
 
 
   render() {
@@ -61,14 +58,14 @@ export class ComboBox extends Component {
           <select
             className="selector"
             onChange={this.handleBoroChange}
+            value={this.state.location}
+            name="location"
 
             style={{ width: "300px", height: "50px" }}
-            name="location"
             id="select-profession"
-
-            value={this.state.location}
           >
             <option value=""> Select Your Location </option>
+            <hr />
             <option value="Brooklyn">Brooklyn</option>
             <option value="Bronx">Bronx</option>
             <option value="New York">Manhattan</option>
@@ -85,8 +82,9 @@ export class ComboBox extends Component {
             onChange={this.handleSkillChange}
             value={this.state.skill_id}
             name='skill_id'
-            >
-            <option value='0' disabled >Select Skill</option>
+          >
+            <option value='0' >Select Skill</option>
+            <hr/>
             {skillList}
           </select>
         </div>
@@ -100,7 +98,9 @@ export class ComboBox extends Component {
   }
 };
 
-
+// const skillList = this.props.fetchSkillList.length !== 0 && [...this.props.fetchSkillList].map(skill => (
+//   <option key={skill.skill_id} value={skill.skill_id} > {skill.skill_name} </option>
+// ))
 
 // const handleSkillChange = event => {
 //   let skill = event.target.value

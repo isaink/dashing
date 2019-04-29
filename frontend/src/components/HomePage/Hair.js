@@ -15,7 +15,8 @@ import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
 class Hair extends React.Component {
   state = {
     skills: [],
-    locations: []
+    locations: [],
+    serviceId: 1,
   }
 
   componentDidMount() {
@@ -114,6 +115,8 @@ class Hair extends React.Component {
                 getProvidersBySkill={this.props.getProvidersBySkill}
                 fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro}
                 getProvidersByService = {this.props.getProvidersByService}
+                fetchProvidersByService = {this.props.fetchProvidersByService}
+                serviceId={this.state.service_id}
                 />
             </span>
 
