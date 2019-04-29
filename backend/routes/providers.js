@@ -11,7 +11,9 @@ const {
     // loginProvider,
     // isLoggedIn,
     updateProvider,
-    deleteProvider
+    deleteProvider,
+    getProvidersBySkill,
+    getProvidersByService,
 
 } = require('../db/queries/provider-Q');
 
@@ -25,6 +27,10 @@ router.get('/services/:id', getProviderServices)
 router.get('/:id', getSingleProvider);
 router.patch('/:id', updateProvider);
 router.delete('/:id', deleteProvider);
+
+router.get('/bySkill/:skill_id', getProvidersBySkill);
+router.get('/byService/:service_id', getProvidersByService);
+
 
 // Routes for user AUTH...
 

@@ -14,6 +14,12 @@ import Barber from "./Barber";
 import Makeup from "./Makeup";
 import { Education } from "./Education";
 import { AboutUs } from "./AboutUs";
+// import  NavbarForComponents  from '../NavBars/NavbarForComponents'
+
+import Navbar from "../NavBars/Navbar";
+import homeLogo from "../../photo_assets/dashing_logo_invert.png";
+
+
 
 import "./../../Css/Home.css";
 
@@ -41,36 +47,68 @@ class Home extends Component {
 
   render() {
     return (
-      <>
-       
-        <Element name="home">
-          <Welcome />
-        </Element>
+        <div className='HomepageDiv'>
 
-        <Element name="hair">
-          <Hair />
-        </Element>
+          <dl>
 
-        <Element name="nails">
-          <Nails />
-        </Element>
+            <dd>
+              <div className="bg_welcome">
+                <div className="homeLogo">
+                  <img src={homeLogo} alt="" width="700px" />
+                </div>
+              </div>
+            </dd>
 
-        <Element name="barber">
-          <Barber />
-        </Element>
-        
-        <Element name="makeup">
-          <Makeup />
-        </Element>
-   
-        <Element name="education">
-          <Education />{" "}
-        </Element>
-        
-        <Element name="aboutus">
-          <AboutUs />{" "}
-        </Element>
-      </>
+            <dt>
+              <div className='NavbarDiv'>
+                <Navbar className='NavbarComponentTag'/>
+              </div>
+            </dt>
+
+          <dd>
+            <Element name="home" className='Element'>
+              <Welcome />
+            </Element>
+          </dd>
+
+          <dd>
+            <Element name="hair" className='Element'>
+              <Hair />
+            </Element>
+          </dd>
+
+          <dd>
+            <Element name="nails" className='Element'>
+              <Nails />
+            </Element>
+          </dd>
+
+          <dd>
+            <Element name="barber" className='Element'>
+              <Barber />
+            </Element>
+          </dd>
+
+          <dd>
+            <Element name="makeup" className='Element'>
+              <Makeup />
+            </Element>
+          </dd>
+
+          <dd>
+            <Element name="education" className='Element'>
+              <Education />{" "}
+            </Element>
+          </dd>
+
+          <dd>
+            <Element name="aboutus" className='Element'>
+              <AboutUs />{" "}
+            </Element>
+          </dd>
+        </dl>
+      </div>
+
     );
   }
 }

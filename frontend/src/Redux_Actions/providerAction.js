@@ -17,6 +17,7 @@ export const receivedProvidersSuccess = (providers, service_id) => {
   };
 };
 
+
 // SERVICES ACTION CREATOR
 export const receiveProviderServices = (services, provider_id) => {
   return {
@@ -26,6 +27,7 @@ export const receiveProviderServices = (services, provider_id) => {
       services: services
     }
   }
+// >>>>>>> 301385b9dd7c14dfb4245f0bf8f8fb3bcac93f29
 };
 
 // PORTFOLIO ACTION CREATOR
@@ -97,4 +99,3 @@ export const getProviderInfo = provider_id => dispatch => {
       return dispatch(fetchErrors(err));
     })
 };
-

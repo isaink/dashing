@@ -1,17 +1,36 @@
-.ComboboxDiv {
-  /* background-color: white; */
-  display: flex;
-
+select {
+  width: 300px;
+  height: 50px;
 }
 
-.Combobox {
-  width: 300px;
+.comboSelector {
+  position: relative;
+  background-color: white;
+  color: black;
+  border: 5px solid #c17a46;
+  padding: 16px;
+  font-size: 16px;
+  /* -webkit-appearance: none; */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+
+.ComboboxDiv {
+  /* background-color: white; */
+
+  /* display: flex; */
+}
+
+.ComboboxDiv select {
+  /* width: 300px;
 
   display: flex;
   align-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 groupBy {
-  color: red;
+  /* color: red; */
 }
