@@ -7,6 +7,7 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 import hairPic from "../../photo_assets/hair.jpg";
 import { Dropdown } from "./Dropdown.js";
 
+
 import axios from 'axios';
 import { ComboBox } from "./ComboBox.js";
 import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
