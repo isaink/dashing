@@ -23,11 +23,6 @@ export class ComboBox extends Component {
   };
 
   handleSkillChange = (event) => {
-    // if (this.state.skill_id === 0) {
-    //   this.setState ({
-    //     skill_selected: false,
-    //   })
-    // }
     this.setState ({
       skill_selected: true,
       [event.target.name]: event.target.value,
@@ -36,27 +31,11 @@ export class ComboBox extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-      let location = this.state.location
-      let skill_id = this.state.skill_id
-      let service_id = this.state.serviceId
 
-    // if (this.state.skill_id === 0) {
-    //   this.props.fetchProvidersByService(serviceId)
-    // }
+    let location = this.state.location
+    let skill_id = this.state.skill_id
 
-    // if (!skill_id) {
-    //   this.props.fetchProvidersByService(service_id)
-    // }
-
-    // if (this.state.boro_selected && this.state.skill_selected) {
-      this.props.getProvidersByService(skill_id, location)
-      // this.props.getProvidersByService(service_id, skill_id, location)
-    // }
-    // else if (this.state.boro_selected && !this.state.skill_selected) {
-    //   this.props.fetchProBySvcAndBoro(location)
-    // } else if (this.state.skill_selected && !this.state.boro_selected) {
-    //   this.props.getProvidersBySkill(skill_id)
-    // }
+    this.props.getProvidersByService(skill_id, location)
   }
 
 
@@ -80,7 +59,7 @@ export class ComboBox extends Component {
             style={{ width: "300px", height: "50px" }}
             id="select-profession"
           >
-            <option value=""> Select Your Location </option>
+            <option value=""> ** Select Your Location ** </option>
             <hr />
             <option value="Brooklyn">Brooklyn</option>
             <option value="Bronx">Bronx</option>
@@ -99,7 +78,7 @@ export class ComboBox extends Component {
             value={this.state.skill_id}
             name='skill_id'
           >
-            <option value='' >Select Skill</option>
+            <option value='' > ** Select Skill ** </option>
             <hr/>
             {skillList}
           </select>
@@ -113,25 +92,3 @@ export class ComboBox extends Component {
     );
   }
 };
-
-
-
-// const skillList = this.props.fetchSkillList.length !== 0 && [...this.props.fetchSkillList].map(skill => (
-//   <option key={skill.skill_id} value={skill.skill_id} > {skill.skill_name} </option>
-// ))
-
-// const handleSkillChange = event => {
-//   let skill = event.target.value
-//   props.getProvidersBySkill(props.skill_id)
-// }
-//
-//   return (
-//     <div>
-//       <select onChange={handleSkillChange} value={props.selectedSkill}>
-//         {props.fetchSkillList.length !== 0 && ['', ...props.fetchSkillList].map(skill => (
-//           <option key={skill.skill_id} value={skill.skill_id} >{skill.skill_name}</option>
-//         ))}
-//       </select>
-//     </div>
-//   );
-// };
