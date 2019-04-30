@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import '../../Css/ComboBox.css'
+import './../../Css/Dropdown.css';
+
 
 export class ComboBox extends Component {
   constructor(props) {
