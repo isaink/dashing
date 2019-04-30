@@ -6,7 +6,7 @@ export class ComboBox extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      skill_id: 0,
+      skill_id: '',
       skill_selected: false,
       boro_selected: false,
       location: '',
@@ -44,9 +44,9 @@ export class ComboBox extends Component {
     //   this.props.fetchProvidersByService(serviceId)
     // }
 
-    if (!skill_id) {
-      this.props.fetchProvidersByService(service_id)
-    }
+    // if (!skill_id) {
+    //   this.props.fetchProvidersByService(service_id)
+    // }
 
     // if (this.state.boro_selected && this.state.skill_selected) {
       this.props.getProvidersByService(skill_id, location)
@@ -99,7 +99,7 @@ export class ComboBox extends Component {
             value={this.state.skill_id}
             name='skill_id'
           >
-            <option value='0' >Select Skill</option>
+            <option value='' >Select Skill</option>
             <hr/>
             {skillList}
           </select>

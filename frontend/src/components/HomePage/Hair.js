@@ -47,7 +47,22 @@ class Hair extends React.Component {
 
   renderProviders = () => {
     if (this.props.hairProviders) {
-      return this.props.hairProviders.map(hairP => {
+      console.log('renderProviders', this.props.hairProviders);
+    // if (this.state.providers) {
+    //   console.log('renderProviders', this.state.providers);
+    const newObj = {};
+    const newArr = [];
+    this.props.hairProviders.forEach(person => {
+      if(!newObj[person.provider_id]) {
+        newObj[person.provider_id] = true;
+        newArr.push(person);
+      }
+    })
+    console.log('newobject', newObj);
+    console.log('newarrrrr', newArr);
+
+      return newArr.map(hairP => {
+      // return this.state.providers.map(hairP => {
         return (
           <div key={hairP.provider_id}>
           <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
@@ -108,10 +123,11 @@ class Hair extends React.Component {
             <hr />
 
             <span className="dropdown">
+
               {/*
-              // <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-              fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro}
-              getProvidersBySkill={this.props.getProvidersBySkill}
+                <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+                fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro}
+                getProvidersBySkill={this.props.getProvidersBySkill}
 
               */}
               <ComboBox
