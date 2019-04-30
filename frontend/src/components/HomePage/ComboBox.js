@@ -63,7 +63,7 @@ export class ComboBox extends Component {
             <hr />
             <option value="Brooklyn">Brooklyn</option>
             <option value="Bronx">Bronx</option>
-            <option value="New York">Manhattan</option>
+            <option value="Manhattan">Manhattan</option>
             <option value="Queens">Queens</option>
             <option value="Staten Island">Staten Island</option>
           </select>
