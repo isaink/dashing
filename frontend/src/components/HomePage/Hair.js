@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 // import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import hairPic from "../../photo_assets/hair.jpg";
-import { Dropdown } from "./Dropdown.js";
+// import { Dropdown } from "./Dropdown.js";
 
 import axios from 'axios';
 import { ComboBox } from "./ComboBox.js";
