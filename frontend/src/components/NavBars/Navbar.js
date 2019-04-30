@@ -96,7 +96,7 @@ export default class Navbar extends Component {
     );
   }
 };
-<<<<<<< HEAD
+
 
 
             // {/* <Link
@@ -122,5 +122,3 @@ export default class Navbar extends Component {
             // >
             //   About Us
             // </Link> */}
-=======
->>>>>>> e704a5d63a7ce46e25462633fc08e5deee5d35e7
