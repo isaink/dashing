@@ -50,18 +50,18 @@ class Hair extends React.Component {
       console.log('renderProviders', this.props.hairProviders);
     // if (this.state.providers) {
     //   console.log('renderProviders', this.state.providers);
-    const newObj = {};
-    const newArr = [];
-    this.props.hairProviders.forEach(person => {
-      if(!newObj[person.provider_id]) {
-        newObj[person.provider_id] = true;
-        newArr.push(person);
+    const providerObj = {};
+    const providerArr = [];
+    this.props.hairProviders.forEach(provider => {
+      if(!providerObj[provider.provider_id]) {
+        providerObj[provider.provider_id] = true;
+        providerArr.push(provider);
       }
     })
-    console.log('newobject', newObj);
-    console.log('newarrrrr', newArr);
+    console.log('providerobject', providerObj);
+    console.log('providerarrrrr', providerArr);
 
-      return newArr.map(hairP => {
+      return providerArr.map(hairP => {
       // return this.state.providers.map(hairP => {
         return (
           <div key={hairP.provider_id}>
