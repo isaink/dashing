@@ -88,6 +88,7 @@ class Hair extends React.Component {
 
   render() {
     console.log(this.props);
+    console.log('this.props.hairProviders', this.props.hairProviders);
     return (
       <>
       <div className='ctnr_prov'>
@@ -109,14 +110,16 @@ class Hair extends React.Component {
             <span className="dropdown">
               {/*
               // <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+              fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro}
+              getProvidersBySkill={this.props.getProvidersBySkill}
+
               */}
               <ComboBox
                 fetchSkillList={this.state.skills}
-                getProvidersBySkill={this.props.getProvidersBySkill}
-                fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro}
                 getProvidersByService = {this.props.getProvidersByService}
+
                 fetchProvidersByService = {this.props.fetchProvidersByService}
-                serviceId={this.state.service_id}
+                serviceId={this.state.serviceId}
                 />
             </span>
 
