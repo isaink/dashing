@@ -7,12 +7,14 @@
 
 }
 
+
 .Element {
   z-index: 4;
 }
 
 .NavbarDiv {
-  z-index: 20;
+  /* z-index: 20; */
+  top: 100px;
 }
 
 .NavbarComponentTag {
