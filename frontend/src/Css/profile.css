@@ -3,6 +3,7 @@ body{
      /* min-height: 12200px; */
      /* border: 1px solid #dbdedd; */
 }
+
   .ctnr_profile{
 
       z-index: 1;
@@ -78,30 +79,27 @@ body{
     text-align: left;
     /* grid-row: 3;
     grid-column: 2; */
-    padding: 10px;
-    position: absolute;
+  padding: 10px;
+  position: absolute;
 }
 
-.prov_info{
-    grid-column: 2;
-    grid-row: 2;
-    /* z-index: 2; */
+.prov_info {
+  grid-column: 2;
+  grid-row: 2;
+  /* z-index: 2; */
 }
 
 .ctnr_services{
     grid-column: 2;
     /* z-index: 2; */
     grid-row: 3;
-    margin-top: 90px;
-    
+    margin-top: 90px;   
 }
 
 .ctnr_skills{
     /* background-color: lightyellow; */
-    /* justify-content: space-around; */
     margin-bottom: 10px;
-    /* margin: 5px 25px 20px; */
-    
+    /* margin: 0 15px 10px; */
 }
 
 .srv_name{
@@ -110,16 +108,17 @@ body{
     text-shadow: 2px 2px 4px #000000;
     color: white;
     text-align: left;
-    font-family: "Yesteryear", cursive;
-    font-size: 60px;
+    /* font-family: "Yesteryear", cursive; */
+    font-family: "Mrs Saint Delafield", cursive;
+    /* font-size: 60px; */
+    font-size: 50px;
     /* margin-top: 30px; */
-    
 }
 
 .skills{
     border-width: thin;
     width: 100px;
-    margin: 10px;
+    /* margin: 10px; */
 }
 
 .contact_info{
@@ -127,16 +126,19 @@ body{
     grid-column: 3;
     grid-column-start: 3;
     grid-column-end: 4;
-    grid-row-gap: 5px;
+    grid-row-gap: 4px;
     grid-row: 6;
+    /* grid-row: 5; */
 
 
 
     /* background: rgb(222, 184, 134); */
     color: white;
-    font-family: 'Cinzel', serif;
+    /* font-family: 'Cinzel', serif; */
+    font-family: "Josefin Sans", sans-serif;
     display: grid;
     grid-template-columns: 100% 100%;
+    /* grid-template-columns: 100%; */
     grid-template-rows:  20% 20%;
     grid-gap: 2px;
     text-align: left;
@@ -145,21 +147,22 @@ body{
 }
 
 .contact_info p {
-    grid-column: 1;
-    /* grid-row: 1; */
-    border-bottom: solid rgb(236, 185, 156);
-    
-    font-size: 14px;
-    font-family: 'Cinzel', serif;
+  grid-column: 1;
+  /* grid-row: 1; */
+  border-bottom: solid rgb(236, 185, 156);
 
+  font-size: 14px;
+  font-family: "Josefin Sans", sans-serif;
 }
 .contact_info h6 {
     /* border-left: solid rgb(236, 185, 156); */
     grid-column: 2;
     font-size: 14px;
-    font-family: 'Cinzel', serif;
+    /* font-family: 'Cinzel', serif; */
     /* grid-row: 2 */
     /* border: solid rgb(236, 185, 156); */
+
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .inner_skill{
@@ -167,7 +170,8 @@ body{
     margin-right: 13px;
     margin-left: 13px;
     color: black;
-    font-family: 'Cinzel', serif;
+    /* font-family: 'Cinzel', serif; */
+    font-family: "Josefin Sans", sans-serif;
     /* background: rgb(236, 185, 156); */
     background: #dbdedd;
     top: 30%;
@@ -191,24 +195,27 @@ body{
     grid-template-rows: 100%;
     overflow-y: scroll;
 }
+
 .portfolio_img{
     grid-row: 1
 }
+
 .social_link{
     grid-column: 3;
     grid-row: 5;
+    grid-row: 4;
     color: #dbdedd;
     display: grid;
     grid-template-columns: 100% 40%;
     text-align: left;
-
 }
 
 .social_link p{
     grid-column: 1;
     grid-row: 5;
     font-size: 14px;
-    font-family: 'Cinzel', serif;
+    /* font-family: 'Cinzel', serif; */
+    font-family: "Josefin Sans", sans-serif;
     border-bottom: solid rgb(236, 185, 156)
 
 }
@@ -216,6 +223,7 @@ body{
     grid-row: 5;
     grid-column: 2;
     font-size: 14px;
-    font-family: 'Cinzel', serif;
+    /* font-family: 'Cinzel', serif; */
+    font-family: "Josefin Sans", sans-serif;
     color: white;
 }

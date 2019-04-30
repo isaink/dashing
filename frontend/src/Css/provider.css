@@ -1,13 +1,16 @@
 .ctnr_prov{
-  max-height: 800px;
+  /* max-height: 800px; */
+  max-height: 950px;
   background-color: black;
-
 }
 
 .ctnr_box {
   display: grid;
-  grid-template-columns: 20% 80%;
-  height: 800px;
+  /* grid-template-columns: 20% 80%;
+  height: 800px; */
+
+  grid-template-columns: 35% 65%;
+  height: 1500px;
 }
 
 .img_intro {
@@ -16,13 +19,11 @@
 
 .inner_ctnr_providers {
   align-items: start;
-  background-color: white;
+  background-color: black;
   display: grid;
   grid-template-columns: 20% 25% 25% 25%;
-  grid-column-gap: 100px;
+  grid-column-gap: 50px;
   margin-left: 20px;
-  border-left: solid #ecb99c;
-  border-style: double;
   padding-right: 10px;
 }
 
@@ -34,19 +35,21 @@
 }
 
 .title {
-  background-color: #c17a46;
-  font-family: "Yesteryear", cursive;
+  background-color: black;
+  font-family: 'Mrs Saint Delafield', cursive;
   padding-left: 20px;
   text-align: left;
-  color: black;
+  color: white;
   font-size: 60px;
   padding-top: 5px;
   grid-column-start: 1;
   grid-column-end: 5;
   grid-row: 1;
+  padding-top: 50px;
 }
 .dropdown {
-  margin-top: 100px;
+  padding-left: 20px;
+  margin-top: 115px;
   grid-column: 1;
   grid-row: 1;
 }
@@ -55,16 +58,19 @@
   grid-row: 1;
   grid-column-start: 2;
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 8px;
+  padding-left: 90px;
 }
 
 .prov {
   display: grid;
-  grid-template-columns: 25% 25% 25%;
+  border-radius: 20px 20px 20px 20px;
+  grid-template-columns: 50% 50%;
   margin-left: 20px;
   border-left: solid #ecb99c;
   border-style: double;
   /* padding-right: 10px; */
+  padding-right: 20px;
 }
 
 
@@ -76,16 +82,13 @@
   margin-right: 40px auto;
   padding: 8px;
   /* background-color: #fffbfc; */
-  background-image: url("data:image/gif;base64,R0lGODlhAQABAPAAAOqrAP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="),
-    url("data:image/gif;base64,R0lGODlhAQABAPAAAOqrAP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="),
-    url("data:image/gif;base64,R0lGODlhAQABAPAAAP///////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==");
   background-repeat: no-repeat;
   background-size: 0 2px, 0 100%, 0% 2px;
   background-position: top center, top center, bottom center;
   -webkit-animation: drawBorderFromCenter 10s;
 }
 .box img {
-  max-width: 100%;
+  max-width: auto;
 }
 
 .box .hvrbox-layer_bottom {
@@ -136,6 +139,8 @@
   font-size: 15px;
   /* border-top: 1px solid rgb(179, 179, 179); for old browsers */
   /* border-top: 1px solid rgba(179, 179, 179, 0.7); */
+  /* border-top: 1px solid #ecb99c; /* for old browsers */
+  /* border-top: 1px solid #ecb99c; */
   margin-top: 5px;
   padding-top: 2px;
   display: none;
@@ -166,6 +171,8 @@
 .location_title {
   font-size: 14px;
   text-align: left;
+  font-family: "Josefin Sans", sans-serif;
+
 }
 
 .provider_name {
