@@ -50,19 +50,19 @@ class Hair extends React.Component {
       console.log('renderProviders', this.props.hairProviders);
     // if (this.state.providers) {
     //   console.log('renderProviders', this.state.providers);
-    const providerObj = {};
-    const providerArr = [];
-    this.props.hairProviders.forEach(provider => {
-      if(!providerObj[provider.provider_id]) {
-        providerObj[provider.provider_id] = true;
-        providerArr.push(provider);
-      }
-    })
-    console.log('providerobject', providerObj);
-    console.log('providerarrrrr', providerArr);
+      const providerObj = {};
+      const providerArr = [];
+      this.props.hairProviders.forEach(provider => {
+        if(!providerObj[provider.provider_id]) {
+          providerObj[provider.provider_id] = true;
+          providerArr.push(provider);
+        }
+      })
+      console.log('providerobject', providerObj);
+      console.log('providerarrrrr', providerArr);
 
       return providerArr.map(hairP => {
-      // return this.state.providers.map(hairP => {
+      // return this.props.hairProviders.map(hairP => {
         return (
           <div key={hairP.provider_id}>
           <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
