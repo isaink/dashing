@@ -4,18 +4,21 @@ import { Link } from "react-router-dom";
 import "../../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
+// import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import barberPic from "../../photo_assets/barber.jpeg";
-import { Dropdown } from "./Dropdown.js";
+// import { Dropdown } from "./Dropdown.js";
 
 import { ComboBox } from "./ComboBox.js";
 import axios from 'axios';
 import { getProvidersBySkill } from "../../Redux_Actions/comboBoxAction";
+import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
 
 
 class Barber extends React.Component {
   state = {
-    skills: []
+    skills: [],
+    locations: [],
+    serviceId: 3,
   }
 
   componentDidMount() {
@@ -42,9 +45,19 @@ class Barber extends React.Component {
 
   renderProviders = () => {
     if (this.props.barberProviders) {
-      return this.props.barberProviders.map(barberP => {
+
+      const providerObj = {};
+      const providerArr = [];
+      this.props.barberProviders.forEach(provider => {
+        if(!providerObj[provider.provider_id]) {
+          providerObj[provider.provider_id] = true;
+          providerArr.push(provider);
+        }
+      })
+
+      return providerArr.map(barberP => {
         return (
-          <>
+          <div key={barberP.provider_id}>
             <Link to={`/singleProviderProfile/${barberP.provider_id}`}>
             <div className="box">
               <div className="content">
@@ -71,7 +84,7 @@ class Barber extends React.Component {
                 </div>
               </div>
             </Link>
-          </>
+          </div>
         );
       });
     } else {
@@ -101,10 +114,17 @@ render() {
               <hr />
 
               <span className="dropdown">
-                <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+                {/*
+                  <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+                  getProvidersBySkill={this.props.getProvidersBySkill}
+
+                  */}
                 <ComboBox
                   fetchSkillList={this.state.skills}
-                  getProvidersBySkill={this.props.getProvidersBySkill}
+                  getProvidersByService = {this.props.getProvidersByService}
+
+                  fetchProvidersByService = {this.props.fetchProvidersByService}
+                  serviceId={this.state.service_id}
                   />
               </span>
 
@@ -131,6 +151,7 @@ const mapDispatchToProps = dispatch => {
     fetchProBySvcAndBoro: borough => dispatch(fetchProvidersByService(3, borough)),
 
     getProvidersBySkill: (skill_id) => dispatch(getProvidersBySkill(3, skill_id)),
+    getProvidersByService: (skill_id, borough) => dispatch(getProvidersByService(3, skill_id, borough))
 
   };
 };

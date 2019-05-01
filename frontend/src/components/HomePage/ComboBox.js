@@ -3,12 +3,16 @@ import React, { Component } from 'react';
 import '../../Css/ComboBox.css'
 
 export class ComboBox extends Component {
-  state = {
-    skill_id: 0,
-    skill_selected: false,
-    boro_selected: false,
-    location: '',
-    serviceId: this.props.service_id
+  constructor(props) {
+    super(props)
+    this.state = {
+      skill_id: '',
+      skill_selected: false,
+      boro_selected: false,
+      location: '',
+      serviceId: this.props.serviceId
+
+    }
   }
 
   handleBoroChange = (event) => {
@@ -19,6 +23,11 @@ export class ComboBox extends Component {
   };
 
   handleSkillChange = (event) => {
+    // if (this.state.skill_id === 0) {
+    //   this.setState ({
+    //     skill_selected: false,
+    //   })
+    // }
     this.setState ({
       skill_selected: true,
       [event.target.name]: event.target.value,
@@ -29,24 +38,31 @@ export class ComboBox extends Component {
     event.preventDefault()
       let location = this.state.location
       let skill_id = this.state.skill_id
-      let serviceId = this.state.servciceId
+      let service_id = this.state.serviceId
 
-    if (this.state.skill_id === 0) {
-      this.props.fetchProvidersByService(serviceId)
-    }
+    // if (this.state.skill_id === 0) {
+    //   this.props.fetchProvidersByService(serviceId)
+    // }
 
-    if (this.state.boro_selected && this.state.skill_selected) {
+    // if (!skill_id) {
+    //   this.props.fetchProvidersByService(service_id)
+    // }
+
+    // if (this.state.boro_selected && this.state.skill_selected) {
       this.props.getProvidersByService(skill_id, location)
-    } else if (this.state.boro_selected) {
-      this.props.fetchProBySvcAndBoro(location)
-    } else if (this.state.skill_selected) {
-      this.props.getProvidersBySkill(skill_id)
-    }
+      // this.props.getProvidersByService(service_id, skill_id, location)
+    // }
+    // else if (this.state.boro_selected && !this.state.skill_selected) {
+    //   this.props.fetchProBySvcAndBoro(location)
+    // } else if (this.state.skill_selected && !this.state.boro_selected) {
+    //   this.props.getProvidersBySkill(skill_id)
+    // }
   }
 
 
   render() {
     console.log(this.state);
+    console.log(this.props);
 
     const skillList = this.props.fetchSkillList.length !== 0 && [...this.props.fetchSkillList].map(skill => (
       <option key={skill.skill_id} value={skill.skill_id} > {skill.skill_name} </option>
@@ -83,7 +99,7 @@ export class ComboBox extends Component {
             value={this.state.skill_id}
             name='skill_id'
           >
-            <option value='0' >Select Skill</option>
+            <option value='' >Select Skill</option>
             <hr/>
             {skillList}
           </select>
@@ -97,6 +113,8 @@ export class ComboBox extends Component {
     );
   }
 };
+
+
 
 // const skillList = this.props.fetchSkillList.length !== 0 && [...this.props.fetchSkillList].map(skill => (
 //   <option key={skill.skill_id} value={skill.skill_id} > {skill.skill_name} </option>
