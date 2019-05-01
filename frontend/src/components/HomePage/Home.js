@@ -55,17 +55,17 @@ class Home extends Component {
             </div>
           </dd>
 
-          <dt>
-            <div className="NavbarDiv">
-              <Navbar className="NavbarComponentTag" />
-            </div>
-          </dt>
-
           <dd>
             <Element name="home" className="Element">
               <Welcome />
             </Element>
           </dd>
+
+          <dt>
+            <div className='NavbarDiv'>
+              <Navbar className='NavbarComponentTag'/>
+            </div>
+          </dt>
 
           <dd>
             <Element name="hair" className="Element">

@@ -1,0 +1,44 @@
+.homeLogo {
+  position: absolute;
+  height: auto;
+  /* z-index: 2; */
+  margin-top: 250px;
+  margin-left: 27%;
+
+}
+
+
+.Element {
+  z-index: 4;
+}
+
+.NavbarDiv {
+  /* z-index: 20; */
+  top: 100px;
+}
+
+.NavbarComponentTag {
+
+}
+
+dl{
+   /* margin: 1rem; */
+   /* background-color: cornflowerblue;
+   color: cornsilk; */
+}
+dt{
+   /* font-weight: 900;
+   font-size: 1.5rem;
+   line-height: 1.5;
+   padding: 0.25rem 1rem;
+   color: whitesmoke;
+   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8); */
+   position:sticky;
+   top: 10px;
+
+}
+dd{
+   /* font-size: 1.2rem;
+   border-top: 1px solid cornsilk;
+   padding: 0.25rem 2rem 0.25rem 4rem; */
+}

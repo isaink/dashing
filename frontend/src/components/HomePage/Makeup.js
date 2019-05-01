@@ -5,15 +5,19 @@ import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 // import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import makeupPic from "../../photo_assets/makeup.jpg";
-import { Dropdown } from "./Dropdown.js";
+// import { Dropdown } from "./Dropdown.js";
 
 import { ComboBox } from "./ComboBox.js";
 import axios from 'axios';
 import { getProvidersBySkill } from "../../Redux_Actions/comboBoxAction";
+import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
+
 
 class Makeup extends React.Component {
   state = {
     skills: [],
+    locations: [],
+    serviceId: 2,
   }
 
   componentDidMount() {
@@ -43,7 +47,17 @@ class Makeup extends React.Component {
 
   renderProviders = () => {
     if (this.props.makeupProviders) {
-      return this.props.makeupProviders.map(makeupP => {
+
+      const providerObj = {};
+      const providerArr = [];
+      this.props.makeupProviders.forEach(provider => {
+        if(!providerObj[provider.provider_id]) {
+          providerObj[provider.provider_id] = true;
+          providerArr.push(provider);
+        }
+      })
+
+      return providerArr.map(makeupP => {
         return (
           <div key={makeupP.provider_id}>
             <Link to={`/singleProviderProfile/${makeupP.provider_id}`}>
@@ -107,10 +121,16 @@ class Makeup extends React.Component {
               <hr />
 
               <span className="dropdown">
+                {/*
                 <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
+                getProvidersBySkill={this.props.getProvidersBySkill}
+                */}
                 <ComboBox
                   fetchSkillList={this.state.skills}
-                  getProvidersBySkill={this.props.getProvidersBySkill}
+                  getProvidersByService = {this.props.getProvidersByService}
+
+                  fetchProvidersByService = {this.props.fetchProvidersByService}
+                  serviceId={this.state.service_id}
                   />
               </span>
 
@@ -133,7 +153,7 @@ class Makeup extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     makeupProviders: state.providersByService[4],
-    makeupProvidersBySkill: [state.providersBySkill[4]],
+    // makeupProvidersBySkill: [state.providersBySkill[4]],
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -142,6 +162,8 @@ const mapDispatchToProps = dispatch => {
     fetchProBySvcAndBoro: borough => dispatch(fetchProvidersByService(4, borough)),
 
     getProvidersBySkill: (skill_id) => dispatch(getProvidersBySkill(4, skill_id)),
+    getProvidersByService: (skill_id, borough) => dispatch(getProvidersByService(4, skill_id, borough))
+
   };
 };
 

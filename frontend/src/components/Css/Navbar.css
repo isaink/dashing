@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   top: 200px;
+  z-index: 500;
+
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   font-size: 18px;
