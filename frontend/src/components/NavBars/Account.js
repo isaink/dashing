@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import "../../Css/Navbar.css";
+import "../Css/Navbar.css";
 import account from "../../img/account.png";
 
 export default class Account extends Component {

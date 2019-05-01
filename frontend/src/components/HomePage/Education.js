@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Css/Education.css";
+import "../Css/Education.css";
 import leftpic from "../../photo_assets/edu_pic.jpg";
 import { DropdownService } from "./DropdownService";
 import axios from "axios";

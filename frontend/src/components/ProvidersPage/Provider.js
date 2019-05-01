@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { Hair } from "../HomePage/Hair";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-import "./../../Css/provider.css";
+import "./../Css/provider.css";
 
 class Provider extends Component {
   componentDidMount() {

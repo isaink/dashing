@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-import "../../Css/Navbar.css";
+import "../Css/Navbar.css";
 import Account from './Account.js';
 
 export default class NavbarHome extends Component {
