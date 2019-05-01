@@ -8,12 +8,13 @@ export let RECEIVE_PROVIDER_PORTFOLIIO = "RECEIVE_PROVIDER_PORTFOLIIO";
 
 // PROVIDER ACTION CREATOR (Action Creator: Function that returns an action object)
 export const receivedProvidersSuccess = (providers, service_id) => {
+  console.log('providerAction, ...providers: ', [...providers]);
   return {
     type: RECEIVE_PROVIDERS_SUCCESS,
     payload: {
       service_id: service_id,
       providers: [...providers]
-    }
+    },
   };
 };
 

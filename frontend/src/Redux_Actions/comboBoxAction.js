@@ -27,7 +27,8 @@ export const fetchErrors = err => {
 };
 
 export const getProvidersByService = (service_id, skill_id, borough) => dispatch => {
-
+  console.log(borough, typeof borough);
+  console.log(skill_id, typeof skill_id);
   let url = `/providers/byService/${service_id}?`
   if (skill_id !== 0 && borough !== 0) {
     url += `skill_id=${skill_id}&borough=${borough}`

@@ -48,101 +48,69 @@ class Home extends Component {
   render() {
     return (
       <>
-       
-        {/* <Element name="home">
-          <Welcome />
-        </Element>
 
-        <Element name="hair">
-          <Hair />
-        </Element>
+        <div className='HomepageDiv'>
+          <dl>
+            <dd>
+              <div className="bg_welcome">
+                <div className="homeLogo">
+                  <img src={homeLogo} alt="" width="700px" />
+                </div>
+              </div>
+            </dd>
 
-        <Element name="nails">
-          <Nails />
-        </Element>
+          <dd>
+            <Element name="home" className='Element'>
+              <Welcome />
+            </Element>
+          </dd>
 
-        <Element name="barber">
-          <Barber />
-        </Element>
+          <dt>
+            <div className='NavbarDiv'>
+              <Navbar className='NavbarComponentTag'/>
+            </div>
+          </dt>
 
-        <Element name="makeup">
-          <Makeup />
-        </Element>
-    */}
+          <dd>
+            <Element name="hair" className='Element'>
+              <Hair />
+            </Element>
+          </dd>
 
+          <dd>
+            <Element name="nails" className='Element'>
+              <Nails />
+            </Element>
+          </dd>
 
+          <dd>
+            <Element name="barber" className='Element'>
+              <Barber />
+            </Element>
+          </dd>
 
-<div className='HomepageDiv'>
+          <dd>
+            <Element name="makeup" className='Element'>
+              <Makeup />
+            </Element>
+          </dd>
 
-<dl>
+          <dd>
+            <Element name="education" className='Element'>
+              <Education />{" "}
+            </Element>
+          </dd>
 
-  <dd>
-    <div className="bg_welcome">
-      <div className="homeLogo">
-        <img src={homeLogo} alt="" width="700px" />
+          <dd>
+            <Element name="aboutus" className='Element'>
+              <AboutUs />{" "}
+            </Element>
+          </dd>
+        </dl>
       </div>
-    </div>
-  </dd>
-
-  <dt>
-    <div className='NavbarDiv'>
-      <NavbarHome className='NavbarComponentTag'/>
-  
-
-    </div>
-  </dt>
-
-<dd>
-  <Element name="home" className='Element'>
-    <Welcome />
-  </Element>
-</dd>
-
-<dd>
-  <Element name="hair" className='Element'>
-    <Hair />
-  </Element>
-</dd>
-
-<dd>
-  <Element name="nails" className='Element'>
-    <Nails />
-  </Element>
-</dd>
-
-<dd>
-  <Element name="barber" className='Element'>
-    <Barber />
-  </Element>
-</dd>
-
-<dd>
-  <Element name="makeup" className='Element'>
-    <Makeup />
-  </Element>
-</dd>
-
-<dd>
-  <Element name="education" className='Element'>
-    <Education />{" "}
-  </Element>
-</dd>
-
-<dd>
-  <Element name="aboutus" className='Element'>
-    <AboutUs />{" "}
-  </Element>
-</dd>
-</dl>
-</div>
-
-
-
-   
-      </>
-    );
+    </>);
   }
-}
+};
 
 export default Home;
 //  {/* <button onClick={this.scrollToTop}>To the top!</button> */}
