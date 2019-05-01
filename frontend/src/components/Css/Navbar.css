@@ -1,10 +1,9 @@
 .links_center {
   display: flex;
   justify-content: center;
-  /* top: 0; */
-  /* top: 200px; */
-  /* position: relative; */
+  top: 200px;
   z-index: 500;
+
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -23,28 +22,31 @@ button {
   text-transform: uppercase;
   background-color: black;
   border-radius: 10px;
-  color: #ECB99C;
+  color: #ecb99c;
   /* z-index: 1; */
   z-index: 5;
   overflow: hidden;
-
 }
 
 button:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  border: solid 5px #ECB99C;
-  /* z-index: -1; */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: solid 5px #ecb99c;
+
   z-index: 5;
   transition: transform 0.6s linear;
   transform: scale(0.97, 0.93);
 }
 
-button:hover::after { transform: scale(1,1); }
+button:hover::after {
+  transform: scale(1, 1);
+}
 
-.nav_prof{
-  /* z-index: 3; */
+.nav_prof {
   z-index: 5;
 }
