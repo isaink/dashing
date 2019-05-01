@@ -19,8 +19,6 @@ import { AboutUs } from "./AboutUs";
 import NavbarHome from "../NavBars/Navbar";
 import homeLogo from "../../photo_assets/dashing_logo_invert.png";
 
-
-
 import "./../../Css/Home.css";
 
 class Home extends Component {
@@ -67,7 +65,7 @@ class Home extends Component {
 
           <dt>
             <div className='NavbarDiv'>
-              <Navbar className='NavbarComponentTag'/>
+              <NavbarHome className='NavbarComponentTag'/>
             </div>
           </dt>
 
