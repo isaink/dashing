@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../Css/provider.css";
+import "../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 // import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
@@ -72,21 +72,21 @@ class Hair extends React.Component {
             <div className="box ">
               <div className="content">
                 <img
-                  alt="avatar"
-                  className='hvrbox-layer_bottom'
-                  src={hairP.avatar}
-                  style={{ height: "150px", display: 'block'}}
+                    alt="avatar"
+                    className='hvrbox-layer_bottom'
+                    src={hairP.avatar}
+                    style={{ height: "140px", display: 'block'}}
                   />
 
                 <div className='hvrbox-layer_top'>
                   <div className='hvrbox-text'>
                     <span id="providername" className='ih-fade-down ih-delay-sm'>{hairP.provider}</span>
                     <br />
-                    <div className='ih-zoom-in ih-delay-md'>
-                      {hairP.borough} <br />
-                      {hairP.email} <br />
-                      {hairP.phone_number} <br />
-                      {hairP.website_link}
+                    <div style={{ zIndex: '4', textAlign: 'center'}}>
+                    {hairP.borough} <br />
+                    {hairP.email} <br />
+                    {hairP.phone_number} <br />
+                    {hairP.website_link}
                     </div>
                   </div>
 

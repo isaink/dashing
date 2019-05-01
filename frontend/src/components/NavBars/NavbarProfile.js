@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
-import "../../Css/Navbar.css";
+import "../Css/Navbar.css";
 import logo from "../../photo_assets/dashing_logo.png";
 
 export default class NavbarProfile extends Component {
@@ -10,8 +10,8 @@ export default class NavbarProfile extends Component {
     render() {
       return (
         <>
-          <div className="navbar">
-            <span className="dashingNav">
+          <div className="nav_prof">
+            <span className="dashingNav ">
               <h3>
                 <Link to={"/"}>
                   <img
