@@ -22,6 +22,8 @@ class Hair extends React.Component {
 
   componentDidMount() {
     this.props.fetchProvidersByService();
+    this.getSkillsForService();
+    // this.props.getProvidersByService()
   };
 
   componentDidUpdate(prevProps, prevState){
