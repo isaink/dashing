@@ -20,7 +20,7 @@ class Hair extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProvidersByService();
+    this.props.getProvidersByService();
   };
 
   componentDidUpdate(prevProps, prevState){
@@ -104,6 +104,7 @@ class Hair extends React.Component {
   render() {
     console.log(this.props);
     console.log('this.props.hairProviders', this.props.hairProviders);
+    console.log(this.props.skill_id);
     return (
       <>
       <div className='ctnr_prov'>
