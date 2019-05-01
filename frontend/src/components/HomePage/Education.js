@@ -1,13 +1,31 @@
 import React from "react";
 import "../../Css/Education.css";
 import leftpic from "../../photo_assets/edu_pic.jpg";
-import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
-
-import { ComboBox } from "./ComboBox.js";
-import axios from 'axios';
+import { DropdownService } from "./DropdownService";
+import axios from "axios";
 import { getProvidersBySkill } from "../../Redux_Actions/comboBoxAction";
 
-export const Education = () => {
+import { Link } from "react-router-dom";
+
+
+
+export const Education = props => {
+  const renderEducationProviders = () => {
+    if (props.educationProviders) {
+      return props.educationProviders.map(eduProv => {
+        return (
+          <div key={eduProv.id}>
+            <Link to={`/singleProviderProfile/${eduProv.id}`}>
+              <img src={eduProv.avatar} alt="Person" />
+            </Link>
+          </div>
+        );
+      });
+    } else {
+      return <div>Loading...</div>
+    }
+  };
+
   return (
     <>
       <div className="edu_container">
@@ -26,9 +44,11 @@ export const Education = () => {
             <br />
             <br />
           </div>
+
           <div className="skillsDropdown">
-          <SkillsByServiceComboBox />
-          </div>
+            <DropdownService /></div>
+            <div>{renderEducationProviders()} </div>
+
         </div>
       </div>
     </>

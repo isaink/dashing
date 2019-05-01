@@ -2,7 +2,7 @@ const  db  = require('../connector.js');
 
 // GET --> Get all provider -->  /providers
 const getAllProviders = (req, res, next) => {
-  db.any('SELECT * FROM providers')
+  db.any('SELECT providers.id, name, email, password, avatar, borough, phone_number, website_link, bio, service_id, skill_id, price_min, price_max, education  FROM providers JOIN skills_provider ON providers.id = skills_provider.id')
   .then(providers => {
     res.status(200).json({
       status: 'success',
@@ -20,6 +20,26 @@ const getAllProviders = (req, res, next) => {
     next();
   })
 };
+const getAllEducationProviders = (req, res, next) => {
+  db.any("SELECT providers.id, name, email, password, avatar, borough, phone_number, website_link, bio, service_id, skill_id, price_min, price_max, education  FROM providers JOIN skills_provider ON providers.id = skills_provider.id WHERE education = 'true'")
+  .then(providers => {
+    res.status(200).json({
+      status: 'success',
+      message: 'Got all Education Providers.',
+      providers: providers
+    })
+  })
+  .catch(err => {
+    res.status(400)
+    .json({
+      status: 'error',
+      message: " 🤣 Na nana na nah. You didn't get your Providers!😝 ",
+      err
+    })
+    next();
+  })
+};
+
 
 // POST -> Create a Provider [USER AUTH]  ->  /provider/:id
 const createProvider = (req, res, next) => {
@@ -99,8 +119,6 @@ const deleteProvider = (req, res, next) => {
 };
 
 
-// const getSingleProvider = (req, res, next) => {
-//   db.any('SELECT providers.id, providers.name AS providerName, array_agg(distinct avatar) AS avatar, email, borough, phone_number, website_link, services_provider.service_id, services_provider.provider_id, services.id, services.name AS servicesName, skills.id, skills.service_id, skills.name AS skillsName FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE provider_id =  ${id} GROUP BY providers.id, services_provider.service_id, services_provider.provider_id, services.id, skills.id', {
 const getProviderInfo = (req, res, next) => {
   db.one('SELECT providers.id, bio, providers.name AS providerName, avatar, email, borough, phone_number, website_link FROM providers WHERE providers.id = ${id}', {
     id: Number(req.params.id)
@@ -115,19 +133,6 @@ const getProviderInfo = (req, res, next) => {
   .catch(err => next(err));
 };
 
-const getSingleProvider = (req, res, next) => {
-  db.one('SELECT providers.id, providers.name AS providerName, array_agg(distinct avatar) AS avatar, email, borough, phone_number, website_link, services_provider.service_id, services_provider.provider_id, services.id, services.name AS servicesName, skills.id, skills.service_id, skills.name AS skillsName FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE provider_id =  ${id} GROUP BY providers.id, services_provider.service_id, services_provider.provider_id, services.id, skills.id', {
-    id: Number(req.params.id)
-  })
-  .then(info => {
-    res.status(200).json({
-      status: 'success',
-      message: 'Got complete infor for provider',
-      info: info
-    })
-  })
-  .catch(err => next(err));
-};
 
 
 // router.get('/bySkill/:skill_id', getProvidersBySkill);
@@ -237,8 +242,8 @@ const getProviderServices = (req, res, next) => {
 module.exports = {
   getAllProviders,
   getProviderInfo,
+  getAllEducationProviders,
   getProviderServices,
-  getSingleProvider,
   createProvider,
   logoutProvider,
   loginProvider,
