@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   /* top: 200px; */
-  /* position: relative; */
   z-index: 500;
+
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -27,11 +27,10 @@ button {
   /* z-index: 1; */
   z-index: 5;
   overflow: hidden;
-
 }
 
 button:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
@@ -42,13 +41,15 @@ button:after {
   transform: scale(0.97, 0.93);
 }
 
-button:hover::after { transform: scale(1,1); }
+button:hover::after {
+  transform: scale(1, 1);
+}
 
-
-.nav_prof{
-  /* z-index: 3; */
+/*  */
+.nav_prof {
   z-index: 5;
 }
+/*  */
 
 .ctnr_lines{
   position: absolute;
