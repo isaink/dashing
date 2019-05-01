@@ -1,13 +1,21 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import "../../Css/Navbar.css";
 import logo from "../../photo_assets/dashing_logo.png";
 
-export default class NavbarProfile extends Component {
+class NavbarProfile extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
 
+  goBack = () => {
+    this.props.history.goBack();
+  };
 
     render() {
+
       return (
         <>
           <div className="navbar">
@@ -29,6 +37,7 @@ export default class NavbarProfile extends Component {
             <Link
                 className="links"
                 to={"/"}
+                onClick={this.goBack}
             >
                 Home
             </Link>
@@ -40,3 +49,6 @@ export default class NavbarProfile extends Component {
       );
     }
 };
+
+
+export default withRouter(NavbarProfile)

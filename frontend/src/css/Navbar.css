@@ -47,4 +47,5 @@ button:hover::after { transform: scale(1,1); }
 .nav_prof{
   /* z-index: 3; */
   z-index: 5;
+  position: absolute;
 }

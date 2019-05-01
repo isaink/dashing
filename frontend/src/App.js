@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from './components/HomePage/Home';
 import { Education } from './components/HomePage/Education';
 import { AboutUs } from './components/HomePage/AboutUs';
-import { ProviderProfile } from './components/ProfilePage/providerProfile';
+import ProviderProfile from './components/ProfilePage/providerProfile';
 import SingleProviderContainer from './Redux_Containers/SingleProviderContainer';
 // import NavbarForComponents from "./components/NavBars/NavbarForComponents";
 

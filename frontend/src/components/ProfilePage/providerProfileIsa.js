@@ -5,64 +5,25 @@ import "./../../Css/profile.css";
 // import pic from './../../img/pic_profile.jpg';
 import pared from "./../../img/habitacion-pared-salmon.jpg";
 import loc from "./../../img/location.png";
-import bulletpoint from "./../../photo_assets/bulletpoint.png";
+import check from "./../../photo_assets/bulletpoint.png";
 // import lines from './../../img/lines_porfolio.jpg';
 import not_img from "./../../img/notFound.jpg";
 
-import { withRouter, Link } from 'react-router-dom';
-import logo from "../../photo_assets/dashing_logo.png";
-
-
-
-const ProviderProfile = props => {
-
-  const goBack = () => {
-    props.history.goBack();
-  };
-
+export const ProviderProfile = props => {
   const renderProviderInfo = () => {
     if (props.providerInfo) {
       return (
-
         <div className="ctnr_profile" key={props.providerInfo.provider_id}>
-
-          <div className="background_img" >
+          <div className="bg_intro_profile">
             <img
               alt="intro_picture"
               src={pared}
               className="intro_pic"
+              style={{ width: `100vw` }}
             />
-          {/*
-            style={{ width: `100%` }}
-            */}
           </div>
 
-          <div className='backLogoAndButtonDiv'>
-
-            <span className="dashingNav">
-              <h3>
-                <Link to={"/"}>
-                  <img
-                    src={logo}
-                    alt=""
-                    width="175px"
-                    height="auto"
-                  />
-                </Link>
-              </h3>
-            </span>
-
-            <Link
-                className="links"
-                to={"/"}
-                onClick={goBack}
-            >
-                Home
-            </Link>
-
-
-
-          </div>
+          {/* <div >    */}
 
           <img
             src={props.providerInfo.avatar}
@@ -73,7 +34,7 @@ const ProviderProfile = props => {
           <div className="prov_info">
             <h5 className="prov_name">{props.providerInfo.providername} </h5>
           </div>
-          <div className="bg_name" /> {/*   ???????   */}
+          <div className="bg_name" />
 
           {/* <div className='ctnr_contact'> */}
           <div className="contact_info">
@@ -103,8 +64,7 @@ const ProviderProfile = props => {
 
           <div className="social_link">
             <p>Social media: </p>
-            <a href="https://www.instagram.com/krystamariehair/"
-              target="_blank" rel='noopener noreferrer'>
+            <a href="https://www.instagram.com/krystamariehair/">
               {" "}
               {props.providerInfo.website_link}{" "}
             </a>
@@ -118,7 +78,7 @@ const ProviderProfile = props => {
                     <>
                       <img
                         alt="intro_picture"
-                        src={bulletpoint}
+                        src={check}
                         style={{ height: "5px" }}
                       />
                     {' '} {skill} {' '}
@@ -165,7 +125,6 @@ const ProviderProfile = props => {
           </div>
         </div>
       );
-
     } else {
       return (
         <div key="1" id="providerInfo">
@@ -175,14 +134,5 @@ const ProviderProfile = props => {
     }
   };
 
-
-  console.log(  props.providerInfo.services);
-  console.log(  props.providerInfo.portfolio);
-  return (
-    <>
-      {renderProviderInfo()}
-    </>
-  )
+  return <>{renderProviderInfo()}</>;
 };
-
-export default withRouter(ProviderProfile)
