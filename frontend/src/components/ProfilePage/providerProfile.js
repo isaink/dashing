@@ -19,7 +19,7 @@ export const ProviderProfile = props => {
               alt="intro_picture"
               src={pared}
               className="intro_pic"
-              style={{ width: `1400px` }}
+              style={{ width: `400%` }}
             />
           </div>
 
