@@ -62,8 +62,8 @@ export class ComboBox extends Component {
             style={{ width: "300px", height: "50px" }}
             id="select-profession"
           >
-            <option value=""> Select Your Location </option>
-            <hr />
+            <option value=""> ** Select Your Location ** </option>
+
             <option value="Brooklyn">Brooklyn</option>
             <option value="Bronx">Bronx</option>
             <option value="Manhattan">Manhattan</option>
@@ -81,11 +81,12 @@ export class ComboBox extends Component {
             value={this.state.skill_id}
             name='skill_id'
           >
-            <option value='' >Select Skill</option>
-            <hr/>
+            <option value='' >** Select Skill **</option>
             {skillList}
           </select>
         </div>
+
+        <hr />
 
         <div>
           <button type='submit'> Submit </button>

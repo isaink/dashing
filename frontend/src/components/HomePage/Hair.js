@@ -7,7 +7,6 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 import hairPic from "../../photo_assets/hair.jpg";
 // import { Dropdown } from "./Dropdown.js";
 
-
 import axios from 'axios';
 import { ComboBox } from "./ComboBox.js";
 import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
@@ -21,9 +20,10 @@ class Hair extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProvidersByService();
+
+    this.props.getProvidersByService();
     this.getSkillsForService();
-    // this.props.getProvidersByService()
+   
   };
 
   componentDidUpdate(prevProps, prevState){
@@ -107,6 +107,7 @@ class Hair extends React.Component {
   render() {
     console.log(this.props);
     console.log('this.props.hairProviders', this.props.hairProviders);
+    console.log(this.props.skill_id);
     return (
       <>
       <div className='ctnr_prov'>
