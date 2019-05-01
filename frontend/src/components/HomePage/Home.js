@@ -18,12 +18,17 @@ import { AboutUs } from "./AboutUs";
 
 import Navbar from "../NavBars/Navbar";
 import homeLogo from "../../photo_assets/dashing_logo_invert.png";
-
+import axios from 'axios';
+import SingleService from './SingleService';
 
 
 import "./../../Css/Home.css";
 
 class Home extends Component {
+  state = {
+    services: [],
+  }
+
   componentDidMount() {
     Events.scrollEvent.register("begin", function() {
       console.log("begin", arguments);
@@ -45,7 +50,32 @@ class Home extends Component {
     });
   }
 
+  getServices = (service_id) => {
+    axios.get(`/services/${service_id}`)
+    .then(res => {
+      console.log(res);
+      debugger
+      this.setState({
+        services: res.data
+      })
+    })
+    .catch(err => {
+      console.log('GET SERVICE ERR', err);
+    })
+  }
+
+  serviceList = () => this.state.services.map(serviceArea => {
+    return (
+      <dd>
+        <Element name={serviceArea.service_name} className='Element'>
+          <SingleService service={serviceArea}/>
+        </Element>
+      </dd>
+    )
+  })
+
   render() {
+
     return (
         <div className='HomepageDiv'>
 
@@ -71,6 +101,9 @@ class Home extends Component {
             </div>
           </dt>
 
+          {this.serviceList}
+
+          {/*
           <dd>
             <Element name="hair" className='Element'>
               <Hair />
@@ -94,6 +127,7 @@ class Home extends Component {
               <Makeup />
             </Element>
           </dd>
+          */}
 
           <dd>
             <Element name="education" className='Element'>
