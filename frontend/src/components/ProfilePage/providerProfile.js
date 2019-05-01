@@ -8,6 +8,7 @@ import loc from "./../../img/location.png";
 import bulletpoint from "./../../photo_assets/bulletpoint.png";
 // import lines from './../../img/lines_porfolio.jpg';
 import not_img from "./../../img/notFound.jpg";
+import backarrow from '../../img/curved_back_arrow.png';
 
 import { withRouter, Link } from 'react-router-dom';
 import logo from "../../photo_assets/dashing_logo.png";
@@ -37,8 +38,8 @@ const ProviderProfile = props => {
             */}
           </div>
 
-          <div className='backLogoAndButtonDiv'>
-
+          <div className='backLinkDiv'>
+            {/*
             <span className="dashingNav">
               <h3>
                 <Link to={"/"}>
@@ -51,24 +52,38 @@ const ProviderProfile = props => {
                 </Link>
               </h3>
             </span>
+            */}
 
             <Link
-                className="links"
-                to={"/"}
-                onClick={goBack}
+              className="backLink"
+              to={"/"}
+              onClick={goBack}
+              style={{textDecoration: 'none'}}
             >
-                Home
+
+              <div className='backarrowImageTagDiv'>
+                <img src={backarrow}
+                  alt=''
+                  width='50px'
+                  className='backarrowImageTag'
+                />
+              </div>
+
+              <div className='goBackTextTag'>
+                <h4> Go Back </h4>
+              </div>
+
             </Link>
-
-
 
           </div>
 
-          <img
-            src={props.providerInfo.avatar}
-            alt="avatar"
-            className="avatar_profile"
-          />
+          <div className='avatarProfileDiv'>
+            <img
+              src={props.providerInfo.avatar}
+              alt="avatar"
+              className="avatarProfile"
+            />
+          </div>
 
           <div className="prov_info">
             <h5 className="prov_name">{props.providerInfo.providername} </h5>

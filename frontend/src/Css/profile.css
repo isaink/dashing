@@ -12,3 +12,54 @@ img.intro_pic {
   justify-content: center;
 
 }
+
+.backLinkDiv {
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 110px;
+}
+
+a.backLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+
+  /* text-decoration: none; */
+}
+
+.backarrowImageTagDiv {
+  display: flex;
+  justify-content: center;
+
+  background-color: brown;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+
+  margin-left: 20px;
+}
+
+.backarrowImageTag {
+  display: flex;
+}
+
+.goBackTextTag {
+  margin-left: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+.avatarProfileDiv {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+  top: -200px;
+}
+
+.avatarProfile {
+  height: 500px;
+}
