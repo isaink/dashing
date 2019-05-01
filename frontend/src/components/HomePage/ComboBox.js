@@ -62,7 +62,7 @@ export class ComboBox extends Component {
             id="select-profession"
           >
             <option value=""> Select Your Location </option>
-            <hr />
+      
             <option value="Brooklyn">Brooklyn</option>
             <option value="Bronx">Bronx</option>
             <option value="Manhattan">Manhattan</option>
@@ -81,7 +81,7 @@ export class ComboBox extends Component {
             name='skill_id'
           >
             <option value='' >Select Skill</option>
-            <hr/>
+        
             {skillList}
           </select>
         </div>

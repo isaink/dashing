@@ -10,7 +10,7 @@ export const educationProv_Reducer = (state = initialState, action) => {
         ...state,
          ...action.payload
       ]
-      debugger
+      // debugger
 
     default:
       return state;
