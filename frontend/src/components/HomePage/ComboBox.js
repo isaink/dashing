@@ -38,6 +38,7 @@ export class ComboBox extends Component {
     // let service_id = this.state.serviceId
 
     this.props.getProvidersByService(skill_id, location)
+
   }
 
 
