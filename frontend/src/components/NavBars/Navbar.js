@@ -2,44 +2,32 @@ import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 import "../../Css/Navbar.css";
-// import logo from "../../photo_assets/dashing_logo.png";
+import Account from './Account.js';
 
-export default class Navbar extends Component {
+export default class NavbarHome extends Component {
+
+
   scrollToTop = () => {
     scroll.scrollToTop();
   };
 
+
   render() {
     return (
       <>
-        <div>
-          {/* <span className="dashingNav">
-            <h3>
-              <Link to={"/"}>
-                <img
-                  src={logo}
-                  alt=""
-                  width="175px"
-                  height="auto"
-                  onClick={this.scrollToTop}
-                />
-              </Link>
-            </h3>
-          </span> */}
+      
 
+        
+      
           <div className="links_center">
-            {/* <Link
-              className="links"
-              activeClass="active"
-              to="home"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >Home
-            </Link> */}
 
-
+        <div className='ctnr_lines'> 
+          <div className='nav_lines'>
+            <div className="first"></div>
+            <div className="second"></div>
+            <div className="third"></div>
+          </div>
+        </div>
 
             <Link
               className="links className='btn-slide-line center'"
@@ -91,8 +79,10 @@ export default class Navbar extends Component {
             >
               <button> Makeup </button>
             </Link>
+
+            <Account/>
           </div>
-        </div>
+          
       </>
     );
   }
