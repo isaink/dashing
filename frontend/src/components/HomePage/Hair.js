@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../Css/provider.css";
+import "../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 // import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import hairPic from "../../photo_assets/hair.jpg";
 // import { Dropdown } from "./Dropdown.js";
-
 
 import axios from 'axios';
 import { ComboBox } from "./ComboBox.js";
@@ -21,9 +20,10 @@ class Hair extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProvidersByService();
+
+    this.props.getProvidersByService();
     this.getSkillsForService();
-    // this.props.getProvidersByService()
+   
   };
 
   componentDidUpdate(prevProps, prevState){
@@ -72,21 +72,21 @@ class Hair extends React.Component {
             <div className="box ">
               <div className="content">
                 <img
-                  alt="avatar"
-                  className='hvrbox-layer_bottom'
-                  src={hairP.avatar}
-                  style={{ height: "150px", display: 'block'}}
+                    alt="avatar"
+                    className='hvrbox-layer_bottom'
+                    src={hairP.avatar}
+                    style={{ height: "140px", display: 'block'}}
                   />
 
                 <div className='hvrbox-layer_top'>
                   <div className='hvrbox-text'>
                     <span id="providername" className='ih-fade-down ih-delay-sm'>{hairP.provider}</span>
                     <br />
-                    <div className='ih-zoom-in ih-delay-md'>
-                      {hairP.borough} <br />
-                      {hairP.email} <br />
-                      {hairP.phone_number} <br />
-                      {hairP.website_link}
+                    <div style={{ zIndex: '4', textAlign: 'center'}}>
+                    {hairP.borough} <br />
+                    {hairP.email} <br />
+                    {hairP.phone_number} <br />
+                    {hairP.website_link}
                     </div>
                   </div>
 
@@ -107,6 +107,7 @@ class Hair extends React.Component {
   render() {
     console.log(this.props);
     console.log('this.props.hairProviders', this.props.hairProviders);
+    console.log(this.props.skill_id);
     return (
       <>
       <div className='ctnr_prov'>

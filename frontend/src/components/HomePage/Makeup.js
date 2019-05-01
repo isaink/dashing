@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../Css/provider.css";
+import "../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 // import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
@@ -21,8 +21,7 @@ class Makeup extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProvidersByService();
-    // this.props.getProvidersBySkill();
+    this.props.getProvidersByService();
   }
 
   componentDidUpdate(prevProps, prevState){

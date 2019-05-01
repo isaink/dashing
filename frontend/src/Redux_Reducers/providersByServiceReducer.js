@@ -2,7 +2,7 @@ import { RECEIVE_PROVIDERS_SUCCESS } from "../Redux_Actions/providerAction";
 
 export const providersByServiceReducer = (state = {}, action) => {
   const newState = { ...state };
-  console.log('newState', newState);
+  // console.log('newState', newState);
   switch (action.type) {
     case RECEIVE_PROVIDERS_SUCCESS:
       const { service_id, providers } = action.payload;

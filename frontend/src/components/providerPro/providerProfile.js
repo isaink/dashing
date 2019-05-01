@@ -1,6 +1,6 @@
 import React from "react";
-import "./../../Css/porfolio.css";
-import "../../Css/providerProfile.css"
+import "./../Css/porfolio.css";
+import "../Css/providerProfile.css"
 
 export const ProviderProfile = props => {
   const renderProviderInfo = () => {
@@ -59,7 +59,6 @@ export const ProviderProfile = props => {
   const renderProviderPortfolio = () => {
     if (props.providerInfo.portfolio) {
      return props.providerInfo.portfolio.map(photo =>{
-
       return(
         <img className="portfolio_image" src={photo['img']} alt='not here'/>
       )

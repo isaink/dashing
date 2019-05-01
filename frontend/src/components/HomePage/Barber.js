@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../Css/provider.css";
+import "../Css/provider.css";
 import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 // import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
@@ -22,7 +22,7 @@ class Barber extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProvidersByService();
+    this.props.getProvidersByService();
   };
 
   componentDidUpdate(prevProps, prevState){
