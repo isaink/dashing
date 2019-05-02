@@ -1,5 +1,5 @@
 import React from "react";
-import "./../Css/profile.css";
+import "../../Css/profile.css";
 
 // import pic from './../../img/pic_profile.png';
 // import pic from './../../img/pic_profile.jpg';

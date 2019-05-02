@@ -6,11 +6,10 @@
   margin-left: 27%;
 }
 
-
-/*  */
-.homeBackground{
-  max-height: 800px;
-/*  */
+.homeBackground {
+  max-height: 1000px;
+  
+}
 
 .Element {
   z-index: 4;

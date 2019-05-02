@@ -1,4 +1,5 @@
 import React from "react";
+import "../../Css/Education.css"
 
 export const DropdownService = props => {
   const handleServiceChange = event => {
@@ -10,11 +11,12 @@ export const DropdownService = props => {
     <>
       <div>
         <select
-          classname="selector"
+          className="selector"
           onChange={handleServiceChange}
-          style={{ width: "300px", height: "50px" }}
+          style={{ width: "300px", height: "50px"}}
           name="select-profession"
           id="select-profession"
+
         >
           <option value=""> Select A Service </option>
           <option value="Hair">Hair</option>

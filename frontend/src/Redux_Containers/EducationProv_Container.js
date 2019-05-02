@@ -11,7 +11,7 @@ class EducationProv_Container extends React.Component {
 
   render() {
     console.log("props in edu servicessssss", this.props);
-    debugger
+
     return (
       <>
       <Education educationProviders={this.props.educationProviders} />
