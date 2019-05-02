@@ -4,15 +4,17 @@ body {
 
 
 /*  */
-.background_img {
+/* .background_img_Div {
   display: flex;
-  height: 300px;
-}
+} */
 
 img.intro_pic {
+  display: flex;
+  height: 300px;
+  width: 100%;
+
   object-fit: cover;
   justify-content: center;
-
 
 }
 
@@ -28,7 +30,7 @@ img.intro_pic {
   /* background-color: green; */
   display: flex;
   flex-direction: column;
-  width: 200px;
+  /* width: 200px; */
   height: 110px;
 }
 a.backLink {
@@ -37,34 +39,34 @@ a.backLink {
   align-items: center;
   margin-top: 20px;
   /* text-decoration: none; */
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: fit-content;
 }
-.backarrowImageTagDiv {
-  display: flex;
-  justify-content: center;
-
-  background-color: pink;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-
-  margin-left: 20px;
-
-  /* -moz-box-shadow: 0 0 50px #fff;
-  -webkit-box-shadow: 0 0 50px #fff;
-  box-shadow: 0 0 50px #fff; */
-}
-.backarrowImageTagDiv:hover {
+a.backLink:hover {
   -moz-box-shadow: 0 0 50px #fff;
   -webkit-box-shadow: 0 0 50px #fff;
   box-shadow: 0 0 50px #fff;
 }
+.backarrowImageTagDiv {
+  display: flex;
+  justify-content: center;
+}
 .backarrowImageTag {
   display: flex;
+  width: 80px;
+  height: 80px;
 }
-.goBackTextTag {
+.goBackTextTag{
   margin-left: 10px;
   font-size: 20px;
-  color: white;
+  font-weight: bolder;
+  color: black;
+  font-family: "Josefin Sans", sans-serif;
+}
+.goBackTextTag h4 {
+  width: auto;
 }
 
 
@@ -75,11 +77,11 @@ a.backLink {
   justify-content: space-between;
   /* background-color: yellow; */
   margin-top: 20px;
-  border: 2px solid white;
-  border-radius: 20px;
-  border-top: white solid 5px;
-  border-right: white solid -5px;
-  padding: 50px;
+  /* border: 2px solid white; */
+  /* border-radius: 20px; */
+  /* border-top: white solid 5px; */
+  /* border-right: white solid -5px; */
+  margin: 50px;
 }
 
 /*  */
@@ -89,32 +91,25 @@ a.backLink {
   width: fit-content;
   /* background-color: red; */
   height: fit-content;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 50px;
 }
 
 /*  */
-.avatarProfileDiv {
+/* .avatarProfileDiv {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  /* z-index: 1; */
-  /* position: relative; */
   width: 300px;
   height: 470px;
   margin-right: 10px;
-  /* background-color: yellow; */
-  /* top: -200px; */
-}
+} */
 .avatarProfileBorder {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-image: linear-gradient(red, yellow); */
-  width: 290px;
-  height: 414px;
   border-radius: 20px;
-
-
-
 }
 
 .avatarProfileImage {
@@ -123,6 +118,10 @@ a.backLink {
   border-style: inset;
   border-width: 3px;
   border-color: white;
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  /* height: inherit; */
 
   -moz-box-shadow: 0 0 50px #fff;
   -webkit-box-shadow: 0 0 50px #fff;
@@ -160,7 +159,7 @@ a.backLink {
   display: flex;
   flex-direction: column;
   justify-content:flex-end;
-  margin-left: 10px;
+  margin-left: 45px;
   /* bottom: 10px; */
   margin-bottom: 50px;
 
@@ -254,6 +253,56 @@ a.socialLink_a_tag  {
 }
 
 /*  */
+
+.ctnr_services {
+  /* background-color: green; */
+  color: white;
+  width: 200px;
+  margin-right: 20px;
+}
+.srv_nameDiv {
+  /* background-color: white; */
+  height: 50px;
+  margin-top: 30px;
+  /* margin-bottom: 10px; */
+}
+.srv_nameDiv .srv_name {
+  /* background-color: yellow; */
+  font-size: 50px;
+  font-family: "Mrs Saint Delafield", cursive;
+  font-weight: bold;
+  color: red;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+
+.srv_nameDiv .skillAndBulletsDiv {
+  background-color: orange;
+  display: flex;
+  /* flex-direction: column; */
+  color: white;
+  margin-bottom: 20px;
+
+  border: 2px solid white;
+}
+
+.skillAndBulletsDiv {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px; */
+}
+
+.skillBullets {
+  /* background-color: yellow; */
+  width: 5px;
+}
+
+
+/*  */
 .ctnr_portfolio {
   display: flex;
   flex-direction: row;
@@ -265,56 +314,10 @@ a.socialLink_a_tag  {
   justify-content: center;
 }
 
-.ctnr_services {
-  /* background-color: green; */
-  color: white;
-  width: 200px;
-  margin-right: 20px;
+.portfolio_img {
+  border-radius: 5px;
+  margin-left: 5px;
 }
-.srv_nameDiv {
-  /* background-color: white; */
-  height: 50px;
-  margin-top: 20px;
-  /* margin-bottom: 10px; */
-}
-.srv_nameDiv .srv_name {
-  /* background-color: yellow; */
-  font-size: 50px;
-  font-family: "Mrs Saint Delafield", cursive;
-  font-weight: bold;
-  color: red;
-  text-shadow: 2px 2px 4px #000000;
-
-
-}
-
-
-.srv_nameDiv .skillAndBulletsDiv {
-  background-color: orange;
-  display: flex;
-  /* flex-direction: column; */
-  font-family: "Josefin Sans", sans-serif;
-  color: white;
-  font-size: 14px;
-  margin-bottom: 20px;
-
-  border: 2px solid white;
-}
-
-/* .skillAndBulletsDiv {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 50px;
-} */
-
-.skillBullets {
-  /* background-color: yellow; */
-  width: 5px;
-}
-
-
 
 
 

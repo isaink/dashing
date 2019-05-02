@@ -27,7 +27,7 @@ const ProviderProfile = props => {
 
         <div className="ctnr_profile" key={props.providerInfo.provider_id}>
 
-          <div className="background_img" >
+          <div className="background_img_Div" >
             <img
               alt="intro_picture"
               src={pared}
@@ -80,6 +80,7 @@ const ProviderProfile = props => {
           </div>
 
           <div className='leftAndRightSidesDiv'>
+
             <div className='AvatarAndAllDetailsDiv'>
 
               <div className='avatarProfileDiv'>
@@ -91,18 +92,33 @@ const ProviderProfile = props => {
                     />
                 </div>
 
-                <div className="prov_info">
-                  <h5 className="prov_name">{props.providerInfo.providername} </h5>
-                </div>
               </div>
 
 
 
-              {/* <div className="bg_name" />   ???????   */}
-
-              {/* <div className='ctnr_contact'> */}
 
               <div className='contactLocationSocialLinkDiv'>
+
+                <div className='LocationAndNameDiv'>
+                  <div className='locDiv'>
+                    <div className="loc">
+                      <div className="prov_boro">
+                        <img
+                          alt="loc"
+                          src={loc}
+                          style={{ zIndex: "2", height: "30px" }}
+                          />
+                        <h6>{props.providerInfo.borough}</h6>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="prov_info">
+                    <h5 className="prov_name">{props.providerInfo.providername} </h5>
+                  </div>
+                </div>
+
+
                 <div className="phoneEmailAndSocialLinkDiv">
                   <div className='phoneNumDiv'>
                     <p>Phone number: </p>
@@ -125,20 +141,7 @@ const ProviderProfile = props => {
 
                 </div>
 
-                <div className='locDiv'>
-                  <div className="loc">
-                    <div className="prov_boro">
-                      <img
-                        alt="loc"
-                        src={loc}
-                        style={{ zIndex: "2", height: "30px" }}
-                        />
-                      <h6>{props.providerInfo.borough}</h6>
-                    </div>
-                  </div>
 
-
-                </div>
 
               </div>
 
