@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-import "../Css/Navbar.css";
+import "../../Css/Navbar.css";
 import Account from './Account.js';
 
 export default class NavbarHome extends Component {
@@ -15,13 +15,13 @@ export default class NavbarHome extends Component {
   render() {
     return (
       <>
-      
 
-        
-      
+
+
+
           <div className="links_center">
 
-        <div className='ctnr_lines'> 
+        <div className='ctnr_lines'>
           <div className='nav_lines'>
             <div className="first"></div>
             <div className="second"></div>
@@ -80,9 +80,28 @@ export default class NavbarHome extends Component {
               <button> Makeup </button>
             </Link>
 
+            <Link
+              className="links btn-slide-line center"
+              to="/education"
+            >
+              <button> Education </button>
+            </Link>
+
+            <Link
+              className="links btn-slide-line center"
+              activeClass="active"
+              to="aboutus"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <button> About Us</button>
+            </Link>
+
             <Account/>
           </div>
-          
+
       </>
     );
   }
