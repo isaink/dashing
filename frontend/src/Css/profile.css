@@ -4,9 +4,6 @@ body {
 
 
 /*  */
-/* .background_img_Div {
-  display: flex;
-} */
 
 img.intro_pic {
   display: flex;
@@ -30,7 +27,6 @@ img.intro_pic {
   /* background-color: green; */
   display: flex;
   flex-direction: column;
-  /* width: 200px; */
   height: 110px;
 }
 a.backLink {
@@ -38,13 +34,13 @@ a.backLink {
   flex-direction: row;
   align-items: center;
   margin-top: 20px;
-  /* text-decoration: none; */
   background-color: white;
   border-radius: 20px;
   padding: 20px;
   width: fit-content;
 }
 a.backLink:hover {
+  background-color: #ecb99c;
   -moz-box-shadow: 0 0 50px #fff;
   -webkit-box-shadow: 0 0 50px #fff;
   box-shadow: 0 0 50px #fff;
@@ -75,13 +71,9 @@ a.backLink:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* background-color: yellow; */
   margin-top: 20px;
-  /* border: 2px solid white; */
-  /* border-radius: 20px; */
-  /* border-top: white solid 5px; */
-  /* border-right: white solid -5px; */
   margin: 50px;
+  /* background-color: red; */
 }
 
 /*  */
@@ -89,16 +81,6 @@ a.backLink:hover {
   display: grid;
   grid-template-columns: 350px 400px;
   height: 500px;
-  /* width: 1000px; */
-
-  /* width: fit-content; */
-  /* background-color: red; */
-  /* height: fit-content; */
-  /* padding: 50px; */
-
-  /* border: 2px solid #202020;
-  border-radius: 20px;
-  background-color: #202020; */
 }
 
 /*  */
@@ -113,14 +95,14 @@ a.backLink:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border-radius: 20px; */
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  /* border-top-left-radius: 20px; */
+  /* border-bottom-left-radius: 20px; */
 
 }
 
 .avatarProfileImage {
-  height: 350px;
+  /* border-top-left-radius: 20px; */
+  /* border-bottom-left-radius: 20px; */
   border-radius: 20px;
   border-style: inset;
   border-color: grey;
@@ -139,10 +121,11 @@ a.backLink:hover {
   margin-top: 20px;
   color: white;
   font-size: 40px;
-
+  /* text-decoration: overline; */
+/*
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate; */
 }
 
 @-webkit-keyframes glow {
@@ -158,29 +141,31 @@ a.backLink:hover {
   display: grid;
   grid-column: 2;
 
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background-color: #202020;
-  display: flex;
   flex-direction: column;
-  justify-content:flex-end;
-  /* border-radius: 20px; */
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  /* margin-left: 45px; */
-  /* bottom: 10px; */
-  /* margin-bottom: 50px; */
+  /* border-top-right-radius: 20px; */
+  /* border-bottom-right-radius: 20px; */
 
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
 }
 .rightProviderDetailsDiv {
-  background-color: yellow;
+  /* background-color: yellow; */
+  width: 350px;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .contactLocationSocialLinkDiv p{
   margin-bottom: 5px;
   font-style: italic;
-  text-decoration: overline;
+  /* text-decoration: overline; */
 }
 .phoneEmailAndSocialLinkDiv {
   display: flex;
@@ -188,10 +173,12 @@ a.backLink:hover {
   text-align: left;
   color: white;
   /* background-color: red; */
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 .phoneEmailAndSocialLinkDiv h6 {
   margin-left: 10px;
+  font-weight: lighter;
+  color: #A0A0A0;
 }
 .phoneNumDiv {
   margin-top: 20px;
@@ -228,18 +215,17 @@ a.socialLink_a_tag  {
 
 }
 
-.loc {
+/* .loc {
   display: flex;
-  color: white;
-  /* background-color: green; */
   margin-bottom: 20px;
-  /* padding-bottom: 60px; */
-
-}
+} */
 .prov_boro {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
 
+  color: white;
 }
 .prov_boro img{
   margin-left: -10px;
@@ -255,21 +241,26 @@ a.socialLink_a_tag  {
   border-color: green;
 } */
 
+
 /*  */
-.rightSideDiv {
-  /* background-color: yellow; */
-  display: flex;
-  flex-direction: row-reverse;
-  width: fit-content;
+.centerDiv {
+
 }
+
+
 
 /*  */
 
 .ctnr_services {
   /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
   color: white;
   width: 200px;
   margin-right: 20px;
+  margin-left: 30px;
 }
 .srv_nameDiv {
   /* background-color: white; */
@@ -279,17 +270,18 @@ a.socialLink_a_tag  {
 }
 .srv_nameDiv .srv_name {
   /* background-color: yellow; */
-  font-size: 50px;
+  font-size: 70px;
   font-family: "Mrs Saint Delafield", cursive;
-  font-weight: bold;
-  color: red;
-  text-shadow: 2px 2px 4px #000000;
+  /* font-weight: bold; */
+  color: white;
+  /* text-shadow: 2px 2px 4px #000000; */
 }
 
 
+
+
 .srv_nameDiv .skillAndBulletsDiv {
-  background-color: orange;
-  display: flex;
+  /* background-color: orange; */
   /* flex-direction: column; */
   color: white;
   margin-bottom: 20px;
@@ -298,8 +290,15 @@ a.socialLink_a_tag  {
 }
 
 .skillAndBulletsDiv {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-top: 15px;
+
   font-family: "Josefin Sans", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
+  color: #A0A0A0;
+  font-weight: lighter;
   /* display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -310,6 +309,41 @@ a.socialLink_a_tag  {
 .skillBullets {
   /* background-color: yellow; */
   width: 5px;
+}
+.skill_item {
+  margin-bottom: 7px;
+}
+
+
+/*  */
+.rightSideDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #202020;
+
+  height: 300px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  /* border-radius: 20px; */
+}
+
+/*  */
+.scrollInstructionsDiv {
+  margin-top: 20px;
+  color: #A0A0A0;
+  /* font-family: "Mrs Saint Delafield", cursive; */
+  /* font-size: 50px; */
+
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 22px;
+  font-weight: lighter;
+
+
+
+  /* background-color: yellow; */
 }
 
 
