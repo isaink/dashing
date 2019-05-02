@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:3000/# -->
+<html lang="en" class="gr__localhost"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="./React App_files/css" rel="stylesheet">
+    
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	
+
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+</style><style type="text/css">.homeLogo {
+  position: absolute;
+  /* height: auto; */
+  /* z-index: 2; */
+  margin-top: 250px;
+  margin-left: 27%;
+
+}
+
+.homeBackground{
+  max-height: 800px;
+}
+
+.Element {
+  z-index: 4;
+}
+
+.NavbarDiv {
+  /* z-index: 20; */
+  top: 100px;
+}
+
+.NavbarComponentTag {
+
+}
+
+dl{
+   /* margin: 1rem; */
+   /* background-color: cornflowerblue;
+   color: cornsilk; */
+}
+dt{
+   /* font-weight: 900;
+   font-size: 1.5rem;
+   line-height: 1.5;
+   padding: 0.25rem 1rem;
+   color: whitesmoke;
+   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8); */
+   position:-webkit-sticky;
+   position:sticky;
+   top: 10px;
+
+}
+dd{
+   /* font-size: 1.2rem;
+   border-top: 1px solid cornsilk;
+   padding: 0.25rem 2rem 0.25rem 4rem; */
+}
+</style><style type="text/css">select {
+  height: 50px;
+  width: 320px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: black;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: black;
+  border: solid 1px white;
+  margin-top: 9px;
+  justify-content: center;
+  border-radius: 0%;
+  background-color: white;
+  padding: 16px;
+  font-size: 10px;
+  text-align: center;
+    background-image:
+      -webkit-linear-gradient(45deg, transparent 50%, gray 50%),
+      -webkit-linear-gradient(315deg, gray 50%, transparent 50%);
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+.selector option {
+  background: white;
+}
+
+.ctnr_options{
+  display: grid;
+  grid-template-columns: 35% 35% 20%;
+  
+}
+.ctnr_options form{
+  grid-column: 1;
+
+}
+
+.ComboboxDiv {
+  grid-column: 2;
+
+}
+
+.bttn_form{
+  grid-column: 3;
+  height: 50px;
+  margin-top: 9px;
+}
+
+</style><style type="text/css"></style><style type="text/css">.ctnr_prov{
+  /* max-height: 800px; */
+  /* max-height: 950px; */
+  /* background-color: black; */
+  /* height: 700px; */
+}
+
+.ctnr_box {
+  display: grid;
+  grid-template-columns: 30% 80%;
+}
+
+.ctnr_box_right{
+  display: grid;
+  grid-template-columns:70% 40% ;
+}
+.img_intro_right{
+  grid-column: 2;
+  height: 800px;
+  border: solid #ecb99c;
+}
+.inner_ctnr_providers_right{
+  grid-column: 1;
+  grid-row: 1;
+  /* align-items: start; */
+  background-color: black;
+  /* display: grid; */
+  grid-template-rows: 10% 70%;
+  border-left: solid #ecb99c;
+  border-bottom: solid #ecb99c;
+  max-height: 800px;
+}
+.img_intro {
+  grid-column: 1;
+  height: 800px;
+  border: solid #ecb99c;
+}
+
+.inner_ctnr_providers {
+
+  align-items: start;
+  background-color: black;
+  /* display: grid; */
+  grid-template-rows: 10% 70%;
+  padding-right: 10px;
+  border-left: solid #ecb99c;
+  border-bottom: solid #ecb99c;
+  max-height: 800px;
+}
+
+.ctnr_nav{
+  display: grid;
+  grid-template-columns: 15% 80%;
+  grid-row: 1;
+  background: #e2ae86;
+}
+
+#providername {
+  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  font-weight: 400;
+}
+
+.title {
+  /* background-color: black; */
+  font-family: 'Mrs Saint Delafield', cursive;
+  padding-left: 60px;
+  text-align: left;
+  color: white;
+  font-size: 50px;
+  padding-top: 20px;
+}
+.dropdown {
+  padding-left: 20px;
+}
+.providers {
+  padding-top: 100px;
+  width: 1000px;
+}
+
+.prov {
+  display: grid;
+  /* border-radius: 20px 20px 20px 20px; */
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+
+.box {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  /* width: 300px; */
+  /* margin-right: 40px auto; */
+  /* padding: 8px; */
+  /* background-color: #fffbfc; */
+  background-repeat: no-repeat;
+  /* background-size: 0 2px, 0 100%, 0% 2px; */
+  /* background-position: top center, top center, bottom center; */
+  -webkit-animation: drawBorderFromCenter 10s;
+}
+.box img {
+  /* max-width: auto; */
+}
+
+.box .hvrbox-layer_bottom {
+  /* display: block; / */
+  
+  border: solid #ecb99c
+}
+.box .hvrbox-layer_top {
+  
+  /* background: white; */
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  /* color: #fff; */
+  padding: 15px;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+.box:hover .hvrbox-layer_top,
+.box.active .hvrbox-layer_top {
+  opacity: 3;
+  /* background: #fff; */
+  color: white;
+}
+.box .hvrbox-text {
+  text-align: center;
+  font-size: 18px;
+  /* display: inline-block; */
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.hvrbox-text{
+
+}
+.box .hvrbox-text_mobile {
+  font-size: 15px;
+  /* border-top: 1px solid rgb(179, 179, 179); for old browsers */
+  /* border-top: 1px solid rgba(179, 179, 179, 0.7); */
+  /* border-top: 1px solid #ecb99c; /* for old browsers */
+  /* border-top: 1px solid #ecb99c; */
+  margin-top: 5px;
+  padding-top: 2px;
+  display: none;
+}
+.box.active .hvrbox-text_mobile {
+  display: block;
+}
+.box:hover {
+  opacity: 0.5;
+  /* background: white; */
+}
+
+@-webkit-keyframes drawBorderFromCenter {
+  0% {
+    background-size: 10% 2px, 0 0, 100% 100%;
+  }
+  20% {
+    background-size: 100% 2px, 100% 0, 100% 100%;
+  }
+  30% {
+    background-size: 100% 2px, 100% 98%, 100% 100%;
+  }
+  99% {
+    background-size: 100% 2px, 100% 98%, 0 2px;
+  }
+}
+
+.location_title {
+  font-size: 14px;
+  text-align: left;
+  font-family: "Josefin Sans", sans-serif;
+
+}
+
+.provider_name {
+  margin: 10px;
+  margin-left: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  /* border-bottom: 1px dashed #000; */
+  width: 20%;
+  margin: auto;
+}
+
+.info_provider {
+  display: none;
+  opacity: 0;
+  text-transform: uppercase;
+  position: absolute;
+  top: 220px;
+  font-family: "Josefin Sans", sans-serif;
+  /* color: white; */
+}
+
+.info_provider:hover {
+  display: block;
+  opacity: 1;
+}
+
+.content {
+  /* background: #ecb99c; */
+  padding: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  
+}
+
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 32px 32px;
+          transform-origin: 32px 32px;
+}
+
+.lds-heart div {
+  top: 23px;
+  left: 19px;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #ce0000;
+  -webkit-animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  background: #ce0000;
+}
+
+.lds-heart div:before {
+  left: -17px;
+  border-radius: 50% 0 0 50%;
+}
+
+.lds-heart div:after {
+  top: -17px;
+  border-radius: 50% 50% 0 0;
+}
+
+@-webkit-keyframes lds-heart {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  5% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  39% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@keyframes lds-heart {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  5% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  39% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+</style><style type="text/css">html {
+  /* background-color: black; */
+}
+
+.edu_container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  object-fit: cover;
+  height: 1000px;
+  background-color: black;
+}
+
+.rightside {
+  background-color: black;
+  grid-template-rows: 30% 70%;
+}
+
+#left_pic {
+  margin-right: 400px;
+}
+
+#ed_header {
+  font-family: 'Mrs Saint Delafield', cursive;
+  color: white;
+  font-size: 60px;
+  padding-top: 100px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+#ed_writeup {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200;
+  color: #abaaaa;
+  padding-left: 20px;
+  display: flex;
+  text-align: left;
+  padding-right: 50px;
+  line-height: 30px;
+  grid-row: 1;
+}
+
+.skillsDropdown {
+  margin-top: auto;
+  grid-row: 2;
+  padding-left: 20px;
+
+}
+</style><style type="text/css">.about_container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  background-color: black;
+  background-size: cover;
+  height: 1000px;
+}
+
+#about_header {
+  font-family: "Mrs Saint Delafield", cursive;
+  color: white;
+  font-size: 60px;
+  padding-top: 100px;
+  text-align: center;
+
+}
+
+#about_writeup {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200;
+  color: #ABAAAA;
+  padding-left: 20px;
+  display: flex;
+  text-align: center;
+  padding-right: 100px;
+  line-height: 50px;
+  padding-left: 400px;
+  padding-right: 400px;
+  font-size: 25px;
+
+}
+</style><style type="text/css">.links_center {
+  display: flex;
+  justify-content: center;
+  /* top: 200px; */
+  z-index: 500;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+button {
+  position: relative;
+  margin: 5px;
+  height: 60px;
+  width: 150px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: black;
+  opacity: 0.9;
+  /* border-radius: 10px; */
+  color: #ECB99C;
+  /* z-index: 1; */
+  z-index: 5;
+  overflow: hidden;
+}
+
+button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  /* border: solid 5px; */
+  /* z-index: -1; */
+  z-index: 5;
+  -webkit-transition: -webkit-transform 0.6s linear;
+  transition: -webkit-transform 0.6s linear;
+  transition: transform 0.6s linear;
+  transition: transform 0.6s linear, -webkit-transform 0.6s linear;
+  -webkit-transform: scale(0.97, 0.93);
+          transform: scale(0.97, 0.93);
+}
+
+button:hover::after {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+/*  */
+.nav_prof {
+  position: absolute;
+  z-index: 5;
+}
+/*  */
+
+.ctnr_lines{
+  position: absolute;
+
+  top: 20px;
+  left: 20%;
+  -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.nav_lines{
+  width: 50px;
+  height: 50px;
+  /* position: relative; */
+  border: 3px solid  #ECB99C;
+  cursor: pointer;
+   -webkit-transition: all 0.3s ease;
+   transition: all 0.3s ease;
+}
+
+.nav_lines div{
+  height: 3px;
+  margin: 0%;
+  width: 40px;
+  background-color: #fff;
+  position: absolute;
+   -webkit-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+.nav_lines  .first{
+  top: 15px;
+  margin-bottom: 10px;
+  left: 20px;
+}
+
+.nav_lines  .second{
+  top: 35px;
+  margin-bottom: 10px;
+  
+  left: 20px;
+}
+
+.nav_lines  .third{
+  top: 55px;
+  left: 20px;
+}
+
+.nav_lines:hover .first {
+   -webkit-transform: translateY(20px) rotate(45deg);
+           transform: translateY(20px) rotate(45deg);
+   -webkit-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+.nav_lines:hover .second {
+   opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+ 
+}
+
+.nav_lines:hover .third{
+  -webkit-transform: translateY(-20px) rotate(-45deg);
+          transform: translateY(-20px) rotate(-45deg);
+   -webkit-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
+.nav_lines:hover{
+   /* border-radius:50%; */
+   -webkit-transition: all 0.3s ease;
+   transition: all 0.3s ease;  
+}
+
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+
+
+/* .button */
+
+.bttn_ {
+    display: inline-block;
+    position: relative;
+    /* margin: 1em; */
+    /* padding: 0.67em; */
+    border: 2px solid #FFF;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 12px;
+    outline: none;
+    color: #FFF;
+    background: transparent;
+    font-family: 'raleway', sans-serif;
+}
+
+.bttn_ img {
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.bttn_:before,
+.bttn_ :after {
+    content: '';
+    position: absolute;
+    top: 0.67em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: .4s,opacity .6s;
+    transition: .4s,opacity .6s;
+}
+
+/* :before */
+
+.bttn_:before {
+    content: attr(data-hover);
+    -webkit-transform: translate(-150%,0);
+    transform: translate(-150%,0);
+}
+
+/* :after */
+
+.bttn_:after {
+    content: attr(data-active);
+    -webkit-transform: translate(150%,0);
+    transform: translate(150%,0);
+}
+
+/* Span on :hover and :active */
+
+.bttn_:hover img,
+.bttn_:active img {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+}
+
+/*  
+    We show :before pseudo-element on :hover 
+    and :after pseudo-element on :active 
+*/
+
+.bttn_:hover:before,
+.bttn_:active:after {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition-delay: .4s;
+    transition-delay: .4s;
+}
+
+/* 
+  We hide :before pseudo-element on :active
+*/
+
+.bttn_:active:before {
+    -webkit-transform: translate(-150%,0);
+    transform: translate(-150%,0);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}</style><style type="text/css">body{
+    background-color: black;
+     /* min-height: 12200px; */
+     /* border: 1px solid #dbdedd; */
+}
+  .ctnr_profile{
+
+      z-index: 1;
+      /* margin-top: 200px; */
+      margin: 0.7%;
+      display: grid;
+      grid-template-columns:  25% 35% 10% 25%;
+      grid-template-rows:    25% 10% 20% 5%  20% 25%;
+      grid-gap: 50px;
+
+      background-color: #000000;
+    
+  }
+
+.bg_intro_profile{
+    grid-row: 1;
+    height: 100px;
+    /* z-index: 2; */
+   -webkit-transform: translateY(-560%);
+           transform: translateY(-560%);
+
+    display: grid;
+    grid-template-rows: 70%;
+    /* z-index: 1; */
+}
+
+.intro_pic{
+    grid-row: 1;
+    /* z-index: -1; */
+    /* margin-left: 0.7%; */
+    /* transform: translateY(-30%); */
+    /* transform: translateX(-50%); */
+}
+
+.avatar_profile{
+    border: solid white;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  /* object-position: center right; */
+    border-radius: 10%;
+    position: absolute;
+    z-index: 2;
+    top: 300px;
+    left: 250px;
+    height: 200px;
+    /* background-color: black; */
+}
+
+.prov_name{
+    z-index: 2;
+    margin-top: 80px;
+    text-align: left;
+    padding: 10px;
+    top:  310px;
+    position: absolute;
+    
+}
+.bg_name{
+    /* background-color: white; */
+    border: 1px solid #dbdedd;
+    background-color:  rgb(244, 240, 235);
+    position: absolute;
+    top:  390px;
+    width: 400px;
+    height:  50px;
+    left: 300px;
+    z-index: 1;
+    
+}
+.prov_boro{
+    top: 330px;
+    color: #ecb99c;
+    font-size: 14px;
+    text-align: left;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+    background: #000000;
+    left: 399px;
+}
+
+.prov_info{
+    grid-column: 2;
+    grid-row: 2;
+    /* z-index: 2; */
+}
+
+.ctnr_services{
+    grid-column: 2;
+    /* z-index: 2; */
+    grid-row: 3;
+    margin-top: 90px;
+    
+}
+
+.ctnr_skills{
+    /* background-color: lightyellow; */
+    /* justify-content: space-around; */
+    margin-bottom: 10px;
+    /* margin: 5px 25px 20px; */
+    
+}
+
+.srv_name{
+    font-weight: bold;
+    /* background: rgb(222, 184, 134); */
+    text-shadow: 2px 2px 4px #000000;
+    color: white;
+    text-align: left;
+    font-family: "Yesteryear", cursive;
+    font-size: 60px;
+    /* margin-top: 30px; */
+    
+}
+
+.skills{
+    border-width: thin;
+    width: 100px;
+    margin: 10px;
+}
+
+.contact_info{
+    z-index: 1; 
+    grid-column: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-gap: 5px;
+    grid-row: 6;
+
+
+
+    /* background: rgb(222, 184, 134); */
+    color: white;
+    font-family: 'Cinzel', serif;
+    display: grid;
+    grid-template-columns: 100% 100%;
+    grid-template-rows:  20% 20%;
+    grid-gap: 2px;
+    text-align: left;
+    
+    /* border: solid rgb(236, 185, 156); */
+}
+
+.contact_info p {
+    grid-column: 1;
+    /* grid-row: 1; */
+    border-bottom: solid rgb(236, 185, 156);
+    
+    font-size: 14px;
+    font-family: 'Cinzel', serif;
+
+}
+.contact_info h6 {
+    /* border-left: solid rgb(236, 185, 156); */
+    grid-column: 2;
+    font-size: 14px;
+    font-family: 'Cinzel', serif;
+    /* grid-row: 2 */
+    /* border: solid rgb(236, 185, 156); */
+}
+
+.inner_skill{
+    /* border: solid white; */
+    margin-right: 13px;
+    margin-left: 13px;
+    color: black;
+    font-family: 'Cinzel', serif;
+    /* background: rgb(236, 185, 156); */
+    background: #dbdedd;
+    top: 30%;
+    padding: 10px;
+    margin-bottom:  20px
+}
+
+.ctnr_porfolio{
+    margin-top: 20px;
+    position: absolute;
+    grid-column: 3;
+    grid-row: 3;
+    background:  #dbdedd;
+    /* background: white; */
+    height: 200px;
+    top: 470px;
+    right: 135px;
+    width: 350px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    overflow-y: scroll;
+}
+.portfolio_img{
+    grid-row: 1
+}
+.social_link{
+    grid-column: 3;
+    grid-row: 5;
+    color: #dbdedd;
+    display: grid;
+    grid-template-columns: 100% 40%;
+    text-align: left;
+
+}
+
+.social_link p{
+    grid-column: 1;
+    grid-row: 5;
+    font-size: 14px;
+    font-family: 'Cinzel', serif;
+    border-bottom: solid rgb(236, 185, 156)
+
+}
+.social_link a{
+    grid-row: 5;
+    grid-column: 2;
+    font-size: 14px;
+    font-family: 'Cinzel', serif;
+    color: white;
+}
+
+</style><style type="text/css">.type_user{
+    color: white;
+    /* z-index: 2; */
+}
+.ctnr_user{
+    position: absolute;
+    z-index:  2
+}</style><style type="text/css">
+.App {
+  text-align: center;
+}
+
+</style></head>
+  <body data-gr-c-s-loaded="true" class="vsc-initialized" cz-shortcut-listen="true">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><div class="HomepageDiv"><dl><dd><div class="bg_welcome"><div class="homeLogo"><img src="./React App_files/dashing_logo_invert.c5800481.png" alt="" width="700px"></div></div></dd><dd><div name="home" class="Element"><div class="bg_welcome"><div class="homeBackground"><img src="./React App_files/beautybackground.ec7429e7.jpg" alt=""></div></div></div></dd><dt><div class="NavbarDiv"></div></dt><dd><div name="hair" class="Element"><div class="ctnr_prov"><div class="ctnr_box"><div class="img_intro "><img alt="intro" src="./React App_files/hair.de25d097.jpg" width="600px"></div><div class="inner_ctnr_providers"><div class="ctnr_nav"><div class="title">Hair</div><span class="dropdown"><form class="ctnr_options"><select class="selector" name="location" id="select-profession"><option value=""> Select a Location </option><option value="Brooklyn">Brooklyn</option><option value="Bronx">Bronx</option><option value="Manhattan">Manhattan</option><option value="Queens">Queens</option><option value="Staten Island">Staten Island</option></select><select class="ComboboxDiv" name="skill_id"><option value=""> Select a Skill </option><option value="1"> Coloring </option><option value="2"> Weaves </option><option value="3"> Locks </option><option value="4"> Perms </option><option value="5"> Cut </option></select><button class="bttn_form" type="submit"> Submit </button></form></span></div><div class="providers"><div class="prov"><div><a href="http://localhost:3000/singleProviderProfile/2"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/latina-girls.jpg" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">Isa Frias</span><br><div style="z-index: 4; text-align: center;">Bronx <br>irico@gmail.com <br>347-599-9843 <br>www.isafrias.com</div></div></div></div></div></a></div><div><a href="http://localhost:3000/singleProviderProfile/4"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/a1cb814979c87ec8f7b252b299c75343.jpg" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">Jo West</span><br><div style="z-index: 4; text-align: center;">Queens <br>jwest@gmail.com <br>347-599-9843 <br>www.jowest.com</div></div></div></div></div></a></div><div><a href="http://localhost:3000/singleProviderProfile/9"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/e16d7087621fbcabdcd4481def7317c7.jpg" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">Samantha Clement</span><br><div style="z-index: 4; text-align: center;">Manhattan <br>sammy@gmail.com <br>646-769-2000 <br>www.sammydoeshair.com</div></div></div></div></div></a></div><div><a href="http://localhost:3000/singleProviderProfile/10"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/superthumb.png" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">Cammy Camz</span><br><div style="z-index: 4; text-align: center;">Staten Island <br>cammycamz@gmail.com <br>646-769-2000 <br>www.cammydoeshair.com</div></div></div></div></div></a></div></div></div></div></div></div></div></dd><dd><div name="nails" class="Element"><div class="ctnr_prov"><div class="ctnr_box_right"><div class="img_intro_right"><img alt="intro" src="./React App_files/nails1.8cbd8d4b.jpg" width="1300px" height="100%" style="object-fit: cover; display: block; padding-right: 800px;"></div><div class="inner_ctnr_providers_right"><div class="ctnr_nav"><div class="title">Nails</div><span class="dropdown"><form class="ctnr_options"><select class="selector" name="location" id="select-profession"><option value=""> Select a Location </option><option value="Brooklyn">Brooklyn</option><option value="Bronx">Bronx</option><option value="Manhattan">Manhattan</option><option value="Queens">Queens</option><option value="Staten Island">Staten Island</option></select><select class="ComboboxDiv" name="skill_id"><option value=""> Select a Skill </option><option value="6"> Nail Art </option><option value="7"> Shaping </option><option value="8"> Mani/Pedi </option><option value="9"> Tips </option><option value="10"> Gel Nails </option></select><button class="bttn_form" type="submit"> Submit </button></form></span></div><div class="providers"><div class="prov"><div><a href="http://localhost:3000/singleProviderProfile/1"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/sitemgr_photo_10665.jpg" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">&gt;Nielene Keys</span><br><div style="z-index: 4; text-align: center;">Brooklyn <br>nkeys@gmail.com <br>347-599-9843 <br>www.nkeys.com</div></div></div></div></div></a></div><div><a href="http://localhost:3000/singleProviderProfile/6"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/71732_446752851221_6737560_n.jpg" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">&gt;Sheree Love</span><br><div style="z-index: 4; text-align: center;">Brooklyn <br>shereelove@gmail.com <br>212-769-2000 <br>www.beautybysheree.com</div></div></div></div></div></a></div><div><a href="http://localhost:3000/singleProviderProfile/11"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/5a8d6cfcf22fa92b008b46d8-960-720.jpg" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">&gt;Loosey Lou</span><br><div style="z-index: 4; text-align: center;">Brooklyn <br>loosey@gmail.com <br>646-769-2000 <br>www.lousnails.com</div></div></div></div></div></a></div><div><a href="http://localhost:3000/singleProviderProfile/14"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/ce71ca421ed47b5d9e22b9b36a7486d7--pretty-people-beautiful-people.jpg" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">&gt;Dianna Rossman</span><br><div style="z-index: 4; text-align: center;">Manhattan <br>drnails@gmail.com <br>646-769-2000 <br>www.drnails.com</div></div></div></div></div></a></div></div></div></div></div></div></div></dd><dd><div name="barber" class="Element"><div class="ctnr_prov"><div class="ctnr_box"><div class="img_intro"><img alt="intro" src="./React App_files/barber1.ffddf1d7.png" width="1200px" height="100%" style="object-fit: cover;display: block;margin-right: 900px;"></div><div class="inner_ctnr_providers"><div class="ctnr_nav"><div class="title">Barber</div><span class="dropdown"><form class="ctnr_options"><select class="selector" name="location" id="select-profession"><option value=""> Select a Location </option><option value="Brooklyn">Brooklyn</option><option value="Bronx">Bronx</option><option value="Manhattan">Manhattan</option><option value="Queens">Queens</option><option value="Staten Island">Staten Island</option></select><select class="ComboboxDiv" name="skill_id"><option value=""> Select a Skill </option><option value="11"> Trim </option><option value="12"> Cut </option><option value="13"> Fade </option><option value="14"> Blowout </option><option value="15"> Facial Hair Grooming </option></select><button class="bttn_form" type="submit"> Submit </button></form></span></div><div class="providers"><div class="prov"><div><a href="http://localhost:3000/singleProviderProfile/3"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/image" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="ih-fade-down ih-delay-sm">Bayne Brian</span><br><div style="z-index: 4; text-align: center;">Manhattan <br>bbrian@gmail.com <br>7189875674 <br>www.baynebrian.com</div></div></div></div></div></a></div><div><a href="http://localhost:3000/singleProviderProfile/7"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/3CB97D1300000578-0-One_of_the_beautiful_people_Actress_Angelina_Jolie_Photography_h-a-132_1486072162004.jpg" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="ih-fade-down ih-delay-sm">Brianna Thomas</span><br><div style="z-index: 4; text-align: center;">Queens <br>bree@gmail.com <br>646-769-2000 <br>www.beautybybree.com</div></div></div></div></div></a></div><div><a href="http://localhost:3000/singleProviderProfile/8"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/sam_hunt_beard_0_1441190712.jpg" style="height: 150px;"><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="ih-fade-down ih-delay-sm">Micah Douglas</span><br><div style="z-index: 4; text-align: center;">Bronx <br>Micah@gmail.com <br>646-769-2000 <br>www.micahdouglashair.com</div></div></div></div></div></a></div></div></div></div></div></div></div></dd><dd><div name="makeup" class="Element"><div class="ctnr_prov"><div class="makeup_box"><div class="ctnr_box"><div class="img_intro"><img alt="intro" src="./React App_files/makeup.7da73df7.jpg" width="600px"></div><div class="inner_ctnr_providers"><div class="ctnr_nav"><div class="title">Makeup</div><span class="dropdown"><form class="ctnr_options"><select class="selector" name="location" id="select-profession"><option value=""> Select a Location </option><option value="Brooklyn">Brooklyn</option><option value="Bronx">Bronx</option><option value="Manhattan">Manhattan</option><option value="Queens">Queens</option><option value="Staten Island">Staten Island</option></select><select class="ComboboxDiv" name="skill_id"><option value=""> Select a Skill </option><option value="16"> Brow shaping </option><option value="17"> Glam </option><option value="18"> Natural </option><option value="19"> Wedding </option><option value="20"> Sugaring </option></select><button class="bttn_form" type="submit"> Submit </button></form></span></div><div class="providers"><div class="prov"><div><a href="http://localhost:3000/singleProviderProfile/5"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/saved_resource" style="height: 150px;"></div><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">Carina Salvador</span><br><div style="z-index: 4; text-align: center;">Staten Island <br>csalvador@gmail.com <br>347-599-9843 <br>www.carinabeauty.com</div></div></div></div></a></div><div><a href="http://localhost:3000/singleProviderProfile/12"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/5a8d77a5391d941d008b461a-960-720.jpg" style="height: 150px;"></div><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">Hadda Babyitsaboy</span><br><div style="z-index: 4; text-align: center;">Queens <br>hbmua@gmail.com <br>646-769-2000 <br>www.lousnails.com</div></div></div></div></a></div><div><a href="http://localhost:3000/singleProviderProfile/13"><div class="box"><div class="content"><img alt="avatar" class="hvrbox-layer_bottom" src="./React App_files/superthumb.jpg" style="height: 150px;"></div><div class="hvrbox-layer_top"><div class="hvrbox-text"><span id="providername" class="ih-fade-down ih-delay-sm">Nikki Vee</span><br><div style="z-index: 4; text-align: center;">Brooklyn <br>nikki@gmail.com <br>646-769-2000 <br>www.nikkiveenails.com</div></div></div></div></a></div></div></div></div></div></div></div></div></dd><dd><div name="education" class="Element"><div class="edu_container"><div id="left_pic"><img src="./React App_files/edu_pic.6188b244.jpg" alt="" width="750px" height="auto"></div><div class="rightside"><div id="ed_header">Educational Services</div><br><div id="ed_writeup">Dashing provides educational beauty services right in the comfort of your own home! <br> Our fun and interactive classes are conducted by our skilled and licensed beauty professionals.<br><br></div><div class="skillsDropdown"><div><select class="selector" name="select-profession" id="select-profession" style="width: 300px; height: 50px;"><option value=""> Select A Service </option><option value="Hair">Hair</option><option value="Nails">Nails</option><option value="Barber">Barber</option><option value="Makeup">Makeup</option></select></div></div><div><div><a href="http://localhost:3000/singleProviderProfile/1"><img src="./React App_files/sitemgr_photo_10665.jpg" alt="Person"></a></div><div><a href="http://localhost:3000/singleProviderProfile/2"><img src="./React App_files/latina-girls.jpg" alt="Person"></a></div><div><a href="http://localhost:3000/singleProviderProfile/5"><img src="./React App_files/saved_resource" alt="Person"></a></div><div><a href="http://localhost:3000/singleProviderProfile/6"><img src="./React App_files/71732_446752851221_6737560_n.jpg" alt="Person"></a></div><div><a href="http://localhost:3000/singleProviderProfile/7"><img src="./React App_files/3CB97D1300000578-0-One_of_the_beautiful_people_Actress_Angelina_Jolie_Photography_h-a-132_1486072162004.jpg" alt="Person"></a></div><div><a href="http://localhost:3000/singleProviderProfile/8"><img src="./React App_files/sam_hunt_beard_0_1441190712.jpg" alt="Person"></a></div><div><a href="http://localhost:3000/singleProviderProfile/11"><img src="./React App_files/5a8d6cfcf22fa92b008b46d8-960-720.jpg" alt="Person"></a></div><div><a href="http://localhost:3000/singleProviderProfile/12"><img src="./React App_files/5a8d77a5391d941d008b461a-960-720.jpg" alt="Person"></a></div><div><a href="http://localhost:3000/singleProviderProfile/13"><img src="./React App_files/superthumb.jpg" alt="Person"></a></div><div><a href="http://localhost:3000/singleProviderProfile/14"><img src="./React App_files/ce71ca421ed47b5d9e22b9b36a7486d7--pretty-people-beautiful-people.jpg" alt="Person"></a></div> </div></div></div> </div></dd><dd><div name="aboutus" class="Element"><div class="about_container"><div id="about_header">About Us<div id="about_writeup">Don't want to spend your entire day waiting in a salon?<br> Let Dashing come to you! <br> Brought to you by JB INC., Dashing is the online destination for bringing together beauty &amp; wellness professionals and servicing their clients in the comfort of their own homes.  <br>Our talented licensed freelance professionals can showcase their work and connect with new &amp; exisiting clients, all while building their business. <br>Our clients can search for providers in their area or by the service they need and book an appointment!  <br> Explore Dashing today!</div></div></div> </div></dd></dl></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/0.chunk.js"></script><script src="./React App_files/main.chunk.js"></script><script src="./React App_files/main.8b703e3735c1b6c55ad2.hot-update.js"></script>
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

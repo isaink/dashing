@@ -16,7 +16,7 @@ import EducationProv_Container  from "../../Redux_Containers/EducationProv_Conta
 import { AboutUs } from "./AboutUs";
 // import  NavbarForComponents  from '../NavBars/NavbarForComponents'
 
-import Navbar from "../NavBars/Navbar";
+import NavbarHome from "../NavBars/Navbar";
 import homeLogo from "../../photo_assets/dashing_logo_invert.png";
 
 import "./../../Css/Home.css";
@@ -37,7 +37,7 @@ class Home extends Component {
 
   scrollTo() {
     scroller.scrollTo("scroll-to-element", {
-      duration: 300,
+      duration: 3000,
       delay: 0,
       smooth: "easeInOutQuart"
     });
@@ -63,7 +63,7 @@ class Home extends Component {
 
           <dt>
             <div className='NavbarDiv'>
-              <Navbar className='NavbarComponentTag'/>
+              {/* <NavbarHome className='NavbarComponentTag'/> */}
             </div>
           </dt>
 
@@ -91,7 +91,7 @@ class Home extends Component {
             </Element>
           </dd>
 
-          <dd>
+          {/* <dd>
             <Element name="education" className="Element">
               <EducationProv_Container />{" "}
             </Element>
@@ -101,12 +101,12 @@ class Home extends Component {
             <Element name="aboutus" className="Element">
               <AboutUs />{" "}
             </Element>
-          </dd>
+          </dd> */}
         </dl>
       </div>
     );
   }
-}
+};
 
 export default Home;
 //  {/* <button onClick={this.scrollToTop}>To the top!</button> */}

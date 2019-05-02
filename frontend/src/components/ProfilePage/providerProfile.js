@@ -1,5 +1,5 @@
 import React from "react";
-import "./../../Css/profile.css";
+import "../../Css/profile.css";
 
 // import pic from './../../img/pic_profile.png';
 // import pic from './../../img/pic_profile.jpg';
@@ -19,7 +19,7 @@ export const ProviderProfile = props => {
               alt="intro_picture"
               src={pared}
               className="intro_pic"
-              style={{ width: `1400px` }}
+              style={{ width: `400%` }}
             />
           </div>
 
