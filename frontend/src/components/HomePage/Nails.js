@@ -1,17 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../../Css/provider.css";
-import { connect } from "react-redux";
-import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-// import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
-import nailsPic from "../../photo_assets/nails.jpg";
-// import { Dropdown } from "./Dropdown.js";
-
 import axios from 'axios';
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { ComboBox } from "./ComboBox.js";
 import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
 import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
+import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
+import "../Css/provider.css";
+import nailsPic from "../../photo_assets/nails.jpg";
+import nail from '../../img/nails1.jpg'
 
 class Nails extends React.Component {
   state = {
@@ -64,79 +62,71 @@ class Nails extends React.Component {
                     alt="avatar"
                     className="hvrbox-layer_bottom"
                     src={nailP.avatar}
-                    style={{ height: "150px" , display: 'block'}}
+                    style={{ height: "140px"}}
                     />
                   <div className='hvrbox-layer_top'>
                     <div className='hvrbox-text'>
                       <span id="providername"  className='ih-fade-down ih-delay-sm'>>{nailP.provider}</span>
                       <br />
-                      <div className='ih-zoom-in ih-delay-md'>
+                      <div style={{ zIndex: '4', textAlign: 'center'}}>
                         {nailP.borough} <br />
-                      {nailP.email} <br />
-                    {nailP.phone_number} <br />
-                  {nailP.website_link}
+                        {nailP.email} <br />
+                        {nailP.phone_number} <br />
+                        {nailP.website_link}
+                      </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
-      </Link>
-    </div>
-  );
-});
-} else {
-  return (
-    <div className="lds-heart"><div></div></div>
-  );
-}
+      );
+    });
+  } else {
+    return (
+      <div className="lds-heart"><div></div></div>
+    );
+  }
 };
 
 render() {
-  console.log('NAIL STATE', this.state)
-
   return (
     <>
     <div className='ctnr_prov'>
-      <div className="ctnr_box">
-        <div className="img_intro">
+      <div className="ctnr_box_right">
+        <div className="img_intro_right"  >
           <img
             alt="intro"
-            src={nailsPic}
-            width="600px"
-            height="auto"
+            src={nail}
+            height='100%'
+            style={{ objectFit: "cover",  height: '800px'}}
             />
         </div>
 
-        <div className="inner_ctnr_providers">
+        <div className="inner_ctnr_providers_right">
+        <div className='ctnr_nav'>
+        
           <div className="title">Nails</div>
-          <hr />
+            <span className="dropdown">
+              <ComboBox style={{display: 'grid', gridTemplateColumns:' 40% 40% 20%'}}
+                fetchSkillList={this.state.skills}
+                getProvidersByService = {this.props.getProvidersByService}
+                fetchProvidersByService = {this.props.fetchProvidersByService}
+                serviceId={this.state.service_id}
+                />
+            </span>
+            </div>
 
-          <span className="dropdown">
-            {/*
-              // <div className="providers">{this.renderProviders()}</div>
-            // <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-            getProvidersBySkill={this.props.getProvidersBySkill}
-            fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro}
-            */}
-            <ComboBox
-              fetchSkillList={this.state.skills}
-              getProvidersByService = {this.props.getProvidersByService}
-
-              fetchProvidersByService = {this.props.fetchProvidersByService}
-              serviceId={this.state.service_id}
-              />
-          </span>
-
-          <div className="providers">
-            <div className="prov">{this.renderProviders()}</div>
+            <div className="providers">
+              <div className="prov">{this.renderProviders()}</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    </>
-);
-}
-}
+      </>
+    )
+  }
+};
 
 const mapStateToProps = (state, ownProps) => {
   return {
