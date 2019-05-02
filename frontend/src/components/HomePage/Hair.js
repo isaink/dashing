@@ -31,12 +31,12 @@ class Hair extends React.Component {
                     <div className='hvrbox-text'>
                     <span id="providername" className='ih-fade-down ih-delay-sm'>{hairP.provider}</span>
                     <br />
-                    <div style={{ zIndex: '4', textAlign: 'center'}}>
+                    {/* <div style={{ zIndex: '4', textAlign: 'center'}}> */}
                     {hairP.borough} <br />
                     {hairP.email} <br />
                     {hairP.phone_number} <br />
                     {hairP.website_link}
-                    </div>
+                    {/* </div>g */}
                   </div>
 
                   </div>

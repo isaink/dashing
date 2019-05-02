@@ -32,12 +32,12 @@ class Makeup extends React.Component {
                       <div className='hvrbox-text'>
                     <span id="providername" className='ih-fade-down ih-delay-sm'>{makeupP.provider}</span>
                     <br />
-                    <div className='ih-zoom-in ih-delay-md'>
+                    {/* <div className='ih-zoom-in ih-delay-md'> */}
                       {makeupP.borough} <br />
                       {makeupP.email} <br />
                       {makeupP.phone_number} <br />
                       {makeupP.website_link}
-                    </div>
+                    {/* </div> */}
                   </div>
                 </div>
               </div>

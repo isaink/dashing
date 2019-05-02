@@ -30,12 +30,12 @@ class Nails extends React.Component {
                  <div className='hvrbox-text'>
                     <span id="providername"  className='ih-fade-down ih-delay-sm'>>{nailP.provider}</span>
                     <br />
-                    <div className='ih-zoom-in ih-delay-md'>
+                    {/* <div className='ih-zoom-in ih-delay-md'> */}
                     {nailP.borough} <br />
                     {nailP.email} <br />
                     {nailP.phone_number} <br />
                     {nailP.website_link}
-                    </div>
+                    {/* </div> */}
                  </div>
                  </div>
               </div>
