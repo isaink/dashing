@@ -42,12 +42,21 @@ a.backLink {
   display: flex;
   justify-content: center;
 
-  background-color: brown;
+  background-color: pink;
   border-radius: 50%;
   width: 80px;
   height: 80px;
 
   margin-left: 20px;
+
+  /* -moz-box-shadow: 0 0 50px #fff;
+  -webkit-box-shadow: 0 0 50px #fff;
+  box-shadow: 0 0 50px #fff; */
+}
+.backarrowImageTagDiv:hover {
+  -moz-box-shadow: 0 0 50px #fff;
+  -webkit-box-shadow: 0 0 50px #fff;
+  box-shadow: 0 0 50px #fff;
 }
 .backarrowImageTag {
   display: flex;
@@ -63,15 +72,23 @@ a.backLink {
 .leftAndRightSidesDiv {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   /* background-color: yellow; */
   margin-top: 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+  border-top: white solid 5px;
+  border-right: white solid -5px;
+  padding: 50px;
 }
 
 /*  */
 .AvatarAndAllDetailsDiv {
   display: flex;
   flex-direction: row;
-  width: 45vw;
+  width: fit-content;
+  background-color: red;
+  height: fit-content;
 }
 
 /*  */
@@ -91,33 +108,61 @@ a.backLink {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(red, yellow);
+  /* background-image: linear-gradient(red, yellow); */
   width: 290px;
   height: 414px;
   border-radius: 20px;
+
+
+
 }
-.avatarProfile {
+
+.avatarProfileImage {
   height: 400px;
   border-radius: 20px;
   /* border-width: 5px; */
   border-style: inset;
   border-color: yellow;
+
+  -moz-box-shadow: 0 0 50px #fff;
+  -webkit-box-shadow: 0 0 50px #fff;
+  box-shadow: 0 0 50px #fff;
+
+  /* -webkit-box-shadow: 0px 0px 3px 5px #f2e1f2;
+  -moz-box-shadow: 0px 0px 3px 5px #f2e1f2;
+  box-shadow: 0px 0px 3px 5px #f2e1f2; */
 }
 .prov_info {
   /* background-color: white; */
   width: 300px;
 }
 .prov_name {
+  margin-top: 20px;
   color: white;
   /* background-color: red; */
-  font-size: 40px
+  font-size: 40px;
+
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
 }
 
 .contactLocationSocialLinkDiv {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:flex-end;
   margin-left: 10px;
+  /* bottom: 10px; */
+  margin-bottom: 50px;
 
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
@@ -160,6 +205,11 @@ a.backLink {
 }
 .social_link h6 {
   margin-left: 10px;
+  text-decoration: none;
+}
+a.socialLink_a_tag  {
+  text-decoration: none;
+  color: pink;
 }
 
 
@@ -173,12 +223,16 @@ a.backLink {
   color: white;
   /* background-color: green; */
   margin-bottom: 20px;
-  padding-bottom: 60px;
-  
+  /* padding-bottom: 60px; */
+
 }
 .prov_boro {
   display: flex;
   flex-direction: row;
+
+}
+.prov_boro img{
+  margin-left: -10px;
 }
 .prov_boro h5{
   margin-left: 10px;
@@ -191,6 +245,15 @@ a.backLink {
   border-color: green;
 } */
 
+/*  */
+.rightSideDiv {
+  background-color: yellow;
+  display: flex;
+  flex-direction: row-reverse;
+  width: fit-content;
+}
+
+/*  */
 .ctnr_portfolio {
   display: flex;
   flex-direction: row;
@@ -205,10 +268,17 @@ a.backLink {
 .ctnr_services {
   background-color: green;
   color: white;
-  margin-top: 20px;
+  width: 200px;
+  margin-right: 20px;
 }
-.ctnr_services .srv_name {
-  background-color: yellow;
+.srv_nameDiv {
+  /* background-color: white; */
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.srv_nameDiv .srv_name {
+  /* background-color: yellow; */
   font-size: 50px;
   font-family: "Mrs Saint Delafield", cursive;
   font-weight: bold;
@@ -218,18 +288,21 @@ a.backLink {
 
 }
 
-.ctnr_skills {
-  background-color: white;
-  height: 50px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+
+.srv_nameDiv .skillAndBulletsDiv {
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  font-size: 14px;
+
+  border: 2px solid white;
 }
 
-.ctnr_services .inner_skill {
-  background-color: orange;
-  font-family: "Josefin Sans", sans-serif;
-  color: black;
-
+.skillBullets {
+  background-color: yellow;
+  width: 5px;
 }
 
 
