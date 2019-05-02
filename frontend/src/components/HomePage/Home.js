@@ -63,7 +63,7 @@ class Home extends Component {
 
           <dt>
             <div className='NavbarDiv'>
-              <NavbarHome className='NavbarComponentTag'/>
+              {/* <NavbarHome className='NavbarComponentTag'/> */}
             </div>
           </dt>
 
@@ -91,7 +91,7 @@ class Home extends Component {
             </Element>
           </dd>
 
-          <dd>
+          {/* <dd>
             <Element name="education" className="Element">
               <EducationProv_Container />{" "}
             </Element>
@@ -101,7 +101,7 @@ class Home extends Component {
             <Element name="aboutus" className="Element">
               <AboutUs />{" "}
             </Element>
-          </dd>
+          </dd> */}
         </dl>
       </div>
     );
