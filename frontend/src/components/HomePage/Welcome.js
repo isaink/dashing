@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../../Css/Home.css";
-import bk_img from "../../photo_assets/beautybackground.jpg";
+import bk_img from "../../photo_assets/newbackground.jpg";
 
 // import Navbar from "../NavBars/Navbar";
 

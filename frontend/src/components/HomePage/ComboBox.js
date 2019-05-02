@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../Css/ComboBox.css'
-import '../Css/Dropdown.css'
+import '../../Css/ComboBox.css'
+import '../../Css/Dropdown.css'
 
 export class ComboBox extends Component {
   constructor(props) {
@@ -43,8 +43,6 @@ export class ComboBox extends Component {
     ))
 
     return (
-
-      
         <form onSubmit={this.handleSubmit} className='ctnr_options'>
 
             <select

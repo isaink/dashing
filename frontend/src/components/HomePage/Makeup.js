@@ -20,7 +20,6 @@ class Makeup extends React.Component {
 
   componentDidMount() {
     this.props.fetchProvidersByService();
-    // this.props.getProvidersBySkill();
   };
 
   componentDidUpdate(prevProps, prevState){

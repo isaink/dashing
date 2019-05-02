@@ -19,7 +19,7 @@ class Nails extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProvidersByService();
+    this.props.getProvidersByService();
   }
 
   componentDidUpdate(prevProps, prevState){

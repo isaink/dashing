@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
+
 import "../../Css/NavbarForComponents.css";
 import logo from "../../photo_assets/dashing_logo.png";
 
@@ -13,17 +15,15 @@ export default class Navbar extends Component {
       <>
         <div className="navbar">
           <span className="dashingNav">
-            <h3>
-              <Link to={"/"}>
-                <img
-                  src={logo}
-                  alt=""
-                  width="175px"
-                  height="auto"
-                  onClick={this.scrollToTop}
-                />
-              </Link>
-            </h3>
+            <Link to={"/"}>
+              <img
+                src={logo}
+                alt=""
+                width="175px"
+                height="auto"
+                onClick={this.scrollToTop}
+              />
+            </Link>
           </span>
 
           <div className="links">
@@ -46,7 +46,8 @@ export default class Navbar extends Component {
               smooth={true}
               offset={-70}
               duration={500}
-            >Hair
+            >
+              Hair
             </Link>
             <Link
               className="links"
@@ -82,17 +83,9 @@ export default class Navbar extends Component {
               Makeup
             </Link>
 
-            <Link
-              className="links"
-              activeClass="active"
-              to="education"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
+            <RouterLink className="links" activeClass="active" to="/education">
               Educational Services
-            </Link>
+            </RouterLink>
 
             <Link
               className="links"
@@ -105,7 +98,6 @@ export default class Navbar extends Component {
             >
               About Us
             </Link>
-
           </div>
         </div>
       </>
