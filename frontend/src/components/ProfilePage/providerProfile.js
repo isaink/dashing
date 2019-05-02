@@ -1,8 +1,5 @@
 import React from "react";
 import "../../Css/profile.css";
-
-// import pic from './../../img/pic_profile.png';
-// import pic from './../../img/pic_profile.jpg';
 import pared from "./../../img/habitacion-pared-salmon.jpg";
 import loc from "./../../img/location.png";
 import check from "./../../photo_assets/bulletpoint.png";
