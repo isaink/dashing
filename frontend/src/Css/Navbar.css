@@ -47,6 +47,7 @@ button:hover::after {
 
 /*  */
 .nav_prof {
+  position: absolute;
   z-index: 5;
 }
 /*  */
@@ -117,101 +118,16 @@ button:hover::after {
 
 
 
-a {
-  text-decoration: none;
-}
-
-nav {
-    font-family: monospace;
-    z-index: 5;
-}
-
-ul {
-  background: darkorange;
-    list-style: none;
-}
-
-li {
-    color: #fff;
-   
-  background: darkorange;
-    display: block;
-    float: right;
-    padding: 3px;
-    position: relative;
-    text-decoration: none;
-  transition-duration: 0.5s;
-}
-  
-li a {
-  color: #fff;
-}
-
-li:hover {
-    background: red;
-    cursor: pointer;
-}
-
-ul li ul {
-    background: orange;
-    visibility: hidden;
-  opacity: 0;
-  min-width: 3rem;
-    position: absolute;
-  transition: all 0.5s ease;
-  /* margin-top: 1rem; */
-    left: 0;
-  display: none;
-}
-
-ul li:hover > ul,
-ul li:focus-within > ul,
-ul li ul:hover,
-ul li ul:focus {
-  visibility: visible;
-  opacity: 1;
-  display: block
-}
-
-ul li ul li {
-    clear: both;
-  width: 100%;
-}
-
-.dropdwon_account{
-  margin: 0%;
-  top: 10px;
-}
-
-
-/*  */
-
-
-
-
-
-
-/*  */
-
-
-
 *,
 *:before,
 *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    /* -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
+    /* box-sizing: border-box; */
 }
 
 
-p {
-    font-size: 1.6em;
-    font-family: 'Lato', sans-serif;
-    background-color: #fff;
-    padding: 1em;
-    color: #002240;
-    margin-top: 0;
-}
+
 
 /* .button */
 

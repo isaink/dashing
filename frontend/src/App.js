@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-
 import Home from "./components/HomePage/Home";
 import { Education } from "./components/HomePage/Education";
 import EducationProv_Container from './Redux_Containers/EducationProv_Container'
 import { AboutUs } from "./components/HomePage/AboutUs";
-import { ProviderProfile } from "./components/ProfilePage/providerProfile";
+import ProviderProfile from './components/ProfilePage/providerProfile';
 import SingleProviderContainer from "./Redux_Containers/SingleProviderContainer";
 import NavbarForComponents from "./components/NavBars/NavbarForComponents";
 import NewUser from "./components/Account/NewUser";

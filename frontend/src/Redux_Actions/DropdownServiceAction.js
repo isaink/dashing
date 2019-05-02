@@ -18,7 +18,7 @@ export const getAllServices = services => dispatch => {
   axios
     .get("/services")
     .then(res => {
-      debugger
+      // debugger
       return dispatch(receiveDropdownServiceSuccess(null));
     })
     .catch(err => {
