@@ -1,12 +1,14 @@
 import React from "react";
 import { withRouter, Link } from 'react-router-dom';
-
 import "./../../Css/profile.css";
 import pared from "./../../img/habitacion-pared-salmon.jpg";
 import loc from "./../../img/location.png";
 import bulletpoint from "./../../photo_assets/bulletpoint.png";
 import not_img from "./../../img/notFound.jpg";
 import backarrow from '../../img/curved_back_arrow.png';
+
+import NavbarProfile from "../NavBars/NavbarProfile";
+
 
 const ProviderProfile = props => {
   const goBack = () => {
@@ -47,6 +49,7 @@ const ProviderProfile = props => {
                 alt=''
                 width='50px'
                 className='backarrowImageTag'
+
                 />
                 </div>
 
@@ -239,6 +242,7 @@ const ProviderProfile = props => {
       console.log(props.providerInfo.providername);
       return (
         <div>
+          <NavbarProfile />
           {renderProviderInfo()}
         </div>
       )

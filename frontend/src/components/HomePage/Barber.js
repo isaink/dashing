@@ -1,18 +1,15 @@
-
 import React from "react";
-import { Link } from "react-router-dom";
-import "../../Css/provider.css";
-import { connect } from "react-redux";
-import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-// import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
-import barberPic from "../../photo_assets/barber.jpeg";
-// import { Dropdown } from "./Dropdown.js";
-
-import { ComboBox } from "./ComboBox.js";
 import axios from 'axios';
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { ComboBox } from "./ComboBox.js";
 import { getProvidersBySkill } from "../../Redux_Actions/comboBoxAction";
 import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
+import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
+import "../../Css/provider.css";
+import barberPic from "../../photo_assets/barber.jpeg";
+import barber from  '../../img/barber1.jpg'
 
 class Barber extends React.Component {
   state = {
@@ -22,14 +19,14 @@ class Barber extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProvidersByService();
+    this.props.getProvidersByService();
   };
 
   componentDidUpdate(prevProps, prevState){
     if (!prevProps.barberProviders && this.props.barberProviders) {
       this.getSkillsForService();
     }
-  }
+  };
 
   getSkillsForService = () => {
     axios.get(`/services/skills/3`)
@@ -41,7 +38,7 @@ class Barber extends React.Component {
     .catch(err => {
       console.log('GET SKILLS ERR', err);
     })
-  }
+  };
 
   renderProviders = () => {
     if (this.props.barberProviders) {
@@ -53,7 +50,7 @@ class Barber extends React.Component {
           providerObj[provider.provider_id] = true;
           providerArr.push(provider);
         }
-      })
+      });
 
       return providerArr.map(barberP => {
         return (
@@ -65,7 +62,7 @@ class Barber extends React.Component {
                   alt="avatar"
                   className="hvrbox-layer_bottom"
                   src={barberP.avatar}
-                  style={{ height: "150px", display: 'block' }}
+                  style={{ height: "140px" }}
                 />
 
                 <div className='hvrbox-layer_top'>
@@ -73,7 +70,7 @@ class Barber extends React.Component {
                       <span id="ih-fade-down ih-delay-sm">{barberP.provider}</span>
                       <br />
 
-                    <div className='ih-zoom-in ih-delay-md'>
+                    <div style={{ zIndex: '4', textAlign: 'center'}} >
                       {barberP.borough} <br />
                       {barberP.email} <br />
                       {barberP.phone_number} <br />
@@ -99,35 +96,30 @@ render() {
     return (
       <>
        <div className='ctnr_prov'>
-        <div className="ctnr_box">
-            <div className="img_intro">
+        <div className="ctnr_box_barber">
+            <div className="img_intro" style={{ }}>
               <img
                 alt="intro"
-                src={barberPic}
-                width="800px"
-                height="auto"
+                src={barber}
+                // width="1200px"
+                height='100%'
+                style={{ objectFit: "cover"}}
               />
             </div>
 
             <div className="inner_ctnr_providers">
-              <div className="title">Barber</div>
-              <hr />
-
-              <span className="dropdown">
-                {/*
-                  <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-                  getProvidersBySkill={this.props.getProvidersBySkill}
-
-                  */}
-                <ComboBox
-                  fetchSkillList={this.state.skills}
-                  getProvidersByService = {this.props.getProvidersByService}
-
-                  fetchProvidersByService = {this.props.fetchProvidersByService}
-                  serviceId={this.state.service_id}
-                  />
-              </span>
-
+              <div className='ctnr_nav'>
+                <div className="title" >Barber</div>
+                  <span className="dropdown">
+                    <ComboBox
+                      fetchSkillList={this.state.skills}
+                      getProvidersByService = {this.props.getProvidersByService}
+                      fetchProvidersByService = {this.props.fetchProvidersByService}
+                      serviceId={this.state.service_id}
+                      />
+                  </span>
+                </div>
+             
               <div className="providers">
                 <div className="prov">{this.renderProviders()}</div>
               </div>
