@@ -78,12 +78,16 @@ const ProviderProfile = props => {
           </div>
 
           <div className='avatarProfileDiv'>
-            <img
-              src={props.providerInfo.avatar}
-              alt="avatar"
-              className="avatarProfile"
-            />
+            <div className='avatarProfileBorder'>
+              <img
+                src={props.providerInfo.avatar}
+                alt="avatar"
+                className="avatarProfile"
+              />
+            </div>
           </div>
+
+
 
           <div className="prov_info">
             <h5 className="prov_name">{props.providerInfo.providername} </h5>
@@ -178,6 +182,11 @@ const ProviderProfile = props => {
               </>
             )}
           </div>
+
+          <div className='testDiv'>
+            <h1 className='testTag'> Test Test tEst tEat stea tl la fjkla sd af</h1>
+          </div>
+
         </div>
       );
 
