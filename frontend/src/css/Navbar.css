@@ -3,10 +3,12 @@
   justify-content: center;
   /* top: 200px; */
   z-index: 500;
+
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   font-size: 18px;
 }
+
 button {
   position: relative;
   margin: 5px;
@@ -23,9 +25,10 @@ button {
   /* border-radius: 10px; */
   color: #ECB99C;
   /* z-index: 1; */
-  /* z-index: 5; */
+  z-index: 5;
   overflow: hidden;
 }
+
 button:after {
   content: "";
   display: block;
@@ -37,17 +40,21 @@ button:after {
   transition: transform 0.6s linear;
   transform: scale(0.97, 0.93);
 }
+
 button:hover::after {
   transform: scale(1, 1);
 }
+
 /*  */
 .nav_prof {
   position: absolute;
   z-index: 5;
 }
 /*  */
+
 .ctnr_lines{
   position: absolute;
+
   top: 20px;
   left: 20%;
   transform: translate(-50%,-50%);
@@ -60,6 +67,7 @@ button:hover::after {
   cursor: pointer;
    transition: all 0.3s ease;
 }
+
 .nav_lines div{
   height: 3px;
   margin: 0%;
@@ -68,38 +76,48 @@ button:hover::after {
   position: absolute;
    transition: all 0.5s ease;
 }
+
 .nav_lines  .first{
   top: 15px;
   margin-bottom: 10px;
   left: 20px;
 }
+
 .nav_lines  .second{
   top: 35px;
   margin-bottom: 10px;
 
   left: 20px;
 }
+
 .nav_lines  .third{
   top: 55px;
   left: 20px;
 }
+
 .nav_lines:hover .first {
    transform: translateY(20px) rotate(45deg);
    transition: all 0.5s ease;
 }
+
 .nav_lines:hover .second {
    opacity: 0;
   transition: all 0.2s ease;
 
 }
+
 .nav_lines:hover .third{
   transform: translateY(-20px) rotate(-45deg);
    transition: all 0.5s ease;
 }
+
 .nav_lines:hover{
    /* border-radius:50%; */
    transition: all 0.3s ease;
 }
+
+
+
 *,
 *:before,
 *:after {
@@ -107,7 +125,12 @@ button:hover::after {
     -moz-box-sizing: border-box; */
     /* box-sizing: border-box; */
 }
+
+
+
+
 /* .button */
+
 .bttn_ {
     display: inline-block;
     position: relative;
@@ -122,6 +145,7 @@ button:hover::after {
     background: transparent;
     font-family: 'raleway', sans-serif;
 }
+
 .bttn_ img {
     -webkit-transition: 0.6s;
     -moz-transition: 0.6s;
@@ -132,6 +156,7 @@ button:hover::after {
     -o-transition-delay: 0.2s;
     transition-delay: 0.2s;
 }
+
 .bttn_:before,
 .bttn_ :after {
     content: '';
@@ -146,7 +171,9 @@ button:hover::after {
     -o-transition: .4s,opacity .6s;
     transition: .4s,opacity .6s;
 }
+
 /* :before */
+
 .bttn_:before {
     content: attr(data-hover);
     -webkit-transform: translate(-150%,0);
@@ -155,7 +182,9 @@ button:hover::after {
     -o-transform: translate(-150%,0);
     transform: translate(-150%,0);
 }
+
 /* :after */
+
 .bttn_:after {
     content: attr(data-active);
     -webkit-transform: translate(150%,0);
@@ -164,7 +193,9 @@ button:hover::after {
     -o-transform: translate(150%,0);
     transform: translate(150%,0);
 }
+
 /* Span on :hover and :active */
+
 .bttn_:hover img,
 .bttn_:active img {
     opacity: 0;
@@ -174,10 +205,12 @@ button:hover::after {
     -o-transform: scale(0.3);
     transform: scale(0.3);
 }
+
 /*
     We show :before pseudo-element on :hover
     and :after pseudo-element on :active
 */
+
 .bttn_:hover:before,
 .bttn_:active:after {
     opacity: 1;
@@ -191,9 +224,11 @@ button:hover::after {
     -o-transition-delay: .4s;
     transition-delay: .4s;
 }
+
 /*
   We hide :before pseudo-element on :active
 */
+
 .bttn_:active:before {
     -webkit-transform: translate(-150%,0);
     -moz-transform: translate(-150%,0);
