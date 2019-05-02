@@ -2,6 +2,8 @@ body {
   background-color: black;
 }
 
+
+/*  */
 .background_img {
   display: flex;
   height: 300px;
@@ -14,6 +16,14 @@ img.intro_pic {
 
 }
 
+/*  */
+.allBelowBkGndImage {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
+/*  */
 .backLinkDiv {
   /* background-color: green; */
   display: flex;
@@ -21,16 +31,13 @@ img.intro_pic {
   width: 200px;
   height: 110px;
 }
-
 a.backLink {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 20px;
-
   /* text-decoration: none; */
 }
-
 .backarrowImageTagDiv {
   display: flex;
   justify-content: center;
@@ -42,32 +49,53 @@ a.backLink {
 
   margin-left: 20px;
 }
-
 .backarrowImageTag {
   display: flex;
 }
-
 .goBackTextTag {
   margin-left: 10px;
   font-size: 20px;
   color: white;
 }
 
+
+/*  */
+.leftAndRightSidesDiv {
+  display: flex;
+  flex-direction: row;
+  /* background-color: yellow; */
+  margin-top: 20px;
+}
+
+/*  */
+.AvatarAndAllDetailsDiv {
+  display: flex;
+  flex-direction: row;
+  width: 45vw;
+}
+
+/*  */
 .avatarProfileDiv {
   display: flex;
-  justify-content: center;
-  z-index: 1;
-  position: relative;
-  top: -200px;
+  flex-direction: column;
+  justify-content: left;
+  /* z-index: 1; */
+  /* position: relative; */
+  width: 300px;
+  height: 470px;
+  margin-right: 10px;
+  /* background-color: yellow; */
+  /* top: -200px; */
 }
-
 .avatarProfileBorder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: linear-gradient(red, yellow);
   width: 290px;
-  height: 402px;
-
+  height: 414px;
+  border-radius: 20px;
 }
-
 .avatarProfile {
   height: 400px;
   border-radius: 20px;
@@ -75,23 +103,175 @@ a.backLink {
   border-style: inset;
   border-color: yellow;
 }
+.prov_info {
+  /* background-color: white; */
+  width: 300px;
+}
+.prov_name {
+  color: white;
+  /* background-color: red; */
+  font-size: 40px
+}
 
+.contactLocationSocialLinkDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
 
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+}
+.contactLocationSocialLinkDiv p{
+  margin-bottom: 5px;
+  font-style: italic;
+  text-decoration: overline;
+}
+.phoneEmailAndSocialLinkDiv {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: white;
+  /* background-color: red; */
+  margin-bottom: 30px;
+}
+.phoneEmailAndSocialLinkDiv h6 {
+  margin-left: 10px;
+}
+.phoneNumDiv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.emailDiv {
+  margin-bottom: 20px;
 
+}
+.social_link {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  color: white;
+  text-align: left;
+  /* background-color: orange; */
+}
+.social_link p {
+  /* font-family: "Josefin Sans", sans-serif; */
 
-.testDiv {
-  background-image: url('./../img/man_hair.jpg');
-  height: 100px;
-  /* z-index: 1; */
+}
+.social_link h6 {
+  margin-left: 10px;
 }
 
 
+/*  */
+.locDiv {
+
+}
+
+.loc {
+  display: flex;
+  color: white;
+  /* background-color: green; */
+  margin-bottom: 20px;
+  padding-bottom: 60px;
+  
+}
+.prov_boro {
+  display: flex;
+  flex-direction: row;
+}
+.prov_boro h5{
+  margin-left: 10px;
+}
+
+
+/* .portfolioDiv {
+  display: flex;
+  border-width: 5px;
+  border-color: green;
+} */
+
+.ctnr_portfolio {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  border-radius: 20px;
+  border-width: thick;
+  justify-content: center;
+}
+
+.ctnr_services {
+  background-color: green;
+  color: white;
+  margin-top: 20px;
+}
+.ctnr_services .srv_name {
+  background-color: yellow;
+  font-size: 50px;
+  font-family: "Mrs Saint Delafield", cursive;
+  font-weight: bold;
+  color: red;
+  text-shadow: 2px 2px 4px #000000;
+
+
+}
+
+.ctnr_skills {
+  background-color: white;
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.ctnr_services .inner_skill {
+  background-color: orange;
+  font-family: "Josefin Sans", sans-serif;
+  color: black;
+
+}
+
+
+
+
+
+
+/* .ctnr_portfolio {
+  position: absolute;
+  grid-column: 3;
+  grid-row: 3;
+  background: #dbdedd;
+  height: 200px;
+  top: 470px;
+  right: 135px;
+  width: 500px;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  overflow-y: scroll;
+}
+.portfolio_img {
+  grid-row: 1;
+} */
+
+
+
+
+
+
+
+
+/*  How to do a transparent background image  */
+.testDiv {
+  background-image: url('./../img/man_hair.jpg');
+  height: 100px;
+}
 h1.testTag {
-  /* z-index: 3; */
   background-color: rgba(255,255,255, 0.3);
   color: black;
 
   font-size: 30px;
   height: 100px;
-  /* opacity: 1; */
 }
