@@ -25,7 +25,7 @@ class Education extends React.Component {
   };
 
   handleEducationSubmit = event => {
-    
+
     let name = this.state.name;
     let service_id = this.state.service_id;
     event.preventDefault();

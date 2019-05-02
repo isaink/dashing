@@ -6,7 +6,7 @@ import {
   scroller
 } from "react-scroll";
 
-// import { ProviderProfile } from '../ProfilePage/providerProfile';
+// import ProviderProfile from '../ProfilePage/providerProfile';
 import { Welcome } from "./Welcome";
 import Hair from "./Hair";
 import Nails from "./Nails";
