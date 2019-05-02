@@ -7,7 +7,7 @@ import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
 import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
-import "../Css/provider.css";
+import "../../Css/provider.css";
 import nailsPic from "../../photo_assets/nails.jpg";
 import nail from '../../img/nails1.jpg'
 

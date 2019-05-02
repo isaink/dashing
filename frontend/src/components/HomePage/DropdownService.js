@@ -7,13 +7,9 @@ export const DropdownService = props => {
       <div>
         <select
           className="selector"
-<<<<<<< HEAD
-          onChange={handleServiceChange}
-=======
           onChange={props.handleServiceChange}
           value={props.service_id}
 
->>>>>>> d69800ca31aae195be461311d7286a5e05026b7a
           style={{ width: "300px", height: "50px" }}
           name="select-profession"
           id="select-profession"

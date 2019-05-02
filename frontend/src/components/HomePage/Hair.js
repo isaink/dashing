@@ -7,7 +7,7 @@ import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
 import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
-import "../Css/provider.css";
+import "../../Css/provider.css";
 import hairPic from "../../photo_assets/hair.jpg";
 
 class Hair extends React.Component {
