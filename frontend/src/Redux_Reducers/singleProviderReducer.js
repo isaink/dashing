@@ -1,6 +1,8 @@
 import { RECEIVE_PROVIDER_INFO } from '../Redux_Actions/providerAction';
 import { RECEIVE_PROVIDER_SERVICES } from '../Redux_Actions/providerAction';
 import { RECEIVE_PROVIDER_PORTFOLIIO } from '../Redux_Actions/providerAction';
+import { RECEIVE_SKILLSBYPRO_SUCCESS } from 
+'../Redux_Actions/providerAction';
 
 export const singleProviderReducer = (state = {}, action) => {
     let newState = {...state};
@@ -20,7 +22,13 @@ export const singleProviderReducer = (state = {}, action) => {
             const { portfolio } = action.payload;
                 newState['portfolio'] = portfolio;
             return newState;
+      
+        case RECEIVE_SKILLSBYPRO_SUCCESS:
+        const { skills } = action.payload;
+              newState['skills'] = skills;
+              return newState;
+              
         default:
-        return state;
+        return state; 
     }
 };

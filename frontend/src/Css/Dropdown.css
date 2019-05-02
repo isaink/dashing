@@ -1,0 +1,19 @@
+.selector{
+    position: relative;
+    background-color: #c17a46;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    /* -webkit-appearance: none; */
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+select{
+    width: 400px;
+}
+option{
+    color: white;
+}

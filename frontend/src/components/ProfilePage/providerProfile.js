@@ -75,6 +75,7 @@ export const ProviderProfile = props => {
               props.providerInfo.services.map(service => {
                 let skills = service.skills.map(skill => {
                   return (
+
                     <>
                       <img
                         alt="intro_picture"
