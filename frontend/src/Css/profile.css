@@ -87,7 +87,7 @@ a.backLink {
   display: flex;
   flex-direction: row;
   width: fit-content;
-  background-color: red;
+  /* background-color: red; */
   height: fit-content;
 }
 
@@ -118,11 +118,11 @@ a.backLink {
 }
 
 .avatarProfileImage {
-  height: 400px;
+  height: 350px;
   border-radius: 20px;
-  /* border-width: 5px; */
   border-style: inset;
-  border-color: yellow;
+  border-width: 3px;
+  border-color: white;
 
   -moz-box-shadow: 0 0 50px #fff;
   -webkit-box-shadow: 0 0 50px #fff;
@@ -247,7 +247,7 @@ a.socialLink_a_tag  {
 
 /*  */
 .rightSideDiv {
-  background-color: yellow;
+  /* background-color: yellow; */
   display: flex;
   flex-direction: row-reverse;
   width: fit-content;
@@ -266,7 +266,7 @@ a.socialLink_a_tag  {
 }
 
 .ctnr_services {
-  background-color: green;
+  /* background-color: green; */
   color: white;
   width: 200px;
   margin-right: 20px;
@@ -275,7 +275,7 @@ a.socialLink_a_tag  {
   /* background-color: white; */
   height: 50px;
   margin-top: 20px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 .srv_nameDiv .srv_name {
   /* background-color: yellow; */
@@ -292,16 +292,25 @@ a.socialLink_a_tag  {
 .srv_nameDiv .skillAndBulletsDiv {
   background-color: orange;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   font-family: "Josefin Sans", sans-serif;
   color: white;
   font-size: 14px;
+  margin-bottom: 20px;
 
   border: 2px solid white;
 }
 
+/* .skillAndBulletsDiv {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+} */
+
 .skillBullets {
-  background-color: yellow;
+  /* background-color: yellow; */
   width: 5px;
 }
 
