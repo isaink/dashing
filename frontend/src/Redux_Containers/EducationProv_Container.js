@@ -1,12 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import {Education} from '../components/HomePage/Education'
-import { getAllEducationProviders } from "../Redux_Actions/EducationProv_Action";
-
+import Education from "../components/HomePage/Education";
+import { getEducationProviders } from "../Redux_Actions/EducationProv_Action";
 
 class EducationProv_Container extends React.Component {
   componentDidMount() {
-    this.props.getAllEducationProviders();
+    this.props.getEducationProviders();
   }
 
   render() {
@@ -14,28 +13,29 @@ class EducationProv_Container extends React.Component {
 
     return (
       <>
-      <Education educationProviders={this.props.educationProviders} />
+        <Education
+          educationProviders={this.props.educationProviders}
+          getEducationProviders={this.props.getEducationProviders}
+        />
       </>
     );
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-
   return {
     educationProviders: state.educationProviders
-  }
-
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
-    getAllEducationProviders: (education) =>
-    dispatch(getAllEducationProviders(education))
-  }
-}
+    getEducationProviders: (name, service_id) =>
+      dispatch(getEducationProviders(name, service_id))
+  };
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(EducationProv_Container)
+)(EducationProv_Container);

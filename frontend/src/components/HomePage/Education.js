@@ -6,15 +6,35 @@ import axios from "axios";
 import { getProvidersBySkill } from "../../Redux_Actions/comboBoxAction";
 import EducationProv_Container from "../../Redux_Containers/EducationProv_Container";
 import NavbarProfile from "../NavBars/NavbarProfile";
-
-
+import { ProviderSearch } from "./ProviderSearch";
 
 import { Link } from "react-router-dom";
 
-export const Education = props => {
-  const renderEducationProviders = () => {
-    if (props.educationProviders) {
-      return props.educationProviders.map(eduProv => {
+class Education extends React.Component {
+  state = {
+    name: "",
+    service_id: ""
+  };
+
+  handleServiceChange = event => {
+    this.setState({ service_id: event.target.value });
+  };
+
+  handleNameChange = event => {
+    this.setState({ name: event.target.value });
+  };
+
+  handleEducationSubmit = event => {
+    
+    let name = this.state.name;
+    let service_id = this.state.service_id;
+    event.preventDefault();
+    this.props.getEducationProviders(name, service_id);
+  };
+
+  renderEducationProviders = () => {
+    if (this.props.educationProviders) {
+      return this.props.educationProviders.map(eduProv => {
         return (
           <div key={eduProv.id}>
             <Link
@@ -40,31 +60,44 @@ export const Education = props => {
       return <div>Loading...</div>;
     }
   };
+  render() {
+    return (
+      <>
+        <NavbarProfile />
+        <div className="edu_body" />
+        <div className="edu_container">
+          <div className="edu_information">
+            <div id="ed_header">Educational Services</div>
 
-  return (
-    <>
-    <NavbarProfile />
-<div className="edu_body"></div>
-      <div className="edu_container">
-        <div className="edu_information">
-          <div id="ed_header">Educational Services</div>
-
-          <div id="ed_writeup">
-            Dashing provides educational beauty services right in the comfort of
-            your own home! <br /> Our fun and interactive classes are conducted
-            by our skilled and licensed beauty professionals.
-            <br />
-            <br />
+            <div id="ed_writeup">
+              Dashing provides educational beauty services right in the comfort
+              of your own home! <br /> Our fun and interactive classes are
+              conducted by our skilled and licensed beauty professionals.
+              <br />
+              <br />
+            </div>
           </div>
         </div>
-      </div>
+        <form
+          className="service_dropdown"
+          onSubmit={this.handleEducationSubmit}
 
-      <span className="service_dropdown">
-        <DropdownService /><DropdownService /><button className="edu_button">Submit</button>
-      </span>
+        >
+          <DropdownService
+            handleServiceChange={this.handleServiceChange}
+            service_id={this.state.service_id}
+          />
+          <ProviderSearch
+            handleNameChange={this.handleNameChange}
+            name={this.state.name}
+          />
 
-      <div className="provider_pics">{renderEducationProviders()} </div>;
+          <button className="edu_button">Submit</button>
+        </form>
+        <div className="provider_pics">{this.renderEducationProviders()} </div>;
+      </>
+    );
+  }
+}
 
-    </>
-  );
-};
+export default Education;
