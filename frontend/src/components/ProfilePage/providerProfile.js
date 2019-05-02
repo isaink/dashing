@@ -82,8 +82,9 @@ const ProviderProfile = props => {
           <div className='leftAndRightSidesDiv'>
 
             <div className='AvatarAndAllDetailsDiv'>
-
-              <div className='avatarProfileDiv'>
+              {/*
+              // <div className='avatarProfileDiv'>
+              */}
                 <div className='avatarProfileBorder'>
                   <img
                     src={props.providerInfo.avatar}
@@ -91,56 +92,62 @@ const ProviderProfile = props => {
                     className="avatarProfileImage"
                     />
                 </div>
-
-              </div>
+                {/*
+              // </div>
+              */}
 
 
 
 
               <div className='contactLocationSocialLinkDiv'>
 
-                <div className='LocationAndNameDiv'>
-                  <div className='locDiv'>
-                    <div className="loc">
-                      <div className="prov_boro">
-                        <img
-                          alt="loc"
-                          src={loc}
-                          style={{ zIndex: "2", height: "30px" }}
-                          />
-                        <h6>{props.providerInfo.borough}</h6>
+                <div className='rightProviderDetailsDiv'>
+
+                  <div className='LocationAndNameDiv'>
+                    <div className='locDiv'>
+                      <div className="loc">
+                        <div className="prov_boro">
+                          <img
+                            alt="loc"
+                            src={loc}
+                            style={{ zIndex: "2", height: "30px" }}
+                            />
+                          <h6>{props.providerInfo.borough}</h6>
+                        </div>
                       </div>
+                    </div>
+
+                    <div className="prov_info">
+                      <h5 className="prov_name">{props.providerInfo.providername} </h5>
                     </div>
                   </div>
 
-                  <div className="prov_info">
-                    <h5 className="prov_name">{props.providerInfo.providername} </h5>
+
+                  <div className="phoneEmailAndSocialLinkDiv">
+                    <div className='phoneNumDiv'>
+                      <p>Phone number: </p>
+                      <h6>{props.providerInfo.phone_number}</h6>
+                    </div>
+                    <div className='emailDiv'>
+                      <p>Email:</p>
+                      <h6>{props.providerInfo.email}</h6>
+                    </div>
+                    {/* </div> */}
+
+                    <div className="social_link">
+                      <p>Social media: </p>
+                      <a href="https://www.instagram.com/krystamariehair/"
+                        target="_blank" rel='noopener noreferrer'
+                        className='socialLink_a_tag'>
+                        <h6>{props.providerInfo.website_link}</h6>
+                      </a>
+                    </div>
+
                   </div>
+
+
+
                 </div>
-
-
-                <div className="phoneEmailAndSocialLinkDiv">
-                  <div className='phoneNumDiv'>
-                    <p>Phone number: </p>
-                    <h6>{props.providerInfo.phone_number}</h6>
-                  </div>
-                  <div className='emailDiv'>
-                    <p>Email:</p>
-                    <h6>{props.providerInfo.email}</h6>
-                  </div>
-                  {/* </div> */}
-
-                  <div className="social_link">
-                    <p>Social media: </p>
-                    <a href="https://www.instagram.com/krystamariehair/"
-                      target="_blank" rel='noopener noreferrer'
-                      className='socialLink_a_tag'>
-                      <h6>{props.providerInfo.website_link}</h6>
-                    </a>
-                  </div>
-
-                </div>
-
 
 
               </div>

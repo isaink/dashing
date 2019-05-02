@@ -86,59 +86,58 @@ a.backLink:hover {
 
 /*  */
 .AvatarAndAllDetailsDiv {
-  display: flex;
-  flex-direction: row;
-  width: fit-content;
+  display: grid;
+  grid-template-columns: 350px 400px;
+  height: 500px;
+  /* width: 1000px; */
+
+  /* width: fit-content; */
   /* background-color: red; */
-  height: fit-content;
-  border: 2px solid white;
+  /* height: fit-content; */
+  /* padding: 50px; */
+
+  /* border: 2px solid #202020;
   border-radius: 20px;
-  padding: 50px;
+  background-color: #202020; */
 }
 
 /*  */
 /* .avatarProfileDiv {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  width: 300px;
-  height: 470px;
-  margin-right: 10px;
+
 } */
 .avatarProfileBorder {
+  display: grid;
+  grid-column: 1;
+  background-color: #404040;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+
 }
 
 .avatarProfileImage {
   height: 350px;
   border-radius: 20px;
   border-style: inset;
-  border-width: 3px;
-  border-color: white;
+  border-color: grey;
   width: 280px;
   height: 400px;
   object-fit: cover;
-  /* height: inherit; */
 
-  -moz-box-shadow: 0 0 50px #fff;
+  /* -moz-box-shadow: 0 0 50px #fff;
   -webkit-box-shadow: 0 0 50px #fff;
-  box-shadow: 0 0 50px #fff;
-
-  /* -webkit-box-shadow: 0px 0px 3px 5px #f2e1f2;
-  -moz-box-shadow: 0px 0px 3px 5px #f2e1f2;
-  box-shadow: 0px 0px 3px 5px #f2e1f2; */
+  box-shadow: 0 0 50px #fff; */
 }
 .prov_info {
-  /* background-color: white; */
   width: 300px;
 }
 .prov_name {
   margin-top: 20px;
   color: white;
-  /* background-color: red; */
   font-size: 40px;
 
   -webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -156,15 +155,27 @@ a.backLink:hover {
 }
 
 .contactLocationSocialLinkDiv {
+  display: grid;
+  grid-column: 2;
+
+
+
+  background-color: #202020;
   display: flex;
   flex-direction: column;
   justify-content:flex-end;
-  margin-left: 45px;
+  /* border-radius: 20px; */
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  /* margin-left: 45px; */
   /* bottom: 10px; */
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
+}
+.rightProviderDetailsDiv {
+  background-color: yellow;
 }
 .contactLocationSocialLinkDiv p{
   margin-bottom: 5px;
