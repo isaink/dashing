@@ -63,7 +63,7 @@ class Makeup extends React.Component {
                       alt="avatar"
                       className="hvrbox-layer_bottom"
                       src={makeupP.avatar}
-                      style={{ height: "150px" }}
+                      style={{ height: "140px" }}
                     />
                 </div>
 

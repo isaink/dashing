@@ -61,7 +61,7 @@ class Hair extends React.Component {
                     alt="avatar"
                     className='hvrbox-layer_bottom'
                     src={hairP.avatar}
-                    style={{ height: "150px"}}
+                    style={{ height: "140px",  transform: 'translateX(20px)'}}
                   />
 
                 <div className='hvrbox-layer_top'>

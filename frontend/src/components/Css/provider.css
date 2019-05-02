@@ -100,9 +100,9 @@
   position: relative;
   display: inline-block;
   overflow: hidden;
-  /* width: 300px; */
-  /* margin-right: 40px auto; */
-  /* padding: 8px; */
+  width: 200px;
+  margin-right: 40px auto;
+  padding: 8px;
   /* background-color: #fffbfc; */
   background-repeat: no-repeat;
   /* background-size: 0 2px, 0 100%, 0% 2px; */
@@ -145,11 +145,12 @@
 }
 .box .hvrbox-text {
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
   /* display: inline-block; */
   position: absolute;
   top: 40%;
-  left: 25%;
+  left: 50%;
+  color: white;
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -172,7 +173,7 @@
   display: block;
 }
 .box:hover {
-  opacity: 0.5;
+  /* opacity: 0.5; */
   /* background: white; */
 }
 

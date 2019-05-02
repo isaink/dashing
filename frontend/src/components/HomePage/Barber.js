@@ -62,7 +62,7 @@ class Barber extends React.Component {
                   alt="avatar"
                   className="hvrbox-layer_bottom"
                   src={barberP.avatar}
-                  style={{ height: "150px" }}
+                  style={{ height: "140px" }}
                 />
 
                 <div className='hvrbox-layer_top'>
