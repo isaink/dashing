@@ -63,7 +63,7 @@ class Home extends Component {
 
           <dt>
             <div className='NavbarDiv'>
-              {/* <NavbarHome className='NavbarComponentTag'/> */}
+              <NavbarHome className='NavbarComponentTag'/>
             </div>
           </dt>
 
