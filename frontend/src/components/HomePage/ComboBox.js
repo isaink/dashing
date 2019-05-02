@@ -46,11 +46,12 @@ export class ComboBox extends Component {
         <form onSubmit={this.handleSubmit} className='ctnr_options'>
 
             <select
-              className="selector"
+              // className="selector"
               onChange={this.handleBoroChange}
               value={this.state.location}
               name="location"
               id="select-profession"
+              style={{ backgroundColor: 'white'}}
             >
               <option value=""> Select a Location </option>
               <option value="Brooklyn">Brooklyn</option>
