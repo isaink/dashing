@@ -197,8 +197,8 @@ const ProviderProfile = props => {
                                 src={not_img}
                                 style={{
                                   objectFit: "cover",
-                                  height: "320px",
-                                  transform: "translateY(-20%)"
+                                  // height: "320px",
+                                  // transform: "translateY(-20%)"
                                 }}
                                 />
                               </>
