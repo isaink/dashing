@@ -99,7 +99,7 @@ render() {
             alt="intro"
             src={nail}
             height='100%'
-            style={{ objectFit: "cover",  height: '800px'}}
+            style={{ objectFit: "cover", height: '100%', width:'100%', border: 'solid #ecb99c' }}
             />
         </div>
 
