@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../Css/ComboBox.css'
-import '../../Css/Dropdown.css'
+// import '../../Css/Dropdown.css'
 
 export class ComboBox extends Component {
   constructor(props) {
@@ -51,7 +51,7 @@ export class ComboBox extends Component {
               value={this.state.location}
               name="location"
               id="select-profession"
-              style={{ backgroundColor: 'white'}}
+              style={{ backgroundColor: 'white', color: 'black', fontSize: '10px', padding: '16px'}}
             >
               <option value=""> Select a Location </option>
               <option value="Brooklyn">Brooklyn</option>
@@ -67,6 +67,7 @@ export class ComboBox extends Component {
               onChange={this.handleSkillChange}
               value={this.state.skill_id}
               name='skill_id'
+              style={{ backgroundColor: 'white', color: 'black', fontSize: '10px', padding: '16px'}}
             >
               <option value=''> Select a Skill </option>
               {skillList}
