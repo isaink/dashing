@@ -20,6 +20,8 @@ class Barber extends React.Component {
 
   componentDidMount() {
     this.props.getProvidersByService();
+    this.getSkillsForService();
+    
   };
 
   componentDidUpdate(prevProps, prevState){
@@ -119,7 +121,7 @@ render() {
                       />
                   </span>
                 </div>
-             
+
               <div className="providers">
                 <div className="prov">{this.renderProviders()}</div>
               </div>

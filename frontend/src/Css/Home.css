@@ -8,11 +8,13 @@
 
 .homeBackground {
   max-height: 1000px;
-  
+
 }
 
 .Element {
   z-index: 4;
+  display: flex;
+  height: 100vh;
 }
 
 .NavbarDiv {
