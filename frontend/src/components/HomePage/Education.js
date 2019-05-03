@@ -25,7 +25,7 @@ class Education extends React.Component {
   };
 
   handleEducationSubmit = event => {
-    
+
     let name = this.state.name;
     let service_id = this.state.service_id;
     event.preventDefault();
@@ -81,20 +81,20 @@ class Education extends React.Component {
         <form
           className="service_dropdown"
           onSubmit={this.handleEducationSubmit}
-
         >
           <DropdownService
             handleServiceChange={this.handleServiceChange}
             service_id={this.state.service_id}
           />
-          <ProviderSearch
-            handleNameChange={this.handleNameChange}
-            name={this.state.name}
-          />
-
+          <div className="providerSearch">
+            <ProviderSearch
+              handleNameChange={this.handleNameChange}
+              name={this.state.name}
+            />
+          </div>
           <button className="edu_button">Submit</button>
         </form>
-        <div className="provider_pics">{this.renderEducationProviders()} </div>;
+        <div className="provider_pics">{this.renderEducationProviders()} </div>
       </>
     );
   }
