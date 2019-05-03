@@ -205,6 +205,9 @@ const ProviderProfile = props => {
                           )
                         }
                       </div>
+                      {/*
+                        transform: "translateY(-20%)"
+                        */}
 
 
                     </div>

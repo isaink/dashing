@@ -20,6 +20,8 @@ class Nails extends React.Component {
 
   componentDidMount() {
     this.props.getProvidersByService();
+    this.getSkillsForService();
+    
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -105,7 +107,7 @@ render() {
 
         <div className="inner_ctnr_providers_right">
         <div className='ctnr_nav'>
-        
+
           <div className="title">Nails</div>
             <span className="dropdown">
               <ComboBox style={{display: 'grid', gridTemplateColumns:' 40% 40% 20%'}}

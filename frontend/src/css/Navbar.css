@@ -85,7 +85,7 @@ button:hover::after {
 .nav_lines  .second{
   top: 35px;
   margin-bottom: 10px;
-
+  
   left: 20px;
 }
 
@@ -102,7 +102,7 @@ button:hover::after {
 .nav_lines:hover .second {
    opacity: 0;
   transition: all 0.2s ease;
-
+ 
 }
 
 .nav_lines:hover .third{
@@ -112,7 +112,7 @@ button:hover::after {
 
 .nav_lines:hover{
    /* border-radius:50%; */
-   transition: all 0.3s ease;
+   transition: all 0.3s ease;  
 }
 
 
@@ -205,9 +205,9 @@ button:hover::after {
     transform: scale(0.3);
 }
 
-/*
-    We show :before pseudo-element on :hover
-    and :after pseudo-element on :active
+/*  
+    We show :before pseudo-element on :hover 
+    and :after pseudo-element on :active 
 */
 
 .bttn_:hover:before,
@@ -224,7 +224,7 @@ button:hover::after {
     transition-delay: .4s;
 }
 
-/*
+/* 
   We hide :before pseudo-element on :active
 */
 
