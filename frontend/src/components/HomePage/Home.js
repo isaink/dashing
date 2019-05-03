@@ -50,7 +50,7 @@ class Home extends Component {
           <dd>
             <div className="bg_welcome">
               <div className="homeLogo">
-                <img src={homeLogo} alt="" width="700px" />
+                <img src={homeLogo} alt="" width="700px"  />
               </div>
             </div>
           </dd>

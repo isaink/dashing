@@ -9,7 +9,7 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
 import "../../Css/provider.css";
 import makeupPic from "../../photo_assets/makeup.jpg";
-import makeup from '../../img/makeup1.jpg'
+import makeup from '../../img/makeup.png'
 
 class Makeup extends React.Component {
   state = {
@@ -97,13 +97,11 @@ class Makeup extends React.Component {
       <>
       <div className='ctnr_prov'>
           <div className="ctnr_box_right">
-            <div className="img_intro_right">
+            <div className="img_intro_right" style={{ borderTop: 'solid #ecb99'}}>
               <img
                 alt="intro"
                 src={makeup}
-                // width="600px"
-                height='100%'
-                style={{ objectFit: "cover", borderBottom: 'solid #ecb99c',borderTop: 'solid #ecb99'}}
+                style={{ objectFit: "cover", height: '100%', width:'100%', border: 'solid #ecb99c'}}
                 />
             </div>
 

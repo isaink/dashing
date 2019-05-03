@@ -245,7 +245,8 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 
 
 INSERT INTO portfolio(provider_id, img, body, skill_id)
-VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),
+VALUES 
+  (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),
   (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg', null, null),
   (2, 'http://www.cuded.com/wp-content/uploads/2017/03/chrome-nail-42.jpg', null, null),
   (2, 'http://tdolanplumbing.com/wp-content/uploads/parser/nail-art-designs-for-short-nails-1.jpg', null, null),
@@ -275,4 +276,5 @@ VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851
   (13, 'https://tinyurl.com/y54y22le', null, null),
   (13, 'https://tinyurl.com/yynypmx9', null, null),
   (14, 'https://tinyurl.com/yxjcdxu7', null, null),
-  (14, 'https://tinyurl.com/y5y69r8p', null, null);
+  (14, 'https://tinyurl.com/y5y69r8p', null, null),
+  (15, 'https://www.menshairstylesnow.com/wp-content/uploads/2017/04/Long-Hair-Fade.jpg', null, 13), (15, 'https://ae01.alicdn.com/kf/HTB1zdgKKVXXXXXlXVXXq6xXFXXXi/Hair-style-ross-queen-hair-products-Black-Hard-Dread-Lock-Synthetic-Dreadlocks-queen-beauty-Hair-Extension.jpg', null, 3), (16, 'https://i.pinimg.com/originals/dc/56/5b/dc565b270312f279a2ea60a8fe58c1f5.jpg', null, 8), (16, 'http://thainakorncuisine.com/wp-content/uploads/parser/professional-makeup-artist-for-wedding-1.jpg', null, 19), (17, 'https://zenblossomsarasota.com/wp-content/uploads/Brow-shaping-transformation.jpg', null, 16), (17, 'http://zygostyle.com/wp-content/uploads/2017/06/Pretty-Natural-Eye-Makeup-Ideas-11.jpg', null, 18), (18, 'https://images-production.freetls.fastly.net/uploads/posts/off_site_promo_image/163605/acrylic-nails.jpg?auto=compress&crop=top&fit=crop&q=55&w=1200&h=900', null, 9), (18, 'https://i.pinimg.com/originals/c6/65/65/c66565588564957fc32d4ff24ddb2fa4.jpg', null, 1), (19, 'https://i0.wp.com/therighthairstyles.com/wp-content/uploads/2015/12/9-long-middle-part-sew-in.jpg?resize=500%2C545&ssl=1', null, 2), (19, 'http://www.cuded.com/wp-content/uploads/2017/03/chrome-nail-42.jpg', null, 6), (20, 'https://i.ytimg.com/vi/0RAANXcDL7w/hqdefault.jpg', null, 17), (20, 'http://whitelotusdayspamedford.com/wp-content/uploads/2018/09/14-gel-nail-designs-thecuddl.jpg', null, 10), (21, 'https://www.handsdayspa.com/wp-content/uploads/2015/11/nail.jpg', null, 8), (21, 'https://i.pinimg.com/736x/00/6e/58/006e58817b315b5e8ff2c1c8d4a0248f.jpg', null, 15), (22, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7a8AI-SoboVWWoVXEIF_MhKU5UugLBCCsVMs-3Wd8j9aeB2mW1Q', null, 3), (22, 'https://i.ebayimg.com/00/s/MTAyNFgxMDA5/z/j3AAAOSwuHdaVirV/$_86.JPG', null, 19), (23, 'https://i.pinimg.com/originals/a6/9a/06/a69a06d65b729f819f8e41aa7b11e3b9.jpg', null, 6), (23,'https://www.herstylecode.com/wp-content/uploads/2016/12/medium-length-hairstyles-shoulder-length-haircuts-8.jpg', null, 5), (24, 'https://media-cdn.tripadvisor.com/media/photo-s/11/e7/09/2b/we-specialize-in-perfect.jpg', null, 16), (24, 'https://i.pinimg.com/originals/39/df/71/39df71a5e473506777c77a57240509b9.png', null, 1), (25, 'https://stayglam.com/wp-content/uploads/2017/03/cierahmua2.jpg', null, 17), (25, 'https://content.latest-hairstyles.com/wp-content/uploads/bubblegum-pink-1-500x625.jpg', null, 1)
