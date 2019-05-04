@@ -193,11 +193,12 @@ const ProviderProfile = props => {
                             : (
                               <>
                               <img
+                                className="portfolio_img"
                                 alt="intro_picture"
                                 src={not_img}
                                 style={{
-                                  objectFit: "cover",
-                                  // height: "320px",
+                                  height: "200px",
+                                  // objectFit: "cover",
                                   // transform: "translateY(-20%)"
                                 }}
                                 />
