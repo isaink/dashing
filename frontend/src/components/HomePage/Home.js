@@ -36,6 +36,9 @@ class Home extends Component {
     Events.scrollEvent.register("end", function() {
       console.log("end", arguments);
     });
+
+    this.getServices()
+
   }
 
   scrollToTop() {
@@ -50,13 +53,13 @@ class Home extends Component {
     });
   }
 
-  getServices = (service_id) => {
-    axios.get(`/services/${service_id}`)
+  getServices = () => {
+    axios.get(`/services`)
     .then(res => {
-      console.log(res);
-      debugger
+      console.log(res.data.body);
+      // debugger
       this.setState({
-        services: res.data
+        services: res.data.body
       })
     })
     .catch(err => {
@@ -64,17 +67,23 @@ class Home extends Component {
     })
   }
 
-  serviceList = () => this.state.services.map(serviceArea => {
+
+  serviceList = () => this.state.services.map(service => {
+    console.log(service);
+    debugger
     return (
       <dd>
-        <Element name={serviceArea.service_name} className='Element'>
-          <SingleService service={serviceArea}/>
+        <Element name={service.name.toLowercase()} className='Element'>
+          <SingleService service={service}/>
         </Element>
       </dd>
     )
   })
 
   render() {
+    console.log(this.state.services);
+    console.log(this.getServices);
+    console.log(this.serviceList);
 
     return (
         <div className='HomepageDiv'>
@@ -103,6 +112,13 @@ class Home extends Component {
 
           {this.serviceList}
 
+          <dd>
+            <Element name="nails" className='Element'>
+              <Nails />
+            </Element>
+          </dd>
+
+
           {/*
           <dd>
             <Element name="hair" className='Element'>
@@ -110,11 +126,6 @@ class Home extends Component {
             </Element>
           </dd>
 
-          <dd>
-            <Element name="nails" className='Element'>
-              <Nails />
-            </Element>
-          </dd>
 
           <dd>
             <Element name="barber" className='Element'>

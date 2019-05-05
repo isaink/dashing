@@ -18,12 +18,13 @@ class SingleService extends React.Component {
     this.state = {
       skills: [],
       locations: [],
-      serviceId: 1,
+      serviceId: this.props.service.id,
     }
 }
 
   componentDidMount() {
-    this.props.fetchProvidersByService();
+
+    this.props.fetchProvidersByService(this.state.serviceId);
   };
 
   componentDidUpdate(prevProps, prevState){
@@ -33,8 +34,9 @@ class SingleService extends React.Component {
     }
   }
 
-  getSkillsForService = () => {
-    axios.get(`/services/skills/1`)
+  getSkillsForService = (service_id) => {
+    service_id = this.state.serviceId
+    axios.get(`/services/skills/${service_id}`)
     .then(res => {
       // console.log(res.data.data);
       // debugger
@@ -107,6 +109,8 @@ class SingleService extends React.Component {
   render() {
     console.log(this.props);
     console.log('this.props.hairProviders', this.props.hairProviders);
+    debugger
+    
     return (
       <>
       <div className='ctnr_prov'>
@@ -155,17 +159,17 @@ class SingleService extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    hairProviders: state.providersByService[1],
+    hairProviders: state.providersByService[ownProps.service.id],
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProvidersByService: () => dispatch(fetchProvidersByService(1)),
-    fetchProBySvcAndBoro: borough => dispatch(fetchProvidersByService(1, borough)),
+    fetchProvidersByService: (service_id) => dispatch(fetchProvidersByService(service_id)),
+    fetchProBySvcAndBoro: (service_id, borough) => dispatch(fetchProvidersByService(service_id, borough)),
 
-    getProvidersBySkill: (skill_id) => dispatch( getProvidersBySkill(1, skill_id)),
-    getProvidersByService: (skill_id, borough) => dispatch(getProvidersByService(1, skill_id, borough))
+    getProvidersBySkill: (service_id, skill_id) => dispatch( getProvidersBySkill(service_id, skill_id)),
+    getProvidersByService: (service_id, skill_id, borough) => dispatch(getProvidersByService(service_id, skill_id, borough))
   };
 };
 
