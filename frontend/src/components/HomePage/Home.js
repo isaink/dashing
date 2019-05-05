@@ -6,21 +6,21 @@ import {
   scroller
 } from "react-scroll";
 
-// import { ProviderProfile } from '../ProfilePage/providerProfile';
+// import ProviderProfile from '../ProfilePage/providerProfile';
 import { Welcome } from "./Welcome";
 import Hair from "./Hair";
 import Nails from "./Nails";
 import Barber from "./Barber";
 import Makeup from "./Makeup";
-import { Education } from "./Education";
+import EducationProv_Container  from "../../Redux_Containers/EducationProv_Container";
 import { AboutUs } from "./AboutUs";
 // import  NavbarForComponents  from '../NavBars/NavbarForComponents'
 
-import Navbar from "../NavBars/Navbar";
+import NavbarHome from "../NavBars/Navbar";
 import homeLogo from "../../photo_assets/dashing_logo_invert.png";
+
 import axios from 'axios';
 import SingleService from './SingleService';
-
 
 import "./../../Css/Home.css";
 
@@ -47,7 +47,7 @@ class Home extends Component {
 
   scrollTo() {
     scroller.scrollTo("scroll-to-element", {
-      duration: 300,
+      duration: 3000,
       delay: 0,
       smooth: "easeInOutQuart"
     });
@@ -86,27 +86,25 @@ class Home extends Component {
     console.log(this.serviceList);
 
     return (
-        <div className='HomepageDiv'>
-
-          <dl>
-
-            <dd>
-              <div className="bg_welcome">
-                <div className="homeLogo">
-                  <img src={homeLogo} alt="" width="700px" />
-                </div>
+      <div className="HomepageDiv">
+        <dl>
+          <dd>
+            <div className="bg_welcome">
+              <div className="homeLogo">
+                <img src={homeLogo} alt="" width="700px"  />
               </div>
-            </dd>
+            </div>
+          </dd>
 
           <dd>
-            <Element name="home" className='Element'>
+            <Element name="home" className="Element">
               <Welcome />
             </Element>
           </dd>
 
           <dt>
             <div className='NavbarDiv'>
-              <Navbar className='NavbarComponentTag'/>
+              {/* <NavbarHome className='NavbarComponentTag'/> */}
             </div>
           </dt>
 
@@ -121,42 +119,46 @@ class Home extends Component {
 
           {/*
           <dd>
+<<<<<<< HEAD
             <Element name="hair" className='Element'>
               <Hair />
+=======
+            <Element name="nails" className="Element">
+              <Nails />
+>>>>>>> fbf98b019ce805747edae37e6a897cac50b211c7
             </Element>
           </dd>
 
 
           <dd>
-            <Element name="barber" className='Element'>
+            <Element name="barber" className="Element">
               <Barber />
             </Element>
           </dd>
 
           <dd>
-            <Element name="makeup" className='Element'>
+            <Element name="makeup" className="Element">
               <Makeup />
             </Element>
           </dd>
           */}
 
-          <dd>
-            <Element name="education" className='Element'>
-              <Education />{" "}
+          {/* <dd>
+            <Element name="education" className="Element">
+              <EducationProv_Container />{" "}
             </Element>
           </dd>
 
           <dd>
-            <Element name="aboutus" className='Element'>
+            <Element name="aboutus" className="Element">
               <AboutUs />{" "}
             </Element>
-          </dd>
+          </dd> */}
         </dl>
       </div>
-
     );
   }
-}
+};
 
 export default Home;
 //  {/* <button onClick={this.scrollToTop}>To the top!</button> */}
