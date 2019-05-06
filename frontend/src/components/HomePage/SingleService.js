@@ -168,23 +168,43 @@ class SingleService extends React.Component {
   }
 
   toggleImage = () => {
-    let ctnr_prov = $('.ctnr_prov');
-    if (this.state.serviceId % 2) {
-      ctnr_prov
+    // let id = $('#{this.state.serviceId}')
+
+    let ctnr_box = $('.ctnr_box');
+    let img_intro = $('.img_intro');
+    let inner_ctnr_providers = $('.inner_ctnr_providers')
+
+    if (this.state.serviceId % 2 === 0) {
+      ctnr_box
+        .removeClass('ctnr_box')
+        .addClass('ctnr_box_right');
+      img_intro
         .removeClass('img_intro')
-        .addClass('img_intro_right');
-    } else {
-      ctnr_prov
-        .removeClass('img_intro_right')
-        .addClass('img_intro');
+        .addClass('img_intro_right')
+      inner_ctnr_providers
+        .removeClass('inner_ctnr_providers')
+        .addClass('inner_ctnr_providers_right')
     }
+
+
+    // else {
+    //   ctnr_box
+    //     .removeClass('ctnr_box_right')
+    //     .addClass('ctnr_box');
+    //   img_intro
+    //     .removeClass('img_intro_right')
+    //     .addClass('img_intro')
+    //   inner_ctnr_providers
+    //     .removeClass('inner_ctnr_providers_right')
+    //     .addClass('inner_ctnr_providers')
+    // }
   }
 
 
   render() {
     return (
       <>
-      <div className='ctnr_prov'>
+      <div className='ctnr_prov' id={this.state.serviceId}>
         <div className="ctnr_box">
           <div className="img_intro" style={{borderTop: 'solid #ecb99c'}}>
             {this.renderImage()}
@@ -196,7 +216,6 @@ class SingleService extends React.Component {
               />
               */}
           </div>
-
           <div className="inner_ctnr_providers">
             <div className='ctnr_nav'>
               <div className="title_hair">{this.props.service.name}</div>
@@ -214,6 +233,8 @@ class SingleService extends React.Component {
               <div className="prov">{this.renderProviders()}</div>
             </div>
           </div>
+
+
         </div>
       </div>
       </>

@@ -23,12 +23,10 @@ import SingleService from './SingleService';
 import "./../../Css/Home.css";
 
 
-import hairPic from "../../photo_assets/hair.jpg";
-
-
 class Home extends Component {
   state = {
     services: [],
+    serviceName: '',
   }
 
   componentDidMount() {
@@ -74,6 +72,7 @@ class Home extends Component {
     return this.state.services.map(service => {
     // console.log(service.name, service.id);
     // debugger
+
       return (
         <dd key={service.id}>
           <Element name={service.name} className='Element'>
@@ -81,9 +80,20 @@ class Home extends Component {
           </Element>
         </dd>
       )
-
     })
   }
+
+  // serviceInElement = () => {
+  //   return this.state.services.map(service => {
+  //     this.setState({
+  //       serviceName: service.name
+  //     })
+  //     return (
+  //
+  //       <SingleService service={service} />
+  //     )
+  //   })
+  // }
 
   render() {
     console.log(this.state.services);
@@ -112,7 +122,26 @@ class Home extends Component {
             </div>
           </dt>
 
+          {/*
+          <dd>
+            <Element name="hair" className='Element'>
+            <Hair />
+            </Element>
+          </dd>
+
+          <dd>
+          <Element name={this.state.servcieName} className='Element'>
+          {() => this.serviceInElement()}
+          </Element>
+          </dd>
+          */}
+
           {this.serviceList()}
+
+
+
+
+
 
         </dl>
       </div>

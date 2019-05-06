@@ -21,7 +21,7 @@ class Nails extends React.Component {
   componentDidMount() {
     this.props.getProvidersByService();
     this.getSkillsForService();
-    
+
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -95,7 +95,7 @@ render() {
   return (
     <>
     <div className='ctnr_prov'>
-      <div className="ctnr_box_right">
+      <div className="ctnr_box_right div2">
         <div className="img_intro_right"  >
           <img
             alt="intro"
@@ -105,6 +105,7 @@ render() {
             />
         </div>
 
+        <div className='div3'>
         <div className="inner_ctnr_providers_right">
         <div className='ctnr_nav'>
 
@@ -123,6 +124,9 @@ render() {
               <div className="prov">{this.renderProviders()}</div>
             </div>
           </div>
+
+        </div>
+
         </div>
       </div>
       </>
