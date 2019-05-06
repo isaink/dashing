@@ -75,7 +75,7 @@ class Home extends Component {
 
       return (
         <dd key={service.id}>
-          <Element name={service.name} className='Element'>
+          <Element name={service.name.toLowerCase()} className='Element'>
             <SingleService service={service}/>
           </Element>
         </dd>
@@ -85,11 +85,10 @@ class Home extends Component {
 
   // serviceInElement = () => {
   //   return this.state.services.map(service => {
-  //     this.setState({
-  //       serviceName: service.name
-  //     })
+  //     // this.setState({
+  //     //   serviceName: service.name
+  //     // })
   //     return (
-  //
   //       <SingleService service={service} />
   //     )
   //   })
@@ -103,6 +102,7 @@ class Home extends Component {
     return (
       <div className="HomepageDiv">
         <dl>
+
           <dd>
             <div className="bg_welcome">
               <div className="homeLogo">
@@ -122,26 +122,8 @@ class Home extends Component {
             </div>
           </dt>
 
-          {/*
-          <dd>
-            <Element name="hair" className='Element'>
-            <Hair />
-            </Element>
-          </dd>
-
-          <dd>
-          <Element name={this.state.servcieName} className='Element'>
-          {() => this.serviceInElement()}
-          </Element>
-          </dd>
-          */}
 
           {this.serviceList()}
-
-
-
-
-
 
         </dl>
       </div>
@@ -151,11 +133,18 @@ class Home extends Component {
 };
 
 export default Home;
+
+
 //  {/* <button onClick={this.scrollToTop}>To the top!</button> */}
 
 
 
 
+// <dd>
+//   <Element name="nails" className='Element'>
+//   {this.serviceInElement()}
+//   </Element>
+//   </dd>
 
 
 // {/*
@@ -180,8 +169,6 @@ export default Home;
 //   <div className='NavbarDiv'>
 //   </div>
 //   </dt>
-//
-//
 //
 //
 //
