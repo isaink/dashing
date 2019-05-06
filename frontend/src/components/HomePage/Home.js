@@ -6,7 +6,7 @@ import {
   scroller
 } from "react-scroll";
 
-// import ProviderProfile from '../ProfilePage/providerProfile';
+// import { ProviderProfile } from '../ProfilePage/providerProfile';
 import { Welcome } from "./Welcome";
 import Hair from "./Hair";
 import Nails from "./Nails";
@@ -50,7 +50,7 @@ class Home extends Component {
           <dd>
             <div className="bg_welcome">
               <div className="homeLogo">
-                <img src={homeLogo} alt="" width="700px" />
+                <img src={homeLogo} alt="" width="700px"  />
               </div>
             </div>
           </dd>
@@ -96,7 +96,6 @@ class Home extends Component {
               <EducationProv_Container />{" "}
             </Element>
           </dd>
-
           <dd>
             <Element name="aboutus" className="Element">
               <AboutUs />{" "}

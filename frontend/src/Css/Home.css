@@ -1,18 +1,28 @@
 .homeLogo {
   position: absolute;
-  /* height: auto; */
+  height: 100px;
   /* z-index: 2; */
-  margin-top: 250px;
+  margin-top: 450px;
   margin-left: 27%;
+
 }
 
 .homeBackground {
-  max-height: 1000px;
-  
+  /* max-height: 1000px; */
+  /* max-height: 1000px; */
+  /* width: 100%; */
+  height: 100%;
+
+
 }
 
 .Element {
   z-index: 4;
+  display: flex;
+  height: 100vh;
+
+  object-fit: cover;
+
 }
 
 .NavbarDiv {

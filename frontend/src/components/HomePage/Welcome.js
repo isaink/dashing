@@ -12,7 +12,7 @@ export const Welcome = () => {
       <div className="bg_welcome">
 
         <div className="homeBackground">
-          <img src={bk} alt="" />
+          <img src={bk} alt=""  style={{maxHeight: '800px', paddingLeft: '300px', paddingTop: '80px'}}/>
         </div>
       </div>
     </>

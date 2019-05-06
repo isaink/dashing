@@ -19,7 +19,7 @@ const ProviderProfile = props => {
     if (props.providerInfo) {
       return (
 
-        <div className="ctnr_profile" key={props.providerInfo.provider_id}>
+        <div className="big_Div" key={props.providerInfo.provider_id}>
 
           <div className="background_img_Div" >
             <img
@@ -64,9 +64,9 @@ const ProviderProfile = props => {
                 */}
 
 
-                <div className='leftAndRightSidesDiv'>
+                <div className='leftCenterAndRightSidesDiv'>
 
-                  <div className='AvatarAndAllDetailsDiv'>
+                  <div className='LeftSideDiv'>
                     {/*
                       // <div className='avatarProfileDiv'>
                       */}
@@ -146,7 +146,7 @@ const ProviderProfile = props => {
                       </div>
                       */}
                       <div className='centerDiv'>
-                        <div className="ctnr_services">
+                        <div className="servicesAndSkills">
                           {props.providerInfo.services &&
                             props.providerInfo.services.map(service => {
                               let skills = service.skills.map(skill => {
@@ -175,6 +175,7 @@ const ProviderProfile = props => {
 
                     </div>
 
+                    <div className='rightSideDivDIV'>
                     <div className='rightSideDiv'>
                       <div className='portfolioDiv'>
 
@@ -193,18 +194,22 @@ const ProviderProfile = props => {
                             : (
                               <>
                               <img
+                                className="portfolio_img"
                                 alt="intro_picture"
                                 src={not_img}
                                 style={{
-                                  objectFit: "cover",
-                                  height: "320px",
-                                  transform: "translateY(-20%)"
+                                  height: "200px",
+                                  // objectFit: "cover",
+                                  // transform: "translateY(-20%)"
                                 }}
                                 />
                               </>
                           )
                         }
                       </div>
+                      {/*
+                        transform: "translateY(-20%)"
+                        */}
 
 
                     </div>
@@ -213,6 +218,8 @@ const ProviderProfile = props => {
                     </div>
 
                   </div>
+
+                </div>
 
                 </div>
 
@@ -249,3 +256,4 @@ const ProviderProfile = props => {
     };
 
     export default withRouter(ProviderProfile)
+    

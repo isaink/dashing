@@ -38,26 +38,14 @@ select {
 
 .ctnr_options{
   display: flex;
-  /* display: grid;
-  grid-template-columns: 35% 35% 20%; */
-  
+
 }
 .ctnr_options_right{
   display: grid;
   grid-template-columns:  40% 40% 20%
 }
-.ctnr_options form{
-  /* grid-column: 1; */
-
-}
-
-.ComboboxDiv {
-  /* grid-column: 2; */
-
-}
 
 .bttn_form{
-  /* grid-column: 3; */
   height: 50px;
   margin-top: 9px;
 }

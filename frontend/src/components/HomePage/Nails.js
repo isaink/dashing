@@ -99,13 +99,13 @@ render() {
             alt="intro"
             src={nail}
             height='100%'
-            style={{ objectFit: "cover",  height: '800px'}}
+            style={{ objectFit: "cover", height: '100%', width:'100%', border: 'solid #ecb99c' }}
             />
         </div>
 
         <div className="inner_ctnr_providers_right">
         <div className='ctnr_nav'>
-        
+
           <div className="title">Nails</div>
             <span className="dropdown">
               <ComboBox style={{display: 'grid', gridTemplateColumns:' 40% 40% 20%'}}

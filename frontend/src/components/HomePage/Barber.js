@@ -9,7 +9,7 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
 import "../../Css/provider.css";
 import barberPic from "../../photo_assets/barber.jpeg";
-import barber from  '../../img/barber1.jpg'
+import barber from  '../../img/barber2.png'
 
 class Barber extends React.Component {
   state = {
@@ -97,7 +97,7 @@ render() {
       <>
        <div className='ctnr_prov'>
         <div className="ctnr_box_barber">
-            <div className="img_intro" style={{ }}>
+            <div className="img_intro" style={{ borderTop: 'solid #ecb99c'}}>
               <img
                 alt="intro"
                 src={barber}
@@ -119,7 +119,7 @@ render() {
                       />
                   </span>
                 </div>
-             
+
               <div className="providers">
                 <div className="prov">{this.renderProviders()}</div>
               </div>

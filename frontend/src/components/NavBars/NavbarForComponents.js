@@ -87,7 +87,7 @@ export default class Navbar extends Component {
               Educational Services
             </RouterLink>
 
-            <Link
+            {/* <Link
               className="links"
               activeClass="active"
               to="aboutus"
@@ -97,7 +97,11 @@ export default class Navbar extends Component {
               duration={500}
             >
               About Us
-            </Link>
+            </Link> */}
+
+            <RouterLink className="links" activeClass="active" to="/aboutus">
+              About Us
+            </RouterLink>
           </div>
         </div>
       </>
