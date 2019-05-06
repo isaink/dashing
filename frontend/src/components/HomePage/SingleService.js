@@ -1,16 +1,20 @@
 import React from "react";
+import axios from 'axios';
 import { Link } from "react-router-dom";
-import "../../Css/provider.css";
 import { connect } from "react-redux";
+
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 // import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import hairPic from "../../photo_assets/hair.jpg";
 // import { Dropdown } from "./Dropdown.js";
 
-import axios from 'axios';
+
 import { ComboBox } from "./ComboBox.js";
 import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
 import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
+
+import "../../Css/provider.css";
+
 
 class SingleService extends React.Component {
   constructor(props) {
@@ -20,17 +24,17 @@ class SingleService extends React.Component {
       locations: [],
       serviceId: this.props.service.id,
     }
-}
+  }
 
   componentDidMount() {
 
-    this.props.fetchProvidersByService(this.state.serviceId);
+    this.props.getProvidersByService(this.state.serviceId);
+    this.getSkillsForService(this.state.serviceId);
   };
 
   componentDidUpdate(prevProps, prevState){
     if (!prevProps.hairProviders && this.props.hairProviders) {
       this.getSkillsForService();
-      // this.getLocationsForService();
     }
   }
 
@@ -38,8 +42,6 @@ class SingleService extends React.Component {
     service_id = this.state.serviceId
     axios.get(`/services/skills/${service_id}`)
     .then(res => {
-      // console.log(res.data.data);
-      // debugger
       this.setState({
         skills: res.data.data
       })
@@ -52,9 +54,6 @@ class SingleService extends React.Component {
 
   renderProviders = () => {
     if (this.props.hairProviders) {
-      console.log('renderProviders', this.props.hairProviders);
-    // if (this.state.providers) {
-    //   console.log('renderProviders', this.state.providers);
       const providerObj = {};
       const providerArr = [];
       this.props.hairProviders.forEach(provider => {
@@ -63,39 +62,33 @@ class SingleService extends React.Component {
           providerArr.push(provider);
         }
       })
-      console.log('providerobject', providerObj);
-      console.log('providerarrrrr', providerArr);
-
       return providerArr.map(hairP => {
-      // return this.props.hairProviders.map(hairP => {
         return (
           <div key={hairP.provider_id}>
           <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
-            <div className="box ">
+            <div className="box">
               <div className="content">
                 <img
-                  alt="avatar"
-                  className='hvrbox-layer_bottom'
-                  src={hairP.avatar}
-                  style={{ height: "150px", display: 'block'}}
+                    alt="avatar"
+                    className='hvrbox-layer_bottom'
+                    src={hairP.avatar}
+                    style={{ height: "140px",  transform: 'translateX(20px)'}}
                   />
 
                 <div className='hvrbox-layer_top'>
                   <div className='hvrbox-text'>
                     <span id="providername" className='ih-fade-down ih-delay-sm'>{hairP.provider}</span>
                     <br />
-                    <div className='ih-zoom-in ih-delay-md'>
-                      {hairP.borough} <br />
-                      {hairP.email} <br />
-                      {hairP.phone_number} <br />
-                      {hairP.website_link}
+                    <div style={{ zIndex: '4', textAlign: 'center'}}>
+                    {hairP.borough} <br />
+                    {hairP.email} <br />
+                    {hairP.phone_number} <br />
+                    {hairP.website_link}
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
-
           </Link>
         </div>
         );
@@ -107,44 +100,30 @@ class SingleService extends React.Component {
 
 
   render() {
-    console.log(this.props);
-    console.log('this.props.hairProviders', this.props.hairProviders);
-    debugger
-    
     return (
       <>
       <div className='ctnr_prov'>
-
         <div className="ctnr_box">
-          <div className="img_intro">
+          <div className="img_intro" style={{borderTop: 'solid #ecb99c'}}>
             <img
               alt="intro"
               src={hairPic}
               width="600px"
-              height="auto"
               />
           </div>
 
           <div className="inner_ctnr_providers">
-            <div className="title">{this.props.service.service_name}</div>   {/*  //////the rigth name: this.props.service //////   */}
-            <hr />
-
-            <span className="dropdown">
-
-              {/*
-                <Dropdown fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro} />
-                fetchProBySvcAndBoro={this.props.fetchProBySvcAndBoro}
-                getProvidersBySkill={this.props.getProvidersBySkill}
-
-              */}
-              <ComboBox
-                fetchSkillList={this.state.skills}
-                getProvidersByService = {this.props.getProvidersByService}
-
-                fetchProvidersByService = {this.props.fetchProvidersByService}
-                serviceId={this.state.serviceId}
-                />
-            </span>
+            <div className='ctnr_nav'>
+              <div className="title_hair">{this.props.service.name}</div>
+              <span className="dropdown">
+                <ComboBox
+                  fetchSkillList={this.state.skills}
+                  getProvidersByService = {this.props.getProvidersByService}
+                  fetchProvidersByService = {this.props.fetchProvidersByService}
+                  serviceId={this.state.serviceId}
+                  />
+              </span>
+            </div>
 
             <div className="providers">
               <div className="prov">{this.renderProviders()}</div>
@@ -159,7 +138,7 @@ class SingleService extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    hairProviders: state.providersByService[ownProps.service.id],
+    hairProviders: state.providersByService[1],
   };
 };
 
@@ -167,7 +146,6 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchProvidersByService: (service_id) => dispatch(fetchProvidersByService(service_id)),
     fetchProBySvcAndBoro: (service_id, borough) => dispatch(fetchProvidersByService(service_id, borough)),
-
     getProvidersBySkill: (service_id, skill_id) => dispatch( getProvidersBySkill(service_id, skill_id)),
     getProvidersByService: (service_id, skill_id, borough) => dispatch(getProvidersByService(service_id, skill_id, borough))
   };
