@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../Css/user.css";
+import "../Css/user.css";
 import homeLogo from "../../photo_assets/dashing_logo_invert.png";
 import bk_img from "../../photo_assets/beautybackground.jpg";
 
