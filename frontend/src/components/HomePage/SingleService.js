@@ -21,6 +21,14 @@ import "../../Css/provider.css";
 
 import $ from 'jquery';
 
+const pics = {
+  1: hairPic,
+  2: nailsPic,
+  3: barberPic,
+  4: makeupPic,
+}
+
+
 class SingleService extends React.Component {
   constructor(props) {
     super(props)
@@ -38,7 +46,6 @@ class SingleService extends React.Component {
     this.props.getProvidersByService(this.state.serviceId);
     this.getSkillsForService(this.state.serviceId);
 
-    this.renderImage();
   };
 
   componentDidUpdate(prevProps, prevState){
@@ -107,65 +114,6 @@ class SingleService extends React.Component {
     }
   };
 
-  renderImage = () => {
-    if (this.state.serviceId === 2 ) {
-      // this.setState ({
-      //   img_intro: {nailsPic}
-      // })
-      return (
-        <img
-          alt="intro"
-          src={nailsPic}
-          width="600px"
-          />
-      )
-    }
-    else if (this.state.serviceId === 3) {
-      // this.setState ({
-      //   img_intro: {barberPic}
-      // })
-      return (
-        <img
-          alt="intro"
-          src={barberPic}
-          width="600px"
-          />
-      )
-    } else if (this.state.serviceId === 4) {
-      // this.setState({
-      //   img_intro: {makeupPic}
-      // })
-      return (
-        <img
-          alt="intro"
-          src={makeupPic}
-          width="600px"
-          />
-      )
-    } else if (this.state.serviceId === 1) {
-      // this.setState ({
-      //   img_intro: {hairPic}
-      // })
-      return (
-        <img
-          alt="intro"
-          src={hairPic}
-          width="600px"
-          />
-      )
-    }
-
-
-    // return (
-    //   <img
-    //     alt="intro"
-    //     src={this.state.img_intro}
-    //     width="600px"
-    //     />
-    // )
-
-
-  }
 
 
 
@@ -177,14 +125,14 @@ class SingleService extends React.Component {
       <div className='ctnr_prov'>
         <div className={index % 2 === 1 ? 'ctnr_box_right' : "ctnr_box"} >
           <div className={index % 2 === 1 ? "img_intro_right" : "img_intro"} style={{borderTop: 'solid #ecb99c'}}>
-            {this.renderImage()}
             {/*
+              {this.renderImage()}
+              */}
             <img
               alt="intro"
-              src={hairPic}
+              src={pics[this.state.serviceId]}
               width="600px"
               />
-              */}
           </div>
           <div className={index % 2 === 1 ? "inner_ctnr_providers_right" : "inner_ctnr_providers"}>
             <div className='ctnr_nav'>
