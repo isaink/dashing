@@ -1,44 +1,89 @@
-const  db  = require('../connector.js');
+const db = require("../connector.js");
 
 // GET --> Get all provider -->  /providers
 const getAllProviders = (req, res, next) => {
-  db.any('SELECT * FROM providers')
-  .then(providers => {
-    res.status(200).json({
-      status: 'success',
-      message: 'Got all Providers.',
-      providers: providers
+  db.any(
+    "SELECT providers.id, name, email, password, avatar, borough, phone_number, website_link, bio, service_id, skill_id, price_min, price_max, education  FROM providers JOIN skills_provider ON providers.id = skills_provider.id"
+  )
+    .then(providers => {
+      res.status(200).json({
+        status: "success",
+        message: "Got all Providers.",
+        providers: providers
+      });
     })
-  })
-  .catch(err => {
-    res.status(400)
-    .json({
-      status: 'error',
-      message: " 🤣 Na nana na nah. You didn't get your Providers!😝 ",
-      err
+    .catch(err => {
+      res.status(400).json({
+        status: "error",
+        message: " 🤣 Na nana na nah. You didn't get your Providers!😝 ",
+        err
+      });
+      next();
+    });
+};
+const getEducationProviders = (req, res, next) => {
+
+  let sql = `SELECT providers.id,
+ name,
+ email,
+ password,
+avatar, borough,
+phone_number,
+website_link,
+bio,
+ service_id,
+skill_id,
+ price_min,
+price_max,
+education
+FROM providers
+JOIN skills_provider ON providers.id = skills_provider.id
+WHERE education = 'true'`
+if(req.query.name) {
+  sql = sql.concat(`AND lower(name) LIKE '%${req.query.name.toLowerCase()}%'`)
+}
+if(req.query.service_id) {
+  sql = sql.concat(`AND service_id = ${req.query.service_id}`)
+}
+console.log(req.query);
+  db.any(sql)
+    .then(providers => {
+      res.status(200).json({
+        status: "success",
+        message: "Got all Education Providers.",
+        providers: providers
+      });
     })
-    next();
-  })
+    .catch(err => {
+      res.status(400).json({
+        status: "error",
+        message: " 🤣 Na nana na nah. You didn't get your Providers!😝 ",
+        err
+      });
+      next();
+    });
 };
 
 // POST -> Create a Provider [USER AUTH]  ->  /provider/:id
 const createProvider = (req, res, next) => {
   // const hash = authHelpers.createHash(req.body.password);
-  db.none('INSERT INTO providers ( name, email, password)' +
-  ' VALUES(${name}, ${email}, ${password} )',
-  { name: req.body.name, email: req.body.email, password: req.body.password})
-  .then(() => {
+  db.none(
+    "INSERT INTO providers ( name, email, password)" +
+      " VALUES(${name}, ${email}, ${password} )",
+    { name: req.body.name, email: req.body.email, password: req.body.password }
+  )
+    .then(() => {
       res.status(200).json({
-          status: 'Success',
-          message: "Registration successful."
-      })
-  }).catch(err => {
-    res.status(500)
-    .json({
-      message: "Error adding a new provider 😝: ",
-      err
+        status: "Success",
+        message: "Registration successful."
+      });
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "Error adding a new provider 😝: ",
+        err
+      });
     });
-  });
 };
 
 // LOG OUT USER for ** USER AUTH **
@@ -48,7 +93,7 @@ const logoutProvider = (req, res, next) => {
 };
 
 // LOG IN USER for ** USER AUTH **
-const loginProvider = (req, res)=> {
+const loginProvider = (req, res) => {
   res.json(req.user);
 };
 
@@ -63,7 +108,9 @@ const isLoggedIn = (req, res) => {
 
 // PATCH -> Edit user account -> /influers/user/:id
 const updateProvider = (req, res, next) => {
-  db.none('UPDATE providers SET name=${name}, email=${email}, password=${password}, avatar=${avatar}, borough=${borough}, phone_number=${phone_number}, website_link=${website_link} WHERE id=${id}', {
+  db.none(
+    "UPDATE providers SET name=${name}, email=${email}, password=${password}, avatar=${avatar}, borough=${borough}, phone_number=${phone_number}, website_link=${website_link} WHERE id=${id}",
+    {
       id: Number(req.params.id),
       name: req.body.name,
       email: req.body.email,
@@ -72,66 +119,55 @@ const updateProvider = (req, res, next) => {
       borough: req.body.borough,
       phone_number: req.body.phone_number,
       website_link: req.body.website_link
-  }).then(() => {
+    }
+  )
+    .then(() => {
       res.status(200).json({
-          status: 'Success',
-          message: 'Provider Updated'
-      })
-  }).catch(err => {
-      console.log("Error updating provider: ", err)
-      return next(err)
-  })
+        status: "Success",
+        message: "Provider Updated"
+      });
+    })
+    .catch(err => {
+      console.log("Error updating provider: ", err);
+      return next(err);
+    });
 };
 
 // DELETE -> Delete a Provider -> `/provider/:id
 const deleteProvider = (req, res, next) => {
   let id = parseInt(req.params.id);
-  db.result('DELETE FROM providers WHERE id=$1', id)
-  .then(provider => {
+  db.result("DELETE FROM providers WHERE id=$1", id)
+    .then(provider => {
       res.status(200).json({
-          status: 'Success',
-          message: 'Provider Deleted'
-      })
-  }).catch(err => {
-      console.log("Error deleting provider: ", err)
-      return next(err)
-  })
+        status: "Success",
+        message: "Provider Deleted"
+      });
+    })
+    .catch(err => {
+      console.log("Error deleting provider: ", err);
+      return next(err);
+    });
 };
 
-
-// const getSingleProvider = (req, res, next) => {
-//   db.any('SELECT providers.id, providers.name AS providerName, array_agg(distinct avatar) AS avatar, email, borough, phone_number, website_link, services_provider.service_id, services_provider.provider_id, services.id, services.name AS servicesName, skills.id, skills.service_id, skills.name AS skillsName FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE provider_id =  ${id} GROUP BY providers.id, services_provider.service_id, services_provider.provider_id, services.id, skills.id', {
 const getProviderInfo = (req, res, next) => {
-  db.one('SELECT providers.id, bio, providers.name AS providerName, avatar, email, borough, phone_number, website_link FROM providers WHERE providers.id = ${id}', {
-    id: Number(req.params.id)
-  })
-  .then(info => {
-    res.status(200).json({
-      status: 'success',
-      message: 'Got complete info for provider',
-      info: info
+  db.one(
+    "SELECT providers.id, bio, providers.name AS providerName, avatar, email, borough, phone_number, website_link FROM providers WHERE providers.id = ${id}",
+    {
+      id: Number(req.params.id)
+    }
+  )
+    .then(info => {
+      res.status(200).json({
+        status: "success",
+        message: "Got complete info for provider",
+        info: info
+      });
     })
-  })
-  .catch(err => next(err));
+    .catch(err => next(err));
 };
-
-const getSingleProvider = (req, res, next) => {
-  db.one('SELECT providers.id, providers.name AS providerName, array_agg(distinct avatar) AS avatar, email, borough, phone_number, website_link, services_provider.service_id, services_provider.provider_id, services.id, services.name AS servicesName, skills.id, skills.service_id, skills.name AS skillsName FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE provider_id =  ${id} GROUP BY providers.id, services_provider.service_id, services_provider.provider_id, services.id, skills.id', {
-    id: Number(req.params.id)
-  })
-  .then(info => {
-    res.status(200).json({
-      status: 'success',
-      message: 'Got complete infor for provider',
-      info: info
-    })
-  })
-  .catch(err => next(err));
-};
-
 
 // router.get('/bySkill/:skill_id', getProvidersBySkill);
-const getProvidersBySkill= (req, res, next) => {
+const getProvidersBySkill = (req, res, next) => {
   db.any(
     `SELECT
       DISTINCT providers.name provider,
@@ -147,31 +183,31 @@ const getProvidersBySkill= (req, res, next) => {
     JOIN skills ON skills.id = skills_provider.skill_id
     JOIN providers ON providers.id = skills_provider.provider_id
     JOIN services ON services.id = skills.service_id
-    WHERE skills.id = $[skill_id]`, {
+    WHERE skills.id = $[skill_id]`,
+    {
       // service_id: Number(req.params.service_id),
       skill_id: Number(req.params.skill_id)
     }
   )
-  .then(data => {
-    res.status(200).json({
-      status: "Success",
-      message: "Got all providers by this service and skill",
-      data: data
+    .then(data => {
+      res.status(200).json({
+        status: "Success",
+        message: "Got all providers by this service and skill",
+        data: data
+      });
+    })
+    .catch(err => {
+      res.status(400).json({
+        status: "Failure",
+        message: "Failed to get all services/skills by this provider"
+      });
     });
-  })
-  .catch(err => {
-    res.status(400).json({
-      status: "Failure",
-      message: "Failed to get all services/skills by this provider"
-    });
-  });
-
-}
+};
 
 // router.get('/byService/:service_id', getProvidersByService);
 // http://localhost:3100/providers/byService/1?skill_id=1&borough=Brooklyn
-const getProvidersByService= (req, res, next) => {
-  console.log('REQ.QUERY', req.query);
+const getProvidersByService = (req, res, next) => {
+  console.log("REQ.QUERY", req.query);
   let sql = `SELECT
     DISTINCT providers.name provider,
     avatar,
@@ -186,59 +222,60 @@ const getProvidersByService= (req, res, next) => {
   JOIN skills ON skills.id = skills_provider.skill_id
   JOIN providers ON providers.id = skills_provider.provider_id
   JOIN services ON services.id = skills.service_id
-  WHERE services.id = $[service_id]`
+  WHERE services.id = $[service_id]`;
 
   // if (req.query.skill_id && req.query.borough) {
   //   sql += `AND skills.id = $[skill_id] AND borough= $[borough]`
   // } else
   if (req.query.skill_id) {
-    sql += `AND skills.id = $[skill_id]`
+    sql += `AND skills.id = $[skill_id]`;
   }
   if (req.query.borough) {
-    sql += `AND borough= $[borough]`
+    sql += `AND borough= $[borough]`;
   }
 
   db.any(sql, {
-      service_id: Number(req.params.service_id),
-      skill_id: Number(req.query.skill_id),
-      borough: req.query.borough
-    }
-  )
-  .then(data => {
-    res.status(200).json({
-      status: "Success",
-      message: "Got all providers by this service and skill",
-      data: data
-    });
+    service_id: Number(req.params.service_id),
+    skill_id: Number(req.query.skill_id),
+    borough: req.query.borough
   })
-  .catch(err => {
-    res.status(400).json({
-      status: "Failure",
-      message: "Failed to get all services/skills by this provider"
+    .then(data => {
+      res.status(200).json({
+        status: "Success",
+        message: "Got all providers by this service and skill",
+        data: data
+      });
+    })
+    .catch(err => {
+      res.status(400).json({
+        status: "Failure",
+        message: "Failed to get all services/skills by this provider"
+      });
     });
-  });
-
-}
+};
 
 const getProviderServices = (req, res, next) => {
-  db.any('SELECT services_provider.provider_id, services_provider.service_id, services.name AS servicesName, array_agg(skills.name) AS skills FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE providers.id =${id} group by services_provider.provider_id, services_provider.service_id, services.name', {
-    id: Number(req.params.id)
-  }).then(info => {
-    res.status(200).json({
-      status: 'success',
-      message: 'Got complete services for provider',
-      info: info
+  db.any(
+    "SELECT services_provider.provider_id, services_provider.service_id, services.name AS servicesName, array_agg(skills.name) AS skills FROM providers JOIN services_provider ON services_provider.provider_id = providers.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE providers.id =${id} group by services_provider.provider_id, services_provider.service_id, services.name",
+    {
+      id: Number(req.params.id)
+    }
+  )
+    .then(info => {
+      res.status(200).json({
+        status: "success",
+        message: "Got complete services for provider",
+        info: info
+      });
     })
-  })
-  .catch(err => next(err));
- };
-
+    .catch(err => next(err));
+};
 
 module.exports = {
   getAllProviders,
   getProviderInfo,
+  getEducationProviders,
   getProviderServices,
-  getSingleProvider,
   createProvider,
   logoutProvider,
   loginProvider,
@@ -247,5 +284,5 @@ module.exports = {
   deleteProvider,
 
   getProvidersBySkill,
-  getProvidersByService,
-}
+  getProvidersByService
+};

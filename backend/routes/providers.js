@@ -3,7 +3,7 @@ var router = express.Router();
 
 const {
     getAllProviders,
-    getSingleProvider,
+    getEducationProviders,
     getProviderInfo,
     getProviderServices,
     // createProvider,
@@ -22,9 +22,9 @@ const {
 
 //Getting Routes...
 router.get('/', getAllProviders);
+router.get('/education', getEducationProviders)
 router.get('/:id', getProviderInfo);
 router.get('/services/:id', getProviderServices)
-router.get('/:id', getSingleProvider);
 router.patch('/:id', updateProvider);
 router.delete('/:id', deleteProvider);
 
