@@ -4,14 +4,11 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
-// import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
+
 import hairPic from "../../photo_assets/hair.jpg";
 import nailsPic from "../../photo_assets/nails.jpg";
 import barberPic from "../../photo_assets/barber.jpeg";
 import makeupPic from '../../img/makeup.png'
-
-// import { Dropdown } from "./Dropdown.js";
-
 
 import { ComboBox } from "./ComboBox.js";
 import { getProvidersBySkill } from '../../Redux_Actions/comboBoxAction';
@@ -19,7 +16,6 @@ import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
 
 import "../../Css/provider.css";
 
-import $ from 'jquery';
 
 const pics = {
   1: hairPic,
@@ -27,6 +23,7 @@ const pics = {
   3: barberPic,
   4: makeupPic,
 }
+
 
 
 class SingleService extends React.Component {
@@ -42,10 +39,8 @@ class SingleService extends React.Component {
   }
 
   componentDidMount() {
-
     this.props.getProvidersByService(this.state.serviceId);
     this.getSkillsForService(this.state.serviceId);
-
   };
 
   componentDidUpdate(prevProps, prevState){
@@ -125,9 +120,6 @@ class SingleService extends React.Component {
       <div className='ctnr_prov'>
         <div className={index % 2 === 1 ? 'ctnr_box_right' : "ctnr_box"} >
           <div className={index % 2 === 1 ? "img_intro_right" : "img_intro"} style={{borderTop: 'solid #ecb99c'}}>
-            {/*
-              {this.renderImage()}
-              */}
             <img
               alt="intro"
               src={pics[this.state.serviceId]}
