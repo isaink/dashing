@@ -6,6 +6,10 @@ import { connect } from "react-redux";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 // import SkillsByServiceComboBox from "./SkillsByServiceComboBox";
 import hairPic from "../../photo_assets/hair.jpg";
+import nailsPic from "../../photo_assets/nails.jpg";
+import barberPic from "../../photo_assets/barber.jpeg";
+import makeupPic from '../../img/makeup.png'
+
 // import { Dropdown } from "./Dropdown.js";
 
 
@@ -23,6 +27,7 @@ class SingleService extends React.Component {
       skills: [],
       locations: [],
       serviceId: this.props.service.id,
+      img_intro: hairPic,
     }
   }
 
@@ -30,11 +35,13 @@ class SingleService extends React.Component {
 
     this.props.getProvidersByService(this.state.serviceId);
     this.getSkillsForService(this.state.serviceId);
+
+    // this.renderImage();
   };
 
   componentDidUpdate(prevProps, prevState){
     if (!prevProps.hairProviders && this.props.hairProviders) {
-      this.getSkillsForService();
+      this.getSkillsForService(this.state.serviceId);
     }
   }
 
@@ -98,6 +105,22 @@ class SingleService extends React.Component {
     }
   };
 
+  renderImage = () => {
+    if (this.state.serviceId === 2 ) {
+      this.setState ({
+        img_intro: nailsPic
+      })
+    }
+
+    return (
+      <img
+        alt="intro"
+        src={this.state.img_intro}
+        width="600px"
+        />
+    )
+  }
+
 
   render() {
     return (
@@ -105,11 +128,14 @@ class SingleService extends React.Component {
       <div className='ctnr_prov'>
         <div className="ctnr_box">
           <div className="img_intro" style={{borderTop: 'solid #ecb99c'}}>
+            {/*
+              {this.renderImage()}
             <img
               alt="intro"
               src={hairPic}
               width="600px"
               />
+              */}
           </div>
 
           <div className="inner_ctnr_providers">
@@ -138,7 +164,7 @@ class SingleService extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    hairProviders: state.providersByService[1],
+    hairProviders: state.providersByService[ownProps.service.id],
   };
 };
 

@@ -72,14 +72,10 @@ class Home extends Component {
 
   serviceList = () => {
     return this.state.services.map(service => {
-
-    console.log(service.name, service.id);
+    // console.log(service.name, service.id);
     // debugger
       return (
         <dd key={service.id}>
-        
-
-
           <Element name={service.name} className='Element'>
             <SingleService service={service}/>
           </Element>
@@ -95,8 +91,30 @@ class Home extends Component {
     console.log(this.serviceList);
 
     return (
-      <div>
-        {this.serviceList()}
+      <div className="HomepageDiv">
+        <dl>
+          <dd>
+            <div className="bg_welcome">
+              <div className="homeLogo">
+                <img src={homeLogo} alt="" width="700px"  />
+              </div>
+            </div>
+          </dd>
+
+          <dd>
+            <Element name="home" className="Element">
+              <Welcome />
+            </Element>
+          </dd>
+
+          <dt>
+            <div className='NavbarDiv'>
+            </div>
+          </dt>
+
+          {this.serviceList()}
+
+        </dl>
       </div>
 
     );
