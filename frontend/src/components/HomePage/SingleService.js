@@ -39,7 +39,6 @@ class SingleService extends React.Component {
     this.getSkillsForService(this.state.serviceId);
 
     this.renderImage();
-    this.toggleImage();
   };
 
   componentDidUpdate(prevProps, prevState){
@@ -168,43 +167,6 @@ class SingleService extends React.Component {
 
   }
 
-  toggleImage = () => {
-    // let id1 = $('#1')
-    // let id2 = $('#2')
-
-    let idNumber = this.state.serviceId
-    let id = $(`#` + idNumber)
-
-    let ctnr_box = $('.ctnr_box');
-    let img_intro = $('.img_intro');
-    let inner_ctnr_providers = $('.inner_ctnr_providers')
-
-    if (idNumber % 2 === 1) {
-      ctnr_box
-        .removeClass('ctnr_box')
-        .addClass('ctnr_box_right');
-      img_intro
-        .removeClass('img_intro')
-        .addClass('img_intro_right')
-      inner_ctnr_providers
-        .removeClass('inner_ctnr_providers')
-        .addClass('inner_ctnr_providers_right')
-    }
-
-
-    // else
-    // if ( idNumber % 2 === 1 ) {
-    //   ctnr_box
-    //     .removeClass('ctnr_box_right')
-    //     .addClass('ctnr_box');
-    //   img_intro
-    //     .removeClass('img_intro_right')
-    //     .addClass('img_intro')
-    //   inner_ctnr_providers
-    //     .removeClass('inner_ctnr_providers_right')
-    //     .addClass('inner_ctnr_providers')
-    // }
-  }
 
 
   render() {
