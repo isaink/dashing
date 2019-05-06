@@ -5,7 +5,7 @@
 
 .ctnr_box {
   display: grid;
-  grid-template-columns: 30% 80%;
+  grid-template-columns: 30% 70%;
   height: 100%;
   overflow-x: scroll;
 }

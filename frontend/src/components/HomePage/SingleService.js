@@ -19,6 +19,7 @@ import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
 
 import "../../Css/provider.css";
 
+import $ from 'jquery';
 
 class SingleService extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class SingleService extends React.Component {
       skills: [],
       locations: [],
       serviceId: this.props.service.id,
-      img_intro: hairPic,
+      img_intro: {hairPic},
     }
   }
 
@@ -36,7 +37,8 @@ class SingleService extends React.Component {
     this.props.getProvidersByService(this.state.serviceId);
     this.getSkillsForService(this.state.serviceId);
 
-    // this.renderImage();
+    this.renderImage();
+    this.toggleImage();
   };
 
   componentDidUpdate(prevProps, prevState){
@@ -108,7 +110,20 @@ class SingleService extends React.Component {
   renderImage = () => {
     if (this.state.serviceId === 2 ) {
       this.setState ({
-        img_intro: nailsPic
+        img_intro: {nailsPic}
+      })
+    }
+    else if (this.state.serviceId === 3) {
+      this.setState ({
+        img_intro: {barberPic}
+      })
+    } else if (this.state.serviceId === 4) {
+      this.setState({
+        img_intro: {makeupPic}
+      })
+    } else if (this.state.serviceId === 1) {
+      this.setState ({
+        img_intro: {hairPic}
       })
     }
 
@@ -121,6 +136,19 @@ class SingleService extends React.Component {
     )
   }
 
+  toggleImage = () => {
+    let ctnr_prov = $('.ctnr_prov');
+    if (this.state.serviceId % 2) {
+      ctnr_prov
+        .removeClass('img_intro')
+        .addClass('img_intro_right');
+    } else {
+      ctnr_prov
+        .removeClass('img_intro_right')
+        .addClass('img_intro');
+    }
+  }
+
 
   render() {
     return (
@@ -128,8 +156,8 @@ class SingleService extends React.Component {
       <div className='ctnr_prov'>
         <div className="ctnr_box">
           <div className="img_intro" style={{borderTop: 'solid #ecb99c'}}>
+            {() => this.renderImage()}
             {/*
-              {this.renderImage()}
             <img
               alt="intro"
               src={hairPic}
