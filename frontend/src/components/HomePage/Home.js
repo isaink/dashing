@@ -6,7 +6,6 @@ import {
   scroller
 } from "react-scroll";
 
-// import ProviderProfile from '../ProfilePage/providerProfile';
 import { Welcome } from "./Welcome";
 import Hair from "./Hair";
 import Nails from "./Nails";
@@ -14,14 +13,22 @@ import Barber from "./Barber";
 import Makeup from "./Makeup";
 import EducationProv_Container  from "../../Redux_Containers/EducationProv_Container";
 import { AboutUs } from "./AboutUs";
-// import  NavbarForComponents  from '../NavBars/NavbarForComponents'
 
 import NavbarHome from "../NavBars/Navbar";
 import homeLogo from "../../photo_assets/dashing_logo_invert.png";
 
+import axios from 'axios';
+import SingleService from './SingleService';
+
 import "./../../Css/Home.css";
 
+
 class Home extends Component {
+  state = {
+    services: [],
+    serviceName: '',
+  }
+
   componentDidMount() {
     Events.scrollEvent.register("begin", function() {
       console.log("begin", arguments);
@@ -29,6 +36,9 @@ class Home extends Component {
     Events.scrollEvent.register("end", function() {
       console.log("end", arguments);
     });
+
+    this.getServices()
+
   }
 
   scrollToTop() {
@@ -43,10 +53,56 @@ class Home extends Component {
     });
   }
 
+  getServices = () => {
+    axios.get(`/services`)
+    .then(res => {
+      console.log(res.data.body);
+      // debugger
+      this.setState({
+        services: res.data.body
+      })
+    })
+    .catch(err => {
+      console.log('GET SERVICE ERR', err);
+    })
+  }
+
+
+  serviceList = () => {
+    return this.state.services.map((service, index) => {
+    // console.log(service.name, service.id);
+    // debugger
+
+      return (
+        <dd key={service.id}>
+          <Element name={service.name.toLowerCase()} className='Element'>
+            <SingleService service={service} index={index}/>
+          </Element>
+        </dd>
+      )
+    })
+  }
+
+  // serviceInElement = () => {
+  //   return this.state.services.map(service => {
+  //     // this.setState({
+  //     //   serviceName: service.name
+  //     // })
+  //     return (
+  //       <SingleService service={service} />
+  //     )
+  //   })
+  // }
+
   render() {
+    console.log(this.state.services);
+    console.log(this.getServices);
+    console.log(this.serviceList);
+
     return (
       <div className="HomepageDiv">
         <dl>
+
           <dd>
             <div className="bg_welcome">
               <div className="homeLogo">
@@ -63,50 +119,84 @@ class Home extends Component {
 
           <dt>
             <div className='NavbarDiv'>
-              {/* <NavbarHome className='NavbarComponentTag'/> */}
             </div>
           </dt>
 
-          <dd>
-            <Element name="hair" className="Element">
-              <Hair />
-            </Element>
-          </dd>
 
-          <dd>
-            <Element name="nails" className="Element">
-              <Nails />
-            </Element>
-          </dd>
+          {this.serviceList()}
 
-          <dd>
-            <Element name="barber" className="Element">
-              <Barber />
-            </Element>
-          </dd>
-
-          <dd>
-            <Element name="makeup" className="Element">
-              <Makeup />
-            </Element>
-          </dd>
-
-          {/* <dd>
-            <Element name="education" className="Element">
-              <EducationProv_Container />{" "}
-            </Element>
-          </dd>
-
-          <dd>
-            <Element name="aboutus" className="Element">
-              <AboutUs />{" "}
-            </Element>
-          </dd> */}
         </dl>
       </div>
+
     );
   }
 };
 
 export default Home;
+
+
 //  {/* <button onClick={this.scrollToTop}>To the top!</button> */}
+
+
+
+
+// <dd>
+//   <Element name="nails" className='Element'>
+//   {this.serviceInElement()}
+//   </Element>
+//   </dd>
+
+
+// {/*
+//
+//   <div className="HomepageDiv">
+//   <dl>
+//   <dd>
+//   <div className="bg_welcome">
+//   <div className="homeLogo">
+//   <img src={homeLogo} alt="" width="700px"  />
+//   </div>
+//   </div>
+//   </dd>
+//
+//   <dd>
+//   <Element name="home" className="Element">
+//   <Welcome />
+//   </Element>
+//   </dd>
+//
+//   <dt>
+//   <div className='NavbarDiv'>
+//   </div>
+//   </dt>
+//
+//
+//
+//   <dd>
+//   <Element name="hair" className='Element'>
+//   <Hair />
+//   </Element>
+//   </dd>
+//
+//   <dd>
+//   <Element name="nails" className='Element'>
+//   <Nails />
+//   </Element>
+//   </dd>
+//
+//   <dd>
+//   <Element name="barber" className="Element">
+//   <Barber />
+//   </Element>
+//   </dd>
+//
+//   <dd>
+//   <Element name="makeup" className="Element">
+//   <Makeup />
+//   </Element>
+// </dd>
+//
+//
+// </dl>
+// </div>
+// */}

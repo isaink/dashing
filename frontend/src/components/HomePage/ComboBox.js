@@ -31,10 +31,13 @@ export class ComboBox extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
+
     let location = this.state.location
     let skill_id = this.state.skill_id
+    let service_id = this.props.serviceId
 
-    this.props.getProvidersByService(skill_id, location)
+    this.props.getProvidersByService(service_id, skill_id, location)
+
   };
 
 
@@ -44,6 +47,7 @@ export class ComboBox extends Component {
     ))
 
     return (
+
         <form onSubmit={this.handleSubmit} className='ctnr_options'>
 
             <select
