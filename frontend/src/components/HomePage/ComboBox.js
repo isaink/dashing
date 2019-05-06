@@ -33,8 +33,9 @@ export class ComboBox extends Component {
 
     let location = this.state.location
     let skill_id = this.state.skill_id
+    let service_id = this.props.serviceId
 
-    this.props.getProvidersByService(skill_id, location)
+    this.props.getProvidersByService(service_id, skill_id, location)
 
   };
 

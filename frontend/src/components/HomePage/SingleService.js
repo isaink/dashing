@@ -69,28 +69,28 @@ class SingleService extends React.Component {
           providerArr.push(provider);
         }
       })
-      return providerArr.map(hairP => {
+      return providerArr.map(serviceP => {
         return (
-          <div key={hairP.provider_id}>
-          <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
+          <div key={serviceP.provider_id}>
+          <Link to={`/singleProviderProfile/${serviceP.provider_id}`}>
             <div className="box">
               <div className="content">
                 <img
                     alt="avatar"
                     className='hvrbox-layer_bottom'
-                    src={hairP.avatar}
+                    src={serviceP.avatar}
                     style={{ height: "140px",  transform: 'translateX(20px)'}}
                   />
 
                 <div className='hvrbox-layer_top'>
                   <div className='hvrbox-text'>
-                    <span id="providername" className='ih-fade-down ih-delay-sm'>{hairP.provider}</span>
+                    <span id="providername" className='ih-fade-down ih-delay-sm'>{serviceP.provider}</span>
                     <br />
                     <div style={{ zIndex: '4', textAlign: 'center'}}>
-                    {hairP.borough} <br />
-                    {hairP.email} <br />
-                    {hairP.phone_number} <br />
-                    {hairP.website_link}
+                    {serviceP.borough} <br />
+                  {serviceP.email} <br />
+                {serviceP.phone_number} <br />
+              {serviceP.website_link}
                     </div>
                   </div>
                 </div>
