@@ -69,14 +69,14 @@ class Home extends Component {
 
 
   serviceList = () => {
-    return this.state.services.map(service => {
+    return this.state.services.map((service, index) => {
     // console.log(service.name, service.id);
     // debugger
 
       return (
         <dd key={service.id}>
           <Element name={service.name.toLowerCase()} className='Element'>
-            <SingleService service={service}/>
+            <SingleService service={service} index={index}/>
           </Element>
         </dd>
       )
