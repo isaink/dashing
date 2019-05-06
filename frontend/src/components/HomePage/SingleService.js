@@ -28,7 +28,7 @@ class SingleService extends React.Component {
       skills: [],
       locations: [],
       serviceId: this.props.service.id,
-      img_intro: {hairPic},
+      img_intro: {hairPic} ,
     }
   }
 
@@ -109,31 +109,62 @@ class SingleService extends React.Component {
 
   renderImage = () => {
     if (this.state.serviceId === 2 ) {
-      this.setState ({
-        img_intro: {nailsPic}
-      })
+      // this.setState ({
+      //   img_intro: {nailsPic}
+      // })
+      return (
+        <img
+          alt="intro"
+          src={nailsPic}
+          width="600px"
+          />
+      )
     }
     else if (this.state.serviceId === 3) {
-      this.setState ({
-        img_intro: {barberPic}
-      })
+      // this.setState ({
+      //   img_intro: {barberPic}
+      // })
+      return (
+        <img
+          alt="intro"
+          src={barberPic}
+          width="600px"
+          />
+      )
     } else if (this.state.serviceId === 4) {
-      this.setState({
-        img_intro: {makeupPic}
-      })
+      // this.setState({
+      //   img_intro: {makeupPic}
+      // })
+      return (
+        <img
+          alt="intro"
+          src={makeupPic}
+          width="600px"
+          />
+      )
     } else if (this.state.serviceId === 1) {
-      this.setState ({
-        img_intro: {hairPic}
-      })
+      // this.setState ({
+      //   img_intro: {hairPic}
+      // })
+      return (
+        <img
+          alt="intro"
+          src={hairPic}
+          width="600px"
+          />
+      )
     }
 
-    return (
-      <img
-        alt="intro"
-        src={this.state.img_intro}
-        width="600px"
-        />
-    )
+
+    // return (
+    //   <img
+    //     alt="intro"
+    //     src={this.state.img_intro}
+    //     width="600px"
+    //     />
+    // )
+
+
   }
 
   toggleImage = () => {
@@ -156,7 +187,7 @@ class SingleService extends React.Component {
       <div className='ctnr_prov'>
         <div className="ctnr_box">
           <div className="img_intro" style={{borderTop: 'solid #ecb99c'}}>
-            {() => this.renderImage()}
+            {this.renderImage()}
             {/*
             <img
               alt="intro"
