@@ -74,8 +74,8 @@ const getSingleUser = (req, res, next) => {
 
 // http://localhost:3000/users/1
 const deleteSingleUser = ( req, res, next ) => {
-  let user_id = parseInt(req.params.id);
-  db.result('DELETE FROM users WHERE users.id =$1', [user_id])
+  let userId = parseInt(req.params.user_id);
+  db.result('DELETE FROM users WHERE users.id =$1', [userId])
   .then(result => {
     res.status(200).json({
       status: 'success',
