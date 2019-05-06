@@ -1,37 +1,28 @@
-const { db } = require('../index.js');
+const  db  = require('../connector.js');
 
-//=======================
 const authHelpers = require("../../auth/helpers");
 
-function createUser(req, res, next) {
+
+
+function createUser(req, res, next) {   //username, password, type
   const hash = authHelpers.createHash(req.body.password);
-  let queryString = 'INSERT INTO users';
-
-  if ( !(req.body.karma_points) ) {
-    queryString += "(username, password_digest) VALUES (${username}, ${password_digest}) RETURNING * "
-  } else {
-    queryString += "(username, password_digest) VALUES (${username}, ${password_digest}) RETURNING * "
-  }
-
-  db.one(
-    queryString,
-    // "INSERT INTO users (username, password_digest) VALUES (${username}, ${password})",
-    { username: req.body.username, password_digest: hash }
-  )
-    .then((data) => {
+  db.one('INSERT INTO users(username, password_digest, type) VALUES (${username}, ${password_digest}, ${type}) RETURNING * ', {
+    username: req.body.username,
+    password_digest: hash,
+    type: req.body.type
+   })
+  .then((data) => {
       res.status(200).json({
         message: "Registration successful.",
         body: data
       });
-    })
-    .catch(err => {
-       console.log(err, 'Log of err');
-      res.status(500).json({
-        message: "User already exists."
-      });
-      //  console.log(err);
-      next();
+  })
+  .catch(err => {
+      console.log(err, 'Log of err');
+    res.status(500).json({
+      message: "User already exists."
     });
+});
 }
 
 function logoutUser(req, res, next) {
@@ -39,15 +30,16 @@ function logoutUser(req, res, next) {
   res.status(200).send("log out success");
 }
 
-function loginUser(req, res) {
+function loginUser(req, res) {    // username, password POST
   res.json(req.user);
 }
 
 function isLoggedIn(req, res) {
+  console.log('IS LOGGED IN USER', req.user)
   if (req.user) {
-    res.json({ username: req.user });
+    res.json({ user: req.user });
   } else {
-    res.json({ username: null });
+    res.json({ user: null });
   }
 }
 
