@@ -1,0 +1,25 @@
+{
+  "name": "dashing",
+  "version": "1.0.0",
+  "description": "making ppl dashing",
+  "main": "index.js",
+  "dependencies": {
+    "react-router-dom": "^5.0.0",
+    "react-widgets": "^4.4.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "cd backend && npm install && cd ../frontend && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaink/dashing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaink/dashing/issues"
+  },
+  "homepage": "https://github.com/isaink/dashing#readme"
+}

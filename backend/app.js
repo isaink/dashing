@@ -24,6 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../frontend/build")))
+
 
 app.use('/', indexRouter);
 app.use('/providers', providersRouter);
@@ -33,7 +35,9 @@ app.use('/portfolio', portfolioRouter);
 app.use('/skillsProvider', skillsProviderRouter);
 app.use('/skills', skillsProvider);
 
-
+app.use("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"))
+})
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
