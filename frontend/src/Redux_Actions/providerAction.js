@@ -43,12 +43,12 @@ export const receiveProviderPortfolio = (portfolio, provider_id) => {
   }
 };
 
-export const recieveSkillsByPro = 
+export const recieveSkillsByPro =
 (skills, provider_id) => {
   return{
     type: RECEIVE_SKILLSBYPRO_SUCCESS,
     payload: {
-      provider_id: provider_id, 
+      provider_id: provider_id,
       skills: skills
     }
   }
@@ -76,7 +76,7 @@ export const fetchErrors = err => {
 // PROVIDER BY SERVICES --> AXIOS // This is an action function that makes async calls.
 export const fetchProvidersByService = (service_id, borough="") => dispatch => {
   axios
-    .get(`/srvProviders/${service_id}/${borough}`)
+    .get(`/api/srvProviders/${service_id}/${borough}`)
     .then(res => {
       let providers = res.data.data;
       return dispatch(receivedProvidersSuccess(providers, service_id)); // what is the key inside the queries...?
@@ -113,7 +113,7 @@ export const getProviderInfo = provider_id => dispatch => {
     .then(res => {
       axios.get(`skillsprovider/provider/${provider_id}`)
       .then(res => {
-       
+
         let skills = res.data.data;
         let action = recieveSkillsByPro(skills, provider_id)
         return dispatch(action)
