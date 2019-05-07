@@ -28,12 +28,12 @@ app.use(express.static(path.join(__dirname, "../frontend/build")))
 
 
 app.use('/', indexRouter);
-app.use('/providers', providersRouter);
-app.use('/srvProviders', srvProvidersRouter);
-app.use('/services', servicesRouter);
-app.use('/portfolio', portfolioRouter);
-app.use('/skillsProvider', skillsProviderRouter);
-app.use('/skills', skillsProvider);
+app.use('/api/providers', providersRouter);
+app.use('/api/srvProviders', srvProvidersRouter);
+app.use('/api/services', servicesRouter);
+app.use('/api/portfolio', portfolioRouter);
+app.use('/api/skillsProvider', skillsProviderRouter);
+app.use('/api/skills', skillsProvider);
 
 app.use("*", (req, res, next) => {
   res.sendFile(path.join(__dirname, "../frontend/build/index.html"))
