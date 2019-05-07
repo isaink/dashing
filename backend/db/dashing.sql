@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS dashing;
-CREATE DATABASE dashing;
-
-\c dashing
+-- DROP DATABASE IF EXISTS dashing;
+-- CREATE DATABASE dashing;
+--
+-- \c dashing
 
 CREATE TABLE services(
   id SERIAL PRIMARY KEY,
@@ -107,7 +107,7 @@ VALUES('Nielene Keys', 'nkeys@gmail.com', 'nkeys', 'https://i0.wp.com/ranktribe.
 ('Hadda Babyitsaboy', 'hbmua@gmail.com', 'muatoday', 'https://amp.businessinsider.com/images/5a8d77a5391d941d008b461a-960-720.jpg', 'Queens', '646-769-2000', 'www.lousnails.com', 'Wedding glam makeup and all the works!', 4),
 ('Nikki Vee', 'nikki@gmail.com', 'nikki', 'https://data.whicdn.com/images/153050864/superthumb.jpg?t=1419377844', 'Bronx', '646-769-2000', 'www.nikkiveenails.com', 'Makeup and all the works!', 4),
 ('Dianna Rossman', 'drnails@gmail.com', 'drnails', 'https://i.pinimg.com/736x/ce/71/ca/ce71ca421ed47b5d9e22b9b36a7486d7--pretty-people-beautiful-people.jpg', 'Manhattan', '646-769-2000', 'www.drnails.com', 'Nails and all the works!', 2), ('Charlie Adams', 'cadadams@gmail.com', 'random', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0EZBXiftaUy0oAOuGqdke5Gj5EkWSSi66syjO7OdzIEbvVryT', 'Brooklyn', null, 'cadams.com', null, 3),
-('Danielle Cohen', 'dCohen@gmail.com', 'idaniel', 'https://nordichairawards.com/wp-content/uploads/2018/10/Men-Categories_Nordic_Hair_Awards4.jpg', 'Bronx', 6719232301, 'danielcohen.com', null, 3),  
+('Danielle Cohen', 'dCohen@gmail.com', 'idaniel', 'https://nordichairawards.com/wp-content/uploads/2018/10/Men-Categories_Nordic_Hair_Awards4.jpg', 'Bronx', 6719232301, 'danielcohen.com', null, 3),
 ('Amanda Richards', 'idoitall@yahoo.com', 'somethingorother', 'https://cache.desktopnexus.com/thumbseg/274/274492-bigthumbnail.jpg', 'Staten Island', 2129078234, 'amandastyles.com', null, 3), ('Sam Linda', 'samlinds@ymail.com', 'youcantguess','http://www.starstyle.ph/wp-content/uploads/2018/01/kimcamjones-featured-image.jpg', 'Manhattan', 5328097654, 'twofirstnames.com', null, 4), ('Felix Hernandez', 'fhernandez@yahoo.com', 'mynameisfe', 'https://ikemitu.net/wp-content/uploads/2018/10/handsome-hairstyle-images-awesome-latest-haircuts-for-men-handsome-hair-fashion-men-beard-0d-of-handsome-hairstyle-images.jpg', 'Manhattan', 6178906752, 'killerstyles.com', null, 3), ('Arielle Lopez', 'aridari@gmail.com', 'stillkiller', 'http://www.gbox.co.nz/images/category_1/Animal%20Killer%20Women%20GreyTshirt%20Wellcoda%20635_3.jpg', 'Bronx', 8907654678, 'ariellecuts.com', null, 1), ('Thomas Avery','thomasdoesthething@ymail.com', 'ABSTRACT','https://i.redd.it/btbqnq05yq111.jpg', 'Queens', 7183467892, 'nailsandthings', 'I have dozens of happy clients! Please join the family', 2), ('Diana Williams', 'dianawill@yahoo.com', '12guess', 'https://www.nkdreamworld.com/wp-content/uploads/2018/08/34868647_1833367416971392_6645010805794275328_n.jpg', 'Queens', 7236789203, 'dianahooksitup.com', 'Making others look good makes me feel good and is what I am all about.', 2), ('Robert Baratheon', 'robhob@yahoo.com', 'youdontknow', 'https://qph.fs.quoracdn.net/main-qimg-4f59f93609b8bae16e30029e2a2f2482.webp', 'Manhattan', 9876478902, 'buzzandcut.com', 'Once you experience my level of customer care you will keep coming back!', 4), ('Elizabeth Long', 'elliebelly@gmail.com', 'farfromhere', 'https://images.pexels.com/photos/1892511/pexels-photo-1892511.jpeg?cs=srgb&dl=attractive-beautiful-beauty-1892511.jpg&fm=jpg', 'Manhattan', 7890237643, 'EllieDyes.com', 'After being my client you''''ll never want anyone else!', 2), ('Cindy Lopez', 'cincity@ymail.com', 'cindyl', 'https://images.express.com/is/image/expressfashion/0006_00279674_0098?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon', 'Manhattan', 7834509876, 'cinfulstyle.com', 'Making people look their best is my passion!', 2);
 
 
@@ -245,7 +245,7 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 
 
 INSERT INTO portfolio(provider_id, img, body, skill_id)
-VALUES 
+VALUES
   (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),
   (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg', null, null),
   (2, 'http://www.cuded.com/wp-content/uploads/2017/03/chrome-nail-42.jpg', null, null),
