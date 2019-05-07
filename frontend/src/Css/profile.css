@@ -86,6 +86,19 @@ a.backLink:hover {
 }
 
 
+.switchButtonsDiv {
+  display: flex;
+  border: 2px solid white;
+  background-color: white;
+}
+
+.switchButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+}
+
 /*  */
 .leftCenterAndRightSidesDiv {
   /* display: flex; */
@@ -108,12 +121,9 @@ a.backLink:hover {
 .LeftSideDiv {
   display: grid;
   grid-column: 1;
-
   grid-template-columns: 50% 50%;
-
   height: 500px;
   min-width: 530px;
-
 }
 
 /*  */
