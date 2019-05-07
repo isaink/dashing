@@ -1,86 +1,69 @@
 body {
   background-color: black;
 }
-
 /*  */
 .big_Div{
   width: fit-content;
   margin: 0px;
   padding: 0px;
 }
-
 /*  */
-
 .background_img_Div {
   width: fit-content;
 }
-
 img.intro_pic {
   display: flex;
   height: 300px;
   width: 100%;
-
   margin-right: 0px;
-
   object-fit: cover;
   justify-content: center;
 }
-
 /*  */
 .allBelowBkGndImage {
   width: 100%;
   object-fit: cover;
   justify-content: center;
 }
-
-
 /*  */
 .switchButtonsDiv {
 }
-
 .switchButtons {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 10px;
-
   /* background-color: white; */
 }
-
 .displayBelowButtonDiv {
   display: flex;
   justify-content: center;
   margin-top: 10px;
   /* width: 50%; */
 }
-
 /*  */
 /* .leftCenterAndRightSidesDiv {
   display: grid;
   grid-template-columns: 45% 20% 35%;
   padding: 20px;
 } */
-
 /*  */
 .LeftSideDiv {
   display: grid;
   /* grid-column: 1; */
   grid-template-columns: 50% 50%;
   height: 350px;
-  /* width: 50%; */
+  width: 50%;
 }
-
 /*  */
 .avatarProfileBorder {
   display: grid;
   grid-column: 1;
   background-color: #404040;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .avatarProfileImage {
   border-radius: 10px;
   border: solid 1px white;
@@ -89,18 +72,15 @@ img.intro_pic {
   height: 300px;
   object-fit: cover;
 }
-
 .prov_name {
   margin-top: 20px;
   color: white;
   font-size: 40px;
   text-align: left;
 }
-
 .contactLocationSocialLinkDiv {
   display: grid;
   grid-column: 2;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,7 +119,6 @@ img.intro_pic {
 }
 .emailDiv {
   margin-bottom: 20px;
-
 }
 .social_link {
   display: flex;
@@ -149,7 +128,6 @@ img.intro_pic {
   text-align: left;
 }
 .social_link p {
-
 }
 .social_link h6 {
   margin-left: 10px;
@@ -159,19 +137,14 @@ a.socialLink_a_tag  {
   text-decoration: none;
   color: pink;
 }
-
-
 /*  */
 .locDiv {
-
 }
-
 .prov_boro {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 20px;
-
   color: white;
 }
 .prov_boro img{
@@ -180,23 +153,16 @@ a.socialLink_a_tag  {
 .prov_boro h5{
   margin-left: 10px;
 }
-
-
 /*  */
 .centerDiv {
   display: grid;
   grid-column: 2;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-
 }
-
-
 /*  */
-
 .servicesAndSkills {
   display: flex;
   flex-direction: row;
@@ -205,14 +171,12 @@ a.socialLink_a_tag  {
   color: white;
   width: 150%;
   margin: 0px 20px 0px 20px;
-
   /* background-color: red; */
 }
 .indivServiceNameAndSkillList {
   display: flex;
   flex-direction: column;
   /* background-color: yellow; */
-
 }
 .srv_nameDiv {
   height: 50px;
@@ -223,37 +187,27 @@ a.socialLink_a_tag  {
   font-family: "Mrs Saint Delafield", cursive;
   color: white;
 }
-
-
-
-
 .srv_nameDiv .skillAndBulletsDiv {
   color: white;
   margin-bottom: 20px;
-
   border: 2px solid white;
 }
-
 .skillAndBulletsDiv {
   display: flex;
   flex-direction: column;
   text-align: left;
   padding-top: 15px;
-
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
   color: #A0A0A0;
   font-weight: lighter;
 }
-
 .skillBullets {
   width: 5px;
 }
 .skill_item {
   margin-bottom: 7px;
 }
-
-
 /*  */
 .rightSideDivDIV {
   display: grid;
@@ -265,23 +219,18 @@ a.socialLink_a_tag  {
   align-items: center;
   justify-content: center;
   background-color: #202020;
-
   height: 250px;
   padding: 20px 20px 20px 20px;
   width: fit-content;
 }
-
 /*  */
 .scrollInstructionsDiv {
   margin-top: 20px;
   color: #A0A0A0;
-
   font-family: "Josefin Sans", sans-serif;
   font-size: 22px;
   font-weight: lighter;
 }
-
-
 /*  */
 .ctnr_portfolio {
   display: flex;
@@ -293,22 +242,12 @@ a.socialLink_a_tag  {
   justify-content: center;
   width: 400px;
 }
-
 .portfolio_img {
   border-radius: 5px;
   margin-left: 5px;
   width: 170px;
   object-fit: cover;
 }
-
-
-
-
-
-
-
-
-
 /*  How to do a transparent background image  */
 .testDiv {
   background-image: url('./../img/man_hair.jpg');
@@ -317,7 +256,6 @@ a.socialLink_a_tag  {
 h1.testTag {
   background-color: rgba(255,255,255, 0.3);
   color: black;
-
   font-size: 30px;
   height: 100px;
 }
