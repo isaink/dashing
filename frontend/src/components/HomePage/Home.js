@@ -96,7 +96,10 @@ class Home extends Component {
               <EducationProv_Container />{" "}
             </Element>
           </dd>
+<<<<<<< HEAD
+=======
 
+>>>>>>> fbf98b019ce805747edae37e6a897cac50b211c7
           <dd>
             <Element name="aboutus" className="Element">
               <AboutUs />{" "}

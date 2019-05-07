@@ -3,7 +3,7 @@ body {
 }
 
 /*  */
-.big_Div{
+.big_Div {
   width: fit-content;
   /* background-color: green; */
   margin: 0px;
@@ -27,7 +27,6 @@ img.intro_pic {
 
   object-fit: cover;
   justify-content: center;
-
 }
 
 /*  */
@@ -40,7 +39,6 @@ img.intro_pic {
   object-fit: cover;
   justify-content: center;
 }
-
 
 /*  */
 .backLinkDiv {
@@ -74,7 +72,7 @@ a.backLink:hover {
   width: 80px;
   height: 80px;
 }
-.goBackTextTag{
+.goBackTextTag {
   margin-left: 10px;
   font-size: 20px;
   font-weight: bolder;
@@ -84,7 +82,6 @@ a.backLink:hover {
 .goBackTextTag h4 {
   width: auto;
 }
-
 
 /*  */
 .leftCenterAndRightSidesDiv {
@@ -101,7 +98,6 @@ a.backLink:hover {
   min-width: 1280px;
   padding: 20px;
   /* background-color: yellow; */
-
 }
 
 /*  */
@@ -113,12 +109,10 @@ a.backLink:hover {
 
   height: 500px;
   min-width: 530px;
-
 }
 
 /*  */
 /* .avatarProfileDiv {
-
 } */
 .avatarProfileBorder {
   display: grid;
@@ -131,7 +125,6 @@ a.backLink:hover {
   /* min-width: 260px; */
   /* border-top-left-radius: 20px; */
   /* border-bottom-left-radius: 20px; */
-
 }
 
 .avatarProfileImage {
@@ -160,7 +153,7 @@ a.backLink:hover {
   /* width: 100%; */
 
   /* text-decoration: overline; */
-/*
+  /*
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate; */
@@ -193,7 +186,7 @@ a.backLink:hover {
   flex-direction: column;
   justify-content: space-between;
 }
-.contactLocationSocialLinkDiv p{
+.contactLocationSocialLinkDiv p {
   margin-bottom: 5px;
   font-style: italic;
   /* text-decoration: overline; */
@@ -209,7 +202,7 @@ a.backLink:hover {
 .phoneEmailAndSocialLinkDiv h6 {
   margin-left: 10px;
   font-weight: lighter;
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
 .phoneNumDiv {
   margin-top: 20px;
@@ -217,7 +210,6 @@ a.backLink:hover {
 }
 .emailDiv {
   margin-bottom: 20px;
-
 }
 .social_link {
   display: flex;
@@ -229,21 +221,18 @@ a.backLink:hover {
 }
 .social_link p {
   /* font-family: "Josefin Sans", sans-serif; */
-
 }
 .social_link h6 {
   margin-left: 10px;
   text-decoration: none;
 }
-a.socialLink_a_tag  {
+a.socialLink_a_tag {
   text-decoration: none;
   color: pink;
 }
 
-
 /*  */
 .locDiv {
-
 }
 
 /* .loc {
@@ -258,20 +247,18 @@ a.socialLink_a_tag  {
 
   color: white;
 }
-.prov_boro img{
+.prov_boro img {
   margin-left: -10px;
 }
-.prov_boro h5{
+.prov_boro h5 {
   margin-left: 10px;
 }
-
 
 /* .portfolioDiv {
   display: flex;
   border-width: 5px;
   border-color: green;
 } */
-
 
 /*  */
 .centerDiv {
@@ -284,10 +271,7 @@ a.socialLink_a_tag  {
   align-items: center;
   color: white;
   /* width: 200px; */
-
 }
-
-
 
 /*  */
 
@@ -318,9 +302,6 @@ a.socialLink_a_tag  {
   /* text-shadow: 2px 2px 4px #000000; */
 }
 
-
-
-
 .srv_nameDiv .skillAndBulletsDiv {
   /* background-color: orange; */
   /* flex-direction: column; */
@@ -338,7 +319,7 @@ a.socialLink_a_tag  {
 
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-weight: lighter;
   /* display: flex;
   flex-direction: column;
@@ -355,14 +336,12 @@ a.socialLink_a_tag  {
   margin-bottom: 7px;
 }
 
-
 /*  */
 .rightSideDivDIV {
   display: grid;
   grid-column: 3;
 
   /* justify-content: flex-end; */
-
 }
 .rightSideDiv {
   /* width: 40%; */
@@ -382,7 +361,7 @@ a.socialLink_a_tag  {
 /*  */
 .scrollInstructionsDiv {
   margin-top: 20px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   /* font-family: "Mrs Saint Delafield", cursive; */
   /* font-size: 50px; */
 
@@ -391,7 +370,6 @@ a.socialLink_a_tag  {
   font-weight: lighter;
   /* background-color: yellow; */
 }
-
 
 /*  */
 .ctnr_portfolio {
@@ -412,9 +390,6 @@ a.socialLink_a_tag  {
   object-fit: cover;
 }
 
-
-
-
 /* .ctnr_portfolio {
   position: absolute;
   grid-column: 3;
@@ -424,7 +399,6 @@ a.socialLink_a_tag  {
   top: 470px;
   right: 135px;
   width: 500px;
-
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
@@ -434,20 +408,13 @@ a.socialLink_a_tag  {
   grid-row: 1;
 } */
 
-
-
-
-
-
-
-
 /*  How to do a transparent background image  */
 .testDiv {
-  background-image: url('./../img/man_hair.jpg');
+  background-image: url("./../img/man_hair.jpg");
   height: 100px;
 }
 h1.testTag {
-  background-color: rgba(255,255,255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   color: black;
 
   font-size: 30px;
