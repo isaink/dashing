@@ -1,11 +1,10 @@
 import React from "react";
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter} from 'react-router-dom';
 import "./../../Css/profile.css";
 import pared from "./../../img/habitacion-pared-salmon.jpg";
 import loc from "./../../img/location.png";
 import bulletpoint from "./../../photo_assets/bulletpoint.png";
 import not_img from "./../../img/notFound.jpg";
-import backarrow from '../../img/curved_back_arrow.png';
 
 import NavbarProfile from "../NavBars/NavbarProfile";
 
@@ -33,7 +32,6 @@ class ProviderProfile extends React.Component {
       serviceClicked: false,
       portfolioClicked: false,
     })
-
   }
 
   toggleServices = () => {
@@ -42,8 +40,6 @@ class ProviderProfile extends React.Component {
       serviceClicked: true,
       portfolioClicked: false,
     })
-
-
   }
 
   togglePortfolio = () => {
@@ -52,8 +48,6 @@ class ProviderProfile extends React.Component {
       serviceClicked: false,
       portfolioClicked: true,
     })
-
-
   }
 
   displayProfile = () => {
@@ -142,19 +136,21 @@ class ProviderProfile extends React.Component {
                 );
               });
               return (
-                <>
+                <div className='indivServiceNameAndSkillList'>
                 <div className="srv_nameDiv">
                   <p className="srv_name">{service.servicesname}</p>
                 </div>
-                <div className="skillAndBulletsDiv">{skills}</div>
-                </>
+                <div className="skillAndBulletsDiv">
+                  {skills}
+                </div>
+              </div>
             );
           })}
         </div>
 
       </div>
-      )
-    }
+    )
+  }
   }
 
   displayPortfolio = () => {
@@ -225,9 +221,9 @@ class ProviderProfile extends React.Component {
             <div className='switchButtonsDiv'>
 
               <form className='switchButtons'>
-                <button type='button' onClick={this.toggleProfile}>Profile</button>
-                <button type='button' onClick={this.toggleServices}>Services</button>
-                <button type='button' onClick={this.togglePortfolio}>Portfolio</button>
+                <button type='button' onClick={this.toggleProfile}>My Profile</button>
+                <button type='button' onClick={this.toggleServices}>My Services</button>
+                <button type='button' onClick={this.togglePortfolio}>My Portfolio</button>
               </form>
 
               <div className= 'displayBelowButtonDiv'>
