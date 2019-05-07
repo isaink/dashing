@@ -18,34 +18,27 @@ select {
   padding: 16px;
   font-size: 10px;
   text-align: center;
-    background-image:
-      linear-gradient(45deg, transparent 50%, gray 50%),
-      linear-gradient(135deg, gray 50%, transparent 50%);
-    background-position:
-      calc(100% - 20px) calc(1em + 2px),
-      calc(100% - 15px) calc(1em + 2px),
-      calc(100% - 2.5em) 0.5em;
-    background-size:
-      5px 5px,
-      5px 5px,
-      1px 1.5em;
-    background-repeat: no-repeat;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
 }
 
 .selector option {
   background: white;
 }
 
-.ctnr_options{
+.ctnr_options {
   display: flex;
-
 }
-.ctnr_options_right{
+.ctnr_options_right {
   display: grid;
-  grid-template-columns:  40% 40% 20%
+  grid-template-columns: 40% 40% 20%;
 }
 
-.bttn_form{
+.bttn_form {
   height: 50px;
   margin-top: 9px;
 }

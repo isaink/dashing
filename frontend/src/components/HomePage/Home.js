@@ -6,7 +6,7 @@ import {
   scroller
 } from "react-scroll";
 
-// import { ProviderProfile } from '../ProfilePage/providerProfile';
+// import ProviderProfile from '../ProfilePage/providerProfile';
 import { Welcome } from "./Welcome";
 import Hair from "./Hair";
 import Nails from "./Nails";
@@ -96,6 +96,10 @@ class Home extends Component {
               <EducationProv_Container />{" "}
             </Element>
           </dd>
+<<<<<<< HEAD
+=======
+
+>>>>>>> fbf98b019ce805747edae37e6a897cac50b211c7
           <dd>
             <Element name="aboutus" className="Element">
               <AboutUs />{" "}

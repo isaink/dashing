@@ -2,25 +2,43 @@ body {
   background-color: black;
 }
 
+/*  */
+.big_Div {
+  width: fit-content;
+  /* background-color: green; */
+  margin: 0px;
+  padding: 0px;
+  /* border-right: 5px solid red; */
+}
 
 /*  */
+
+.background_img_Div {
+  width: fit-content;
+}
 
 img.intro_pic {
   display: flex;
   height: 300px;
   width: 100%;
+  min-width: 1280px;
+
+  margin-right: 0px;
 
   object-fit: cover;
   justify-content: center;
-
 }
 
 /*  */
 .allBelowBkGndImage {
   /* margin-left: 40px; */
   /* margin-right: 40px; */
-}
+  /* background-color: red; */
 
+  width: 100%;
+  object-fit: cover;
+  justify-content: center;
+}
 
 /*  */
 .backLinkDiv {
@@ -54,7 +72,7 @@ a.backLink:hover {
   width: 80px;
   height: 80px;
 }
-.goBackTextTag{
+.goBackTextTag {
   margin-left: 10px;
   font-size: 20px;
   font-weight: bolder;
@@ -65,22 +83,32 @@ a.backLink:hover {
   width: auto;
 }
 
-
 /*  */
-.leftAndRightSidesDiv {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* margin-top: 20px; */
-  margin: 20px;
-  /* background-color: red; */
+.leftCenterAndRightSidesDiv {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+
+  display: grid;
+  grid-template-columns: 45% 20% 35%;
+
+  /* margin: 20px; */
+
+  /* width: 100%; */
+  min-width: 1280px;
+  padding: 20px;
+  /* background-color: yellow; */
 }
 
 /*  */
-.AvatarAndAllDetailsDiv {
+.LeftSideDiv {
   display: grid;
+  grid-column: 1;
+
   grid-template-columns: 50% 50%;
+
   height: 500px;
+  min-width: 530px;
 }
 
 /*  */
@@ -94,9 +122,9 @@ a.backLink:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* min-width: 260px; */
   /* border-top-left-radius: 20px; */
   /* border-bottom-left-radius: 20px; */
-
 }
 
 .avatarProfileImage {
@@ -106,7 +134,8 @@ a.backLink:hover {
   border: solid 1px white;
   border-style: inset;
   /* border-color: grey; */
-  width: 280px;
+  width: 80%;
+  /* min-width: 230px; */
   height: 400px;
   object-fit: cover;
 
@@ -115,26 +144,19 @@ a.backLink:hover {
   box-shadow: 0 0 50px #fff; */
 }
 .prov_info {
-  width: 300px;
+  /* width: 300px; */
 }
 .prov_name {
   margin-top: 20px;
   color: white;
   font-size: 40px;
+  /* width: 100%; */
+
   /* text-decoration: overline; */
-/*
+  /*
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate; */
-}
-
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-  }
 }
 
 .contactLocationSocialLinkDiv {
@@ -144,25 +166,27 @@ a.backLink:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 29px;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: #202020;
   flex-direction: column;
-  /* border-top-right-radius: 20px; */
-  /* border-bottom-right-radius: 20px; */
+
+  /* width: 100%; */
 
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
 }
 .rightProviderDetailsDiv {
   /* background-color: yellow; */
-  width: 350px;
+  /* width: 350px; */
+  width: 100%;
   height: 400px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.contactLocationSocialLinkDiv p{
+.contactLocationSocialLinkDiv p {
   margin-bottom: 5px;
   font-style: italic;
   /* text-decoration: overline; */
@@ -178,7 +202,7 @@ a.backLink:hover {
 .phoneEmailAndSocialLinkDiv h6 {
   margin-left: 10px;
   font-weight: lighter;
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
 .phoneNumDiv {
   margin-top: 20px;
@@ -186,7 +210,6 @@ a.backLink:hover {
 }
 .emailDiv {
   margin-bottom: 20px;
-
 }
 .social_link {
   display: flex;
@@ -198,21 +221,18 @@ a.backLink:hover {
 }
 .social_link p {
   /* font-family: "Josefin Sans", sans-serif; */
-
 }
 .social_link h6 {
   margin-left: 10px;
   text-decoration: none;
 }
-a.socialLink_a_tag  {
+a.socialLink_a_tag {
   text-decoration: none;
   color: pink;
 }
 
-
 /*  */
 .locDiv {
-
 }
 
 /* .loc {
@@ -227,13 +247,12 @@ a.socialLink_a_tag  {
 
   color: white;
 }
-.prov_boro img{
+.prov_boro img {
   margin-left: -10px;
 }
-.prov_boro h5{
+.prov_boro h5 {
   margin-left: 10px;
 }
-
 
 /* .portfolioDiv {
   display: flex;
@@ -241,26 +260,32 @@ a.socialLink_a_tag  {
   border-color: green;
 } */
 
-
 /*  */
 .centerDiv {
+  /* background-color: yellow; */
+  display: grid;
+  grid-column: 2;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  /* width: 200px; */
 }
-
-
 
 /*  */
 
-.ctnr_services {
+.servicesAndSkills {
   /* background-color: green; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
   color: white;
-  width: 200px;
-  margin-right: 20px;
-  margin-left: 30px;
+  width: fit-content;
+  margin: 0px 20px 0px 20px;
+  /* margin-right: 20px;
+  margin-left: 30px; */
 }
 .srv_nameDiv {
   /* background-color: white; */
@@ -276,9 +301,6 @@ a.socialLink_a_tag  {
   color: white;
   /* text-shadow: 2px 2px 4px #000000; */
 }
-
-
-
 
 .srv_nameDiv .skillAndBulletsDiv {
   /* background-color: orange; */
@@ -297,7 +319,7 @@ a.socialLink_a_tag  {
 
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-weight: lighter;
   /* display: flex;
   flex-direction: column;
@@ -314,9 +336,16 @@ a.socialLink_a_tag  {
   margin-bottom: 7px;
 }
 
-
 /*  */
+.rightSideDivDIV {
+  display: grid;
+  grid-column: 3;
+
+  /* justify-content: flex-end; */
+}
 .rightSideDiv {
+  /* width: 40%; */
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -324,28 +353,23 @@ a.socialLink_a_tag  {
   background-color: #202020;
 
   height: 250px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 10px;
+  padding: 20px 20px 20px 20px;
+  width: fit-content;
   /* border-radius: 20px; */
 }
 
 /*  */
 .scrollInstructionsDiv {
   margin-top: 20px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   /* font-family: "Mrs Saint Delafield", cursive; */
   /* font-size: 50px; */
 
   font-family: "Josefin Sans", sans-serif;
   font-size: 22px;
   font-weight: lighter;
-
-
-
   /* background-color: yellow; */
 }
-
 
 /*  */
 .ctnr_portfolio {
@@ -362,10 +386,9 @@ a.socialLink_a_tag  {
 .portfolio_img {
   border-radius: 5px;
   margin-left: 5px;
+  width: 170px;
+  object-fit: cover;
 }
-
-
-
 
 /* .ctnr_portfolio {
   position: absolute;
@@ -385,20 +408,13 @@ a.socialLink_a_tag  {
   grid-row: 1;
 } */
 
-
-
-
-
-
-
-
 /*  How to do a transparent background image  */
 .testDiv {
-  background-image: url('./../img/man_hair.jpg');
+  background-image: url("./../img/man_hair.jpg");
   height: 100px;
 }
 h1.testTag {
-  background-color: rgba(255,255,255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   color: black;
 
   font-size: 30px;
