@@ -2,13 +2,13 @@ const bcrypt = require("bcryptjs");
 
 function comparePass(userPass, databasePass) {
   return bcrypt.compareSync(userPass, databasePass);
-}
+};
 
 function createHash(password) {
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(password, salt);
   return hash;
-}
+};
 
 function loginRequired(req, res, next) {
   if (!req.user) {
@@ -16,7 +16,7 @@ function loginRequired(req, res, next) {
     return;
   }
   next();
-}
+};
 
 module.exports = {
   comparePass,

@@ -15,11 +15,7 @@ export default class NavbarHome extends Component {
   render() {
     return (
       <>
-
-
-
-
-          <div className="links_center">
+        <div className="links_center">
 
         <div className='ctnr_lines'>
           <div className='nav_lines'>
