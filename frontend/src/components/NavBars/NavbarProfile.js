@@ -4,6 +4,9 @@ import { Link as RouterLink } from "react-router-dom";
 import "../../Css/Navbar.css";
 import logo from "../../photo_assets/dashing_logo.png";
 
+import NewUser from '../UserAuth/NewUser.js'
+
+
 class NavbarProfile extends Component {
   constructor(props) {
     super(props)
@@ -53,6 +56,9 @@ class NavbarProfile extends Component {
             <RouterLink className="links" activeClass="active" to="/aboutus">
               About Us
             </RouterLink>
+
+            <NewUser className="links" activeClass="active" />
+
 
             </div>
           </div>

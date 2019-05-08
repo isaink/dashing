@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavbarForComponents />
+        {/* // <NavbarForComponents /> */}
 
         <Switch>
           <Route exact path="/" component={Home} />

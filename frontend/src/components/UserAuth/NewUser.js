@@ -41,7 +41,9 @@ export default class NewUser extends Component {
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
+    // this.subtitle.style.color = '#f00';
+    this.closeButton.style.width = 'fit-content';
+    this.closeButton.style.padding = '10px';
   }
 
   closeModal() {
@@ -60,15 +62,17 @@ export default class NewUser extends Component {
           contentLabel="Example Modal"
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
-          <div>I am a modal</div>
+          {/* // <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2> */}
+          <button
+            ref={closeButton => this.closeButton = closeButton}
+            onClick={this.closeModal} >
+              x
+            </button>
+          {/*// <div>I am a modal</div>*/}
           <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
+            {/*// <input />*/}
+            <button>Sign Up</button>
+            <button>Login</button>
           </form>
         </Modal>
       </div>

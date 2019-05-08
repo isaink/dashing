@@ -23,6 +23,8 @@ import axios from 'axios';
 import SingleService from './SingleService';
 
 import "./../../Css/Home.css";
+import NavbarForComponents from "../NavBars/NavbarForComponents";
+
 
 
 class Home extends Component {
@@ -189,6 +191,8 @@ class Home extends Component {
 
     return (
       <div className="HomepageDiv">
+        <NavbarForComponents />
+
         <dl>
 
           <dd>

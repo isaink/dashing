@@ -105,7 +105,7 @@ export default class Navbar extends Component {
               About Us
             </RouterLink>
 
-            <NewUser />
+            <NewUser className="links" activeClass="active" />
           </div>
         </div>
       </>
