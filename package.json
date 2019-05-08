@@ -11,7 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd backend && npm start",
+    "start": "concurrently \"cd backend/frontend && npm start\" \"cd backend && npm start\"",
     "heroku-postbuild": "cd backend && npm install && cd ../frontend && npm install && npm run build"
   },
   "repository": {

@@ -27,6 +27,7 @@ export const fetchSkillsByService = service_id => dispatch => {
       return dispatch(receivedSkillsSuccess(skills, service_id)); // what is the key inside the queries...?
     })
     .catch(err => {
+      console.log('SERVICE SKILLS ERRRR', err)
       return dispatch(fetchErrors(err));
     });
 };

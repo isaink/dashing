@@ -32,6 +32,7 @@ class Hair extends React.Component {
   getSkillsForService = () => {
     axios.get(`/services/skills/1`)
     .then(res => {
+      console.log('THE RES????', res)
       this.setState({
         skills: res.data.data
       })

@@ -38,7 +38,7 @@ export class ComboBox extends Component {
 
   render() {
     const skillList =
-      this.props.fetchSkillList.length !== 0 &&
+      this.props.fetchSkillList && this.props.fetchSkillList.length > 0 &&
       [...this.props.fetchSkillList].map(skill => (
         <option key={skill.skill_id} value={skill.skill_id}>
           {" "}
