@@ -5,6 +5,8 @@ import { Link as RouterLink } from "react-router-dom";
 import "../../Css/NavbarForComponents.css";
 import logo from "../../photo_assets/dashing_logo.png";
 
+import NewUser from '../UserAuth/NewUser.js'
+
 export default class Navbar extends Component {
   scrollToTop = () => {
     scroll.scrollToTop();
@@ -102,6 +104,8 @@ export default class Navbar extends Component {
             <RouterLink className="links" activeClass="active" to="/aboutus">
               About Us
             </RouterLink>
+
+            <NewUser />
           </div>
         </div>
       </>

@@ -54,4 +54,9 @@ const deleteOneSkill = (req, res, next) => {
 };
 
 
-module.exports = { getAllSkills, getOneSkill, addOneSkill, deleteOneSkill };
+module.exports = { 
+  getAllSkills, 
+  getOneSkill, 
+  addOneSkill, 
+  deleteOneSkill 
+};

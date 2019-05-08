@@ -2,7 +2,7 @@ const db = require("../connector");
 
 const getAllProByServ = (req, res, next) => {
   db.any(
-    "SELECT DISTINCT providers.id AS provider_id,providers.name AS Provider, services.name AS Services, email, avatar, borough, phone_number, website_link FROM providers JOIN services_provider ON providers.id = services_provider.provider_id JOIN services ON services.id = providers.service_id Where services.id=${id}",
+    "SELECT DISTINCT users.id AS user_id, users.first_name, users.last_name, services.name AS Services, email, avatar, borough, phone_number, website_link FROM users JOIN services_provider ON users.id = services_provider.user_id JOIN services ON services.id = users.service_id WHERE services.id=${id}",
     {
       id: Number(req.params.id)
     }
@@ -23,7 +23,7 @@ const getAllProByServ = (req, res, next) => {
 
 const getProvBySvcAndBoro = (req, res, next) => {
   db.any(
-    "SELECT * FROM providers WHERE service_id = ${service_id} AND borough = ${borough}", {
+    "SELECT * FROM users WHERE service_id = ${service_id} AND borough = ${borough}", {
       service_id: Number(req.params.id),
       borough: req.params.location}
   )

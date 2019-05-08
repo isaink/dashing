@@ -11,9 +11,11 @@ import Hair from "./Hair";
 import Nails from "./Nails";
 import Barber from "./Barber";
 import Makeup from "./Makeup";
+import ProviderSignUpForm from '../UserAuth/ProviderSignUpForm';
+import  LogInForm from '../UserAuth/LogIn';
+
 import EducationProv_Container  from "../../Redux_Containers/EducationProv_Container";
 import { AboutUs } from "./AboutUs";
-
 import NavbarHome from "../NavBars/Navbar";
 import homeLogo from "../../photo_assets/dashing_logo_invert.png";
 
@@ -27,6 +29,13 @@ class Home extends Component {
   state = {
     services: [],
     serviceName: '',
+
+    first_name: '',
+    last_name: '',
+    email: '',
+    password: '',
+    phone_number: '',
+    startUp: '',    // toggleForms switch statement
   }
 
   componentDidMount() {
@@ -38,7 +47,6 @@ class Home extends Component {
     });
 
     this.getServices()
-
   }
 
   scrollToTop() {
@@ -52,6 +60,96 @@ class Home extends Component {
       smooth: "easeInOutQuart"
     });
   }
+
+
+
+  handleSignUp = (e) => {
+    this.setState({
+      startUp: true
+    })
+  };
+
+  handleLogIn = (e) => {
+      this.setState({
+        startUp: false
+    })
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  };
+
+  handleLogginUser = (e) => {
+    e.preventDefault();
+    let { email, password } = this.state;
+
+    this.props.logInUser({ email, password });
+  };
+
+  handleLogOutUser = () => {
+    this.props.LogOutUser();
+  };
+
+  handleSubmission = async (event) => {
+    event.preventDefault();
+    let { username, password,  email} = this.state;
+
+    // CALL REDUX ACTION AFTER
+    await this.props.newUser({ username, password, email });
+    await this.props.logInUser({ username, password }); // this state have to macth with the backend router
+
+  };
+
+  handleForms = () => {
+    switch(this.state.startUp){
+      case false :
+        return (
+          <>
+            <LogInForm
+              startUp={this.startUp}
+              loginUser={this.loginUser}
+              email={this.state.email}
+              password={this.state.password}
+              handleChange={this.handleChange}
+              handleLogginUser={this.handleLogginUser}
+            />
+          </>
+      )
+      case true:
+      return (
+          <>
+             <ProviderSignUpForm
+              startUp={this.startUp}
+              email={this.state.email}
+              password={this.state.password}
+              first_name={this.state.first_name}
+              last_name={this.state.last_name}
+              phone_number={this.state.phone_number}
+              handleChange={this.handleChange}
+              handleSubmission={this.handleSubmission}
+            />
+          </>
+      )
+      default :
+        return (
+          <>
+            <div className='button_welcome'>
+              <button type='submit' className='start' onClick={this.handleSignUp}>
+                  Get Started
+              </button >
+
+              <button type='submit' className='log_in' onClick={this.handleLogIn}>
+                Log In
+              </button>
+            </div>
+        </>
+      )
+    }
+  };
+
+
 
   getServices = () => {
     axios.get(`/services`)
@@ -83,16 +181,6 @@ class Home extends Component {
     })
   }
 
-  // serviceInElement = () => {
-  //   return this.state.services.map(service => {
-  //     // this.setState({
-  //     //   serviceName: service.name
-  //     // })
-  //     return (
-  //       <SingleService service={service} />
-  //     )
-  //   })
-  // }
 
   render() {
     console.log(this.state.services);
@@ -119,6 +207,7 @@ class Home extends Component {
 
           <dt>
             <div className='NavbarDiv'>
+              <NavbarHome className='NavbarComponentTag'/>
             </div>
           </dt>
 
