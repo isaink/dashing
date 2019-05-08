@@ -15,6 +15,7 @@ render() {
 
             <img src={homeLogo} alt='logo' style={{ height: '30px', zIndex: -1}}/>
             <p>Set Up as </p>
+            
             <h2 className='type_user'> CUSTOMER </h2>
             <p>Set Up as </p>
             <h2 className='type_user'> PROVIDER </h2>
