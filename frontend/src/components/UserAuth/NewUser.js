@@ -41,6 +41,9 @@ export default class NewUser extends Component {
       isClient: false,
 
       modalIsOpen: false,
+
+
+      // phone_number: '',
     };
 
     this.openModal = this.openModal.bind(this);
@@ -289,9 +292,14 @@ export default class NewUser extends Component {
   }
 
 
-
+  // handleChange = (e) => {
+  //   this.setState ({
+  //     [e.target.name]: e.target.value,
+  //   })
+  // }
 
   render() {
+    // console.log(this.state);
     const { modalIsOpen, navBarClicked, signUpClicked, logInClicked, isProvider, isClient } = this.state;
     return (
       <div>
@@ -306,7 +314,17 @@ export default class NewUser extends Component {
         { (signUpClicked && modalIsOpen && isClient && !logInClicked) ? this.displayClientSignUpForm() : null }
         { (logInClicked && modalIsOpen && !signUpClicked) ? this.displayLoginForm() : null }
 
-
+{/*
+        // <form>
+        //   <input className='signUpInput'
+        //       name='phone_number'
+        //       placeholder='Phone Number'
+        //       type="text"
+        //       value={this.state.phone_number}
+        //       onChange={this.handleChange}
+        //   />
+        // </form>
+        */}
 
       </div>
     );

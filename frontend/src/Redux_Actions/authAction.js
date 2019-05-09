@@ -42,7 +42,7 @@ export const logInUser = ( user ) =>  dispatch => {
 
 export const logOutUser = ( ) =>  dispatch => {
     axios.post('/users/logout')
-    
+
     .then(() => {
         Auth.deauthenticateUser();
         return dispatch( logOut())
@@ -52,7 +52,7 @@ export const logOutUser = ( ) =>  dispatch => {
     })
 };
 
-export const checkAuthenticateStatus = () => dispatch => { 
+export const checkAuthenticateStatus = () => dispatch => {
     axios.get('/users/isLoggedIn')
     .then(res => {
         let user = res.data;

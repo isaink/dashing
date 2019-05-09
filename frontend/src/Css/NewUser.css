@@ -1,3 +1,18 @@
+button.loginButton {
+  border: none;
+  background-color: #ECB99C;
+  color: black;
+  font-family: "Josefin Sans", sans-serif;
+
+  padding: 0px;
+  margin: 0px;
+  margin-top: -38px;
+}
+button.loginButton:hover{
+  background-color: #ECB99C;
+  color: white;
+}
+
 .closeXButtonDiv {
   /* background-color: green; */
   display: flex;

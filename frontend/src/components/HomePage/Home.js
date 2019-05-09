@@ -84,7 +84,7 @@ class Home extends Component {
     })
   };
 
-  handleLogginUser = (e) => {
+  handleLoginUser = (e) => {
     e.preventDefault();
     let { email, password } = this.state;
 
@@ -116,7 +116,7 @@ class Home extends Component {
               email={this.state.email}
               password={this.state.password}
               handleChange={this.handleChange}
-              handleLogginUser={this.handleLogginUser}
+              handleLoginUser={this.handleLoginUser}
             />
           </>
       )
@@ -190,6 +190,8 @@ class Home extends Component {
     console.log(this.getServices);
     console.log(this.serviceList);
 
+    console.log(this.state);
+
     return (
       <div className="HomepageDiv">
         <NavbarForComponents />
@@ -212,7 +214,7 @@ class Home extends Component {
 
           <dt>
             <div className='NavbarDiv'>
-              <NavbarHome className='NavbarComponentTag'/>
+              {/*<NavbarHome className='NavbarComponentTag'/>*/}
             </div>
           </dt>
 

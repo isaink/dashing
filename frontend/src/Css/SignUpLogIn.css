@@ -1,9 +1,62 @@
+.form_register_Div {
+
+
+}
+
 .form_register {
   display: flex;
   flex-direction: column;
+
 }
 
+.signUpInput {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  height: 22px;
+  border: 0.5px solid grey;
+  padding-left: 5px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 13px;
+}
+
+.checkboxDiv {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 13px;
+}
+
+.checkboxOptions {
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid grey;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.checkboxAndLabelEach {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkboxBox {
+  margin-right: 6px;
+}
+
+.signUpBttnDiv{
+  background-color: red;
+  display: flex;
+  justify-content: center;
+}
+.signUpBttn {
+
+}
+.signUpBttnDisabledDiv {
+  display: flex;
+  justify-content: center;
+}
 .signUpBttnDisabled {
   background-color: grey;
-  
 }
