@@ -2,22 +2,45 @@ import React, { Component } from "react";
 import '../../Css/SignUpLogIn.css'
 
 export default class ProviderSignUpForm extends Component {
-    constructor() {
-      super()
+    constructor(props) {
+      super(props)
       this.state = {
-        isProvider: false,
-        isClient: false,
+        first_name: '',
+        last_name: '',
+        email: '',
+        password: '',
+        phone_number: '',
+
+        formSubmitted: false,
+      }
+    }
+
+    handleChange = (e) => {
+      this.setState ({
+        [e.target.name]: e.target.value,
+      })
+    }
+
+    handleSubmit = (e) => {
+      e.preventDefault()
+
+      const {first_name, last_name, email, password, phone_number} = this.state
+
+      if (first_name && last_name && email && password) {
+        this.setState ({
+          formSubmitted: true
+        })
       }
     }
 
     render(){
-        console.log('SIGNUP PROPS',this.props)
+        console.log('SIGNUP STATE',this.state)
 
-        const { handleChange, handleSubmission, email, password, first_name, last_name, phone_number} = this.props
+        const { handleChange, handleSubmit, email, password, first_name, last_name, phone_number, formSubmitted } = this.state
 
         return (
             <>
-                <form className='form_register' onSubmit={handleSubmission} >
+                <form className='form_register' onSubmit={handleSubmit} >
                     <input className='signUpInput'
                         name='first_name'
                         placeholder='First Name'
@@ -58,7 +81,11 @@ export default class ProviderSignUpForm extends Component {
                         onChange={handleChange}
                     />
 
-                  <button className='signUpBttn' type='submit'>Sign Up</button>
+                  { formSubmitted ?
+                    <button className='signUpBttn' type='submit' >Sign Up</button>
+                  : <button className='signUpBttnDisabled' type='submit' disabled >Sign Up</button>
+                  }
+
                 </form>
             </>
         )

@@ -10,6 +10,7 @@ import { ProviderSearch } from "./ProviderSearch";
 
 import { Link } from "react-router-dom";
 
+
 class Education extends React.Component {
   state = {
     name: "",
