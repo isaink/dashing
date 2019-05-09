@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import '../../Css/SignUpLogIn.css'
 
-export default class ProviderSignUpForm extends Component {
+export default class ClientSignUpForm extends Component {
     constructor() {
       super()
       this.state = {
@@ -50,15 +50,8 @@ export default class ProviderSignUpForm extends Component {
                         onChange={handleChange}
                     />
 
-                    <input className='signUpInput'
-                        name='phone_number'
-                        placeholder='Phone Number'
-                        type="text"
-                        value={phone_number}
-                        onChange={handleChange}
-                    />
 
-                  <button className='signUpBttn' type='submit'>Sign Up</button>
+                  <button className='signUpBttn'type='submit' onSubmit={handleSubmission} >Sign Up</button>
                 </form>
             </>
         )
