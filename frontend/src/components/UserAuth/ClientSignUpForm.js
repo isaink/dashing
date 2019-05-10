@@ -5,25 +5,53 @@ export default class ClientSignUpForm extends Component {
     constructor() {
       super()
       this.state = {
-        isProvider: false,
-        isClient: false,
+        first_name: '',
+        last_name: '',
+        email: '',
+        password: '',
+
+        formCompleted: false,
+        formSubmitted: false,
+      }
+    }
+
+    handleChange = (e) => {
+      this.setState ({
+        [e.target.name]: e.target.value
+      })
+      const {first_name, last_name, email, password } = this.state
+      if (first_name && last_name && email && password) {
+        this.setState ({
+          formCompleted: true
+        })
+      }
+    }
+
+    handleSubmit = (e) => {
+      e.preventDefault()
+      const {formCompleted} = this.state
+      if (formCompleted) {
+        this.setState ({
+          formSubmitted: true,
+        })
       }
     }
 
     render(){
-        console.log('SIGNUP PROPS',this.props)
+        console.log('SIGNUP STATE',this.state)
 
-        const { handleChange, handleSubmission, email, password, first_name, last_name, phone_number} = this.props
+        const { email, password, first_name, last_name, phone_number, formCompleted, formSubmitted} = this.state
 
         return (
             <>
-                <form className='form_register' onSubmit={handleSubmission} >
+                <form className='form_register' onSubmit={this.handleSubmit} >
+
                     <input className='signUpInput'
                         name='first_name'
                         placeholder='First Name'
                         type="text"
                         value={first_name}
-                        onChange={handleChange}
+                        onChange={this.handleChange}
                     />
 
                     <input className='signUpInput'
@@ -31,7 +59,7 @@ export default class ClientSignUpForm extends Component {
                         placeholder='Last Name'
                         type="text"
                         value={last_name}
-                        onChange={handleChange}
+                        onChange={this.handleChange}
                     />
 
                     <input className='signUpInput'
@@ -39,7 +67,7 @@ export default class ClientSignUpForm extends Component {
                         placeholder='Email'
                         type="text"
                         value={email}
-                        onChange={handleChange}
+                        onChange={this.handleChange}
                     />
 
                     <input className='signUpInput'
@@ -47,11 +75,14 @@ export default class ClientSignUpForm extends Component {
                         placeholder='Password'
                         type="text"
                         value={password}
-                        onChange={handleChange}
+                        onChange={this.handleChange}
                     />
 
+                    { formCompleted ?
+                      <div className='signUpBttnDiv'><button className='signUpBttn' type='submit' >Sign Up</button></div>
+                    : <div className='signUpBttnDisabledDiv'><button className='signUpBttnDisabled' type='submit' disabled >Sign Up</button></div>
+                    }
 
-                  <button className='signUpBttn'type='submit' onSubmit={handleSubmission} >Sign Up</button>
                 </form>
             </>
         )

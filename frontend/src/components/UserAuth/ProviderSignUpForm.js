@@ -18,6 +18,7 @@ export default class ProviderSignUpForm extends Component {
           makeup: false,
         },
 
+        serviceChecked: false,
         formCompleted: false,
         formSubmitted: false,
       }
@@ -27,33 +28,30 @@ export default class ProviderSignUpForm extends Component {
       this.setState ({
         [e.target.name]: e.target.value
       })
-
-      const {first_name, last_name, email, password, phone_number} = this.state
-
-      if (first_name && last_name && email && password) {
+      const {first_name, last_name, email, password, serviceChecked} = this.state
+      if (first_name && last_name && email && password && serviceChecked ) {
         this.setState ({
-          formCompleted: true
+          formCompleted: true,
         })
       }
     }
 
     handleCheckboxChange = (event) => {
-    event.stopPropagation()
-    let checkedItems = this.state[event.target.name]
-    checkedItems[event.target.id] = event.target.checked
-    // console.log(event)
-    // debugger
-    // console.log('=>', event.target.name , '-->' ,checkedItems)
-    this.setState({
-      [event.target.name]: checkedItems
-    })
-  }
-
+      event.stopPropagation()
+      let checkedItems = this.state[event.target.name]
+      checkedItems[event.target.id] = event.target.checked
+      // console.log(event)
+      // debugger
+      // console.log('=>', event.target.name , '-->' ,checkedItems)
+      this.setState({
+        [event.target.name]: checkedItems,
+        serviceChecked: true
+      })
+    }
 
     handleSubmit = (e) => {
       e.preventDefault()
-
-      const {first_name, last_name, email, password, phone_number, formCompleted} = this.state
+      const {first_name, last_name, email, password, formCompleted} = this.state
       if (formCompleted) {
         this.setState ({
           formSubmitted: true,
@@ -64,17 +62,17 @@ export default class ProviderSignUpForm extends Component {
     render(){
         console.log('SIGNUP STATE',this.state)
 
-        const { handleChange, handleSubmit, email, password, first_name, last_name, phone_number, formCompleted, formSubmitted } = this.state
+        const { email, password, first_name, last_name, phone_number, formCompleted, formSubmitted } = this.state
 
         return (
             <div className='form_register_Div'>
-                <form className='form_register' onSubmit={handleSubmit} >
+                <form className='form_register' onSubmit={this.handleSubmit} >
                     <input className='signUpInput'
                         name='first_name'
                         placeholder='First Name'
                         type="text"
                         value={first_name}
-                        onChange={handleChange}
+                        onChange={this.handleChange}
                     />
 
                     <input className='signUpInput'
@@ -82,7 +80,7 @@ export default class ProviderSignUpForm extends Component {
                         placeholder='Last Name'
                         type="text"
                         value={last_name}
-                        onChange={handleChange}
+                        onChange={this.handleChange}
                     />
 
                     <input className='signUpInput'
@@ -90,7 +88,7 @@ export default class ProviderSignUpForm extends Component {
                         placeholder='Email'
                         type="text"
                         value={email}
-                        onChange={handleChange}
+                        onChange={this.handleChange}
                     />
 
                     <input className='signUpInput'
@@ -98,7 +96,7 @@ export default class ProviderSignUpForm extends Component {
                         placeholder='Password'
                         type="text"
                         value={password}
-                        onChange={handleChange}
+                        onChange={this.handleChange}
                     />
 
                     <input className='signUpInput'
@@ -106,7 +104,7 @@ export default class ProviderSignUpForm extends Component {
                         placeholder='Phone Number'
                         type="text"
                         value={phone_number}
-                        onChange={handleChange}
+                        onChange={this.handleChange}
                     />
 
                     <div className='checkboxDiv'>
