@@ -3,7 +3,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 
 import "../../Css/NavbarForComponents.css";
-import logo from "../../photo_assets/dashing_logo.png";
+import homeLogo from "../../photo_assets/dashing_logo_invert.png";
 
 export default class Navbar extends Component {
   scrollToTop = () => {
@@ -14,10 +14,10 @@ export default class Navbar extends Component {
     return (
       <>
         <div className="navbar">
-          <span className="dashingNav">
+          <span className="dashing_logo">
             <Link to={"/"}>
               <img
-                src={logo}
+                src={homeLogo}
                 alt=""
                 width="175px"
                 height="auto"
@@ -26,68 +26,73 @@ export default class Navbar extends Component {
             </Link>
           </span>
 
-          <div className="links">
-            <Link
-              className="links"
-              activeClass="active"
-              to="home"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Home
-            </Link>
-            <Link
-              className="links"
-              activeClass="active"
-              to="hair"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Hair
-            </Link>
-            <Link
-              className="links"
-              activeClass="active"
-              to="nails"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Nails
-            </Link>
-            <Link
-              className="links"
-              activeClass="active"
-              to="barber"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Barber
-            </Link>
-            <Link
-              className="links"
-              activeClass="active"
-              to="makeup"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Makeup
-            </Link>
+          <div className="dashingNav">
 
-            <RouterLink className="links" activeClass="active" to="/education">
-              Educational Services
-            </RouterLink>
+              <Link
+                className="links"
+                activeClass="active"
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                Home
+              </Link>
+              <Link
+                className="links"
+                activeClass="active"
+                to="hair"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                Hair
+              </Link>
+              <Link
+                className="links"
+                activeClass="active"
+                to="nails"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                Nails
+              </Link>
+              <Link
+                className="links"
+                activeClass="active"
+                to="barber"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                Barber
+              </Link>
+              <Link
+                className="links"
+                activeClass="active"
+                to="makeup"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                Makeup
+              </Link>
 
-            {/* <Link
+              <RouterLink
+                className="links"
+                activeClass="active"
+                to="/education"
+              >
+                Educational Services
+              </RouterLink>
+
+              {/* <Link
               className="links"
               activeClass="active"
               to="aboutus"
@@ -99,11 +104,12 @@ export default class Navbar extends Component {
               About Us
             </Link> */}
 
-            <RouterLink className="links" activeClass="active" to="/aboutus">
-              About Us
-            </RouterLink>
+              <RouterLink className="links" activeClass="active" to="/aboutus">
+                About Us
+              </RouterLink>
+            </div>
           </div>
-        </div>
+
       </>
     );
   }

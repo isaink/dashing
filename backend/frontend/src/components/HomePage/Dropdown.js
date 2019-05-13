@@ -25,7 +25,7 @@ export const Dropdown = props => {
           <option value="Staten Island">Staten Island</option>
         </select>
       </div>
-      <hr />
+    
     </>
   );
 };

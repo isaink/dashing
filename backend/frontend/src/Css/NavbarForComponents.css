@@ -1,44 +1,46 @@
 .navbar {
-  background-color: #ECB99C;
   height: 80px;
   width: 100%;
   list-style-type: none;
   position: fixed;
   z-index: 2;
-
+  background-color: black;
 }
-
-.dashingNav {
+.dashing_logo {
   display: flex;
   justify-content: flex-start;
-  padding-left: 25px;
+  padding-left: 40px;
   padding-top: 12px;
+}
+.dashingNav {
+  padding-right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  padding-left: 40px;
+  font-size: 18px;
+  color: white;
 }
 
 .links {
-  display: flex;
-  justify-content: center;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
-  margin-top: -17px;
-  padding-left: 20px;
-  font-size: 18px;
-
+  padding-right: 20px;
+  margin-top: -38px;
 }
 
-.links a:link {
-  color: black;
+.dashingNav a:link {
+  color: white;
   text-decoration: none;
   text-transform: normal;
   letter-spacing: normal;
   /* padding-left: 20px; */
 }
 
-.links a:visited {
+.dashingNav a:visited {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
-.links a:hover {
-  color: white;
+.dashingNav a:hover {
+  color: red;
 }

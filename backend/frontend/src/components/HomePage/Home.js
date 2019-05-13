@@ -7,7 +7,7 @@ import {
 } from "react-scroll";
 
 // import ProviderProfile from '../ProfilePage/providerProfile';
-import { Welcome } from "./Welcome";
+import Welcome  from "./Welcome";
 import Hair from "./Hair";
 import Nails from "./Nails";
 import Barber from "./Barber";
@@ -16,8 +16,7 @@ import EducationProv_Container  from "../../Redux_Containers/EducationProv_Conta
 import { AboutUs } from "./AboutUs";
 // import  NavbarForComponents  from '../NavBars/NavbarForComponents'
 
-import NavbarHome from "../NavBars/Navbar";
-import homeLogo from "../../photo_assets/dashing_logo_invert.png";
+
 
 import "./../../Css/Home.css";
 
@@ -47,13 +46,7 @@ class Home extends Component {
     return (
       <div className="HomepageDiv">
         <dl>
-          <dd>
-            <div className="bg_welcome">
-              <div className="homeLogo">
-                <img src={homeLogo} alt="" width="700px"  />
-              </div>
-            </div>
-          </dd>
+
 
           <dd>
             <Element name="home" className="Element">
@@ -61,11 +54,7 @@ class Home extends Component {
             </Element>
           </dd>
 
-          <dt>
-            <div className='NavbarDiv'>
-              {/* <NavbarHome className='NavbarComponentTag'/> */}
-            </div>
-          </dt>
+
 
           <dd>
             <Element name="hair" className="Element">
