@@ -1,0 +1,46 @@
+.navbar {
+  height: 80px;
+  width: 100%;
+  list-style-type: none;
+  position: fixed;
+  z-index: 2;
+  background-color: black;
+}
+.dashing_logo {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 40px;
+  padding-top: 12px;
+}
+.dashingNav {
+  padding-right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  padding-left: 40px;
+  font-size: 18px;
+  color: white;
+}
+
+.links {
+  padding-right: 20px;
+  margin-top: -38px;
+}
+
+.dashingNav a:link {
+  color: white;
+  text-decoration: none;
+  text-transform: normal;
+  letter-spacing: normal;
+  /* padding-left: 20px; */
+}
+
+.dashingNav a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.dashingNav a:hover {
+  color: red;
+}

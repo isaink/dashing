@@ -1,0 +1,329 @@
+.ctnr_prov{
+  width: 100%;
+  height: 100%;
+}
+.ctnr_box {
+  display: grid;
+  grid-template-columns: 33% 67%;
+  height: 90%;
+  background-color: black;
+  /* overflow-x: scroll; */
+}
+.ctnr_box_barber{
+  display: grid;
+  grid-template-columns: 35% 65%;
+  height: 90%;
+  background-color: black;
+  /* overflow-x: scroll; */
+}
+.ctnr_box_right{
+  display: grid;
+  height: 90%;
+  grid-template-columns:70% 30% ;
+  /* overflow-x: scroll; */
+  background-color: black;
+
+}
+.img_intro_right{
+  height: 100%;
+  margin-right: 45px;
+  /* transform: translate(-12px); */
+}
+.inner_ctnr_providers_right{
+  grid-column: 1;
+  grid-row: 1;
+  background-color: black;
+  /* display: grid; */
+  grid-template-rows: 10% 70%;
+  max-height: 800px;
+  padding-right: 10px;
+  /* width: 500px; */
+  overflow-x: scroll;
+}
+.img_intro {
+  grid-column: 1;
+  margin-top: 10px;
+  margin-left: 35px;
+  height: 100%;
+}
+.ctnr_new_nav{
+  grid-column: 1;
+}
+.inner_ctnr_providers {
+  background-color: black;
+  /* display: grid; */
+  grid-template-rows: 10% 70%;
+  padding-right: 10px;
+  max-height: 730px;
+  padding-right: 10px;
+  /* width: 500px; */
+  overflow-x: scroll;
+}
+.ctnr_nav{
+  display: grid;
+  grid-template-columns: 17% 80%;
+  grid-row: 1;
+  background: black;
+}
+#providername {
+  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  font-weight: 400;
+}
+.title {
+  font-family: 'Josefin Sans', sans-serif;
+  padding-left: 30px;
+  text-align: left;
+  color: darkgray;
+  font-size: 65px;
+  padding-top: 10px;
+}
+.title_hair{
+  font-family: 'Josefin Sans', sans-serif;
+  padding-left: 30px;
+  text-align: left;
+  color: darkgray;
+  font-size: 65px;
+  padding-top: 10px;
+}
+.providers {
+  /* padding-top: 30px; */
+  width: 1000px;
+}
+.prov {
+  display: grid;
+  overflow-x: scroll;
+        /* height: 650px; */
+    margin-top: 12px;
+    grid-template-columns: 50% 50%;
+    width: 900px;
+}
+.text_intro_srv{
+  color: #a9a9a9;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  height: 50px;
+  padding-top: 30px;
+  width: 855px;
+  margin-left: 45px;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  margin-top: 10px;
+}
+.dropdown{
+  width: 1130px;
+}
+.box {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 200px;
+  margin-right: 40px auto;
+  padding: 8px;
+  /* background-color: #fffbfc; */
+  background-repeat: no-repeat;
+  /* background-size: 0 2px, 0 100%, 0% 2px; */
+  /* background-position: top center, top center, bottom center; */
+  -webkit-animation: drawBorderFromCenter 10s;
+}
+.box img {
+  /* max-width: auto; */
+}
+.box .hvrbox-layer_bottom {
+  /* display: block; / */
+
+  /* border: solid #ecb99c */
+}
+.box .hvrbox-layer_top {
+
+  /* background: white; */
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* width: 100%;
+  height: 100%; */
+  background: rgba(0, 0, 0, 0.9);
+  /* color: #fff; */
+  padding: 15px;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -ms-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+.box:hover .hvrbox-layer_top,
+.box.active .hvrbox-layer_top {
+  opacity: 3;
+  /* background: #fff; */
+  color: white;
+}
+.box .hvrbox-text {
+  text-align: center;
+  font-size: 14px;
+  /* display: inline-block; */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: white;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.hvrbox-text{
+}
+.box .hvrbox-text_mobile {
+  font-size: 15px;
+  /* border-top: 1px solid rgb(179, 179, 179); for old browsers */
+  /* border-top: 1px solid rgba(179, 179, 179, 0.7); */
+  /* border-top: 1px solid #ecb99c; /* for old browsers */
+  /* border-top: 1px solid #ecb99c; */
+  margin-top: 5px;
+  padding-top: 2px;
+  display: none;
+}
+.box.active .hvrbox-text_mobile {
+  display: block;
+}
+.box:hover {
+  /* opacity: 0.5; */
+  /* background: white; */
+}
+@-webkit-keyframes drawBorderFromCenter {
+  0% {
+    background-size: 10% 2px, 0 0, 100% 100%;
+  }
+  20% {
+    background-size: 100% 2px, 100% 0, 100% 100%;
+  }
+  30% {
+    background-size: 100% 2px, 100% 98%, 100% 100%;
+  }
+  99% {
+    background-size: 100% 2px, 100% 98%, 0 2px;
+  }
+}
+.location_title {
+  font-size: 14px;
+  text-align: left;
+  font-family: "Josefin Sans", sans-serif;
+}
+.provider_name {
+  margin: 10px;
+  margin-left: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  /* border-bottom: 1px dashed #000; */
+  width: 20%;
+  margin: auto;
+}
+.info_provider:hover {
+  display: block;
+  opacity: 1;
+}
+.content {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  /* background: #ecb99c; */
+  /* padding: 8px; */
+  padding-bottom: 10px;
+  text-align: center;
+  /* text-transform: uppercase; */
+
+  /* /* width: 300px;      */
+  height: 150px;
+}
+.content img {
+  position: absolute;
+  max-width: 100%;
+  /* width: 100%; */
+  /* height: auto; */
+  /* top: 50%;      */
+  /* left: 50%; */
+  /* transform: translate( -50%, -50%); */
+  transform: translate(-5%);
+}
+.ctnr_avatar{
+  overflow: hidden;
+  width: 190px;
+  position: relative;
+  transform: translateX(-40px);
+}
+.prov_avatar{
+  grid-column: 1;
+}
+.info_prov{
+  /* width: 680px; */
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-left: 20px;
+  padding-top: 10px;
+  grid-column: 2;
+  color: #e1e2e4;
+  text-align: left;
+  background-color: #1f1f1f;
+  /* height: 140px; */
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+
+}
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  transform: rotate(45deg);
+  transform-origin: 32px 32px;
+}
+.lds-heart div {
+  top: 23px;
+  left: 19px;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #ce0000;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  background: #ce0000;
+}
+.lds-heart div:before {
+  left: -17px;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+  top: -17px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}

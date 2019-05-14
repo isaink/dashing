@@ -14,24 +14,39 @@ var skillsProvider = require('./routes/skills');
 
 
 var app = express();
-
+console.log('THE DIRNAME', __dirname);
 // view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "jade");
 
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+
+//Static file declaration
+app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+//production mode
+// if(process.env.NODE_ENV === 'production') {
+ // app.use(express.static(path.join(__dirname, 'frontend/build')));
+//  //
+//  app.get('*', (req, res) => {
+//    res.sendfile(path.join(__dirname = 'frontend/build/index.html'));
+//  })
+// }
+//build mode
+
 
 app.use('/', indexRouter);
 app.use('/providers', providersRouter);
-app.use('/srvProviders', srvProvidersRouter);
+app.use('/api/srvProviders', srvProvidersRouter);
 app.use('/services', servicesRouter);
 app.use('/portfolio', portfolioRouter);
 app.use('/skillsProvider', skillsProviderRouter);
 app.use('/skills', skillsProvider);
+
+app.get('*', (req, res) => {
+ res.sendFile(path.join(__dirname+'/frontend/public/index.html'));
+})
 
 
 // catch 404 and forward to error handler
@@ -49,7 +64,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
-
 
 module.exports = app;

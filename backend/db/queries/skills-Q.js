@@ -25,6 +25,22 @@ const getOneSkill = (req, res, next) => {
     .catch(err => next(err));
 };
 
+const getSkillsForProvider = (req, res, next) => {
+  db.many("SELECT skill_id, provider_id, price_min, price_max, education, skills.service_id, array_agg(skills.name) AS skills FROM skills_provider JOIN skills ON skills.id = skills_provider.skill_id WHERE skills_provider.provider_id =${id} GROUP BY skills_provider.skill_id, skills_provider.provider_id, skills_provider.price_min, skills_provider.price_max, education, skills.service_id ",
+  {
+    id: Number(req.params.id)
+  })
+  .then( data => {
+    res.status(200).json({
+      status: 'success',
+      message: 'Got all skills for this provider',
+      data: data
+
+    });
+  })
+  .catch(err => next(err))
+}
+
 const addOneSkill = (req, res, next) => {
   db.none(
     "INSERT INTO skills (name, service_id) VALUES (${name}, ${service_id})",
@@ -40,6 +56,7 @@ const addOneSkill = (req, res, next) => {
     .catch(err => next(err));
 };
 
+
 const deleteOneSkill = (req, res, next) => {
   let id = parseInt(req.params.id);
   db.result("DELETE FROM skills WHERE id=$1", id)
@@ -54,4 +71,4 @@ const deleteOneSkill = (req, res, next) => {
 };
 
 
-module.exports = { getAllSkills, getOneSkill, addOneSkill, deleteOneSkill };
+module.exports = { getAllSkills, getOneSkill, addOneSkill, deleteOneSkill, getSkillsForProvider };
