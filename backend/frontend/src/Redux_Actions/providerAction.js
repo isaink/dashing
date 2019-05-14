@@ -5,6 +5,7 @@ export let RECEIVE_PROVIDERS_SUCCESS = "RECEIVE_PROVIDERS_SUCCESS";
 export let RECEIVE_PROVIDER_INFO = "RECEIVE_PROVIDER_INFO";
 export let RECEIVE_PROVIDER_SERVICES = "RECEIVE_PROVIDER_SERVICES";
 export let RECEIVE_PROVIDER_PORTFOLIIO = "RECEIVE_PROVIDER_PORTFOLIIO";
+export let RECEIVE_PROVIDER_SKILLS = "RECEIVE_PROVIDER_SKILLS";
 export let RECEIVE_SKILLSBYPRO_SUCCESS = "RECEIVE_SKILLSBYPRO_SUCCESS"
 
 // PROVIDER ACTION CREATOR (Action Creator: Function that returns an action object)
@@ -29,7 +30,6 @@ export const receiveProviderServices = (services, provider_id) => {
       services: services
     }
   }
-
 };
 
 // PORTFOLIO ACTION CREATOR
@@ -43,8 +43,17 @@ export const receiveProviderPortfolio = (portfolio, provider_id) => {
   }
 };
 
-export const recieveSkillsByPro =
-(skills, provider_id) => {
+export const receiveProviderSkills = (providerSkills, provider_id) => {
+  return{
+    type: RECEIVE_PROVIDER_SKILLS,
+    payload: {
+      provider_id: provider_id,
+      providerSkills: providerSkills
+    }
+  }
+};
+
+export const recieveSkillsByPro = (skills, provider_id) => {
   return{
     type: RECEIVE_SKILLSBYPRO_SUCCESS,
     payload: {
@@ -76,7 +85,7 @@ export const fetchErrors = err => {
 // PROVIDER BY SERVICES --> AXIOS // This is an action function that makes async calls.
 export const fetchProvidersByService = (service_id, borough="") => dispatch => {
   axios
-    .get(`/api/srvProviders/${service_id}/${borough}`)
+    .get(`/srvProviders/${service_id}/${borough}`)
     .then(res => {
       let providers = res.data.data;
       return dispatch(receivedProvidersSuccess(providers, service_id)); // what is the key inside the queries...?
@@ -109,16 +118,23 @@ export const getProviderInfo = provider_id => dispatch => {
               let action = receiveProviderPortfolio(portfolio, provider_id)
               return dispatch(action)
             })
-    })
-    .then(res => {
-      axios.get(`skillsprovider/provider/${provider_id}`)
-      .then(res => {
-
-        let skills = res.data.data;
-        let action = recieveSkillsByPro(skills, provider_id)
-        return dispatch(action)
+    }).then(res =>{
+        axios.get(`/skills/providers/${provider_id}`)
+              .then(res =>{
+                let providerSkills = res.data.data
+                console.log('providerrrrrr', providerSkills)
+                let action = receiveProviderSkills(providerSkills, provider_id)
+                return dispatch(action)
+              })
       })
-    })
+    // .then(res => {
+    //   axios.get(`skillsprovider/provider/${provider_id}`)
+    //   .then(res => {
+    //     let skills = res.data.data;
+    //     let action = recieveSkillsByPro(skills, provider_id)
+    //     return dispatch(action)
+    //   })
+    // })
     .catch(err => {
       return dispatch(fetchErrors(err));
     });

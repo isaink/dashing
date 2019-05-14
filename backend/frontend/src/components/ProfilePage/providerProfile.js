@@ -17,7 +17,7 @@ const ProviderProfile = props => {
   const renderProviderInfo = () => {
     if (props.providerInfo) {
       return (
-        <div className="big_Div" key={props.providerInfo.provider_id}>
+        <div className="ctnr_profile" key={props.providerInfo.provider_id}>
           <div className="background_img_Div">
             <img alt="intro_picture" src={pared} className="intro_pic" />
             {/*
@@ -28,28 +28,36 @@ const ProviderProfile = props => {
           <div className="allBelowBkGndImage">
             {/*
                 <div className='backLinkDiv'>
+
+
                 <Link
                 className="backLink"
                 to={"/"}
                 onClick={goBack}
                 style={{textDecoration: 'none'}}
                 >
+
                 <div className='backarrowImageTagDiv'>
                 <img src={backarrow}
                 alt=''
                 width='50px'
                 className='backarrowImageTag'
+
                 />
                 </div>
+
                 <div className='goBackTextTag'>
                 <h4> Go Back </h4>
                 </div>
+
                 </Link>
+
                 </div>
+
                 */}
 
-            <div className="leftCenterAndRightSidesDiv">
-              <div className="LeftSideDiv">
+            <div className="leftAndRightSidesDiv">
+              <div className="AvatarAndAllDetailsDiv">
                 {/*
                       // <div className='avatarProfileDiv'>
                       */}
@@ -121,82 +129,65 @@ const ProviderProfile = props => {
                       </div>
                       */}
               <div className="centerDiv">
-                <div className="servicesAndSkills">
-                  {props.providerInfo.services &&
-                    props.providerInfo.services.map(service => {
-                      let skills = service.skills.map(skill => {
-                        return (
-                          <>
-                            <img
-                              alt="intro_picture"
-                              src={bulletpoint}
-                              style={{ height: "5px" }}
-                              className="skillBullets"
-                            />{" "}
-                            <p className="skill_item">{skill}</p>{" "}
-                          </>
-                        );
-                      });
-                      return (
-                        <>
-                          <div className="srv_nameDiv">
-                            <p className="srv_name">{service.servicesname}</p>
-                          </div>
-                          <div className="skillAndBulletsDiv">{skills}</div>
-                        </>
-                      );
-                    })}
-                </div>
+                {/*  <div className="ctnr_services">
+                          {props.providerInfo.services &&
+                            props.providerInfo.services.map(service => {
+                              let skills = service.skills.map(skill => {
+                                return (
+                                  <>
+
+                                  </>
+                              );
+                            });
+                            return (
+                              <>
+                              <div className="srv_nameDiv">
+                                <p className="srv_name">{service.servicesname}</p>
+                              </div>
+                              <div className="skillAndBulletsDiv">{skills}</div>
+                              </>
+                          );
+                        })}
+                      </div> */}
               </div>
 
-              <div className="rightSideDivDIV">
-                <div className="rightSideDiv">
-                  <div className="portfolioDiv">
-                    <div className="ctnr_portfolio">
-                      {props.providerInfo.portfolio ? (
-                        props.providerInfo.portfolio.map(photo => {
-                          return (
-                            <img
-                              className="portfolio_img"
-                              src={photo["img"]}
-                              alt="not here"
-                              style={{ height: "200px" }}
-                            />
-                          );
-                        })
-                      ) : (
-                        <>
+              <div className="rightSideDiv">
+                <div className="portfolioDiv">
+                  <div className="ctnr_portfolio">
+                    {props.providerInfo.portfolio ? (
+                      props.providerInfo.portfolio.map(photo => {
+                        return (
                           <img
                             className="portfolio_img"
-                            alt="intro_picture"
-                            src={not_img}
-                            style={{
-                              height: "200px"
-                              // objectFit: "cover",
-                              // transform: "translateY(-20%)"
-                            }}
+                            src={photo["img"]}
+                            alt="not here"
+                            style={{ height: "200px" }}
                           />
-                        </>
-                      )}
-                    </div>
-                    {/*
-                        transform: "translateY(-20%)"
-                        */}
+                        );
+                      })
+                    ) : (
+                      <>
+                        <img
+                          alt="intro_picture"
+                          src={not_img}
+                          style={{
+                            objectFit: "cover",
+                            height: "320px",
+                            transform: "translateY(-20%)"
+                          }}
+                        />
+                      </>
+                    )}
                   </div>
-                  <div className="scrollInstructionsDiv">
-                    <p className="scrollInstructions">
-                      Click and scroll through my portfolio!
-                    </p>
-                  </div>
+                </div>
+                <div className="scrollInstructionsDiv">
+                  <p className="scrollInstructions">
+                    Click and scroll through my portfolio!
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          {/*
-                <div className='testDiv'>
-                <h1 className='testTag'> Test Test tEst tEat stea tl la fjkla sd af</h1>
-              </div>
-              */}
         </div>
       );
     } else {
@@ -208,13 +199,79 @@ const ProviderProfile = props => {
     }
   };
 
-  console.log(props.providerInfo.services);
-  console.log(props.providerInfo.portfolio);
-  console.log(props.providerInfo.providername);
+  const renderProviderSkillsAndPrices = () => {
+    // if (props.providerInfo.providerSkills ) {
+    //   console.log("provider info propppps", props.providerInfo);
+    //   return (
+    //     <div>
+    //         <div  className="ctnr_services">
+    //         {
+    //           props.providerInfo.providerSkills.map(theSkills =>{
+    //           console.log(props.providerInfo.providerSkills, "the damn props");
+    //
+    //
+    //            console.log("theSkills prt 1",theSkills, "<~~~~ here!!!");
+    //           // console.log("theSkills", Object.entries(theSkills), "<~~~~ here!!!");
+    //
+    //         return  theSkills.skills.map(skills =>{
+    //           return(
+    //             <>
+    //               <h1>{skills}</h1>
+    //
+    //             </>
+    //           )
+    //           })
+    //         })}
+    //         </div>
+    //
+    //         <div>
+    //         {props.providerInfo.providerSkills && props.providerInfo.providerSkills.map(prices =>{
+    //           // console.log("here", prices.price_max, "<~~~~ prices!!");
+    //         // return  props.prices.price_max.map(price =>{
+    //           return(
+    //             <>
+    //
+    //               <h1  className="ctnr_services">{prices.price_max}</h1>
+    //             </>
+    //           )
+    //           })
+    //         })}
+    //         </div>
+    //
+    //
+    //     </div>
+    //
+    //   )
+    // }
+
+    if (props.providerInfo.providerSkills) {
+      return (
+        <div>
+          {props.providerInfo.providerSkills.map(skillInfo => {
+            console.log(skillInfo, "<----- skill info here");
+            return (
+              <div className="ctnr_services">
+                <div className="skill_div">{skillInfo.skills}</div>
+                <div className="price_div">
+                  <div className="price_min_div">${skillInfo.price_min} -</div>
+                  <div className="price_max_div">${skillInfo.price_max}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
+  };
+
+  // console.log(  props.providerInfo.services);
+  // console.log(  props.providerInfo.portfolio);
+  // console.log(props.providerInfo.providername);
   return (
     <div>
       <NavbarProfile />
       {renderProviderInfo()}
+      {renderProviderSkillsAndPrices()}
     </div>
   );
 };

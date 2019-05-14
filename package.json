@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "concurrently": "^4.1.0",
+    "pagination": "github:react-bootstrap/Pagination",
     "react-router-dom": "^5.0.0",
     "react-slick": "^0.24.0",
     "react-widgets": "^4.4.10",

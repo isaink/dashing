@@ -27,78 +27,62 @@ export default class Navbar extends Component {
           </span>
 
           <div className="dashingNav">
+            <Link
+              className="links"
+              activeClass="active"
+              to="hair"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Hair
+            </Link>
+            <Link
+              className="links"
+              activeClass="active"
+              to="nails"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Nails
+            </Link>
+            <Link
+              className="links"
+              activeClass="active"
+              to="barber"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Barber
+            </Link>
+            <Link
+              className="links"
+              activeClass="active"
+              to="makeup"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Makeup
+            </Link>
 
-              { /*<Link
-                className="links"
-                activeClass="active"
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Home
-              </Link>
-              <Link
-                className="links"
-                activeClass="active"
-                to="hair"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Hair
-              </Link>
-              <Link
-                className="links"
-                activeClass="active"
-                to="nails"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Nails
-              </Link>
-              <Link
-                className="links"
-                activeClass="active"
-                to="barber"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Barber
-              </Link>
-              <Link
-                className="links"
-                activeClass="active"
-                to="makeup"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Makeup
-              </Link>*/}
+            <RouterLink className="links" activeClass="active" to="/education">
+              Educational Services
+            </RouterLink>
 
-              <RouterLink
-                className="links"
-                activeClass="active"
-                to="/education"
-              >
-                Educational Services
-              </RouterLink>
-
-              <RouterLink className="links" activeClass="active" to="/aboutus">
-                About Us
-              </RouterLink>
-            </div>
+            <RouterLink className="links" activeClass="active" to="/aboutus">
+              About Us
+            </RouterLink>
           </div>
+        </div>
 
-              {/* <Link
+        {/* <Link
               className="links"
               activeClass="active"
               to="aboutus"
@@ -109,9 +93,6 @@ export default class Navbar extends Component {
             >
               About Us
             </Link>*/}
-
-
-
       </>
     );
   }
