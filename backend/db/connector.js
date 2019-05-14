@@ -1,4 +1,4 @@
 const pgp = require('pg-promise')({});
-const db = pgp('postgres://localhost:5432/dashing');
+const db = pgp(process.env.DATABASE_URL);
 
-module.exports = db ;
+module.exports = db;

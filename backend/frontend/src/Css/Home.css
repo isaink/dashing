@@ -1,0 +1,99 @@
+.welcome_container {
+  padding-left: 250px;
+  padding-right: 200px;
+  padding-top: 250px;
+}
+
+.box .hvrbox-layer_top {
+  /* background: white; */
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  /* color: #fff; */
+  padding: 15px;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -ms-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+.box:hover .hvrbox-layer_top,
+.box.active .hvrbox-layer_top {
+  opacity: 3;
+  color: white;
+}
+.box .hvrbox-text {
+  text-align: center;
+  font-size: 14px;
+  /* display: inline-block; */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: white;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+
+.slogan {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 60px;
+  color: #ffffff;
+  letter-spacing: -2px;
+}
+
+.subSlogan {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 100;
+  color: #ecb99c;
+}
+
+.choose_svc {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 25px;
+
+  color: #ffffff;
+}
+
+.service_thumbs img {
+  border-radius: 100px;
+  margin-left: 20px;
+  object-fit: cover;
+  transition: filter 0.5s ease-in-out;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  border-color: red;
+  border-width: medium;
+}
+
+.service_thumbs img:hover {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  border-color: red;
+}
+
+.Element {
+  z-index: 4;
+  display: flex;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/*dl {
+  /* margin: 1rem; */
+/* background-color: cornflowerblue;
+   color: cornsilk; */
+/* } */
+/* dt {
+  position: sticky;
+  top: 100px;
+} */

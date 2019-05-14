@@ -1,8 +1,39 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "bootstrap": "^4.3.1",
     "jquery": "^1.9.1",
     "node-sass-chokidar": "^1.3.4",
     "popper.js": "^1.15.0"
   }
+=======
+  "name": "dashing",
+  "version": "1.0.0",
+  "description": "making ppl dashing",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "pagination": "github:react-bootstrap/Pagination",
+    "react-router-dom": "^5.0.0",
+    "react-slick": "^0.24.0",
+    "react-widgets": "^4.4.10",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd backend/frontend && npm start\" \"cd backend && npm start\"",
+    "heroku-postbuild": "cd backend && npm install && cd frontend && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaink/dashing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaink/dashing/issues"
+  },
+  "homepage": "https://github.com/isaink/dashing#readme"
+>>>>>>> 3a374ba649e0804a1655eecdf174e902dec731f9
 }

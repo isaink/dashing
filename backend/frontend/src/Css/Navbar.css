@@ -1,0 +1,242 @@
+.links_center {
+  display: flex;
+  justify-content: center;
+  /* top: 200px; */
+  z-index: 500;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+button {
+  position: relative;
+  margin: 5px;
+  height: 60px;
+  width: 150px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: black;
+  opacity: 0.9;
+  /* border-radius: 10px; */
+  color: #ECB99C;
+  /* z-index: 1; */
+  /* z-index: 5; */
+  overflow: hidden;
+}
+
+button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  /* border: solid 5px; */
+  /* z-index: -1; */
+  z-index: 5;
+  transition: transform 0.6s linear;
+  transform: scale(0.97, 0.93);
+}
+
+button:hover::after {
+  transform: scale(1, 1);
+}
+
+/*  */
+.nav_prof {
+  position: absolute;
+  z-index: 5;
+}
+/*  */
+
+.ctnr_lines{
+  position: absolute;
+
+  top: 20px;
+  left: 20%;
+  transform: translate(-50%,-50%);
+}
+.nav_lines{
+  width: 50px;
+  height: 50px;
+  /* position: relative; */
+  border: 3px solid  #ECB99C;
+  cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.nav_lines div{
+  height: 3px;
+  margin: 0%;
+  width: 40px;
+  background-color: #fff;
+  position: absolute;
+   transition: all 0.5s ease;
+}
+
+.nav_lines  .first{
+  top: 15px;
+  margin-bottom: 10px;
+  left: 20px;
+}
+
+.nav_lines  .second{
+  top: 35px;
+  margin-bottom: 10px;
+  
+  left: 20px;
+}
+
+.nav_lines  .third{
+  top: 55px;
+  left: 20px;
+}
+
+.nav_lines:hover .first {
+   transform: translateY(20px) rotate(45deg);
+   transition: all 0.5s ease;
+}
+
+.nav_lines:hover .second {
+   opacity: 0;
+  transition: all 0.2s ease;
+ 
+}
+
+.nav_lines:hover .third{
+  transform: translateY(-20px) rotate(-45deg);
+   transition: all 0.5s ease;
+}
+
+.nav_lines:hover{
+   /* border-radius:50%; */
+   transition: all 0.3s ease;  
+}
+
+
+
+*,
+*:before,
+*:after {
+    /* -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
+    /* box-sizing: border-box; */
+}
+
+
+
+
+/* .button */
+
+.bttn_ {
+    display: inline-block;
+    position: relative;
+    /* margin: 1em; */
+    /* padding: 0.67em; */
+    border: 2px solid #FFF;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 12px;
+    outline: none;
+    color: #FFF;
+    background: transparent;
+    font-family: 'raleway', sans-serif;
+}
+
+.bttn_ img {
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.bttn_:before,
+.bttn_ :after {
+    content: '';
+    position: absolute;
+    top: 0.67em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: .4s,opacity .6s;
+    -moz-transition: .4s,opacity .6s;
+    -o-transition: .4s,opacity .6s;
+    transition: .4s,opacity .6s;
+}
+
+/* :before */
+
+.bttn_:before {
+    content: attr(data-hover);
+    -webkit-transform: translate(-150%,0);
+    -moz-transform: translate(-150%,0);
+    -ms-transform: translate(-150%,0);
+    -o-transform: translate(-150%,0);
+    transform: translate(-150%,0);
+}
+
+/* :after */
+
+.bttn_:after {
+    content: attr(data-active);
+    -webkit-transform: translate(150%,0);
+    -moz-transform: translate(150%,0);
+    -ms-transform: translate(150%,0);
+    -o-transform: translate(150%,0);
+    transform: translate(150%,0);
+}
+
+/* Span on :hover and :active */
+
+.bttn_:hover img,
+.bttn_:active img {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    -o-transform: scale(0.3);
+    transform: scale(0.3);
+}
+
+/*  
+    We show :before pseudo-element on :hover 
+    and :after pseudo-element on :active 
+*/
+
+.bttn_:hover:before,
+.bttn_:active:after {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition-delay: .4s;
+    -moz-transition-delay: .4s;
+    -o-transition-delay: .4s;
+    transition-delay: .4s;
+}
+
+/* 
+  We hide :before pseudo-element on :active
+*/
+
+.bttn_:active:before {
+    -webkit-transform: translate(-150%,0);
+    -moz-transform: translate(-150%,0);
+    -ms-transform: translate(-150%,0);
+    -o-transform: translate(-150%,0);
+    transform: translate(-150%,0);
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+}

@@ -144,3 +144,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Barber);
+

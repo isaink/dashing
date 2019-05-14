@@ -1,9 +1,8 @@
 DROP DATABASE IF EXISTS dashing;
 CREATE DATABASE dashing;
-
 \c dashing
 
-CREATE TYPE userType AS ENUM ( 'provider', 'client');
+CREATE TYPE userType AS ENUM('provider', 'client');
 
 CREATE TABLE services(
   id SERIAL PRIMARY KEY,
@@ -30,14 +29,11 @@ CREATE TABLE users(
   service_id INT REFERENCES services(id) ON DELETE CASCADE,
   type userType
 );
-
 CREATE TABLE services_provider(
   id SERIAL PRIMARY KEY,
   service_id INT REFERENCES services(id) ON DELETE SET NULL,
   user_id INT REFERENCES users(id) ON DELETE SET NULL
 );
-
-
 CREATE TABLE skills_provider(
     id SERIAL PRIMARY KEY,
     skill_id  INT REFERENCES skills(id) ON DELETE SET NULL,
@@ -46,7 +42,6 @@ CREATE TABLE skills_provider(
     price_max INT,
     education BOOLEAN
 );
-
 CREATE TABLE portfolio (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id) ON DELETE SET NULL,
@@ -60,7 +55,6 @@ VALUES('Hair'),
 ('Nails'),
 ('Barber'),
 ('Makeup');
-
 INSERT INTO skills (name, service_id)
 VALUES('Coloring' , 1),
 ('Weaves' , 1),
@@ -86,7 +80,7 @@ VALUES('Coloring' , 1),
 INSERT INTO users (first_name, last_name, password_digest, email, avatar, borough, phone_number, website_link, bio, service_id, type)
 VALUES('Nielene', 'Keys', 'nkeys', 'nkeys@gmail.com',  'https://i0.wp.com/ranktribe.com/custom/domain_1/image_files/sitemgr_photo_10665.jpg?resize=297%2C297', 'Brooklyn', '347-599-9843', 'www.nkeys.com', 'I love doing nails!', 2, null),
 ('Isa', 'Frias', 'irico', 'irico@gmail.com',  'https://assets.teenvogue.com/photos/55fada5fda9bc0e85547e428/master/pass/latina-girls.jpg', 'Bronx', '347-599-9843', 'www.isafrias.com', 'I love to do hair!', 1, null),
-('Bayne', ' Brian', 'bbrian', 'bbrian@gmail.com', 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F11%2Fkofi-siriboe-peopledotcom1.jpg&w=400&c=sc&poi=face&q=85', 'Manhattan','7189875674', 'www.baynebrian.com', 'I''m the best barber in NY fam!', 3, null), 
+('Bayne', ' Brian', 'bbrian', 'bbrian@gmail.com', 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F11%2Fkofi-siriboe-peopledotcom1.jpg&w=400&c=sc&poi=face&q=85', 'Manhattan','7189875674', 'www.baynebrian.com', 'I''m the best barber in NY fam!', 3, null),
 ('Jo', 'West', 'jwest', 'jwest@gmail.com', 'https://i-h2.pinimg.com/564x/a1/cb/81/a1cb814979c87ec8f7b252b299c75343.jpg', 'Queens', '347-599-9843', 'www.jowest.com', 'Jo is here to take care of you', 1, null),
 ('Carina', 'Salvador', 'csalvador','csalvador@gmail.com',  'https://static1.squarespace.com/static/585862a3e6f2e134f2aa6e3e/t/58b87bf6d2b8579db55b0e57/1488485395205/', 'Staten Island', '347-599-9843', 'www.carinabeauty.com', 'Im here to meet all your beauty needs', 4, null),
 ('Sheree', ' Love', 'sheloves', 'shereelove@gmail.com',  'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/71732_446752851221_6737560_n.jpg?_nc_cat=109&_nc_oc=AQnBLTtsTVHV9U2ho6WqGEQY5VTSxi4pjhkycI-hOKIaJSZZQlKRJVu6WsTJiZQ3oqc&_nc_ht=scontent-lga3-1.xx&oh=f47011313f8a95f23c17a3a2d1a1608f&oe=5D37A50F', 'Brooklyn', '212-769-2000', 'www.beautybysheree.com', 'Let me take care of all your needs!', 1, null),
@@ -241,7 +235,6 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 (19, 25, 30, 70, 'false'), ---makeup
 (16, 25, 30, 80, 'true') ---makeup
 ;
-
 
 INSERT INTO portfolio(user_id, img, body, skill_id)
 VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),

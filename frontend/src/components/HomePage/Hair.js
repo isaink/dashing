@@ -104,8 +104,7 @@ class Hair extends React.Component {
                 </div>
                   <div className='info_prov' >
                     <div style={{textTransform: 'uppercase', fontSize: '20px', color: '#ECB99C'}}> 
-                    {hairP.first_name} { " "} 
-                    {hairP.last_name}  <br />
+                    {hairP.first_name} { " "} {hairP.last_name}  <br />
                   </div>  
                     {  hairP.borough} <br />
                   </div>
