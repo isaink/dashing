@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS dashing;
 CREATE DATABASE dashing;
 \c dashing
+
 CREATE TYPE userType AS ENUM ( 'provider', 'client');
 CREATE TABLE services(
   id SERIAL PRIMARY KEY,
