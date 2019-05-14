@@ -143,7 +143,7 @@ const mapDispatchToProps = dispatch => {
     getProvidersBySkill: (skill_id) => dispatch(getProvidersBySkill(4, skill_id)),
     getProvidersByService: (skill_id, borough) => dispatch(getProvidersByService(4, skill_id, borough))
 
-  };
+  }
 };
 
 export default connect(
