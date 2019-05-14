@@ -9,6 +9,7 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 import "../../Css/provider.css";
 import barberPic from "../../photo_assets/barber.jpeg";
 import barber from "../../img/barber2.png";
+
 class Barber extends React.Component {
   state = {
     skills: [],
@@ -113,7 +114,7 @@ class Barber extends React.Component {
                   Choose your time saver and{" "}
                   <b style={{ color: "white" }}>BARBER </b>care
                 </h3>
-                {/* <div className="prov" style={{width: '873px'}}>{this.renderProviders()}</div> */}
+                <div className="prov" style={{width: '873px'}}>{this.renderProviders()}</div>}
               </div>
             </div>
           </div>

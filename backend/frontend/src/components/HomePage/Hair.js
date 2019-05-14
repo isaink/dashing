@@ -117,6 +117,7 @@ class Hair extends React.Component {
     }
   };
   render() {
+    console.log('HAIR COMPONENT', this.props)
     return (
       <>
         <div className="ctnr_prov">
@@ -142,8 +143,8 @@ class Hair extends React.Component {
                   Choose your time saver and{" "}
                   <b style={{ color: "white" }}>HAIR</b> care
                 </h3>
-                {/* <div className="prov">{this.renderProviders()}</div> */}
-              
+                <div className="prov">{this.renderProviders()}</div>
+
               </div>
             </div>
           </div>

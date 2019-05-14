@@ -13,7 +13,7 @@ export const Dropdown = props => {
         <select
           className="selector"
           onChange={handleBoroChange}
-          style={{ width: "300px", height: "50px" }}
+          style={{ width: "300px", height:' 55px' }}
           name="select-profession"
           id="select-profession"
         >
@@ -25,7 +25,7 @@ export const Dropdown = props => {
           <option value="Staten Island">Staten Island</option>
         </select>
       </div>
-    
+
     </>
   );
 };

@@ -9,11 +9,12 @@ import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 import "../../Css/provider.css";
 import nailsPic from "../../photo_assets/nails.jpg";
 import nail from "../../img/nails1.jpg";
+
 class Nails extends React.Component {
   state = {
     skills: [],
     locations: [],
-    serviceId: 2
+    serviceId: 0
   };
   componentDidMount() {
     this.props.getProvidersByService();
@@ -114,7 +115,7 @@ class Nails extends React.Component {
                 <b style={{ color: "white" }}>NAILS</b> care
               </h3>
               <div className="providers">
-                {/* <div className="prov">{this.renderProviders()}</div> */}
+                <div className="prov">{this.renderProviders()}</div>
               </div>
             </div>
           </div>

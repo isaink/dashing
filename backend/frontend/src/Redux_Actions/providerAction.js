@@ -99,7 +99,7 @@ export const fetchProvidersByService = (service_id, borough="") => dispatch => {
 
 // PROVIDERS PORFOLIO PICTURES & ALL INFO DETAILS  --> AXIOS
 export const getProviderInfo = provider_id => dispatch => {
-  axios.get(`/providers/${provider_id}`)
+  axios.get(`/providers/singleProvider/${provider_id}`)
     .then(res => {
       let provider = res.data.info;
       let action = receiveSingleProvider(provider, provider_id)
