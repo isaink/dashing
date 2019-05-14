@@ -55,31 +55,25 @@ class Makeup extends React.Component {
       return providerArr.map(makeupP => {
         return (
           <div key={makeupP.provider_id}>
-            <Link to={`/singleProviderProfile/${makeupP.provider_id}`}>
-              <div className="box">
-                <div className="content">
-                    <img
-                      alt="avatar"
-                      className="hvrbox-layer_bottom"
+            <div className="content">
+              <div className='ctnr_avatar'>
+                <Link to={`/singleProviderProfile/${makeupP.provider_id}`}>
+                  <img
+                    alt="avatar"
+                      className="prov_avatar"
                       src={makeupP.avatar}
-                      style={{ height: "140px" }}
+                      style={{ height: "150px" }}
                     />
+                </Link>
                 </div>
-
-                  <div className='hvrbox-layer_top'>
-                      <div className='hvrbox-text'>
-                    <span id="providername" className='ih-fade-down ih-delay-sm'>{makeupP.provider}</span>
-                    <br />
-                    <div style={{ zIndex: '4', textAlign: 'center'}}>
-                      {makeupP.borough} <br />
-                      {makeupP.email} <br />
-                      {makeupP.phone_number} <br />
-                      {makeupP.website_link}
-                    </div>
-                  </div>
-                </div>
+              <div className="info_prov">
+              <div style={{textTransform: 'uppercase', fontSize: '20px', color: '#ECB99C'}}> 
+                {makeupP.first_name} { " "} 
+                {makeupP.last_name}  <br />
+              </div>  
+                {makeupP.borough} <br />
               </div>
-            </Link>
+            </div>
           </div>
         );
       });
@@ -94,30 +88,28 @@ class Makeup extends React.Component {
     return (
       <>
       <div className='ctnr_prov'>
+        <div className='ctnr_nav' style={{ gridTemplateColumns: '23% 72%'}}>
+          <div className="title">MAKEUP</div>
+            <span className="dropdown" style={{width: '1048px'}}>
+              <ComboBox
+                fetchSkillList={this.state.skills}
+                getProvidersByService = {this.props.getProvidersByService}
+                fetchProvidersByService = {this.props.fetchProvidersByService}
+                serviceId={this.state.service_id}
+              />
+            </span>
+          </div>
           <div className="ctnr_box_right">
-            <div className="img_intro_right" style={{ borderTop: 'solid #ecb99'}}>
+            <div className="img_intro_right">
               <img
                 alt="intro"
                 src={makeup}
-                style={{ objectFit: "cover", height: '100%', width:'100%', border: 'solid #ecb99c'}}
+                style={{ objectFit: "cover", height: '100%', width:'100%'}}
                 />
             </div>
-
             <div className="inner_ctnr_providers_right">
-              <div className='ctnr_nav'>
-
-                <div className="title" style={{    paddingLeft: '20px'}}>Makeup</div>
-                  <span className="dropdown">
-                    <ComboBox
-                      fetchSkillList={this.state.skills}
-                      getProvidersByService = {this.props.getProvidersByService}
-                      fetchProvidersByService = {this.props.fetchProvidersByService}
-                      serviceId={this.state.service_id}
-                      />
-                  </span>
-                </div>
-
-              <div className="providers">
+              <h3 className="text_intro_srv"> Choose your time saver and <b style={{ color: 'white'}}>MAKEUP</b> care</h3>
+                <div className="providers">
                 <div className="prov">{this.renderProviders()}</div>
               </div>
             </div>

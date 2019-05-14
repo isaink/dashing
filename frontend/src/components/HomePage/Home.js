@@ -18,8 +18,8 @@ import  LogInForm from '../UserAuth/LogIn';
 import EducationProv_Container  from "../../Redux_Containers/EducationProv_Container";
 import { AboutUs } from "./AboutUs";
 // import  NavbarForComponents  from '../NavBars/NavbarForComponents'
-import NavbarHome from "../NavBars/Navbar";
-import homeLogo from "../../photo_assets/dashing_logo_invert.png";
+// import NavbarHome from "../NavBars/Navbar";
+// import homeLogo from "../../photo_assets/dashing_logo_invert.png";
 
 import "./../../Css/Home.css";
 
@@ -148,7 +148,7 @@ class Home extends Component {
           <dd>
             <div className="bg_welcome">
               <div className="homeLogo">
-                <img src={homeLogo} alt="" width="700px"  />
+                {/* <img src={homeLogo} alt="" width="700px"  /> */}
               </div>
             </div>
           </dd>
@@ -161,7 +161,7 @@ class Home extends Component {
 
           <dt>
             <div className='NavbarDiv'>
-              <NavbarHome className='NavbarComponentTag'/>
+              {/* <NavbarHome className='NavbarComponentTag'/> */}
             </div>
           </dt>
 

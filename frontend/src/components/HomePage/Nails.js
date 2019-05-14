@@ -51,34 +51,28 @@ class Nails extends React.Component {
           providerArr.push(provider);
         }
       })
-
       return providerArr.map(nailP => {
         return (
           <div key={nailP.provider_id}>
-            <Link to={`/singleProviderProfile/${nailP.provider_id}`}>
-              <div className="box">
-                <div className="content">
+            <div className="content">
+              <div className='ctnr_avatar'> 
+                <Link to={`/singleProviderProfile/${nailP.provider_id}`}>
                   <img
                     alt="avatar"
-                    className="hvrbox-layer_bottom"
+                    className='prov_avatar'
                     src={nailP.avatar}
-                    style={{ height: "140px"}}
+                    style={{ height: "150px"}}
                     />
-                  <div className='hvrbox-layer_top'>
-                    <div className='hvrbox-text'>
-                      <span id="providername"  className='ih-fade-down ih-delay-sm'>>{nailP.provider}</span>
-                      <br />
-                      <div style={{ zIndex: '4', textAlign: 'center'}}>
-                        {nailP.borough} <br />
-                        {nailP.email} <br />
-                        {nailP.phone_number} <br />
-                        {nailP.website_link}
-                      </div>
-                  </div>
+                </Link>
                 </div>
-              </div>
+                <div className='info_prov' >
+                  <div style={{textTransform: 'uppercase', fontSize: '20px', color: '#ECB99C'}}> 
+                    {nailP.first_name} { " "} 
+                    {nailP.last_name}  <br />
+                  </div>  
+                    {  nailP.borough} <br />
+                  </div>
             </div>
-          </Link>
         </div>
       );
     });
@@ -93,22 +87,10 @@ render() {
   return (
     <>
     <div className='ctnr_prov'>
-      <div className="ctnr_box_right">
-        <div className="img_intro_right"  >
-          <img
-            alt="intro"
-            src={nail}
-            height='100%'
-            style={{ objectFit: "cover", height: '100%', width:'100%', border: 'solid #ecb99c' }}
-            />
-        </div>
-
-        <div className="inner_ctnr_providers_right">
         <div className='ctnr_nav'>
-        
-          <div className="title">Nails</div>
+          <div className="title">NAILS</div>
             <span className="dropdown">
-              <ComboBox style={{display: 'grid', gridTemplateColumns:' 40% 40% 20%'}}
+              <ComboBox 
                 fetchSkillList={this.state.skills}
                 getProvidersByService = {this.props.getProvidersByService}
                 fetchProvidersByService = {this.props.fetchProvidersByService}
@@ -116,7 +98,16 @@ render() {
                 />
             </span>
             </div>
-
+            <div className="ctnr_box_right">
+              <div className="img_intro_right"  >
+                <img
+                  alt="intro"
+                  src={nail}
+                  style={{ objectFit: "cover", height: '100%', width:'100%'}}
+                  />
+              </div>
+          <div className="inner_ctnr_providers_right">
+          <h3 className="text_intro_srv"> Choose your time saver and <b style={{ color: 'white'}}>NAILS</b> care</h3>
             <div className="providers">
               <div className="prov">{this.renderProviders()}</div>
             </div>

@@ -55,33 +55,26 @@ class Barber extends React.Component {
       return providerArr.map(barberP => {
         return (
           <div key={barberP.provider_id}>
-            <Link to={`/singleProviderProfile/${barberP.provider_id}`}>
-            <div className="box">
               <div className="content">
-                <img
-                  alt="avatar"
-                  className="hvrbox-layer_bottom"
-                  src={barberP.avatar}
-                  style={{ height: "140px" }}
-                />
-
-                <div className='hvrbox-layer_top'>
-                    <div className='hvrbox-text'>
-                      <span id="ih-fade-down ih-delay-sm">{barberP.provider}</span>
-                      <br />
-
-                    <div style={{ zIndex: '4', textAlign: 'center'}} >
-                      {barberP.borough} <br />
-                      {barberP.email} <br />
-                      {barberP.phone_number} <br />
-                      {barberP.website_link}
-                    </div>
-                    </div>
+                <div className='ctnr_avatar'> 
+                <Link to={`/singleProviderProfile/${barberP.provider_id}`}>
+                  <img
+                    alt="avatar"
+                    className='prov_avatar'
+                    src={barberP.avatar}
+                    style={{ height: "150px" }}
+                  />
+                  </Link>  
                   </div>
-                </div>
+                  <div className='info_prov' >
+                    <div style={{textTransform: 'uppercase', fontSize: '20px', color: '#ECB99C'}}> 
+                    {barberP.first_name} { " "} 
+                    {barberP.last_name}  <br />
+                  </div>  
+                    { barberP.borough} <br />
+                  </div>
               </div>
-            </Link>
-          </div>
+        </div>
         );
       });
     } else {
@@ -96,35 +89,34 @@ render() {
     return (
       <>
        <div className='ctnr_prov'>
+       <div className='ctnr_nav'>
+          <div className="title" >BARBER</div>
+            <span style={{ paddingLeft: '55px', width: '1074px'}}>
+              <ComboBox
+                fetchSkillList={this.state.skills}
+                getProvidersByService = {this.props.getProvidersByService}
+                fetchProvidersByService = {this.props.fetchProvidersByService}
+                serviceId={this.state.service_id}
+              />
+            </span>
+          </div>
         <div className="ctnr_box_barber">
-            <div className="img_intro" style={{ borderTop: 'solid #ecb99c'}}>
+            <div className="img_intro">
               <img
                 alt="intro"
                 src={barber}
-                // width="1200px"
-                height='100%'
-                style={{ objectFit: "cover"}}
+                objectFit="cover"
+                // height='600px'
               />
             </div>
-
-            <div className="inner_ctnr_providers">
-              <div className='ctnr_nav'>
-                <div className="title" >Barber</div>
-                  <span className="dropdown">
-                    <ComboBox
-                      fetchSkillList={this.state.skills}
-                      getProvidersByService = {this.props.getProvidersByService}
-                      fetchProvidersByService = {this.props.fetchProvidersByService}
-                      serviceId={this.state.service_id}
-                      />
-                  </span>
+              <div className="inner_ctnr_providers">
+                <div className="providers">
+                  <h3 className="text_intro_srv" style={{ width: '825px'}}>
+                  Choose your time saver and <b style={{ color: 'white'}}>BARBER </b>care</h3>
+                  <div className="prov" style={{width: '873px'}}>{this.renderProviders()}</div>
                 </div>
-             
-              <div className="providers">
-                <div className="prov">{this.renderProviders()}</div>
-              </div>
             </div>
-          </div>
+            </div>
         </div>
       </>
     );

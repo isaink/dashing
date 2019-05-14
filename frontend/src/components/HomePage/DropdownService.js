@@ -1,5 +1,6 @@
 import React from "react";
 import "../../Css/Education.css";
+import { register } from "../../serviceWorker";
 
 export const DropdownService = props => {
   return (

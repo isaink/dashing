@@ -8,6 +8,8 @@ import store from "./Redux_Store/store.js";
 import { BrowserRouter } from "react-router-dom";
 import ScrollMemory from 'react-router-scroll-memory';
 
+
+
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>

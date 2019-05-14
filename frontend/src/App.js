@@ -6,8 +6,7 @@ import EducationProv_Container from './Redux_Containers/EducationProv_Container'
 import { AboutUs } from "./components/HomePage/AboutUs";
 import ProviderProfile from './components/ProfilePage/providerProfile';
 import SingleProviderContainer from "./Redux_Containers/SingleProviderContainer";
-import NavbarForComponents from "./components/NavBars/NavbarForComponents";
-import NewUser from "./components/Account/NewUser";
+import NewUser from './components/UserAuth/NewUser';
 
 import "./App.css";
 import "./index.css";
@@ -16,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavbarForComponents />
+        {/* <NavbarForComponents /> */}
 
         <Switch>
           <Route exact path="/" component={Home} />
