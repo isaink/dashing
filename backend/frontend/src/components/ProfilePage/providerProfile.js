@@ -264,7 +264,7 @@ const ProviderProfile = props => {
     }
   };
 
-  // console.log(  props.providerInfo.services);
+  // console.log(  props.providerInfo.services)
   // console.log(  props.providerInfo.portfolio);
   // console.log(props.providerInfo.providername);
   return (
