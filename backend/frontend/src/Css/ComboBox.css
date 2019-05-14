@@ -1,6 +1,6 @@
-select {
-  height: 50px;
-  width: 320px;
+/* select { */
+  /* height: 50px; */
+  /* width: 320px;
   cursor: pointer;
   text-transform: uppercase;
   background-color: black;
@@ -24,7 +24,7 @@ select {
     calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 1px 1.5em;
   background-repeat: no-repeat;
-}
+} */
 
 .selector option {
   background: white;
@@ -39,6 +39,6 @@ select {
 }
 
 .bttn_form {
-  height: 50px;
+  /* height: 60px; */
   margin-top: 9px;
 }

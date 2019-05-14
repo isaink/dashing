@@ -69,18 +69,20 @@ class Education extends React.Component {
             <div id="ed_header">Educational Services</div>
 
             <div id="ed_writeup">
-              Dashing provides educational beauty services right in the comfort
-              of your own home! <br /> Our fun and interactive classes are
-              conducted by our skilled and licensed beauty professionals.
+              Dashing provides 1:1 educational beauty services in the
+              convenience of your own home! <br /> Our fun and interactive
+              classes are conducted by our skilled and licensed beauty
+              professionals.
               <br />
               <br />
             </div>
           </div>
         </div>
-        <form
-          className="service_dropdown"
-          onSubmit={this.handleEducationSubmit}
-        >
+
+        <span>
+          <form className="edu_service_search"
+            onSubmit={this.handleEducationSubmit}
+          >
           <DropdownService
             handleServiceChange={this.handleServiceChange}
             service_id={this.state.service_id}
@@ -94,6 +96,7 @@ class Education extends React.Component {
           <button className="edu_button">Submit</button>
         </form>
         <div className="provider_pics">{this.renderEducationProviders()} </div>
+        </span>
       </>
     );
   }
