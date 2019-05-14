@@ -3,7 +3,7 @@ const db = require("../connector.js");
 // GET --> Get all provider -->  /providers
 const getAllUsers = (req, res, next) => {
   db.any(
-    "SELECT providers.id, first_name, last_name, password_digest, email, avatar, borough, phone_number, website_link, bio, service_id, type, skill_id, price_min, price_max, education FROM users JOIN skills_provider ON users.id = skills_provider.id"
+    "SELECT users.id, first_name, last_name, password_digest, email, avatar, borough, phone_number, website_link, bio, service_id, type, skill_id, price_min, price_max, education FROM users JOIN skills_provider ON users.id = skills_provider.id"
   )
     .then(providers => {
       res.status(200).json({
