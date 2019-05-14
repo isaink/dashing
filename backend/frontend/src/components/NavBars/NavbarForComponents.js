@@ -28,7 +28,7 @@ export default class Navbar extends Component {
 
           <div className="dashingNav">
 
-              <Link
+              { /*<Link
                 className="links"
                 activeClass="active"
                 to="home"
@@ -82,7 +82,7 @@ export default class Navbar extends Component {
                 duration={500}
               >
                 Makeup
-              </Link>
+              </Link>*/}
 
               <RouterLink
                 className="links"
@@ -91,6 +91,12 @@ export default class Navbar extends Component {
               >
                 Educational Services
               </RouterLink>
+
+              <RouterLink className="links" activeClass="active" to="/aboutus">
+                About Us
+              </RouterLink>
+            </div>
+          </div>
 
               {/* <Link
               className="links"
@@ -102,13 +108,9 @@ export default class Navbar extends Component {
               duration={500}
             >
               About Us
-            </Link> */}
+            </Link>*/}
 
-              <RouterLink className="links" activeClass="active" to="/aboutus">
-                About Us
-              </RouterLink>
-            </div>
-          </div>
+
 
       </>
     );

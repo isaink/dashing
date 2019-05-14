@@ -1,9 +1,10 @@
 .welcome_container {
   padding-left: 250px;
+  padding-right: 200px;
+  padding-top: 250px;
 }
 
 .box .hvrbox-layer_top {
-
   /* background: white; */
   opacity: 0;
   position: absolute;
@@ -44,7 +45,6 @@
 
 .slogan {
   font-family: "Josefin Sans", sans-serif;
-  padding-top: 250px;
   font-size: 60px;
   color: #ffffff;
   letter-spacing: -2px;
