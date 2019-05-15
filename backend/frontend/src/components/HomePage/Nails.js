@@ -72,7 +72,7 @@ class Nails extends React.Component {
                   {nailP.first_name} {nailP.last_name} <br />
                 </div>
                 {nailP.borough} <br />
-              <div className="bio" > "{nailP.bio}" </div>
+              <div className="bio"> "{nailP.bio}" </div>
               </div>
             </div>
           </div>

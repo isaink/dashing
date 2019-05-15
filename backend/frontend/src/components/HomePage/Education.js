@@ -35,7 +35,7 @@ class Education extends React.Component {
     if (this.props.educationProviders) {
       return this.props.educationProviders.map(eduProv => {
         return (
-          <div key={eduProv.id}>
+          <div className="profile_box" key={eduProv.id}>
             <Link
               to={`/singleProviderProfile/${eduProv.id}`}
               className="edu_avatar_link"
@@ -46,11 +46,14 @@ class Education extends React.Component {
                 width="200px"
                 height="auto"
                 className="edu_avatar"
+
               />
-              <span className="edu_info">
-                <div id="edu_name">{eduProv.first_name} {" "}{eduProv.last_name}</div>
+            <div className="edu_info">
+                <div id="edu_name">
+                  {eduProv.first_name} {eduProv.last_name}
+                </div>
                 <div id="edu_location">{eduProv.borough}</div>
-              </span>
+              </div>
             </Link>
           </div>
         );
@@ -80,22 +83,26 @@ class Education extends React.Component {
         </div>
 
         <span>
-          <form className="edu_service_search"
+          <form
+            className="edu_service_search"
             onSubmit={this.handleEducationSubmit}
           >
-          <DropdownService
-            handleServiceChange={this.handleServiceChange}
-            service_id={this.state.service_id}
-          />
-          <div className="providerSearch">
-            <ProviderSearch
-              handleNameChange={this.handleNameChange}
-              name={this.state.name}
+            <DropdownService
+              handleServiceChange={this.handleServiceChange}
+              service_id={this.state.service_id}
             />
+            <div className="providerSearch">
+              <ProviderSearch
+                handleNameChange={this.handleNameChange}
+                name={this.state.name}
+              />
+            </div>
+            <button className="edu_button">SUBMIT</button>
+          </form>
+
+          <div className="provider_pics">
+            {this.renderEducationProviders()}{" "}
           </div>
-          <button className="edu_button">SUBMIT</button>
-        </form>
-        <div className="provider_pics">{this.renderEducationProviders()} </div>
         </span>
       </>
     );
