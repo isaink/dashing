@@ -219,8 +219,7 @@ const getProvidersByService = (req, res, next) => {
         message: "Failed to get all services/skills by this provider"
       });
     });
-};
-
+  }
 module.exports = {
   getAllUsers,
   getEducationProviders,
@@ -228,5 +227,6 @@ module.exports = {
   deleteUser,
   getUserInfo,
   getProvidersBySkill,
-  getProvidersByService
+  getProvidersByService,
+  // getProviderServices
 };

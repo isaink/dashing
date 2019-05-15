@@ -16,9 +16,10 @@ const {
 //Getting Routes...
 router.get('/', getAllUsers);
 router.get('/education', getEducationProviders)
-router.get('/singleUser/:id', getUserInfo);
+router.get('/singleProvider/:id', getUserInfo);
 router.patch('/:id', updateUser);
 router.delete('/:id', deleteUser);
+
 router.get('/bySkill/:skill_id', getProvidersBySkill);
 router.get('/byService/:service_id', getProvidersByService);
 
