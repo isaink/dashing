@@ -8,7 +8,7 @@ import { getProvidersByService } from '../../Redux_Actions/comboBoxAction';
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
 
 import "../../Css/provider.css";
-import makeupPic from "../../photo_assets/makeup.jpg";
+import makeupPic from "../../photo_assets/makeupRight.jpg";
 import makeup from '../../img/makeup.png'
 
 class Makeup extends React.Component {
@@ -79,6 +79,7 @@ class Makeup extends React.Component {
                     {makeupP.first_name} {makeupP.last_name} <br />
                   </div>
                   {makeupP.borough} <br />
+                <div className="bio" > "{makeupP.bio}" </div>
                 </div>
               </div>
           </div>
@@ -96,11 +97,11 @@ class Makeup extends React.Component {
       <>
       <div className='ctnr_prov'>
           <div className="ctnr_box_right">
-            <div className="img_intro_right" style={{ borderTop: 'solid #ecb99'}}>
+            <div className="img_intro_right" >
               <img
                 alt="intro"
-                src={makeup}
-                style={{ objectFit: "cover", height: '100%', width:'100%', border: 'solid #ecb99c'}}
+                src={makeupPic}
+                style={{ objectFit: "cover", height: '100%', width:'100%', }}
                 />
             </div>
 
@@ -119,6 +120,10 @@ class Makeup extends React.Component {
                 </div>
 
               <div className="providers">
+                <h3 className="text_intro_srv">
+                  Choose your{" "}
+                  <b style={{ color: "white" }}>MAKEUP</b> provider
+                </h3>
                 <div className="prov">{this.renderProviders()}</div>
               </div>
             </div>

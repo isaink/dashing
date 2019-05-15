@@ -10,11 +10,11 @@ export const receivedEduProvidersSuccess = edu_providers => {
   };
 };
 
-export const getEducationProviders = (name, service_id) => dispatch => {
-  
+export const getEducationProviders = (first_name, service_id) => dispatch => {
+
   let url = '/providers/education?'
-  if (name) {
-    url = url.concat(`name=${name}&`)
+  if (first_name) {
+    url = url.concat(`first_name=${first_name}&`)
   }
   if(service_id) {
     url = url.concat(`service_id=${service_id}`)

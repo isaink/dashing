@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import { Link as RouterLink } from "react-router-dom";
 import "../../Css/Navbar.css";
-import logo from "../../photo_assets/dashing_logo.png";
+import homeLogo from "../../photo_assets/dashing_logo_invert.png";
 
 class NavbarProfile extends Component {
   constructor(props) {
@@ -19,11 +19,12 @@ class NavbarProfile extends Component {
       return (
         <>
           <div className="navbar">
-            <span className="dashingNav">
+
+            <span className="dashing_logo">
               <h3>
                 <RouterLink to={"/"}>
                   <img
-                    src={logo}
+                    src={homeLogo}
                     alt=""
                     width="175px"
                     height="auto"
@@ -32,14 +33,13 @@ class NavbarProfile extends Component {
               </h3>
             </span>
 
-            <div className="links">
-
+            <div className="dashingNav">
             <RouterLink
                 className="links"
                 to={"/"}
                 onClick={this.goBack}
             >
-                Go back
+                Go Back
             </RouterLink>
 
             <RouterLink className="links" activeClass="active" to="/">

@@ -71,6 +71,7 @@ class Barber extends React.Component {
                   {barberP.first_name} {barberP.last_name} <br />
                 </div>
                 {barberP.borough} <br />
+              <div className="bio" > "{barberP.bio}" </div>
               </div>
             </div>
           </div>
@@ -103,16 +104,16 @@ class Barber extends React.Component {
             <div className="img_intro">
               <img
                 alt="intro"
-                src={barber}
+                src={barberPic}
                 objectFit="cover"
                 // height='600px'
               />
             </div>
             <div className="inner_ctnr_providers">
               <div className="providers">
-                <h3 className="text_intro_srv" style={{ width: "825px" }}>
-                  Choose your time saver and{" "}
-                  <b style={{ color: "white" }}>BARBER </b>care
+                <h3 className="text_intro_srv">
+                  Choose your{" "}
+                  <b style={{ color: "white" }}>BARBER</b> provider
                 </h3>
                 <div className="prov" style={{width: '873px'}}>{this.renderProviders()}</div>}
               </div>

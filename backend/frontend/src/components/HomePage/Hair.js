@@ -50,6 +50,7 @@ class Hair extends React.Component {
   componentDidMount() {
     this.props.getProvidersByService();
     this.getSkillsForService();
+
   }
   componentDidUpdate(prevProps, prevState) {
     if (!prevProps.hairProviders && this.props.hairProviders) {
@@ -79,6 +80,7 @@ class Hair extends React.Component {
         }
       });
       return providerArr.map(hairP => {
+          console.log(hairP, 'hair')
         return (
           <div key={hairP.provider_id}>
             <div className="content">
@@ -102,7 +104,11 @@ class Hair extends React.Component {
                 >
                   {hairP.first_name} {hairP.last_name} <br />
                 </div>
-                {hairP.borough} <br />
+                <div className="info_subInfo">
+                  {" "}{hairP.borough} <br />
+                <div className="bio" > "{hairP.bio}" </div>
+
+                </div>
               </div>
             </div>
           </div>
@@ -117,7 +123,7 @@ class Hair extends React.Component {
     }
   };
   render() {
-    console.log('HAIR COMPONENT', this.props)
+    console.log("HAIR COMPONENT", this.props);
     return (
       <>
         <div className="ctnr_prov">
@@ -140,11 +146,9 @@ class Hair extends React.Component {
             <div className="inner_ctnr_providers">
               <div className="providers">
                 <h3 className="text_intro_srv">
-                  Choose your time saver and{" "}
-                  <b style={{ color: "white" }}>HAIR</b> care
+                  Choose your <b style={{ color: "white" }}>HAIR</b> provider
                 </h3>
                 <div className="prov">{this.renderProviders()}</div>
-
               </div>
             </div>
           </div>

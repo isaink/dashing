@@ -9,7 +9,7 @@
 .dashing_logo {
   display: flex;
   justify-content: flex-start;
-  padding-left: 40px;
+  /* padding-left: 20px; */
   padding-top: 12px;
 }
 .dashingNav {
@@ -42,5 +42,5 @@
 }
 
 .dashingNav a:hover {
-  color: red;
+  color: #ecb99c;
 }

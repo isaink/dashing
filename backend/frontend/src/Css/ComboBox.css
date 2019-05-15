@@ -1,6 +1,6 @@
 /* select { */
-  /* height: 50px; */
-  /* width: 320px;
+/* height: 50px; */
+/* width: 320px;
   cursor: pointer;
   text-transform: uppercase;
   background-color: black;
@@ -32,6 +32,9 @@
 
 .ctnr_options {
   display: flex;
+  padding-top: 3px;
+  font-size: 12px;
+  justify-content: space-between;
 }
 .ctnr_options_right {
   display: grid;
@@ -39,6 +42,27 @@
 }
 
 .bttn_form {
-  /* height: 60px; */
+  height: 50px;
   margin-top: 9px;
+  background-color: black;
+  color: white;
+  width: 100px;
+  margin-left: 5px;
+}
+.select_loc {
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+  width: 500px;
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.select_skill {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  margin-top: 10px;
+  width: 500px;
+  padding-left: 20px;
 }

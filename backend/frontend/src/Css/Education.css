@@ -94,6 +94,7 @@
   line-height: 40px;
   font-weight: 200;
   color: #abaaaa;
+  padding-top: 30px;
 }
 
 .edu_service_search {
@@ -131,6 +132,9 @@ select {
   padding-left: 10px;
   color: #fffbfc;
 }
+.providerSearch{
+  color: white;
+}
 
 .edu_button {
   grid-column: 3;
@@ -143,7 +147,9 @@ select {
   color: #fffbfc;
   font-size: 15px;
   font-weight: 200;
+  background: black;
 }
-.edu_searchBar {
+.edu_searchBar::placeholder {
   color: white;
+  font-weight: 200
 }
