@@ -240,6 +240,7 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 (19, 25, 30, 70, 'false'), ---makeup
 (16, 25, 30, 80, 'true'); ---makeup
 
+
 INSERT INTO portfolio(user_id, img, body, skill_id)
 VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),
   (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg', null, null),

@@ -70,8 +70,17 @@ class Barber extends React.Component {
                 >
                   {barberP.first_name} {barberP.last_name} <br />
                 </div>
-                {barberP.borough} <br />
-              <div className="bio" > "{barberP.bio}" </div>
+                <div>
+                  {barberP.borough}
+                  <div className="bio" > "{barberP.bio}" </div>
+                </div>
+                  <div className='ctnr_bottom_info'>
+                    <p> {barberP.availability.toUpperCase()}  </p>
+                    <Link to={`/singleProviderProfile/${barberP.provider_id}`} >
+                      <button className='bttn_toProfile'> View my Profile </button>
+                    </Link>
+                  </div>
+              
               </div>
             </div>
           </div>
