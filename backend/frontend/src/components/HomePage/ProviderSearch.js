@@ -10,7 +10,7 @@ export const ProviderSearch = props => {
     <input
     placeholder="Search For Stylist By Name"
     onChange={props.handleNameChange}
-    value={props.name}
+    value={props.first_name}
     className="edu_searchBar"/>
     </>
   )

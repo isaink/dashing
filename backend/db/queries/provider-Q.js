@@ -3,7 +3,7 @@ const db = require("../connector.js");
 // GET --> Get all provider -->  /providers
 const getAllUsers = (req, res, next) => {
   db.any(
-    "SELECT users.id, first_name, last_name, password_digest, email, avatar, borough, phone_number, website_link, bio, service_id, type, skill_id, price_min, price_max, education FROM users JOIN skills_provider ON users.id = skills_provider.id"
+    "SELECT * FROM users JOIN skills_provider ON users.id = skills_provider.id"
   )
     .then(providers => {
       res.status(200).json({
@@ -23,20 +23,7 @@ const getAllUsers = (req, res, next) => {
 };
 const getEducationProviders = (req, res, next) => {
 
-  let sql = `SELECT users.id,
-    first_name,
-    last_name,
-    email,
-    avatar, borough,
-    phone_number,
-    website_link,
-    bio,
-    service_id,
-    type,
-    skill_id,
-    price_min,
-    price_max,
-    education
+  let sql = `SELECT *
     FROM users
     JOIN skills_provider ON users.id = skills_provider.id
     WHERE education = 'true'`
@@ -115,7 +102,7 @@ const deleteUser = (req, res, next) => {
 
 const getUserInfo = (req, res, next) => {
   db.one(
-    "SELECT users.id, bio, users.first_name, users.last_name, avatar, email, borough, phone_number, website_link FROM users WHERE users.id = ${id}",
+    "SELECT * FROM users WHERE users.id = ${id}",
     {
       id: Number(req.params.id)
     }
@@ -142,6 +129,7 @@ const getProvidersBySkill = (req, res, next) => {
       phone_number,
       users.id provider_id,
       website_link,
+      bio,
       services.name services,
       skills.id skill_id
     FROM skills_provider
@@ -179,6 +167,7 @@ const getProvidersByService = (req, res, next) => {
   last_name,
   avatar,
   borough,
+  bio,
   email,
   phone_number,
   users.id provider_id,
@@ -222,7 +211,7 @@ const getProvidersByService = (req, res, next) => {
 
     const getProviderServices = (req, res, next) => {
       db.any(
-        "SELECT services_provider.user_id, services_provider.service_id, services.name AS servicesName, array_agg(skills.name) AS skills FROM users JOIN services_provider ON services_provider.user_id = users.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE providers.id =${id} group by services_provider.provider_id, services_provider.service_id, services.name",
+        "SELECT services_provider.user_id, services_provider.service_id, services.name AS servicesName, array_agg(skills.name) AS skills FROM users JOIN services_provider ON services_provider.user_id = users.id JOIN services ON services_provider.service_id = services.id JOIN skills ON skills.service_id = services.id WHERE users.id = 1 GROUP BY services_provider.user_id, services_provider.service_id, services.name",
         {
           id: Number(req.params.id)
         }

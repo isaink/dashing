@@ -48,7 +48,7 @@ class Education extends React.Component {
                 className="edu_avatar"
               />
               <span className="edu_info">
-                <div id="edu_name">{eduProv.name}</div>
+                <div id="edu_name">{eduProv.first_name} {" "}{eduProv.last_name}</div>
                 <div id="edu_location">{eduProv.borough}</div>
               </span>
             </Link>
@@ -93,7 +93,7 @@ class Education extends React.Component {
               name={this.state.name}
             />
           </div>
-          <button className="edu_button">Submit</button>
+          <button className="edu_button">SUBMIT</button>
         </form>
         <div className="provider_pics">{this.renderEducationProviders()} </div>
         </span>

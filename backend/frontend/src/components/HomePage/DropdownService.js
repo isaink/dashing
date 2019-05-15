@@ -10,7 +10,7 @@ export const DropdownService = props => {
           onChange={props.handleServiceChange}
           value={props.service_id}
 
-        
+
           name="select-profession"
           id="select-profession"
         >

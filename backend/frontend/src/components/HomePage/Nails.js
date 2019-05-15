@@ -72,6 +72,7 @@ class Nails extends React.Component {
                   {nailP.first_name} {nailP.last_name} <br />
                 </div>
                 {nailP.borough} <br />
+              <div className="bio" > "{nailP.bio}" </div>
               </div>
             </div>
           </div>
@@ -110,9 +111,8 @@ class Nails extends React.Component {
             </div>
             <div className="inner_ctnr_providers_right">
               <h3 className="text_intro_srv">
-                {" "}
-                Choose your time saver and{" "}
-                <b style={{ color: "white" }}>NAILS</b> care
+                Choose your{" "}
+                <b style={{ color: "white" }}>NAILS</b> provider
               </h3>
               <div className="providers">
                 <div className="prov">{this.renderProviders()}</div>

@@ -13,9 +13,8 @@ export const Dropdown = props => {
         <select
           className="selector"
           onChange={handleBoroChange}
-          style={{ width: "300px", height:' 55px' }}
-          name="select-profession"
-          id="select-profession"
+          style={{ width: "300px", height:' 55px', marginTop: '10px'}}
+          
         >
           <option value=""> Select Your Location </option>
           <option value="Brooklyn">Brooklyn</option>

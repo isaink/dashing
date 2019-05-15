@@ -38,7 +38,8 @@ export class ComboBox extends Component {
 
   render() {
     const skillList =
-      this.props.fetchSkillList && this.props.fetchSkillList.length > 0 &&
+      this.props.fetchSkillList &&
+      this.props.fetchSkillList.length > 0 &&
       [...this.props.fetchSkillList].map(skill => (
         <option key={skill.skill_id} value={skill.skill_id}>
           {" "}
@@ -49,19 +50,13 @@ export class ComboBox extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="ctnr_options">
         <select
-          // className="selector"
           onChange={this.handleBoroChange}
           value={this.state.location}
           name="location"
-          id="select-profession"
-          style={{
-            backgroundColor: "white",
-            color: "black",
-            fontSize: "10px",
-            padding: "16px"
-          }}
+          className="select_loc"
+          style={{}}
         >
-          <option value=""> Select a Location </option>
+          <option value=""> Select A Location </option>
           <option value="Brooklyn">Brooklyn</option>
           <option value="Bronx">Bronx</option>
           <option value="Manhattan">Manhattan</option>
@@ -70,18 +65,13 @@ export class ComboBox extends Component {
         </select>
 
         <select
-          className="ComboboxDiv"
+          className="select_skill"
           onChange={this.handleSkillChange}
           value={this.state.skill_id}
           name="skill_id"
-          style={{
-            backgroundColor: "white",
-            color: "black",
-            fontSize: "10px",
-            padding: "16px"
-          }}
+          
         >
-          <option value=""> Select a Skill </option>
+          <option value=""> Select A Skill </option>
           {skillList}
         </select>
 
