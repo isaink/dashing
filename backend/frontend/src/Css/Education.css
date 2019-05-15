@@ -43,22 +43,28 @@
 }
 
 .provider_pics {
-  column-count: 4;
-  -webkit-column-count: 4;
-  column-gap: 2;
-  -webkit-column-gap: 2;
-  break-inside: avoid-column;
-  -webkit-column-break-inside: avoid;
-  padding: 20px;
-  padding-left: 250px;
-  padding-right: 200px;
-  padding-top: 70px;
-  border-radius: 10px;
-  /* overflow: scroll; */
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.profile_box {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+}
+
+.edu_info {
+  grid-column: 2;
+  background-color: #383b3f;
 }
 
 .edu_avatar {
-  border-radius: 5px;
+  grid-column: 1;
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 100px;
+  border-radius: 20px;
 }
 
 #edu_name {
@@ -132,7 +138,7 @@ select {
   padding-left: 10px;
   color: #fffbfc;
 }
-.providerSearch{
+.providerSearch {
   color: white;
 }
 
@@ -151,5 +157,5 @@ select {
 }
 .edu_searchBar::placeholder {
   color: white;
-  font-weight: 200
+  font-weight: 200;
 }

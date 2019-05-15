@@ -2,60 +2,78 @@ body {
   background-color: black;
 }
 /*  */
-.big_Div{
-  width: fit-content;
-  margin: 0px;
-  padding: 0px;
-}
-/*  */
-.background_img_Div {
-  width: fit-content;
-}
 img.intro_pic {
   display: flex;
   height: 300px;
   width: 100%;
-  margin-right: 0px;
   object-fit: cover;
   justify-content: center;
 }
 /*  */
 .allBelowBkGndImage {
-  width: 100%;
-  object-fit: cover;
-  justify-content: center;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 /*  */
-.switchButtonsDiv {
+.backLinkDiv {
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  height: 110px;
 }
-.switchButtons {
+a.backLink {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  margin-top: 10px;
-  /* background-color: white; */
+  align-items: center;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: fit-content;
 }
-.displayBelowButtonDiv {
+a.backLink:hover {
+  background-color: #ecb99c;
+  -moz-box-shadow: 0 0 50px #fff;
+  -webkit-box-shadow: 0 0 50px #fff;
+  box-shadow: 0 0 50px #fff;
+}
+.backarrowImageTagDiv {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
-  /* width: 50%; */
+}
+.backarrowImageTag {
+  display: flex;
+  width: 80px;
+  height: 80px;
+}
+.goBackTextTag{
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: black;
+  font-family: "Josefin Sans", sans-serif;
+}
+.goBackTextTag h4 {
+  width: auto;
 }
 /*  */
-/* .leftCenterAndRightSidesDiv {
+.leftAndRightSidesDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin: 50px;
+  /* background-color: red; */
+}
+/*  */
+.AvatarAndAllDetailsDiv {
   display: grid;
-  grid-template-columns: 45% 20% 35%;
-  padding: 20px;
+  grid-template-columns: 350px 400px;
+  height: 500px;
+}
+/*  */
+/* .avatarProfileDiv {
 } */
-/*  */
-.LeftSideDiv {
-  display: grid;
-  /* grid-column: 1; */
-  grid-template-columns: 50% 50%;
-  height: 350px;
-  width: 50%;
-}
-/*  */
 .avatarProfileBorder {
   display: grid;
   grid-column: 1;
@@ -63,20 +81,42 @@ img.intro_pic {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* border-top-left-radius: 20px; */
+  /* border-bottom-left-radius: 20px; */
 }
 .avatarProfileImage {
-  border-radius: 10px;
-  border: solid 1px white;
+  /* border-top-left-radius: 20px; */
+  /* border-bottom-left-radius: 20px; */
+  border-radius: 20px;
   border-style: inset;
-  width: 80%;
-  height: 300px;
+  border-color: grey;
+  width: 280px;
+  height: 400px;
   object-fit: cover;
+  /* -moz-box-shadow: 0 0 50px #fff;
+  -webkit-box-shadow: 0 0 50px #fff;
+  box-shadow: 0 0 50px #fff; */
+}
+.prov_info {
+  width: 300px;
 }
 .prov_name {
   margin-top: 20px;
   color: white;
   font-size: 40px;
-  text-align: left;
+  /* text-decoration: overline; */
+/*
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate; */
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
 }
 .contactLocationSocialLinkDiv {
   display: grid;
@@ -84,16 +124,17 @@ img.intro_pic {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 20px;
-  padding-right: 20px;
   background-color: #202020;
   flex-direction: column;
+  /* border-top-right-radius: 20px; */
+  /* border-bottom-right-radius: 20px; */
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
 }
 .rightProviderDetailsDiv {
-  width: 100%;
-  height: 300px;
+  /* background-color: yellow; */
+  width: 350px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -101,12 +142,15 @@ img.intro_pic {
 .contactLocationSocialLinkDiv p{
   margin-bottom: 5px;
   font-style: italic;
+  /* text-decoration: overline; */
 }
 .phoneEmailAndSocialLinkDiv {
   display: flex;
   flex-direction: column;
   text-align: left;
   color: white;
+  /* background-color: red; */
+  /* margin-bottom: 30px; */
 }
 .phoneEmailAndSocialLinkDiv h6 {
   margin-left: 10px;
@@ -126,8 +170,10 @@ img.intro_pic {
   margin-top: 10px;
   color: white;
   text-align: left;
+  /* background-color: orange; */
 }
 .social_link p {
+  /* font-family: "Josefin Sans", sans-serif; */
 }
 .social_link h6 {
   margin-left: 10px;
@@ -140,6 +186,10 @@ a.socialLink_a_tag  {
 /*  */
 .locDiv {
 }
+/* .loc {
+  display: flex;
+  margin-bottom: 20px;
+} */
 .prov_boro {
   display: flex;
   flex-direction: row;
@@ -153,41 +203,42 @@ a.socialLink_a_tag  {
 .prov_boro h5{
   margin-left: 10px;
 }
+/* .portfolioDiv {
+  display: flex;
+  border-width: 5px;
+  border-color: green;
+} */
 /*  */
 .centerDiv {
-  display: grid;
-  grid-column: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
 }
 /*  */
-.servicesAndSkills {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-around;
-  color: white;
-  width: 150%;
-  margin: 0px 20px 0px 20px;
-  /* background-color: red; */
-}
-.indivServiceNameAndSkillList {
+.ctnr_services {
+  /* background-color: green; */
   display: flex;
   flex-direction: column;
-  /* background-color: yellow; */
+  align-items: flex-start;
+  color: white;
+  width: 200px;
+  margin-right: 20px;
+  margin-left: 30px;
 }
 .srv_nameDiv {
+  /* background-color: white; */
   height: 50px;
   margin-top: 30px;
+  /* margin-bottom: 10px; */
 }
 .srv_nameDiv .srv_name {
+  /* background-color: yellow; */
   font-size: 70px;
   font-family: "Mrs Saint Delafield", cursive;
+  /* font-weight: bold; */
   color: white;
+  /* text-shadow: 2px 2px 4px #000000; */
 }
 .srv_nameDiv .skillAndBulletsDiv {
+  /* background-color: orange; */
+  /* flex-direction: column; */
   color: white;
   margin-bottom: 20px;
   border: 2px solid white;
@@ -201,53 +252,75 @@ a.socialLink_a_tag  {
   font-size: 20px;
   color: #A0A0A0;
   font-weight: lighter;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px; */
 }
 .skillBullets {
+  /* background-color: yellow; */
   width: 5px;
 }
 .skill_item {
   margin-bottom: 7px;
 }
 /*  */
-.rightSideDivDIV {
-  display: grid;
-  grid-column: 3;
-}
 .rightSideDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #202020;
-  height: 250px;
-  padding: 20px 20px 20px 20px;
-  width: fit-content;
+  height: 300px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  /* border-radius: 20px; */
 }
 /*  */
 .scrollInstructionsDiv {
   margin-top: 20px;
   color: #A0A0A0;
+  /* font-family: "Mrs Saint Delafield", cursive; */
+  /* font-size: 50px; */
   font-family: "Josefin Sans", sans-serif;
   font-size: 22px;
   font-weight: lighter;
+  /* background-color: yellow; */
 }
 /*  */
 .ctnr_portfolio {
   display: flex;
   flex-direction: row;
+  width: 500px;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  border-radius: 10px;
+  border-radius: 20px;
   border-width: thick;
   justify-content: center;
-  width: 400px;
 }
 .portfolio_img {
   border-radius: 5px;
   margin-left: 5px;
-  width: 170px;
-  object-fit: cover;
 }
+/* .ctnr_portfolio {
+  position: absolute;
+  grid-column: 3;
+  grid-row: 3;
+  background: #dbdedd;
+  height: 200px;
+  top: 470px;
+  right: 135px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  overflow-y: scroll;
+}
+.portfolio_img {
+  grid-row: 1;
+} */
 /*  How to do a transparent background image  */
 .testDiv {
   background-image: url('./../img/man_hair.jpg');
