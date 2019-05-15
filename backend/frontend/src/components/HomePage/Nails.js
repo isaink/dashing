@@ -71,8 +71,16 @@ class Nails extends React.Component {
                 >
                   {nailP.first_name} {nailP.last_name} <br />
                 </div>
-                {nailP.borough} <br />
-              <div className="bio" > "{nailP.bio}" </div>
+                {nailP.borough}
+                <div className="bio" > "{nailP.bio}" </div>
+                
+                  <div className='ctnr_bottom_info'>
+                    <p> {nailP.availability.toUpperCase()}  </p>
+                    <Link to={`/singleProviderProfile/${nailP.provider_id}`} >
+                      <button className='bttn_toProfile'> View my Profile </button>
+                    </Link>
+                  </div>
+
               </div>
             </div>
           </div>

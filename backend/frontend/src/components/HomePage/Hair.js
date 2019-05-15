@@ -7,8 +7,10 @@ import { ComboBox } from "./ComboBox.js";
 import { getProvidersBySkill } from "../../Redux_Actions/comboBoxAction";
 import { getProvidersByService } from "../../Redux_Actions/comboBoxAction";
 import { fetchProvidersByService } from "../../Redux_Actions/providerAction";
+
 import "../../Css/provider.css";
 import hairPic from "../../photo_assets/hair.jpg";
+
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import NavbarForComponents from "./components/NavBars/NavbarForComponents";
 import NavbarForComponents from "../NavBars/NavbarForComponents";
@@ -104,10 +106,18 @@ class Hair extends React.Component {
                 >
                   {hairP.first_name} {hairP.last_name} <br />
                 </div>
-                <div className="info_subInfo">
-                  {" "}{hairP.borough} <br />
-                <div className="bio" > "{hairP.bio}" </div>
 
+                <div>
+                  {hairP.borough} 
+                  <div className="bio" > "{hairP.bio}" </div>
+                  
+                  <div className='ctnr_bottom_info'>
+                    
+                    <p> {hairP.availability.toUpperCase()}  </p>
+                    <Link to={`/singleProviderProfile/${hairP.provider_id}`} >
+                      <button className='bttn_toProfile'> View my Profile </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

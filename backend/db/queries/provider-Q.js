@@ -130,6 +130,7 @@ const getProvidersBySkill = (req, res, next) => {
       users.id provider_id,
       website_link,
       bio,
+      availability,
       services.name services,
       skills.id skill_id
     FROM skills_provider
@@ -168,6 +169,7 @@ const getProvidersByService = (req, res, next) => {
   avatar,
   borough,
   bio,
+  availability,
   email,
   phone_number,
   users.id provider_id,
@@ -237,20 +239,3 @@ module.exports = {
   getProvidersByService,
   // getProviderServices
 };
-
-
-// module.exports = {
-//   getAllProviders,
-//   getProviderInfo,
-//   getEducationProviders,
-//   getProviderServices,
-//   createProvider,
-//   logoutProvider,
-//   loginProvider,
-//   isLoggedIn,
-//   updateProvider,
-//   deleteProvider,
-//
-//   getProvidersBySkill,
-//   getProvidersByService
-// };

@@ -78,8 +78,17 @@ class Makeup extends React.Component {
                   >
                     {makeupP.first_name} {makeupP.last_name} <br />
                   </div>
-                  {makeupP.borough} <br />
-                <div className="bio" > "{makeupP.bio}" </div>
+                  <div> 
+                    {makeupP.borough}
+                    <div className="bio" > "{makeupP.bio}" </div>
+
+                    <div className='ctnr_bottom_info'>
+                      <p> {makeupP.availability.toUpperCase()}  </p>
+                      <Link to={`/singleProviderProfile/${makeupP.provider_id}`} >
+                        <button className='bttn_toProfile'> View my Profile </button>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
           </div>
