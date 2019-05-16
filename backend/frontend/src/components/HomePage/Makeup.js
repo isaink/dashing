@@ -48,18 +48,18 @@ class Makeup extends React.Component {
       const providerObj = {};
       const providerArr = [];
       this.props.makeupProviders.forEach(provider => {
-        if(!providerObj[provider.provider_id]) {
-          providerObj[provider.provider_id] = true;
+        if(!providerObj[provider.user_id]) {
+          providerObj[provider.user_id] = true;
           providerArr.push(provider);
         }
       });
 
       return providerArr.map(makeupP => {
         return (
-          <div key={makeupP.provider_id}>
+          <div key={makeupP.user_id}>
             <div className="content">
               <div className="ctnr_avatar">
-                <Link to={`/singleProviderProfile/${makeupP.provider_id}`}>
+                <Link to={`/singleProviderProfile/${makeupP.user_id}`}>
                   <img
                       alt="avatar"
                       className="prov_avatar"
@@ -84,7 +84,7 @@ class Makeup extends React.Component {
 
                     <div className='ctnr_bottom_info'>
                       <p> {makeupP.availability.toUpperCase()}  </p>
-                      <Link to={`/singleProviderProfile/${makeupP.provider_id}`} >
+                      <Link to={`/singleProviderProfile/${makeupP.user_id}`} >
                         <button className='bttn_toProfile'> View my Profile </button>
                       </Link>
                     </div>

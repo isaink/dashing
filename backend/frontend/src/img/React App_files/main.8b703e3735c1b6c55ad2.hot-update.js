@@ -86,22 +86,22 @@ function (_React$Component) {
         var providerArr = [];
 
         _this.props.barberProviders.forEach(function (provider) {
-          if (!providerObj[provider.provider_id]) {
-            providerObj[provider.provider_id] = true;
+          if (!providerObj[provider.user_id]) {
+            providerObj[provider.user_id] = true;
             providerArr.push(provider);
           }
         });
 
         return providerArr.map(function (barberP) {
           return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-            key: barberP.provider_id,
+            key: barberP.user_id,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 57
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-            to: "/singleProviderProfile/".concat(barberP.provider_id),
+            to: "/singleProviderProfile/".concat(barberP.user_id),
             __source: {
               fileName: _jsxFileName,
               lineNumber: 58

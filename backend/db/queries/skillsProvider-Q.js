@@ -1,7 +1,7 @@
 const  db  = require('../connector.js');
 
 const getAllSkillsforProvider = (req, res, next) => {
-  db.any('SELECT * FROM skills_provider WHERE provider_id=${id}', {id: Number(req.params.id)})
+  db.any('SELECT * FROM skills_provider WHERE user_id=${id}', {id: Number(req.params.id)})
     .then(data => {
       res.status(200)
           .json({
@@ -21,7 +21,7 @@ const getAllSkillsforProvider = (req, res, next) => {
 };
 
 const addSkillForProvider = (req, res, next) => {
-  db.none('INSERT INTO skills_provider(skill_id, provider_id, price_min, price_max, education) VALUES(${skill_id},${provider_id},${price_min},${price_max},${education})', {skill_id: Number(req.body.skill_id), provider_id: Number(req.body.provider_id), price_min: Number(req.body.price_min), price_max: Number(req.body.price_max), education: req.body.education })
+  db.none('INSERT INTO skills_provider(skill_id, user_id, price_min, price_max, education) VALUES(${skill_id},${user_id},${price_min},${price_max},${education})', {skill_id: Number(req.body.skill_id), user_id: Number(req.body.user_id), price_min: Number(req.body.price_min), price_max: Number(req.body.price_max), education: req.body.education })
   .then(()=>{
     res.status(200)
         .json({

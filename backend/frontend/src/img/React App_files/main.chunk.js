@@ -775,29 +775,29 @@ var getProvidersByService = function getProvidersByService(service_id, skill_id,
 //   };
 // };
 //
-// export const receiveSingleProvider = (provider, provider_id) => {
+// export const receiveSingleProvider = (provider, user_id) => {
 //   return {
 //     type: RECEIVE_PROVIDER_INFO,
 //     payload: {
-//       provider_id: provider_id,
+//       user_id: user_id,
 //       provider: provider
 //     }
 //   }
 // }
 //
-// export const getProviderInfo = provider_id => dispatch => {
-//   axios.get(`/providers/${provider_id}`)
+// export const getProviderInfo = user_id => dispatch => {
+//   axios.get(`/providers/${user_id}`)
 //     .then(res => {
 //       console.log(res.data.info);
 //
 //       let provider = res.data.info;
-//       let action = receiveSingleProvider(provider, provider_id)
+//       let action = receiveSingleProvider(provider, user_id)
 //       return dispatch(action)
 //     }).then(res => {
-//       axios.get(`/providers/services/${provider_id}`)
+//       axios.get(`/providers/services/${usr_id}`)
 //         .then(res => {
 //           let services = res.data.info;
-//           let action = receiveProviderServices(services, provider_id)
+//           let action = receiveProviderServices(services, user_id)
 //           return dispatch(action)
 //         })
 //     })
@@ -806,11 +806,11 @@ var getProvidersByService = function getProvidersByService(service_id, skill_id,
 //     })
 // }
 //
-// export const receiveProviderServices = (services, provider_id) => {
+// export const receiveProviderServices = (services, user_id) => {
 //   return {
 //     type: RECEIVE_PROVIDER_SERVICES,
 //     payload: {
-//       provider_id: provider_id,
+//       use_id: user_id,
 //       services: services
 //     }
 //   }
@@ -903,32 +903,32 @@ var receivedProvidersSuccess = function receivedProvidersSuccess(providers, serv
   };
 }; // SERVICES ACTION CREATOR
 
-var receiveProviderServices = function receiveProviderServices(services, provider_id) {
+var receiveProviderServices = function receiveProviderServices(services, user_id) {
   return {
     type: RECEIVE_PROVIDER_SERVICES,
     payload: {
-      provider_id: provider_id,
+      user_id: user_id,
       services: services
     } // >>>>>>> 301385b9dd7c14dfb4245f0bf8f8fb3bcac93f29
 
   };
 }; // PORTFOLIO ACTION CREATOR
 
-var receiveProviderPortfolio = function receiveProviderPortfolio(portfolio, provider_id) {
+var receiveProviderPortfolio = function receiveProviderPortfolio(portfolio, user_id) {
   return {
     type: RECEIVE_PROVIDER_PORTFOLIIO,
     payload: {
-      provider_id: provider_id,
+      user_id: user_id,
       portfolio: portfolio
     }
   };
 }; // SINGLE PROVIDER ACTION CREATOR
 
-var receiveSingleProvider = function receiveSingleProvider(provider, provider_id) {
+var receiveSingleProvider = function receiveSingleProvider(provider, user_id) {
   return {
     type: RECEIVE_PROVIDER_INFO,
     payload: {
-      provider_id: provider_id,
+      user_id: user_id,
       provider: provider
     }
   };
@@ -953,22 +953,22 @@ var fetchProvidersByService = function fetchProvidersByService(service_id) {
   };
 }; // PROVIDERS PORFOLIO PICTURES & ALL INFO DETAILS  --> AXIOS
 
-var getProviderInfo = function getProviderInfo(provider_id) {
+var getProviderInfo = function getProviderInfo(user_id) {
   return function (dispatch) {
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/providers/".concat(provider_id)).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/providers/".concat(user_id)).then(function (res) {
       var provider = res.data.info;
-      var action = receiveSingleProvider(provider, provider_id);
+      var action = receiveSingleProvider(provider, user_id);
       return dispatch(action);
     }).then(function (res) {
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/providers/services/".concat(provider_id)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/providers/services/".concat(user_id)).then(function (res) {
         var services = res.data.info;
-        var action = receiveProviderServices(services, provider_id);
+        var action = receiveProviderServices(services, user_id);
         return dispatch(action);
       });
     }).then(function (res) {
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/portfolio/".concat(provider_id)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/portfolio/".concat(user_id)).then(function (res) {
         var portfolio = res.data.body;
-        var action = receiveProviderPortfolio(portfolio, provider_id);
+        var action = receiveProviderPortfolio(portfolio,  user_id);
         return dispatch(action);
       });
     }).catch(function (err) {
@@ -2185,22 +2185,22 @@ function (_React$Component) {
         var providerArr = [];
 
         _this.props.barberProviders.forEach(function (provider) {
-          if (!providerObj[provider.provider_id]) {
-            providerObj[provider.provider_id] = true;
+          if (!providerObj[provider.user_id]) {
+            providerObj[provider.user_id] = true;
             providerArr.push(provider);
           }
         });
 
         return providerArr.map(function (barberP) {
           return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-            key: barberP.provider_id,
+            key: barberP.user_id,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 57
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-            to: "/singleProviderProfile/".concat(barberP.provider_id),
+            to: "/singleProviderProfile/".concat(barberP.user_id),
             __source: {
               fileName: _jsxFileName,
               lineNumber: 58
@@ -2958,22 +2958,22 @@ function (_React$Component) {
         var providerArr = [];
 
         _this.props.hairProviders.forEach(function (provider) {
-          if (!providerObj[provider.provider_id]) {
-            providerObj[provider.provider_id] = true;
+          if (!providerObj[provider.user_id]) {
+            providerObj[provider.user_id] = true;
             providerArr.push(provider);
           }
         });
 
         return providerArr.map(function (hairP) {
           return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-            key: hairP.provider_id,
+            key: hairP.user_id,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 56
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-            to: "/singleProviderProfile/".concat(hairP.provider_id),
+            to: "/singleProviderProfile/".concat(hairP.user_id),
             __source: {
               fileName: _jsxFileName,
               lineNumber: 57
@@ -3597,22 +3597,22 @@ function (_React$Component) {
         var providerArr = [];
 
         _this.props.makeupProviders.forEach(function (provider) {
-          if (!providerObj[provider.provider_id]) {
-            providerObj[provider.provider_id] = true;
+          if (!providerObj[provider.user_id]) {
+            providerObj[provider.user_id] = true;
             providerArr.push(provider);
           }
         });
 
         return providerArr.map(function (makeupP) {
           return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-            key: makeupP.provider_id,
+            key: makeupP.user_id,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 57
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Link"], {
-            to: "/singleProviderProfile/".concat(makeupP.provider_id),
+            to: "/singleProviderProfile/".concat(makeupP.user_id),
             __source: {
               fileName: _jsxFileName,
               lineNumber: 58

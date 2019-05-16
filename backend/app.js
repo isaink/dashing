@@ -17,6 +17,7 @@ var skillsProvider = require('./routes/skills');
 var app = express();
 console.log('THE DIRNAME', __dirname);
 // view engine setup
+app.set("view engine", "jade")
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -27,13 +28,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'frontend/build')));
 
 //production mode
-if(process.env.NODE_ENV === 'production') {
- app.use(express.static(path.join(__dirname, 'frontend/build')));
- //
- app.get('*', (req, res) => {
-   res.sendfile(path.join(__dirname = 'frontend/build/index.html'));
- })
-}
+// if(process.env.NODE_ENV === 'production') {
+//  app.use(express.static(path.join(__dirname, 'frontend/build')));
+//  //
+//  app.get('*', (req, res) => {
+//    res.sendfile(path.join(__dirname = 'frontend/build/index.html'));
+//  })
+// }
 //build mode
 
 
@@ -62,7 +63,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render("error");
+  res.render("Error");
 });
 
 

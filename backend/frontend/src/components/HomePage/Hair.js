@@ -76,18 +76,18 @@ class Hair extends React.Component {
       const providerObj = {};
       const providerArr = [];
       this.props.hairProviders.forEach(provider => {
-        if (!providerObj[provider.provider_id]) {
-          providerObj[provider.provider_id] = true;
+        if (!providerObj[provider.user_id]) {
+          providerObj[provider.user_id] = true;
           providerArr.push(provider);
         }
       });
       return providerArr.map(hairP => {
           console.log(hairP, 'hair')
         return (
-          <div key={hairP.provider_id}>
+          <div key={hairP.user_id}>
             <div className="content">
               <div className="ctnr_avatar">
-                <Link to={`/singleProviderProfile/${hairP.provider_id}`}>
+                <Link to={`/singleProviderProfile/${hairP.user_id}`}>
                   <img
                     alt="avatar"
                     className="prov_avatar"
@@ -114,7 +114,7 @@ class Hair extends React.Component {
                   <div className='ctnr_bottom_info'>
                     
                     <p> {hairP.availability.toUpperCase()}  </p>
-                    <Link to={`/singleProviderProfile/${hairP.provider_id}`} >
+                    <Link to={`/singleProviderProfile/${hairP.user_id}`} >
                       <button className='bttn_toProfile'> View my Profile </button>
                     </Link>
                   </div>

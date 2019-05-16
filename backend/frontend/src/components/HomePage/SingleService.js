@@ -68,15 +68,15 @@ class SingleService extends React.Component {
       const providerObj = {};
       const providerArr = [];
       this.props.hairProviders.forEach(provider => {
-        if(!providerObj[provider.provider_id]) {
-          providerObj[provider.provider_id] = true;
+        if(!providerObj[provider.user_id]) {
+          providerObj[provider.user_id] = true;
           providerArr.push(provider);
         }
       })
       return providerArr.map(serviceP => {
         return (
-          <div key={serviceP.provider_id}>
-          <Link to={`/singleProviderProfile/${serviceP.provider_id}`}>
+          <div key={serviceP.user_id}>
+          <Link to={`/singleProviderProfile/${serviceP.user_id}`}>
             <div className="box">
               <div className="content">
                 <img

@@ -19,10 +19,8 @@ export const receivedSkillsSuccess = (skills, service_id) => {
 // PROVIDER BY SERVICES --> AXIOS
 export const fetchSkillsByService = service_id => dispatch => {
   axios
-    .get(`/services/skills/${service_id}`)
+    .get(`/services/skills/singleSkill/${service_id}`)
     .then(res => {
-      // console.log(res);
-      // debugger
       let skills = res.data.data;
       return dispatch(receivedSkillsSuccess(skills, service_id)); // what is the key inside the queries...?
     })

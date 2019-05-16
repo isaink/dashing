@@ -42,17 +42,17 @@ class Nails extends React.Component {
       const providerObj = {};
       const providerArr = [];
       this.props.nailProviders.forEach(provider => {
-        if (!providerObj[provider.provider_id]) {
-          providerObj[provider.provider_id] = true;
+        if (!providerObj[provider.user_id]) {
+          providerObj[provider.user_id] = true;
           providerArr.push(provider);
         }
       });
       return providerArr.map(nailP => {
         return (
-          <div key={nailP.provider_id}>
+          <div key={nailP.user_id}>
             <div className="content">
               <div className="ctnr_avatar">
-                <Link to={`/singleProviderProfile/${nailP.provider_id}`}>
+                <Link to={`/singleProviderProfile/${nailP.user_id}`}>
                   <img
                     alt="avatar"
                     className="prov_avatar"
@@ -76,7 +76,7 @@ class Nails extends React.Component {
                 
                   <div className='ctnr_bottom_info'>
                     <p> {nailP.availability.toUpperCase()}  </p>
-                    <Link to={`/singleProviderProfile/${nailP.provider_id}`} >
+                    <Link to={`/singleProviderProfile/${nailP.user_id}`} >
                       <button className='bttn_toProfile'> View my Profile </button>
                     </Link>
                   </div>

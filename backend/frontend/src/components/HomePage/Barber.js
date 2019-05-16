@@ -41,17 +41,17 @@ class Barber extends React.Component {
       const providerObj = {};
       const providerArr = [];
       this.props.barberProviders.forEach(provider => {
-        if (!providerObj[provider.provider_id]) {
-          providerObj[provider.provider_id] = true;
+        if (!providerObj[provider.user_id]) {
+          providerObj[provider.user_id] = true;
           providerArr.push(provider);
         }
       });
       return providerArr.map(barberP => {
         return (
-          <div key={barberP.provider_id}>
+          <div key={barberP.user_id}>
             <div className="content">
               <div className="ctnr_avatar">
-                <Link to={`/singleProviderProfile/${barberP.provider_id}`}>
+                <Link to={`/singleProviderProfile/${barberP.user_id}`}>
                   <img
                     alt="avatar"
                     className="prov_avatar"
@@ -76,7 +76,7 @@ class Barber extends React.Component {
                 </div>
                   <div className='ctnr_bottom_info'>
                     <p> {barberP.availability.toUpperCase()}  </p>
-                    <Link to={`/singleProviderProfile/${barberP.provider_id}`} >
+                    <Link to={`/singleProviderProfile/${barberP.user_id}`} >
                       <button className='bttn_toProfile'> View my Profile </button>
                     </Link>
                   </div>
