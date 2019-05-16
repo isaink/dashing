@@ -35,11 +35,8 @@ class Education extends React.Component {
     if (this.props.educationProviders) {
       return this.props.educationProviders.map(eduProv => {
         return (
-          <div key={eduProv.id}>
-            <Link
-              to={`/singleProviderProfile/${eduProv.id}`}
-              className="edu_avatar_link"
-            >
+          <Link to={`/singleProviderProfile/${eduProv.id}`} className="linkto">
+            <div className="profile_box" key={eduProv.id}>
               <img
                 src={eduProv.avatar}
                 alt="Person"
@@ -47,16 +44,20 @@ class Education extends React.Component {
                 height="auto"
                 className="edu_avatar"
               />
-              <span className="edu_info">
-                <div id="edu_name">{eduProv.first_name} {" "}{eduProv.last_name}</div>
-                <div id="edu_location">{eduProv.borough}</div>
-              </span>
-            </Link>
-          </div>
+              <div className="edu_info">
+                <div id="edu_name">
+                  {eduProv.first_name} <br/>{eduProv.last_name}
+                </div><br />
+                <div id="edu_location">{eduProv.borough}</div><br />
+
+                <div id="edu_avail"> Hours: {eduProv.availability}</div>
+              </div>
+            </div>
+          </Link>
         );
       });
     } else {
-      return <div>Loading...</div>;
+      return <div> Loading...</div>;
     }
   };
   render() {
@@ -80,22 +81,26 @@ class Education extends React.Component {
         </div>
 
         <span>
-          <form className="edu_service_search"
+          <form
+            className="edu_service_search"
             onSubmit={this.handleEducationSubmit}
           >
-          <DropdownService
-            handleServiceChange={this.handleServiceChange}
-            service_id={this.state.service_id}
-          />
-          <div className="providerSearch">
-            <ProviderSearch
-              handleNameChange={this.handleNameChange}
-              name={this.state.name}
+            <DropdownService
+              handleServiceChange={this.handleServiceChange}
+              service_id={this.state.service_id}
             />
+            <div className="providerSearch">
+              <ProviderSearch
+                handleNameChange={this.handleNameChange}
+                name={this.state.name}
+              />
+            </div>
+            <button className="edu_button">SUBMIT</button>
+          </form>
+
+          <div className="provider_pics">
+            {this.renderEducationProviders()}{" "}
           </div>
-          <button className="edu_button">SUBMIT</button>
-        </form>
-        <div className="provider_pics">{this.renderEducationProviders()} </div>
         </span>
       </>
     );
