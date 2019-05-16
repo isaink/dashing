@@ -108,11 +108,11 @@ class Hair extends React.Component {
                 </div>
 
                 <div>
-                  {hairP.borough} 
+                  {hairP.borough}
                   <div className="bio" > "{hairP.bio}" </div>
-                  
+
                   <div className='ctnr_bottom_info'>
-                    
+
                     <p> {hairP.availability.toUpperCase()}  </p>
                     <Link to={`/singleProviderProfile/${hairP.provider_id}`} >
                       <button className='bttn_toProfile'> View my Profile </button>
@@ -163,6 +163,7 @@ class Hair extends React.Component {
             </div>
           </div>
         </div>
+
       </>
     );
   }

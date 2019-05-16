@@ -30,14 +30,12 @@ export default class Welcome extends Component {
           <div className="subSlogan">
             <h3>You'll never have to wait in a salon for hours again!</h3>
           </div>
-
           <br />
           <div className="choose_svc">
             <br />
             <h3>Choose Your Service</h3>
             <br />
           </div>
-
           <div className="service_thumbs">
             <Link
               className="links"
@@ -50,7 +48,6 @@ export default class Welcome extends Component {
             >
               <img src={hair_thumb} alt="" width="150px" height="auto" />
             </Link>
-
             <Link
               className="links"
               activeClass="active"
@@ -62,7 +59,6 @@ export default class Welcome extends Component {
             >
               <img src={nails_thumb} alt="" width="150px" height="auto" />
             </Link>
-
             <Link
               className="links"
               activeClass="active"
@@ -75,7 +71,6 @@ export default class Welcome extends Component {
               {" "}
               <img src={barb_thumb} alt="" width="150px" height="auto" />
             </Link>
-
             <Link
               className="links"
               activeClass="active"
@@ -87,7 +82,6 @@ export default class Welcome extends Component {
             >
               <img src={makeup_thumb} alt="" width="150px" height="auto" />
             </Link>
-
             <RouterLink
               className="links"
               activeClass="active"
