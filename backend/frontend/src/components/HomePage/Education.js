@@ -46,9 +46,12 @@ class Education extends React.Component {
               />
               <div className="edu_info">
                 <div id="edu_name">
-                  {eduProv.first_name} <br/>{eduProv.last_name}
-                </div><br />
-                <div id="edu_location">{eduProv.borough}</div><br />
+                  {eduProv.first_name} <br />
+                  {eduProv.last_name}
+                </div>
+                <br />
+                <div id="edu_location">{eduProv.borough}</div>
+                <br />
 
                 <div id="edu_avail"> Hours: {eduProv.availability}</div>
               </div>
@@ -80,28 +83,27 @@ class Education extends React.Component {
           </div>
         </div>
 
-        <span>
-          <form
-            className="edu_service_search"
-            onSubmit={this.handleEducationSubmit}
-          >
-            <DropdownService
-              handleServiceChange={this.handleServiceChange}
-              service_id={this.state.service_id}
+        <form
+          className="edu_service_search"
+          onSubmit={this.handleEducationSubmit}
+        >
+          <DropdownService
+            handleServiceChange={this.handleServiceChange}
+            service_id={this.state.service_id}
+          />
+          <div className="providerSearch">
+            <ProviderSearch
+              handleNameChange={this.handleNameChange}
+              name={this.state.name}
             />
-            <div className="providerSearch">
-              <ProviderSearch
-                handleNameChange={this.handleNameChange}
-                name={this.state.name}
-              />
-            </div>
-            <button className="edu_button">SUBMIT</button>
-          </form>
-
+          </div>
+          <button className="edu_button">SUBMIT</button>
+        </form>
+        <div className="grid-container">
           <div className="provider_pics">
             {this.renderEducationProviders()}{" "}
           </div>
-        </span>
+        </div>
       </>
     );
   }
