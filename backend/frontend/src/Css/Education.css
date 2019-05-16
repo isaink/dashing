@@ -45,37 +45,68 @@
 .provider_pics {
   display: grid;
   grid-template-columns: 33% 33% 33%;
+  grid-column-gap: 15px;
+  grid-row-gap: 20px;
+  padding-left: 350px;
+  padding-right: 350px;
+  padding-top: 50px;
 }
 
 .profile_box {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 40% 60%;
   grid-column-gap: 20px;
   grid-row-gap: 10px;
+  background-color: #383b3f;
+  text-decoration: none;
+  border-radius: 5px;
+  height: 175px;
 }
 
 .edu_info {
   grid-column: 2;
-  background-color: #383b3f;
+  padding-left: 5px;
+  padding-top: 15px;
+}
+
+.linkto {
+  text-decoration: none;
 }
 
 .edu_avatar {
   grid-column: 1;
   padding-left: 10px;
-  padding-top: 10px;
-  width: 100px;
-  border-radius: 20px;
+  padding-top: 13px;
+  width: 150px;
+  border-radius: 110px;
+  border-style: inset;
+  border-color: grey;
+  height: 150px;
+  object-fit: cover;
+  text-decoration: none;
 }
 
 #edu_name {
+  text-align: left;
+  text-decoration: none;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 20px;
+  font-size: 25px;
+  color: white;
 }
 
 #edu_location {
+  text-align: left;
+  text-decoration: none;
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   color: #ecb99c;
+}
+
+#edu_avail {
+  text-align: left;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  color: white;
 }
 
 .edu_avatar_link {
@@ -105,9 +136,10 @@
 
 .edu_service_search {
   display: grid;
-  width: 400px;
   column-gap: 8px;
-  padding-left: 250px;
+  padding-left: 500px;
+  padding-right: 300px;
+
 }
 
 .svc_selector {
@@ -119,7 +151,7 @@
   border-color: #ecb99c;
   color: #fffbfc;
   grid-column: 1;
-  width: 300px;
+  width: 100%;
   height: 54px;
 }
 
@@ -130,7 +162,7 @@ select {
   border-style: solid;
   border-width: 1px;
   border-color: #ecb99c;
-  width: 500px;
+  width: 100%;
   height: 50px;
   font-size: 15px;
   border-radius: 4px;
@@ -154,8 +186,10 @@ select {
   font-size: 15px;
   font-weight: 200;
   background: black;
+  margin-left: 15px;
 }
 .edu_searchBar::placeholder {
   color: white;
   font-weight: 200;
+
 }

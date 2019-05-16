@@ -35,31 +35,29 @@ class Education extends React.Component {
     if (this.props.educationProviders) {
       return this.props.educationProviders.map(eduProv => {
         return (
-          <div className="profile_box" key={eduProv.id}>
-            <Link
-              to={`/singleProviderProfile/${eduProv.id}`}
-              className="edu_avatar_link"
-            >
+          <Link to={`/singleProviderProfile/${eduProv.id}`} className="linkto">
+            <div className="profile_box" key={eduProv.id}>
               <img
                 src={eduProv.avatar}
                 alt="Person"
                 width="200px"
                 height="auto"
                 className="edu_avatar"
-
               />
-            <div className="edu_info">
+              <div className="edu_info">
                 <div id="edu_name">
-                  {eduProv.first_name} {eduProv.last_name}
-                </div>
-                <div id="edu_location">{eduProv.borough}</div>
+                  {eduProv.first_name} <br/>{eduProv.last_name}
+                </div><br />
+                <div id="edu_location">{eduProv.borough}</div><br />
+
+                <div id="edu_avail"> Hours: {eduProv.availability}</div>
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
         );
       });
     } else {
-      return <div>Loading...</div>;
+      return <div> Loading...</div>;
     }
   };
   render() {
