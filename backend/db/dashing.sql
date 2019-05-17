@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS dashing;
-CREATE DATABASE dashing;
-\c dashing
+-- DROP DATABASE IF EXISTS dashing;
+-- CREATE DATABASE dashing;
+-- \c dashing
 
 CREATE TYPE userType AS ENUM ( 'provider', 'client');
 
