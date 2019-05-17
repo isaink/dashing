@@ -83,22 +83,27 @@ class Education extends React.Component {
           </div>
         </div>
 
-        <form
-          className="edu_service_search"
-          onSubmit={this.handleEducationSubmit}
-        >
-          <DropdownService
-            handleServiceChange={this.handleServiceChange}
-            service_id={this.state.service_id}
-          />
-          <div className="providerSearch">
-            <ProviderSearch
-              handleNameChange={this.handleNameChange}
-              name={this.state.name}
-            />
-          </div>
-          <button className="edu_button">SUBMIT</button>
-        </form>
+        <span >
+          <form  className="edu_service_search" onSubmit={this.handleEducationSubmit}>
+
+            <div className="svc_selector">
+              <DropdownService
+                handleServiceChange={this.handleServiceChange}
+                service_id={this.state.service_id}
+              />
+          </div> <br />
+
+            <div className="providerSearch">
+              <ProviderSearch
+                handleNameChange={this.handleNameChange}
+                name={this.state.name}
+              />
+            </div><br />
+
+            <button className="edu_button">SUBMIT</button>
+          </form>
+        </span>
+
         <div className="grid-container">
           <div className="provider_pics">
             {this.renderEducationProviders()}{" "}

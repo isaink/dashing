@@ -10,9 +10,9 @@ const {
 
 router.get("/providers/:id", getSkillsForProvider)
 router.get("/", getAllSkills);
-router.get("/:id", getOneSkill);
+router.get("/singleSkill/:id", getOneSkill);
 router.post("/", addOneSkill);
-router.delete("/:id", deleteOneSkill);
+router.delete("/deleteSkill/:id", deleteOneSkill);
 
 
 module.exports = router;
