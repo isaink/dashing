@@ -72,15 +72,17 @@ class Barber extends React.Component {
                 </div>
                 <div>
                   {barberP.borough}
-                  <div className="bio" > "{barberP.bio}" </div>
+                  <div className="bio"> "{barberP.bio}" </div>
                 </div>
-                  <div className='ctnr_bottom_info'>
-                    <p> {barberP.availability.toUpperCase()}  </p>
-                    <Link to={`/singleProviderProfile/${barberP.user_id}`} >
-                      <button className='bttn_toProfile'> View my Profile </button>
-                    </Link>
-                  </div>
-
+                <div className="ctnr_bottom_info">
+                  <p> {barberP.availability.toUpperCase()} </p>
+                  <Link to={`/singleProviderProfile/${barberP.user_id}`}>
+                    <button className="bttn_toProfile">
+                      {" "}
+                      View my Profile{" "}
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -121,10 +123,12 @@ class Barber extends React.Component {
             <div className="inner_ctnr_providers">
               <div className="providers">
                 <h3 className="text_intro_srv">
-                  Choose your{" "}
-                  <b style={{ color: "white" }}>BARBER</b> provider
+                  Choose your <b style={{ color: "white" }}>BARBER</b> provider
                 </h3>
-                <div className="prov" style={{width: '873px'}}>{this.renderProviders()}</div>}
+                <div className="prov" style={{ width: "873px" }}>
+                  {this.renderProviders()}
+                </div>
+                }
               </div>
             </div>
           </div>
