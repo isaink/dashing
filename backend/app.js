@@ -25,12 +25,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //Static file declaration
-app.use(express.static(path.join(__dirname, 'frontend/build')));
+// app.use(express.static(path.join(__dirname, 'frontend/build')));
 
 //production mode
-// if(process.env.NODE_ENV === 'production') {
-//  app.use(express.static(path.join(__dirname, 'frontend/build')));
-//  //
+if(process.env.NODE_ENV === 'production') {
+ app.use(express.static(path.join(__dirname, 'frontend/build')));
+ //
 //  app.get('*', (req, res) => {
 //    res.sendfile(path.join(__dirname = 'frontend/build/index.html'));
 //  })
@@ -45,6 +45,7 @@ app.use('/services', servicesRouter);
 app.use('/portfolio', portfolioRouter);
 app.use('/skillsProvider', skillsProviderRouter);
 app.use('/skills', skillsProvider);
+
 
 app.get('*', (req, res) => {
  res.sendFile(path.join(__dirname+'/frontend/public/index.html'));
