@@ -3,7 +3,6 @@
   padding-right: 200px;
   padding-top: 250px;
 }
-
 .box .hvrbox-layer_top {
   /* background: white; */
   opacity: 0;
@@ -14,9 +13,10 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+      width: 140px;
+
   /* color: #fff; */
-  padding: 15px;
+
   -moz-transition: all 0.4s ease-in-out 0s;
   -webkit-transition: all 0.4s ease-in-out 0s;
   -ms-transition: all 0.4s ease-in-out 0s;
@@ -27,44 +27,70 @@
   opacity: 3;
   color: white;
 }
-.box .hvrbox-text {
+.box {
   text-align: center;
   font-size: 14px;
   /* display: inline-block; */
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 10%;
   color: white;
+      width: 100%;
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
-
-
+.box img{
+  border-radius: 100px
+}
 .slogan {
   font-family: "Josefin Sans", sans-serif;
   font-size: 60px;
   color: #ffffff;
   letter-spacing: -2px;
 }
-
 .subSlogan {
   font-family: "Josefin Sans", sans-serif;
   font-size: 25px;
   font-weight: 100;
   color: #ecb99c;
 }
-
 .choose_svc {
   font-family: "Josefin Sans", sans-serif;
   font-size: 25px;
-
   color: #ffffff;
 }
-
+.service_thumbs,
+.service_thumbs * {
+    box-sizing: border-box;
+}
+.service_thumbs{
+  position: relative;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+.service_thumbs:hover.hvrbox-layer_top,
+.hvrbox.active .hvrbox-layer_top {
+    opacity: 1;
+}
+.service_thumbs .hvrbox-text {
+    text-align: center;
+    font-size: 18px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.service_thumbs
 .service_thumbs img {
+  max-width: 100%;
   border-radius: 100px;
   margin-left: 20px;
   object-fit: cover;
@@ -74,26 +100,19 @@
   border-color: red;
   border-width: medium;
 }
-
 .service_thumbs img:hover {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   border-color: red;
 }
-
 .Element {
   z-index: 4;
   display: flex;
   height: 100vh;
   object-fit: cover;
 }
+.hvrbox-text{
+  font-family: "Josefin Sans", sans-serif;
 
-/*dl {
-  /* margin: 1rem; */
-/* background-color: cornflowerblue;
-   color: cornsilk; */
-/* } */
-/* dt {
-  position: sticky;
-  top: 100px;
-} */
+
+}
