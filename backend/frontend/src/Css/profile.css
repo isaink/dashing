@@ -46,7 +46,7 @@ a.backLink:hover {
   width: 80px;
   height: 80px;
 }
-.goBackTextTag{
+.goBackTextTag {
   margin-left: 10px;
   font-size: 20px;
   font-weight: bolder;
@@ -105,17 +105,19 @@ a.backLink:hover {
   color: white;
   font-size: 40px;
   /* text-decoration: overline; */
-/*
+  /*
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate; */
 }
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
 .contactLocationSocialLinkDiv {
@@ -139,7 +141,7 @@ a.backLink:hover {
   flex-direction: column;
   justify-content: space-between;
 }
-.contactLocationSocialLinkDiv p{
+.contactLocationSocialLinkDiv p {
   margin-bottom: 5px;
   font-style: italic;
   /* text-decoration: overline; */
@@ -155,7 +157,7 @@ a.backLink:hover {
 .phoneEmailAndSocialLinkDiv h6 {
   margin-left: 10px;
   font-weight: lighter;
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
 .phoneNumDiv {
   margin-top: 20px;
@@ -179,7 +181,7 @@ a.backLink:hover {
   margin-left: 10px;
   text-decoration: none;
 }
-a.socialLink_a_tag  {
+a.socialLink_a_tag {
   text-decoration: none;
   color: pink;
 }
@@ -197,10 +199,10 @@ a.socialLink_a_tag  {
   margin-bottom: 20px;
   color: white;
 }
-.prov_boro img{
+.prov_boro img {
   margin-left: -10px;
 }
-.prov_boro h5{
+.prov_boro h5 {
   margin-left: 10px;
 }
 /* .portfolioDiv {
@@ -250,7 +252,7 @@ a.socialLink_a_tag  {
   padding-top: 15px;
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-weight: lighter;
   /* display: flex;
   flex-direction: column;
@@ -281,7 +283,7 @@ a.socialLink_a_tag  {
 /*  */
 .scrollInstructionsDiv {
   margin-top: 20px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   /* font-family: "Mrs Saint Delafield", cursive; */
   /* font-size: 50px; */
   font-family: "Josefin Sans", sans-serif;
@@ -323,11 +325,11 @@ a.socialLink_a_tag  {
 } */
 /*  How to do a transparent background image  */
 .testDiv {
-  background-image: url('./../img/man_hair.jpg');
+  background-image: url("./../img/man_hair.jpg");
   height: 100px;
 }
 h1.testTag {
-  background-color: rgba(255,255,255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   color: black;
   font-size: 30px;
   height: 100px;

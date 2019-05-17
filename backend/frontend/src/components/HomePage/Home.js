@@ -16,7 +16,9 @@ import EducationProv_Container from "../../Redux_Containers/EducationProv_Contai
 import { AboutUs } from "./AboutUs";
 
 
+
 // import  NavbarForComponents  from '../NavBars/NavbarForComponents'
+
 
 import "./../../Css/Home.css";
 
@@ -32,7 +34,7 @@ class Home extends Component {
 
   scrollToTop() {
     scroll.scrollToTop();
-  }
+  };
 
   scrollTo() {
     scroller.scrollTo("scroll-to-element", {
@@ -40,7 +42,7 @@ class Home extends Component {
       delay: 0,
       smooth: "easeInOutQuart"
     });
-  }
+  };
 
   render() {
     return (
@@ -76,6 +78,12 @@ class Home extends Component {
 
             </Element>
           </dd>
+
+          <dd>
+            <Element name="aboutus" className="Element">
+              <AboutUs />{" "}
+            </Element>
+          </dd> */}
 
 
         </dl>

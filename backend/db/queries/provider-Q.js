@@ -127,7 +127,7 @@ const getProvidersBySkill = (req, res, next) => {
       avatar,
       borough,
       phone_number,
-      users.id provider_id,
+      users.id user_id,
       website_link,
       bio,
       availability,
@@ -172,7 +172,7 @@ const getProvidersByService = (req, res, next) => {
   availability,
   email,
   phone_number,
-  users.id provider_id,
+  users.id user_id,
   website_link,
   services.name services,
   skills.id skill_id

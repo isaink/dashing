@@ -3,9 +3,6 @@ import { withRouter, Link } from "react-router-dom";
 import "./../../Css/profile.css";
 import pared from "./../../img/habitacion-pared-salmon.jpg";
 import loc from "./../../img/location.png";
-import phone from "./../../img/phoneIcon.png"
-import email from "./../../img/email.png"
-import link from "./../../img/link.png"
 import bulletpoint from "./../../photo_assets/bulletpoint.png";
 import not_img from "./../../img/notFound.jpg";
 import backarrow from "../../img/curved_back_arrow.png";
@@ -16,92 +13,123 @@ const ProviderProfile = props => {
   const goBack = () => {
     props.history.goBack();
   };
-  console.log(props.providerInfo, 'providerINFO')
+
   const renderProviderInfo = () => {
     if (props.providerInfo) {
       return (
-        <div className="ctnr_profile" key={props.providerInfo.user_id}>
-
+        <div className="ctnr_profile" key={props.providerInfo.provider_id}>
           <div className="background_img_Div">
             <img alt="intro_picture" src={pared} className="intro_pic" />
+            {/*
+              style={{ width: `100%` }}
+              */}
           </div>
 
           <div className="allBelowBkGndImage">
+            {/*
+                <div className='backLinkDiv'>
+
+
+                <Link
+                className="backLink"
+                to={"/"}
+                onClick={goBack}
+                style={{textDecoration: 'none'}}
+                >
+
+                <div className='backarrowImageTagDiv'>
+                <img src={backarrow}
+                alt=''
+                width='50px'
+                className='backarrowImageTag'
+
+                />
+                </div>
+
+                <div className='goBackTextTag'>
+                <h4> Go Back </h4>
+                </div>
+
+                </Link>
+
+                </div>
+
+                */}
+
             <div className="leftAndRightSidesDiv">
               <div className="AvatarAndAllDetailsDiv">
+                {/*
+                      // <div className='avatarProfileDiv'>
+                      */}
                 <div className="avatarProfileBorder">
-
                   <img
                     src={props.providerInfo.avatar}
                     alt="avatar"
                     className="avatarProfileImage"
                   />
-
                 </div>
+                {/*
+                        // </div>
+                        */}
+
                 <div className="contactLocationSocialLinkDiv">
                   <div className="rightProviderDetailsDiv">
                     <div className="LocationAndNameDiv">
                       <div className="locDiv">
                         <div className="loc">
-
-                        <div className="prov_info">
-
-                      </div>
-                      <h5 className="prov_name">
-                          {props.providerInfo.first_name}{" "} {props.providerInfo.last_name}
-                        </h5>
                           <div className="prov_boro">
                             <img
                               alt="loc"
                               src={loc}
-                              style={{ zIndex: "2", height: "18px" }}
+                              style={{ zIndex: "2", height: "30px" }}
                             />
                             <h6>{props.providerInfo.borough}</h6>
                           </div>
                         </div>
                       </div>
+
+                      <div className="prov_info">
+                        <h5 className="prov_name">
+                          {props.providerInfo.providername}{" "}
+                        </h5>
+                      </div>
                     </div>
 
                     <div className="phoneEmailAndSocialLinkDiv">
-                        <img
-                          alt="phone"
-                          src={phone}
-                          style={{ zIndex: "2", width: "18px" }}
-                        />
+                      <div className="phoneNumDiv">
+                        <p>Phone number: </p>
                         <h6>{props.providerInfo.phone_number}</h6>
-
-                        <img
-                          alt="email"
-                          src={email}
-                          style={{ zIndex: "2", width: "18px" }}
-                        />
+                      </div>
+                      <div className="emailDiv">
+                        <p>Email:</p>
                         <h6>{props.providerInfo.email}</h6>
+                      </div>
+                      {/* </div> */}
 
-                        <img
-                          alt="email"
-                          src={link}
-                          style={{ zIndex: "2", width: "18px", gridColumn: 1 }}
-                        />
+                      <div className="social_link">
+                        <p>Social media: </p>
                         <a
                           href="https://www.instagram.com/krystamariehair/"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="socialLink_a_tag"
                         >
-
-                          <h5 >{props.providerInfo.website_link}</h5>
+                          <h6>{props.providerInfo.website_link}</h6>
                         </a>
-                      {/* </div> */}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-
+              {/*
+                        <div className="ctnr_porfolio">
+                        //  <img src={lines}/>
+                        //  PORFOLIO HERE
+                      </div>
+                      */}
               <div className="centerDiv">
-
-                 <div className="ctnr_services">
-
+                {/*  <div className="ctnr_services">
                           {props.providerInfo.services &&
                             props.providerInfo.services.map(service => {
                               let skills = service.skills.map(skill => {
@@ -120,7 +148,7 @@ const ProviderProfile = props => {
                               </>
                           );
                         })}
-                      </div>
+                      </div> */}
               </div>
 
               <div className="rightSideDiv">
@@ -144,31 +172,23 @@ const ProviderProfile = props => {
                           src={not_img}
                           style={{
                             objectFit: "cover",
-                            height: '250px',
-                            transform: "translateY(-20%)",
-                            margin:' 25px'
+                            height: "320px",
+                            transform: "translateY(-20%)"
                           }}
                         />
-
                       </>
                     )}
-
-
-
-                    {/* <div className="scrollInstructionsDiv">
-
-                      </div> */}
-
                   </div>
-
-
                 </div>
-
+                <div className="scrollInstructionsDiv">
+                  <p className="scrollInstructions">
+                    Click and scroll through my portfolio!
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       );
     } else {
       return (
