@@ -80,7 +80,7 @@ class Barber extends React.Component {
                       <button className='bttn_toProfile'> View my Profile </button>
                     </Link>
                   </div>
-              
+
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ class Barber extends React.Component {
         <div className="ctnr_prov">
           <div className="ctnr_nav">
             <div className="title">BARBER</div>
-            <span style={{ paddingLeft: "55px", width: "1074px" }}>
+            <span style={{ paddingLeft: "78px", width: "1074px" }}>
               <ComboBox
                 fetchSkillList={this.state.skills}
                 getProvidersByService={this.props.getProvidersByService}

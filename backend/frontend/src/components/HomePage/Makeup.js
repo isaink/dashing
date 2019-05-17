@@ -78,7 +78,7 @@ class Makeup extends React.Component {
                   >
                     {makeupP.first_name} {makeupP.last_name} <br />
                   </div>
-                  <div> 
+                  <div>
                     {makeupP.borough}
                     <div className="bio" > "{makeupP.bio}" </div>
 
@@ -104,35 +104,33 @@ class Makeup extends React.Component {
   render() {
     return (
       <>
-      <div className='ctnr_prov'>
+
+        <div className="ctnr_prov">
+          <div className="ctnr_nav">
+            <div className="title">MAKEUP</div>
+            <span style={{ paddingLeft: "78px", width: "1074px" }}>
+              <ComboBox
+                fetchSkillList={this.state.skills}
+                getProvidersByService={this.props.getProvidersByService}
+                fetchProvidersByService={this.props.fetchProvidersByService}
+                serviceId={this.state.service_id}
+              />
+            </span>
+          </div>
           <div className="ctnr_box_right">
-            <div className="img_intro_right" >
+            <div className="img_intro_right">
               <img
                 alt="intro"
                 src={makeupPic}
-                style={{ objectFit: "cover", height: '100%', width:'100%', }}
-                />
+                style={{ objectFit: "cover", height: "100%", width: "100%" }}
+              />
             </div>
-
             <div className="inner_ctnr_providers_right">
-              <div className='ctnr_nav'>
-
-                <div className="title" style={{    paddingLeft: '20px'}}>Makeup</div>
-                  <span className="dropdown">
-                    <ComboBox
-                      fetchSkillList={this.state.skills}
-                      getProvidersByService = {this.props.getProvidersByService}
-                      fetchProvidersByService = {this.props.fetchProvidersByService}
-                      serviceId={this.state.service_id}
-                      />
-                  </span>
-                </div>
-
+              <h3 className="text_intro_srv">
+                Choose your{" "}
+                <b style={{ color: "white" }}>MAKEUP</b> provider
+              </h3>
               <div className="providers">
-                <h3 className="text_intro_srv">
-                  Choose your{" "}
-                  <b style={{ color: "white" }}>MAKEUP</b> provider
-                </h3>
                 <div className="prov">{this.renderProviders()}</div>
               </div>
             </div>

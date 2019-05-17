@@ -10,10 +10,10 @@ img.intro_pic {
   justify-content: center;
 }
 /*  */
-.allBelowBkGndImage {
+/* .allBelowBkGndImage {
   margin-left: 40px;
   margin-right: 40px;
-}
+} */
 /*  */
 .backLinkDiv {
   /* background-color: green; */
@@ -46,7 +46,7 @@ a.backLink:hover {
   width: 80px;
   height: 80px;
 }
-.goBackTextTag {
+.goBackTextTag{
   margin-left: 10px;
   font-size: 20px;
   font-weight: bolder;
@@ -68,13 +68,15 @@ a.backLink:hover {
 /*  */
 .AvatarAndAllDetailsDiv {
   display: grid;
-  grid-template-columns: 350px 400px;
-  height: 500px;
+  /* grid-template-columns: 350px 400px; */
+  /* height: 500px; */
 }
 /*  */
 /* .avatarProfileDiv {
 } */
 .avatarProfileBorder {
+  width: 250px;
+  height: 300px;
   display: grid;
   grid-column: 1;
   background-color: #404040;
@@ -87,11 +89,11 @@ a.backLink:hover {
 .avatarProfileImage {
   /* border-top-left-radius: 20px; */
   /* border-bottom-left-radius: 20px; */
-  border-radius: 20px;
+  border-radius: 5px;
   border-style: inset;
   border-color: grey;
-  width: 280px;
-  height: 400px;
+  width: 198px;
+  height: 250px;
   object-fit: cover;
   /* -moz-box-shadow: 0 0 50px #fff;
   -webkit-box-shadow: 0 0 50px #fff;
@@ -102,63 +104,86 @@ a.backLink:hover {
 }
 .prov_name {
   margin-top: 20px;
-  color: white;
-  font-size: 40px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  color: #ecb99c;
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: -1px;
+  text-transform: uppercase;
   /* text-decoration: overline; */
-  /*
+/*
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate; */
 }
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
-      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
-      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
 .contactLocationSocialLinkDiv {
-  display: grid;
+  /* display: grid; */
   grid-column: 2;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* padding-top: 10px; */
+  /* align-items: center; */
+  /* justify-content: center; */
   background-color: #202020;
   flex-direction: column;
   /* border-top-right-radius: 20px; */
   /* border-bottom-right-radius: 20px; */
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
+  width: 300px;
+  height: 300px;
 }
 .rightProviderDetailsDiv {
   /* background-color: yellow; */
-  width: 350px;
-  height: 400px;
+  /* width: 350px; */
+  /* height: 400px; */
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.contactLocationSocialLinkDiv p {
+.contactLocationSocialLinkDiv p{
   margin-bottom: 5px;
-  font-style: italic;
+  /* font-style: italic; */
   /* text-decoration: overline; */
 }
 .phoneEmailAndSocialLinkDiv {
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 10% 90%;
   flex-direction: column;
   text-align: left;
   color: white;
+  margin-top: 50px;
+  font-size: 18px;
   /* background-color: red; */
   /* margin-bottom: 30px; */
 }
+
 .phoneEmailAndSocialLinkDiv h6 {
-  margin-left: 10px;
+  grid-column: 2;
+  /* margin-left: 10px; */
   font-weight: lighter;
-  color: #a0a0a0;
+  color: #A0A0A0;
+  margin-bottom: 15px;
 }
+h5{
+  color: #A0A0A0;
+  font-weight: lighter;
+}
+h5:hover{
+  color: white;
+
+}
+
 .phoneNumDiv {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -177,70 +202,103 @@ a.backLink:hover {
 .social_link p {
   /* font-family: "Josefin Sans", sans-serif; */
 }
+.portf_text{
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  font-size: 15px;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: lighter;
+  margin-top: 40px;
+  /* width: 200px; */
+  text-align: center;
+}
 .social_link h6 {
   margin-left: 10px;
   text-decoration: none;
 }
-a.socialLink_a_tag {
+a.socialLink_a_tag  {
   text-decoration: none;
   color: pink;
 }
-/*  */
-.locDiv {
-}
-/* .loc {
-  display: flex;
-  margin-bottom: 20px;
-} */
+
 .prov_boro {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   color: white;
+  margin-top: 10px;
 }
-.prov_boro img {
-  margin-left: -10px;
-}
-.prov_boro h5 {
+
+.prov_boro h5{
   margin-left: 10px;
 }
-/* .portfolioDiv {
-  display: flex;
-  border-width: 5px;
-  border-color: green;
-} */
 /*  */
 .centerDiv {
+  display: flex;
+}
+
+.main_ctnr_skills{
+  width: 500px;
+  height: 60%;
+  padding-top: 20px;
+  justify-content: center;
+  background-color: #202020;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.inner_ctnr_srv{
+  display: grid;
+  grid-template-columns: 30% 50%;
+  font-weight: lighter;
+  margin-left: 30%;
+  /* margin-right: 50%; */
+
+}
+.skill_type{
+  grid-column: 2;
+    color: #A0A0A0;
+    font-size: 20px;
+    text-align: left;
+    /* text-transform: uppercase; */
+}
+
+.prices{
+  grid-column: 1;
+  color: #A0A0A0;
+  font-size: 20px;
+}
+.title_srv_sks{
+  /* padding-bottom: 10px;  */
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: lighter;
+  background-color: #202020;
+  color: white;
+  font-size: 40px;
+  letter-spacing: -1px;
+  padding-top: 20px;
 }
 /*  */
 .ctnr_services {
-  /* background-color: green; */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: white;
-  width: 200px;
-  margin-right: 20px;
-  margin-left: 30px;
+
+    color: white;
+
 }
 .srv_nameDiv {
-  /* background-color: white; */
   height: 50px;
   margin-top: 30px;
-  /* margin-bottom: 10px; */
 }
 .srv_nameDiv .srv_name {
-  /* background-color: yellow; */
+
   font-size: 70px;
   font-family: "Mrs Saint Delafield", cursive;
-  /* font-weight: bold; */
   color: white;
-  /* text-shadow: 2px 2px 4px #000000; */
+
 }
 .srv_nameDiv .skillAndBulletsDiv {
-  /* background-color: orange; */
-  /* flex-direction: column; */
+
   color: white;
   margin-bottom: 20px;
   border: 2px solid white;
@@ -252,38 +310,47 @@ a.socialLink_a_tag {
   padding-top: 15px;
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
-  color: #a0a0a0;
+  color: #A0A0A0;
   font-weight: lighter;
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 50px; */
+}
+.profile_bio{
+  margin-top: 30px;
+  font-weight: lighter;
+  color: white;
+  font-size: 18px;
+  text-align: left;
+    /* margin-bottom: 20px; */
+}
+.avalibility{
+  color: white;
+
+  font-weight: lighter;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  background-color: #1f1f1f;
 }
 .skillBullets {
-  /* background-color: yellow; */
   width: 5px;
 }
 .skill_item {
   margin-bottom: 7px;
 }
-/*  */
-.rightSideDiv {
+
+
+.portfolioDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #202020;
   height: 300px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 10px;
-  /* border-radius: 20px; */
+
 }
+
 /*  */
 .scrollInstructionsDiv {
   margin-top: 20px;
-  color: #a0a0a0;
+  color: #A0A0A0;
   /* font-family: "Mrs Saint Delafield", cursive; */
   /* font-size: 50px; */
   font-family: "Josefin Sans", sans-serif;
@@ -291,17 +358,18 @@ a.socialLink_a_tag {
   font-weight: lighter;
   /* background-color: yellow; */
 }
-/*  */
+
+
 .ctnr_portfolio {
   display: flex;
+  margin: 25px;
   flex-direction: row;
-  width: 500px;
+  width: 300px;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  border-radius: 20px;
   border-width: thick;
-  justify-content: center;
 }
+
 .portfolio_img {
   border-radius: 5px;
   margin-left: 5px;
@@ -325,12 +393,15 @@ a.socialLink_a_tag {
 } */
 /*  How to do a transparent background image  */
 .testDiv {
-  background-image: url("./../img/man_hair.jpg");
+  background-image: url('./../img/man_hair.jpg');
   height: 100px;
 }
 h1.testTag {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255,255,255, 0.3);
   color: black;
   font-size: 30px;
   height: 100px;
+}
+.hr{
+  width: 300px
 }

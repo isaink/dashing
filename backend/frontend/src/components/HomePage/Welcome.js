@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
@@ -12,11 +13,12 @@ import barb_thumb from "../../photo_assets/barb_thumb.jpg";
 import makeup_thumb from "../../photo_assets/makeup_thumb.jpeg";
 import edu_pic from "../../photo_assets/edu_pic.jpg";
 
+// import Navbar from "../NavBars/Navbar";
+//
 export default class Welcome extends Component {
   scrollToTop = () => {
     scroll.scrollToTop();
   };
-
   render() {
     return (
       <>
@@ -45,11 +47,7 @@ export default class Welcome extends Component {
               offset={-70}
               duration={500}
             >
-
-              <img src={hair_thumb} className='hvrbox-layer_bottom' alt="" width="150px" height="auto" />
-              <div className='hvrbox-layer_top'>
-                  <p className='hvrbox-text'> HAIR </p>
-              </div>  
+              <img src={hair_thumb} alt="" width="150px" height="auto" />
             </Link>
             <Link
               className="links"
