@@ -1,8 +1,11 @@
 -- DROP DATABASE IF EXISTS dashing;
 -- CREATE DATABASE dashing;
 -- \c dashing
+DROP TABLE services, skills, users, services_provider, skills_provider, portfolio CASCADE;
 
-CREATE TYPE userType AS ENUM ( 'provider', 'client');
+DROP TYPE usertype;
+
+CREATE TYPE usertype AS ENUM ( 'provider', 'client');
 
 CREATE TABLE services(
   id SERIAL PRIMARY KEY,
@@ -28,7 +31,7 @@ CREATE TABLE users(
   bio TEXT,
   service_id INT REFERENCES services(id) ON DELETE CASCADE,
   availability TEXT,
-  type userType
+  type usertype
 );
 
 CREATE TABLE services_provider(
