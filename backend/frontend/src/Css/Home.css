@@ -1,7 +1,13 @@
 .welcome_container {
-  padding-left: 250px;
-  padding-right: 200px;
-  padding-top: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-left: 20%;
+  padding-top: 5%;
+
+  /* padding-left: 20%;
+  padding-right: 20%;; */
 }
 .box .hvrbox-layer_top {
   /* background: white; */
@@ -13,8 +19,10 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-      width: 140px;
+  width: 140px;
+
   /* color: #fff; */
+
   -moz-transition: all 0.4s ease-in-out 0s;
   -webkit-transition: all 0.4s ease-in-out 0s;
   -ms-transition: all 0.4s ease-in-out 0s;
@@ -27,20 +35,22 @@
 }
 .box {
   text-align: center;
+  padding-left: 20px;
   font-size: 14px;
   /* display: inline-block; */
   position: absolute;
-  top: 40%;
+  border-radius: 110px;
+
   left: 10%;
   color: white;
-      width: 100%;
+  width: 100%;
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.box img{
-  border-radius: 100px
+.box img {
+  border-radius: 110px;
 }
 .slogan {
   font-family: "Josefin Sans", sans-serif;
@@ -61,33 +71,32 @@
 }
 .service_thumbs,
 .service_thumbs * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-.service_thumbs{
+.service_thumbs {
   position: relative;
-    display: inline-block;
-    overflow: hidden;
-    max-width: 100%;
-    height: auto;
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
 }
 .service_thumbs:hover.hvrbox-layer_top,
 .hvrbox.active .hvrbox-layer_top {
-    opacity: 1;
+  opacity: 1;
 }
 .service_thumbs .hvrbox-text {
-    text-align: center;
-    font-size: 18px;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 18px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-.service_thumbs
-.service_thumbs img {
+.service_thumbs .service_thumbs img {
   max-width: 100%;
   border-radius: 100px;
   margin-left: 20px;
@@ -109,6 +118,6 @@
   height: 100vh;
   object-fit: cover;
 }
-.hvrbox-text{
+.hvrbox-text {
   font-family: "Josefin Sans", sans-serif;
 }

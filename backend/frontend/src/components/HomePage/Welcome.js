@@ -20,7 +20,7 @@ export default class Welcome extends Component {
   render() {
     return (
       <>
-        <span className="welcome_container">
+        <div className="welcome_container">
           <div className="slogan">
             <h1>"We Bring Style to Your Doorstep"</h1>
           </div>
@@ -34,14 +34,9 @@ export default class Welcome extends Component {
           <div className="choose_svc">
             <br />
             <h3>Choose Your Service</h3>
-            <br />
           </div>
-
           <div style={{ paddingTop: "100px" }}>
-            <div
-              className=" box"
-              style={{ borderRadius: "100px", width: "150px" }}
-            >
+            <div className=" box" style={{ width: "150px" }}>
               <Link
                 className="links"
                 activeClass="active"
@@ -58,10 +53,7 @@ export default class Welcome extends Component {
               </Link>
             </div>
 
-            <div
-              className=" box"
-              style={{ borderRadius: "100px", width: "150px" }}
-            >
+            <div className=" box" style={{ width: "150px" }}>
               <Link
                 className="links"
                 activeClass="active"
@@ -78,10 +70,7 @@ export default class Welcome extends Component {
               </Link>
             </div>
 
-            <div
-              className=" box"
-              style={{ borderRadius: "100px", width: "150px" }}
-            >
+            <div className=" box" style={{ width: "150px" }}>
               <Link
                 className="links"
                 activeClass="active"
@@ -99,10 +88,7 @@ export default class Welcome extends Component {
               </Link>
             </div>
 
-            <div
-              className=" box"
-              style={{ borderRadius: "100px", width: "150px" }}
-            >
+            <div className=" box" style={{ width: "150px" }}>
               <Link
                 className="links"
                 activeClass="active"
@@ -119,10 +105,7 @@ export default class Welcome extends Component {
               </Link>
             </div>
 
-            <div
-              className=" box"
-              style={{ borderRadius: "100px", width: "150px" }}
-            >
+            <div className=" box" style={{ width: "150px" }}>
               <RouterLink
                 className="links"
                 activeClass="active"
@@ -139,7 +122,7 @@ export default class Welcome extends Component {
               </RouterLink>
             </div>
           </div>
-        </span>
+        </div>
       </>
     );
   }
