@@ -5,6 +5,7 @@
   position: fixed;
   z-index: 2;
   background-color: black;
+  cursor: pointer;
 }
 .dashing_logo {
   display: flex;
@@ -22,12 +23,10 @@
   font-size: 18px;
   color: white;
 }
-
 .links {
   padding-right: 20px;
   margin-top: -38px;
 }
-
 .dashingNav a:link {
   color: white;
   text-decoration: none;
@@ -35,12 +34,10 @@
   letter-spacing: normal;
   /* padding-left: 20px; */
 }
-
 .dashingNav a:visited {
   text-decoration: none;
   color: white;
 }
-
 .dashingNav a:hover {
   color: #ecb99c;
 }
