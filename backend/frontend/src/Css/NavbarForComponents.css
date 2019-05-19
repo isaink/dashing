@@ -5,6 +5,7 @@
   position: fixed;
   z-index: 2;
   background-color: black;
+  cursor: pointer;
 }
 .dashing_logo {
   display: flex;

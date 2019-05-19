@@ -61,8 +61,8 @@ a.backLink:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 20px;
-  margin: 50px;
+  margin-top: 5%;
+  /* margin: 50px; */
   /* background-color: red; */
 }
 /*  */
@@ -242,7 +242,7 @@ a.socialLink_a_tag  {
 
 .main_ctnr_skills{
   width: 500px;
-  height: 60%;
+  height: 61%;
   padding-top: 20px;
   justify-content: center;
   background-color: #202020;
