@@ -16,14 +16,12 @@ class Barber extends React.Component {
     locations: [],
     serviceId: 3
   };
+  
   componentDidMount() {
     this.props.getProvidersByService();
+    this.getSkillsForService();
   }
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevProps.barberProviders && this.props.barberProviders) {
-      this.getSkillsForService();
-    }
-  }
+
   getSkillsForService = () => {
     axios
       .get(`/services/skills/3`)

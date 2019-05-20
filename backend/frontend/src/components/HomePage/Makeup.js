@@ -23,12 +23,6 @@ class Makeup extends React.Component {
     this.getSkillsForService();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevProps.makeupProviders && this.props.makeupProviders) {
-      this.getSkillsForService();
-    }
-  }
-
   getSkillsForService = () => {
     axios
       .get(`/services/skills/4`)

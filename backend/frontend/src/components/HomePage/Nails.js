@@ -16,14 +16,12 @@ class Nails extends React.Component {
     locations: [],
     serviceId: 0
   };
+
   componentDidMount() {
     this.props.getProvidersByService();
+    this.getSkillsForService();
   }
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevProps.nailProviders && this.props.nailProviders) {
-      this.getSkillsForService();
-    }
-  }
+
   getSkillsForService = () => {
     axios
       .get(`/services/skills/2`)
@@ -36,7 +34,7 @@ class Nails extends React.Component {
         console.log("GET SKILLS ERR", err);
       });
   };
-  // };
+
   renderProviders = () => {
     if (this.props.nailProviders) {
       const providerObj = {};
@@ -73,16 +71,17 @@ class Nails extends React.Component {
                 </div>
 
                 {nailP.borough}
-                <div className="bio" > "{nailP.bio}" </div>
+                <div className="bio"> "{nailP.bio}" </div>
 
-                  <div className='ctnr_bottom_info'>
-                    <p> {nailP.availability.toUpperCase()}  </p>
-                    <Link to={`/singleProviderProfile/${nailP.user_id}`} >
-                      <button className='bttn_toProfile'> View my Profile </button>
-                    </Link>
-                  </div>
-
-
+                <div className="ctnr_bottom_info">
+                  <p> {nailP.availability.toUpperCase()} </p>
+                  <Link to={`/singleProviderProfile/${nailP.user_id}`}>
+                    <button className="bttn_toProfile">
+                      {" "}
+                      View my Profile{" "}
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -121,8 +120,7 @@ class Nails extends React.Component {
             </div>
             <div className="inner_ctnr_providers_right">
               <h3 className="text_intro_srv">
-                Choose your{" "}
-                <b style={{ color: "white" }}>NAILS</b> provider
+                Choose your <b style={{ color: "white" }}>NAILS</b> provider
               </h3>
               <div className="providers">
                 <div className="prov">{this.renderProviders()}</div>
