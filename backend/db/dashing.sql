@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS dashing;
 CREATE DATABASE dashing;
 \c dashing
 
-CREATE TYPE userType AS ENUM ( 'provider', 'client');
+CREATE TYPE usertype AS ENUM ( 'provider', 'client');
 
 CREATE TABLE services(
   id SERIAL PRIMARY KEY,
@@ -241,6 +241,7 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 (16, 25, 30, 80, 'true'); ---makeup
 
 
+
 INSERT INTO portfolio(user_id, img, body, skill_id)
 VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),
   (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg', null, null),
@@ -255,7 +256,8 @@ VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851
   (5, 'http://jpmmobile.com/wp-content/uploads/2018/11/40-braids-for-black-kids-2018-mr-kids-haircuts-braids-for-black-kids.jpg', null, null),
   (5, 'https://4cjz9s2texp5a66rp37l3uty-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/1492699004/bashab___12224424_252504998425062_1601193227_n-2.jpg', null, null),
   (5, 'https://www.menshairstylestoday.com/wp-content/uploads/2018/03/Black-Men-Hairstyles.jpg', null, null),
-  (6, 'https://tinyurl.com/yyqagcrl', null, null),
+
+
   (7, 'https://tinyurl.com/y6gwhcka', null, null),
   (7, 'https://tinyurl.com/y56k6cu2', null, null),
   (8, 'https://tinyurl.com/y4y7ccxd', null, null),
@@ -272,13 +274,13 @@ VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851
   (13, 'https://tinyurl.com/yynypmx9', null, null),
   (14, 'https://tinyurl.com/yxjcdxu7', null, null),
   (14, 'https://tinyurl.com/y5y69r8p', null, null),
-  (6, 'https://i.pinimg.com/originals/99/1b/a2/991ba20bbd35b00bcd91a9b876ab7783.jpg', null, null),
+  (6, 'http://www.shearexcitementhairsalon.com/uploads/2/4/7/8/24780048/sew-in-hairstyles-1-1_orig.jpg', null, null),
   (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvO5NrjkKqGD_ClEeDHVaycfY0Fm7B5-UPTDJHDTgblyON8I_', null, null),
   (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUbb2p4lOtrHULJJzdKBM_F09XEac0EUwy4EzBwZ4UjOifJiub', null, null),
   (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROBPHVdQEMEj3y54KypaeNvDrWLmdduTDzxh6n4QxIawz7wBQg', null, null),
   (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn1mjWNh0xPCBXbm0RA7swpOmYGpuU52QlUT96UEQpT4afZw4rNQ', null, null),
   (6, 'https://davina-diaries-7jkaizw9lep2iaf6od7zdyieys8em.netdna-ssl.com/wp-content/uploads/2018/09/make-up-for-darker-skin-tones-soft-glam-natural-full-lips-soft-arch-brows-334x500-334x500.jpg', null, null),
-    (6, 'https://www.dhresource.com/0x0s/f2-albu-g6-M00-F3-FF-rBVaSFuEpnWAbwksAAGEi5krZmI024.jpg/24pcs-fashion-candy-stiletto-nails-pointed.jpg', null, null),
+    (6, 'https://i.pinimg.com/originals/55/e7/e0/55e7e062ba977860f1e016eecbcfb529.jpg', null, null),
     (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCic_2K_zkttToVFTjAkqMr8ZmHyEPJRlfoLUbWKepSmSCL60N', null, null),
     (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvU8ctKrNtdoC0B6hy6_0zTTIGRTta9ywGpH2dWY2jluPBTKqx', null, null),
 

@@ -46,7 +46,7 @@ a.backLink:hover {
   width: 80px;
   height: 80px;
 }
-.goBackTextTag{
+.goBackTextTag {
   margin-left: 10px;
   font-size: 20px;
   font-weight: bolder;
@@ -112,17 +112,19 @@ a.backLink:hover {
   letter-spacing: -1px;
   text-transform: uppercase;
   /* text-decoration: overline; */
-/*
+  /*
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate; */
 }
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
 .contactLocationSocialLinkDiv {
@@ -150,7 +152,7 @@ a.backLink:hover {
   flex-direction: column;
   justify-content: space-between;
 }
-.contactLocationSocialLinkDiv p{
+.contactLocationSocialLinkDiv p {
   margin-bottom: 5px;
   /* font-style: italic; */
   /* text-decoration: overline; */
@@ -172,16 +174,15 @@ a.backLink:hover {
   grid-column: 2;
   /* margin-left: 10px; */
   font-weight: lighter;
-  color: #A0A0A0;
+  color: #a0a0a0;
   margin-bottom: 15px;
 }
-h5{
-  color: #A0A0A0;
+h5 {
+  color: #a0a0a0;
   font-weight: lighter;
 }
-h5:hover{
+h5:hover {
   color: white;
-
 }
 
 .phoneNumDiv {
@@ -202,7 +203,7 @@ h5:hover{
 .social_link p {
   /* font-family: "Josefin Sans", sans-serif; */
 }
-.portf_text{
+.portf_text {
   color: white;
   font-family: "Josefin Sans", sans-serif;
   color: white;
@@ -218,7 +219,7 @@ h5:hover{
   margin-left: 10px;
   text-decoration: none;
 }
-a.socialLink_a_tag  {
+a.socialLink_a_tag {
   text-decoration: none;
   color: pink;
 }
@@ -232,7 +233,7 @@ a.socialLink_a_tag  {
   margin-top: 10px;
 }
 
-.prov_boro h5{
+.prov_boro h5 {
   margin-left: 10px;
 }
 /*  */
@@ -240,7 +241,7 @@ a.socialLink_a_tag  {
   display: flex;
 }
 
-.main_ctnr_skills{
+.main_ctnr_skills {
   width: 500px;
   height: 61%;
   padding-top: 20px;
@@ -249,28 +250,27 @@ a.socialLink_a_tag  {
   font-family: "Josefin Sans", sans-serif;
 }
 
-.inner_ctnr_srv{
+.inner_ctnr_srv {
   display: grid;
   grid-template-columns: 30% 50%;
   font-weight: lighter;
   margin-left: 30%;
   /* margin-right: 50%; */
-
 }
-.skill_type{
+.skill_type {
   grid-column: 2;
-    color: #A0A0A0;
-    font-size: 20px;
-    text-align: left;
-    /* text-transform: uppercase; */
+  color: #a0a0a0;
+  font-size: 20px;
+  text-align: left;
+  /* text-transform: uppercase; */
 }
 
-.prices{
+.prices {
   grid-column: 1;
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-size: 20px;
 }
-.title_srv_sks{
+.title_srv_sks {
   /* padding-bottom: 10px;  */
   font-family: "Josefin Sans", sans-serif;
   font-weight: lighter;
@@ -282,23 +282,18 @@ a.socialLink_a_tag  {
 }
 /*  */
 .ctnr_services {
-
-    color: white;
-
+  color: white;
 }
 .srv_nameDiv {
   height: 50px;
   margin-top: 30px;
 }
 .srv_nameDiv .srv_name {
-
   font-size: 70px;
   font-family: "Mrs Saint Delafield", cursive;
   color: white;
-
 }
 .srv_nameDiv .skillAndBulletsDiv {
-
   color: white;
   margin-bottom: 20px;
   border: 2px solid white;
@@ -310,18 +305,18 @@ a.socialLink_a_tag  {
   padding-top: 15px;
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-weight: lighter;
 }
-.profile_bio{
+.profile_bio {
   margin-top: 30px;
   font-weight: lighter;
   color: white;
   font-size: 18px;
   text-align: left;
-    /* margin-bottom: 20px; */
+  /* margin-bottom: 20px; */
 }
-.avalibility{
+.avalibility {
   color: white;
 
   font-weight: lighter;
@@ -336,7 +331,6 @@ a.socialLink_a_tag  {
   margin-bottom: 7px;
 }
 
-
 .portfolioDiv {
   display: flex;
   flex-direction: column;
@@ -344,13 +338,12 @@ a.socialLink_a_tag  {
   justify-content: center;
   background-color: #202020;
   height: 300px;
-
 }
 
 /*  */
 .scrollInstructionsDiv {
   margin-top: 20px;
-  color: #A0A0A0;
+  color: #a0a0a0;
   /* font-family: "Mrs Saint Delafield", cursive; */
   /* font-size: 50px; */
   font-family: "Josefin Sans", sans-serif;
@@ -358,7 +351,6 @@ a.socialLink_a_tag  {
   font-weight: lighter;
   /* background-color: yellow; */
 }
-
 
 .ctnr_portfolio {
   display: flex;
@@ -393,15 +385,15 @@ a.socialLink_a_tag  {
 } */
 /*  How to do a transparent background image  */
 .testDiv {
-  background-image: url('./../img/man_hair.jpg');
+  background-image: url("./../img/man_hair.jpg");
   height: 100px;
 }
 h1.testTag {
-  background-color: rgba(255,255,255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   color: black;
   font-size: 30px;
   height: 100px;
 }
-.hr{
-  width: 300px
+.hr {
+  width: 300px;
 }
