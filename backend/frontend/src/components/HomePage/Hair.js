@@ -54,11 +54,11 @@ class Hair extends React.Component {
     this.getSkillsForService();
 
   }
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (!prevProps.hairProviders && this.props.hairProviders) {
-  //     this.getSkillsForService();
-  //   }
-  // }
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevProps.hairProviders && this.props.hairProviders) {
+      this.getSkillsForService();
+    }
+  }
   getSkillsForService = () => {
     axios
       .get(`/services/skills/1`)
