@@ -19,11 +19,11 @@ class Nails extends React.Component {
   componentDidMount() {
     this.props.getProvidersByService();
   }
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevProps.nailProviders && this.props.nailProviders) {
-      this.getSkillsForService();
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (!prevProps.nailProviders && this.props.nailProviders) {
+  //     this.getSkillsForService();
+  //   }
+  // }
   getSkillsForService = () => {
     axios
       .get(`/services/skills/2`)
