@@ -244,6 +244,7 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 (16, 25, 30, 80, 'true'); ---makeup
 
 
+
 INSERT INTO portfolio(user_id, img, body, skill_id)
 VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),
   (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg', null, null),
@@ -258,7 +259,8 @@ VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851
   (5, 'http://jpmmobile.com/wp-content/uploads/2018/11/40-braids-for-black-kids-2018-mr-kids-haircuts-braids-for-black-kids.jpg', null, null),
   (5, 'https://4cjz9s2texp5a66rp37l3uty-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/1492699004/bashab___12224424_252504998425062_1601193227_n-2.jpg', null, null),
   (5, 'https://www.menshairstylestoday.com/wp-content/uploads/2018/03/Black-Men-Hairstyles.jpg', null, null),
-  (6, 'https://tinyurl.com/yyqagcrl', null, null),
+
+
   (7, 'https://tinyurl.com/y6gwhcka', null, null),
   (7, 'https://tinyurl.com/y56k6cu2', null, null),
   (8, 'https://tinyurl.com/y4y7ccxd', null, null),
@@ -284,6 +286,7 @@ VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851
     (6, 'https://i.pinimg.com/originals/55/e7/e0/55e7e062ba977860f1e016eecbcfb529.jpg', null, null),
     (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCic_2K_zkttToVFTjAkqMr8ZmHyEPJRlfoLUbWKepSmSCL60N', null, null),
     (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvU8ctKrNtdoC0B6hy6_0zTTIGRTta9ywGpH2dWY2jluPBTKqx', null, null),
+
     (2, 'https://i.pinimg.com/originals/dc/56/5b/dc565b270312f279a2ea60a8fe58c1f5.jpg', null, null),
     (2, 'http://s3photo.nailartgallery.nailsmag.com/sotolicious_367020_l.jpg', null, null),
     (2, 'https://i.pinimg.com/originals/fc/0c/ac/fc0caccccd67c9d934903f864eee480f.jpg', null, null),
