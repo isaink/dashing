@@ -34,26 +34,29 @@ export default class Welcome extends Component {
           <div className="choose_svc">
             <br />
             <h3>Choose Your Service</h3>
+
           </div>
-          <div style={{ paddingTop: "100px" }}>
-            <div className=" box" style={{ width: "150px" }}>
+          <div style={{ paddingTop: '100px'}}>
+            <div className=" box" style={{width: '150px'}}>
               <Link
-                className="links"
-                activeClass="active"
-                to="hair"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
+                  className="links"
+                  activeClass="active"
+                  to="hair"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+
+                >
+
                 <img src={hair_thumb} alt="" width="150px" height="auto" />
-                <div className="hvrbox-layer_top">
-                  <div className="hvrbox-text"> HAIR </div>
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'> HAIR </div>
                 </div>
               </Link>
             </div>
 
-            <div className=" box" style={{ width: "150px" }}>
+            <div className=" box" style={{width: '150px'}}>
               <Link
                 className="links"
                 activeClass="active"
@@ -64,13 +67,13 @@ export default class Welcome extends Component {
                 duration={500}
               >
                 <img src={nails_thumb} alt="" width="150px" height="auto" />
-                <div className="hvrbox-layer_top">
-                  <div className="hvrbox-text"> NAILS </div>
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text' > NAILS </div>
                 </div>
               </Link>
             </div>
 
-            <div className=" box" style={{ width: "150px" }}>
+            <div className=" box" style={{width: '150px'}}>
               <Link
                 className="links"
                 activeClass="active"
@@ -82,13 +85,13 @@ export default class Welcome extends Component {
               >
                 {" "}
                 <img src={barb_thumb} alt="" width="150px" height="auto" />
-                <div className="hvrbox-layer_top">
-                  <div className="hvrbox-text">BARBER </div>
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'>BARBER </div>
                 </div>
               </Link>
             </div>
 
-            <div className=" box" style={{ width: "150px" }}>
+            <div className=" box" style={{width: '150px'}}>
               <Link
                 className="links"
                 activeClass="active"
@@ -99,13 +102,13 @@ export default class Welcome extends Component {
                 duration={500}
               >
                 <img src={makeup_thumb} alt="" width="150px" height="auto" />
-                <div className="hvrbox-layer_top">
-                  <div className="hvrbox-text">MAKEUP </div>
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'>MAKEUP </div>
                 </div>
               </Link>
             </div>
 
-            <div className=" box" style={{ width: "150px" }}>
+            <div className=" box" style={{ width: '150px'}}>
               <RouterLink
                 className="links"
                 activeClass="active"
@@ -116,11 +119,12 @@ export default class Welcome extends Component {
                 duration={500}
               >
                 <img src={edu_pic} alt="" width="150px" height="auto" />
-                <div className="hvrbox-layer_top">
-                  <div className="hvrbox-text">EDUCATIONAL SERVICES </div>
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'>EDUCATIONAL SERVICES </div>
                 </div>
               </RouterLink>
             </div>
+
           </div>
         </div>
       </>
