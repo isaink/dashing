@@ -13,7 +13,7 @@ import Nails from "./Nails";
 import Barber from "./Barber";
 import Makeup from "./Makeup";
 import EducationProv_Container from "../../Redux_Containers/EducationProv_Container";
-import { AboutUs } from "./AboutUs";
+// import { AboutUs } from "./AboutUs";
 
 
 
@@ -79,11 +79,7 @@ class Home extends Component {
             </Element>
           </dd>
 
-          <dd>
-            <Element name="aboutus" className="Element">
-              <AboutUs />{" "}
-            </Element>
-          </dd> */}
+
 
 
         </dl>
