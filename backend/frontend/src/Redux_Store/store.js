@@ -14,7 +14,7 @@ import RootReducer from '../Redux_Reducers/RootReducer.js';
 
 const store = createStore(RootReducer, {}, compose(
     applyMiddleware(thunk, logger),
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__() || compose
 ));
 
 
