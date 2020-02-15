@@ -1,45 +1,6 @@
-.edu_body {
-  background-image: url("../photo_assets/edu_pic.jpg");
-  z-index: -2;
-  object-fit: cover;
-  /* opacity: 0.2; */
-  filter: alpha(opacity=50);
-  max-height: 1000px;
-  max-width: 1000px;
-}
-
-.buffer_div {
-  opacity: 0.2;
-}
-
-.navbar {
-  z-index: 3;
-}
-.solo_links {
+.grid-container {
   display: flex;
   justify-content: center;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
-  margin-top: -35px;
-  padding-left: 20px;
-  font-size: 18px;
-}
-
-.solo_links a:link {
-  color: black;
-  text-decoration: none;
-  text-transform: normal;
-  letter-spacing: normal;
-  /* padding-left: 20px; */
-}
-
-.solo_links a:visited {
-  text-decoration: none;
-  color: black;
-}
-
-.solo_links a:hover {
-  color: white;
 }
 
 .provider_pics {
@@ -47,8 +8,7 @@
   grid-template-columns: 33% 33% 33%;
   grid-column-gap: 15px;
   grid-row-gap: 20px;
-  padding-left: 350px;
-  padding-right: 350px;
+  width: 80%;
   padding-top: 50px;
 }
 
@@ -57,7 +17,7 @@
   grid-template-columns: 40% 60%;
   grid-column-gap: 20px;
   grid-row-gap: 10px;
-  background-color: #383b3f;
+  background-color: #1E1E1E;
   text-decoration: none;
   border-radius: 5px;
   height: 175px;
@@ -107,6 +67,8 @@
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   color: white;
+  letter-spacing: -0.5px;
+  font-weight: 200;
 }
 
 .edu_avatar_link {
@@ -135,10 +97,9 @@
 }
 
 .edu_service_search {
-  display: grid;
-  column-gap: 8px;
-  padding-left: 500px;
-  padding-right: 300px;
+  display: flex;
+  justify-content: center;
+
 
 }
 
@@ -147,11 +108,8 @@
   font-family: "Josefin Sans", sans-serif;
   font-weight: 200;
   border-style: solid;
-  border-width: 1px;
-  border-color: #ecb99c;
   color: #fffbfc;
-  grid-column: 1;
-  width: 100%;
+  width: 400px;
   height: 54px;
 }
 
@@ -162,20 +120,19 @@ select {
   border-style: solid;
   border-width: 1px;
   border-color: #ecb99c;
-  width: 100%;
+  width: 400px;
   height: 50px;
   font-size: 15px;
   border-radius: 4px;
-  grid-column: 2;
   padding-left: 10px;
   color: #fffbfc;
 }
+
 .providerSearch {
   color: white;
 }
 
 .edu_button {
-  grid-column: 3;
   border-radius: 4px;
   width: 100px;
   height: 53px;
@@ -186,10 +143,8 @@ select {
   font-size: 15px;
   font-weight: 200;
   background: black;
-  margin-left: 15px;
 }
 .edu_searchBar::placeholder {
   color: white;
   font-weight: 200;
-
 }

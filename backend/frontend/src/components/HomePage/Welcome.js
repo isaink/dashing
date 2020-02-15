@@ -12,16 +12,15 @@ import barb_thumb from "../../photo_assets/barb_thumb.jpg";
 import makeup_thumb from "../../photo_assets/makeup_thumb.jpeg";
 import edu_pic from "../../photo_assets/edu_pic.jpg";
 
-// import Navbar from "../NavBars/Navbar";
-//
 export default class Welcome extends Component {
   scrollToTop = () => {
     scroll.scrollToTop();
   };
+
   render() {
     return (
       <>
-        <span className="welcome_container">
+        <div className="welcome_container">
           <div className="slogan">
             <h1>"We Bring Style to Your Doorstep"</h1>
           </div>
@@ -35,72 +34,99 @@ export default class Welcome extends Component {
           <div className="choose_svc">
             <br />
             <h3>Choose Your Service</h3>
-            <br />
+
           </div>
+          <div style={{ paddingTop: '100px'}}>
+            <div className=" box" style={{width: '150px'}}>
+              <Link
+                  className="links"
+                  activeClass="active"
+                  to="hair"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
 
-          <div className="service_thumbs">
-            <Link
-              className="links"
-              activeClass="active"
-              to="hair"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              <img src={hair_thumb} alt="" width="150px" height="auto" />
-            </Link>
+                >
 
-            <Link
-              className="links"
-              activeClass="active"
-              to="nails"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              <img src={nails_thumb} alt="" width="150px" height="auto" />
-            </Link>
+                <img src={hair_thumb} alt="" width="150px" height="auto" />
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'> HAIR </div>
+                </div>
+              </Link>
+            </div>
 
-            <Link
-              className="links"
-              activeClass="active"
-              to="barber"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              {" "}
-              <img src={barb_thumb} alt="" width="150px" height="auto" />
-            </Link>
+            <div className=" box" style={{width: '150px'}}>
+              <Link
+                className="links"
+                activeClass="active"
+                to="nails"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <img src={nails_thumb} alt="" width="150px" height="auto" />
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text' > NAILS </div>
+                </div>
+              </Link>
+            </div>
 
-            <Link
-              className="links"
-              activeClass="active"
-              to="makeup"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              <img src={makeup_thumb} alt="" width="150px" height="auto" />
-            </Link>
+            <div className=" box" style={{width: '150px'}}>
+              <Link
+                className="links"
+                activeClass="active"
+                to="barber"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                {" "}
+                <img src={barb_thumb} alt="" width="150px" height="auto" />
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'>BARBER </div>
+                </div>
+              </Link>
+            </div>
 
-            <RouterLink
-              className="links"
-              activeClass="active"
-              to="/education"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              <img src={edu_pic} alt="" width="150px" height="auto" />
-            </RouterLink>
+            <div className=" box" style={{width: '150px'}}>
+              <Link
+                className="links"
+                activeClass="active"
+                to="makeup"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <img src={makeup_thumb} alt="" width="150px" height="auto" />
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'>MAKEUP </div>
+                </div>
+              </Link>
+            </div>
+
+            <div className=" box" style={{ width: '150px'}}>
+              <RouterLink
+                className="links"
+                activeClass="active"
+                to="/education"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <img src={edu_pic} alt="" width="150px" height="auto" />
+                <div className='hvrbox-layer_top'>
+                    <div className='hvrbox-text'>EDUCATIONAL SERVICES </div>
+                </div>
+              </RouterLink>
+            </div>
+
           </div>
-        </span>
+        </div>
       </>
     );
   }

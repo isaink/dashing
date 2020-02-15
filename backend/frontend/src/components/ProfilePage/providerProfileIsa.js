@@ -13,7 +13,7 @@ export const ProviderProfile = props => {
   const renderProviderInfo = () => {
     if (props.providerInfo) {
       return (
-        <div className="ctnr_profile" key={props.providerInfo.provider_id}>
+        <div className="ctnr_profile" key={props.providerInfo.user_id}>
           <div className="bg_intro_profile">
             <img
               alt="intro_picture"

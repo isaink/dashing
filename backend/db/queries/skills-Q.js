@@ -26,7 +26,7 @@ const getOneSkill = (req, res, next) => {
 };
 
 const getSkillsForProvider = (req, res, next) => {
-  db.many("SELECT skill_id, provider_id, price_min, price_max, education, skills.service_id, array_agg(skills.name) AS skills FROM skills_provider JOIN skills ON skills.id = skills_provider.skill_id WHERE skills_provider.provider_id =${id} GROUP BY skills_provider.skill_id, skills_provider.provider_id, skills_provider.price_min, skills_provider.price_max, education, skills.service_id ",
+  db.many("SELECT skill_id, user_id, price_min, price_max, education, skills.service_id, array_agg(skills.name) AS skills FROM skills_provider JOIN skills ON skills.id = skills_provider.skill_id WHERE skills_provider.user_id =${id} GROUP BY skills_provider.skill_id, skills_provider.user_id, skills_provider.price_min, skills_provider.price_max, education, skills.service_id ",
   {
     id: Number(req.params.id)
   })

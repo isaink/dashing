@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS dashing;
 CREATE DATABASE dashing;
 \c dashing
 
-CREATE TYPE userType AS ENUM ( 'provider', 'client');
+CREATE TYPE usertype AS ENUM ( 'provider', 'client');
 
 CREATE TABLE services(
   id SERIAL PRIMARY KEY,
@@ -63,7 +63,7 @@ VALUES('Hair'),
 INSERT INTO skills (name, service_id)
 VALUES('Coloring' , 1),
 ('Weaves' , 1),
-('Locks' , 1),
+('Locs' , 1),
 ('Perms' , 1),
 ('Cut' , 1),
 ('Nail Art' , 2),
@@ -71,24 +71,24 @@ VALUES('Coloring' , 1),
 ('Mani/Pedi' , 2),
 ('Tips' , 2),
 ('Gel Nails' , 2),
-('Trim' , 3),
-('Cut' , 3),
+('Men''s Trim' , 3),
+('Men''sCut' , 3),
 ('Fade' , 3),
 ('Blowout' , 3),
 ('Facial Hair Grooming' , 3),
 ('Brow shaping' , 4),
-('Glam' , 4),
-('Natural' , 4),
-('Wedding' , 4),
+('Glam Makeup' , 4),
+('Natural Makeup' , 4),
+('Wedding Makeup' , 4),
 ('Sugaring' , 4);
 
 INSERT INTO users (first_name, last_name, password_digest, email, avatar, borough, phone_number, website_link, bio, service_id, type, availability)
 VALUES('Nielene', 'Keys', 'nkeys', 'nkeys@gmail.com',  'https://i0.wp.com/ranktribe.com/custom/domain_1/image_files/sitemgr_photo_10665.jpg?resize=297%2C297', 'Brooklyn', '347-599-9843', 'www.nkeys.com', 'I love doing nails!', 2, null, 'Mon - Thurs 10-6'),
-('Isa', 'Frias', 'irico', 'irico@gmail.com',  'https://assets.teenvogue.com/photos/55fada5fda9bc0e85547e428/master/pass/latina-girls.jpg', 'Bronx', '347-599-9843', 'www.isafrias.com', 'I love to do hair!', 1, null, 'Sat - Tues 3 - 9'),
+('Isa', 'Frias', 'irico', 'irico@gmail.com',  'https://assets.teenvogue.com/photos/55fada5fda9bc0e85547e428/master/pass/latina-girls.jpg', 'Bronx', '347-599-9843', 'www.isafrias.com', 'Taking care of my clients is my speciality!', 1, null, 'Sat - Tues 3 - 9'),
 ('Bayne', ' Brian', 'bbrian', 'bbrian@gmail.com', 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2017%2F11%2Fkofi-siriboe-peopledotcom1.jpg&w=400&c=sc&poi=face&q=85', 'Manhattan','7189875674', 'www.baynebrian.com', 'I''m the best barber in NY fam!', 3, null, 'Sun - Thurs 2 - 9 '),
 ('Jo', 'West', 'jwest', 'jwest@gmail.com', 'https://i-h2.pinimg.com/564x/a1/cb/81/a1cb814979c87ec8f7b252b299c75343.jpg', 'Queens', '347-599-9843', 'www.jowest.com', 'Jo is here to take care of you', 1, null, 'Mon - Thurs 11 - 7'),
 ('Carina', 'Salvador', 'csalvador','csalvador@gmail.com',  'https://static1.squarespace.com/static/585862a3e6f2e134f2aa6e3e/t/58b87bf6d2b8579db55b0e57/1488485395205/', 'Staten Island', '347-599-9843', 'www.carinabeauty.com', 'Im here to meet all your beauty needs', 4, null, 'Mon - Fri 10 - 7'),
-('Channy', 'Styles', 'channystyles', 'channystyles@gmail.com',  'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/71732_446752851221_6737560_n.jpg?_nc_cat=109&_nc_oc=AQnBLTtsTVHV9U2ho6WqGEQY5VTSxi4pjhkycI-hOKIaJSZZQlKRJVu6WsTJiZQ3oqc&_nc_ht=scontent-lga3-1.xx&oh=f47011313f8a95f23c17a3a2d1a1608f&oe=5D37A50F', 'Brooklyn', '212-769-2000', 'www.channystyles.com', 'Let me take care of all your needs!', 1, null, 'Sun - Thurs 11 - 7'),
+('Channing', 'Styles', 'channystyles', 'channystyles@gmail.com',  'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/71732_446752851221_6737560_n.jpg?_nc_cat=109&_nc_oc=AQnBLTtsTVHV9U2ho6WqGEQY5VTSxi4pjhkycI-hOKIaJSZZQlKRJVu6WsTJiZQ3oqc&_nc_ht=scontent-lga3-1.xx&oh=f47011313f8a95f23c17a3a2d1a1608f&oe=5D37A50F', 'Brooklyn', '212-769-2000', 'www.channystyles.com', 'Let me take care of all your needs!', 1, null, 'Sun - Thurs 11 - 7'),
 ('Brianna', 'Thomas', 'bree', 'bree@gmail.com', 'https://i.dailymail.co.uk/i/pix/2017/02/02/21/3CB97D1300000578-0-One_of_the_beautiful_people_Actress_Angelina_Jolie_Photography_h-a-132_1486072162004.jpg', 'Queens', '646-769-2000', 'www.beautybybree.com', 'Let me take care of all your needs!', 3, null, 'Mon - Fri 2 - 8'),
 ('Micah', 'Douglas', 'micah', 'Micah@gmail.com',  'https://cdn7.whiskeyriff.com/wp-content/uploads/sam_hunt_beard_0_1441190712.jpg', 'Bronx', '646-769-2000', 'www.micahdouglashair.com', 'Best Barber in the Business!', 2, null, 'Weds - Sun 10 - 7'),
 ('Samantha', 'Clement', 'sammy', 'sammy@gmail.com',  'https://i.pinimg.com/236x/e1/6d/70/e16d7087621fbcabdcd4481def7317c7.jpg', 'Manhattan', '646-769-2000', 'www.sammydoeshair.com', 'Professional looking to take care of you!', 1, null, 'Tues - Fri 12 - 9'),
@@ -241,6 +241,7 @@ VALUES(1, 1, 50, 70, 'true'), --hair
 (16, 25, 30, 80, 'true'); ---makeup
 
 
+
 INSERT INTO portfolio(user_id, img, body, skill_id)
 VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851ecbe.jpg', null, null),
   (1, 'https://www.blushblowoutbar.com/wp-content/uploads/2016/08/blowouts.jpg', null, null),
@@ -255,8 +256,8 @@ VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851
   (5, 'http://jpmmobile.com/wp-content/uploads/2018/11/40-braids-for-black-kids-2018-mr-kids-haircuts-braids-for-black-kids.jpg', null, null),
   (5, 'https://4cjz9s2texp5a66rp37l3uty-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/1492699004/bashab___12224424_252504998425062_1601193227_n-2.jpg', null, null),
   (5, 'https://www.menshairstylestoday.com/wp-content/uploads/2018/03/Black-Men-Hairstyles.jpg', null, null),
-  (6, 'https://tinyurl.com/y37njtfh', null, null),
-  (6, 'https://tinyurl.com/yyqagcrl', null, null),
+
+
   (7, 'https://tinyurl.com/y6gwhcka', null, null),
   (7, 'https://tinyurl.com/y56k6cu2', null, null),
   (8, 'https://tinyurl.com/y4y7ccxd', null, null),
@@ -272,4 +273,19 @@ VALUES (1, 'https://i.pinimg.com/originals/e5/e6/34/e5e634a0efeada0eab1096fef851
   (13, 'https://tinyurl.com/y54y22le', null, null),
   (13, 'https://tinyurl.com/yynypmx9', null, null),
   (14, 'https://tinyurl.com/yxjcdxu7', null, null),
-  (14, 'https://tinyurl.com/y5y69r8p', null, null);
+  (14, 'https://tinyurl.com/y5y69r8p', null, null),
+  (6, 'http://www.shearexcitementhairsalon.com/uploads/2/4/7/8/24780048/sew-in-hairstyles-1-1_orig.jpg', null, null),
+  (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvO5NrjkKqGD_ClEeDHVaycfY0Fm7B5-UPTDJHDTgblyON8I_', null, null),
+  (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUbb2p4lOtrHULJJzdKBM_F09XEac0EUwy4EzBwZ4UjOifJiub', null, null),
+  (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROBPHVdQEMEj3y54KypaeNvDrWLmdduTDzxh6n4QxIawz7wBQg', null, null),
+  (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn1mjWNh0xPCBXbm0RA7swpOmYGpuU52QlUT96UEQpT4afZw4rNQ', null, null),
+  (6, 'https://davina-diaries-7jkaizw9lep2iaf6od7zdyieys8em.netdna-ssl.com/wp-content/uploads/2018/09/make-up-for-darker-skin-tones-soft-glam-natural-full-lips-soft-arch-brows-334x500-334x500.jpg', null, null),
+    (6, 'https://i.pinimg.com/originals/55/e7/e0/55e7e062ba977860f1e016eecbcfb529.jpg', null, null),
+    (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCic_2K_zkttToVFTjAkqMr8ZmHyEPJRlfoLUbWKepSmSCL60N', null, null),
+    (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvU8ctKrNtdoC0B6hy6_0zTTIGRTta9ywGpH2dWY2jluPBTKqx', null, null),
+
+    (2, 'https://i.pinimg.com/originals/dc/56/5b/dc565b270312f279a2ea60a8fe58c1f5.jpg', null, null),
+    (2, 'http://s3photo.nailartgallery.nailsmag.com/sotolicious_367020_l.jpg', null, null),
+    (2, 'https://i.pinimg.com/originals/fc/0c/ac/fc0caccccd67c9d934903f864eee480f.jpg', null, null),
+    (2, 'https://www.mariaestelle.com/wp-content/uploads/2014/11/Before-and-after-brow-shaping-with-tint.jpg', null, null),
+    (2, 'https://www.dhresource.com/0x0s/f2-albu-g6-M01-DE-D0-rBVaR1vchqqAa_kBAAFDLWpwoeg986.jpg/24pcs-acrylic-nail-tips-for-children-kids.jpg', null, null), (2, 'https://www.brawtaliving.com/wp-content/uploads/2019/04/Runas-Mani-and-Pedi.png', null, null), (2, 'https://i.pinimg.com/originals/89/d4/74/89d474ecfad259be218318e0b2f99223.jpg', null, null);

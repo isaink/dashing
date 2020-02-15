@@ -41,17 +41,17 @@ class Barber extends React.Component {
       const providerObj = {};
       const providerArr = [];
       this.props.barberProviders.forEach(provider => {
-        if (!providerObj[provider.provider_id]) {
-          providerObj[provider.provider_id] = true;
+        if (!providerObj[provider.user_id]) {
+          providerObj[provider.user_id] = true;
           providerArr.push(provider);
         }
       });
       return providerArr.map(barberP => {
         return (
-          <div key={barberP.provider_id}>
+          <div key={barberP.user_id}>
             <div className="content">
               <div className="ctnr_avatar">
-                <Link to={`/singleProviderProfile/${barberP.provider_id}`}>
+                <Link to={`/singleProviderProfile/${barberP.user_id}`}>
                   <img
                     alt="avatar"
                     className="prov_avatar"
@@ -72,15 +72,17 @@ class Barber extends React.Component {
                 </div>
                 <div>
                   {barberP.borough}
-                  <div className="bio" > "{barberP.bio}" </div>
+                  <div className="bio"> "{barberP.bio}" </div>
                 </div>
-                  <div className='ctnr_bottom_info'>
-                    <p> {barberP.availability.toUpperCase()}  </p>
-                    <Link to={`/singleProviderProfile/${barberP.provider_id}`} >
-                      <button className='bttn_toProfile'> View my Profile </button>
-                    </Link>
-                  </div>
-              
+                <div className="ctnr_bottom_info">
+                  <p> {barberP.availability.toUpperCase()} </p>
+                  <Link to={`/singleProviderProfile/${barberP.user_id}`}>
+                    <button className="bttn_toProfile">
+                      {" "}
+                      View my Profile{" "}
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -100,7 +102,7 @@ class Barber extends React.Component {
         <div className="ctnr_prov">
           <div className="ctnr_nav">
             <div className="title">BARBER</div>
-            <span style={{ paddingLeft: "55px", width: "1074px" }}>
+            <span style={{ paddingLeft: "78px", width: "1074px" }}>
               <ComboBox
                 fetchSkillList={this.state.skills}
                 getProvidersByService={this.props.getProvidersByService}
@@ -121,10 +123,12 @@ class Barber extends React.Component {
             <div className="inner_ctnr_providers">
               <div className="providers">
                 <h3 className="text_intro_srv">
-                  Choose your{" "}
-                  <b style={{ color: "white" }}>BARBER</b> provider
+                  Choose your <b style={{ color: "white" }}>BARBER</b> provider
                 </h3>
-                <div className="prov" style={{width: '873px'}}>{this.renderProviders()}</div>}
+                <div className="prov" style={{ width: "873px" }}>
+                  {this.renderProviders()}
+                </div>
+                }
               </div>
             </div>
           </div>

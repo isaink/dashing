@@ -3,7 +3,7 @@
   width: 100%;
   list-style-type: none;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   background-color: black;
 }
 
@@ -14,23 +14,40 @@
   padding-top: 12px;
 }
 
+.solo_links {
+  display: flex;
+  justify-content: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  margin-top: -35px;
+  padding-left: 20px;
+  font-size: 18px;
+}
 
+.solo_links a:link {
+  color: black;
+  text-decoration: none;
+  text-transform: normal;
+  letter-spacing: normal;
+  /* padding-left: 20px; */
+}
 
+.solo_links a:visited {
+  text-decoration: none;
+  color: black;
+}
 
-
-
-
-
-
-
+.solo_links a:hover {
+  color: white;
+}
 
 /* .links_center {
   display: flex;
   justify-content: center; */
-  /* top: 200px; */
-  /* z-index: 500; */
+/* top: 200px; */
+/* z-index: 500; */
 
-  /* font-family: "Josefin Sans", sans-serif;
+/* font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   font-size: 18px;
 } */
@@ -48,11 +65,11 @@
   text-transform: uppercase;
   background-color: black;
   opacity: 0.9; */
-  /* border-radius: 10px; */
-  /* color: #ECB99C; */
-  /* z-index: 1; */
-  /* z-index: 5; */
-  /* overflow: hidden;
+/* border-radius: 10px; */
+/* color: #ECB99C; */
+/* z-index: 1; */
+/* z-index: 5; */
+/* overflow: hidden;
 } */
 
 /* button:after {
@@ -60,9 +77,9 @@
   display: block;
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0; */
-  /* border: solid 5px; */
-  /* z-index: -1; */
-  /* z-index: 5;
+/* border: solid 5px; */
+/* z-index: -1; */
+/* z-index: 5;
   transition: transform 0.6s linear;
   transform: scale(0.97, 0.93);
 } */
@@ -89,7 +106,7 @@ button:hover::after {
   width: 50px;
   height: 50px;
   /* position: relative; */
-  /* border: 3px solid  #ECB99C;
+/* border: 3px solid  #ECB99C;
   cursor: pointer;
    transition: all 0.3s ease;
 } */
@@ -139,21 +156,14 @@ button:hover::after {
 
 /* .nav_lines:hover{
    /* border-radius:50%; */
-   /* transition: all 0.3s ease;   */
-
-
-
+/* transition: all 0.3s ease;   */
 
 /* *,
 *:before,
 *:after { */
-    /* -webkit-box-sizing: border-box;
+/* -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box; */
-    /* box-sizing: border-box; */
-
-
-
-
+/* box-sizing: border-box; */
 
 /* .button */
 
@@ -161,8 +171,8 @@ button:hover::after {
     display: inline-block;
     position: relative;
     /* margin: 1em; */
-    /* padding: 0.67em; */
-    /* border: 2px solid #FFF;
+/* padding: 0.67em; */
+/* border: 2px solid #FFF;
     overflow: hidden;
     text-decoration: none;
     font-size: 12px;
