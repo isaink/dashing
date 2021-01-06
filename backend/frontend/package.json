@@ -7,7 +7,7 @@
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "@typescript-eslint/typescript-estree": "^1.7.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-js": "^3.0.1",
     "create-react-context": "^0.2.3",
     "mdbreact": "^4.13.0",
